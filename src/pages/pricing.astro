@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingTier from '../components/PricingTier.astro';
+---
+
+<Layout title='pricing'>
+  <div class='container'>
+    <h1 class='heading-1 | text-center'>Flexible plans</h1>
+    <div class='even-columns'>
+      <div>
+        <PricingTier
+          tier='Basic'
+          ,
+          price={199}
+          ,
+          subheading='Ideal for startups'
+          ,
+          features={[
+            'Up to 8 pieces of content per month',
+            'Basic ad campaigns',
+            'Basic social media presence',
+            'Monthly reports and insights',
+          ]}
+        />
+      </div>
+      <div>
+        <PricingTier
+          tier='Standard'
+          ,
+          price={399}
+          ,
+          subheading='Ideal for growing businesses'
+          ,
+          features={[
+            'Up to 16 pieces of content per month',
+            'Standard ad campaigns',
+            'Standard social media presence',
+            'Monthly reports and insights',
+            'Brand analysis',
+          ]}
+        />
+      </div>
+      <div>
+        <PricingTier
+          tier='Premium'
+          ,
+          price={499}
+          ,
+          subheading='Ideal for large companies'
+          ,
+          features={[
+            'Up to 32 pieces of content per month',
+            'Premium ad campaigns',
+            'Premium social media presence and growth',
+            'Monthly reports and insights',
+            'Brand analysis',
+            'Influencer marketing',
+          ]}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<!-- Style / Using SCSS -->
+<style lang='scss'>
+  @use '../sass/abstracts' as *;
+</style>
+
+<script>
+  import '../scripts/main.js';
+</script>

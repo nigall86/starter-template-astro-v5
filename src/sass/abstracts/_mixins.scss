@@ -1,0 +1,75 @@
+@use 'sass:meta';
+@use 'sass:math';
+@use 'sass:map';
+@use 'breakpoints' as *;
+@use 'tokens' as *;
+
+// Breakpoints --> we can change $min-or-max to 'min-width', 'max-width' (default value), 'between'
+// if we choose 'between', we can set range of breakpoints
+@mixin mq($bp-1, $min-or-max: max-width, $bp-2: $bp-1) {
+  @if map.has-key($breakpoints, $bp-1) {
+    $breakpoint-1: map-get($breakpoints, $bp-1) !global;
+
+    @media only screen and ($min-or-max: $breakpoint-1) {
+      @content;
+    }
+  } @else if meta.type-of($bp-1) == number {
+    @if math.is-unitless($bp-1) {
+      @error 'when using a number with @mq() make sure to include a unit';
+    } @else {
+      @media only screen and ($min-or-max: $bp-1) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$bp-1} is not in the $breakpoints map';
+  }
+
+  @if $min-or-max == between {
+    @if map.has-key($breakpoints, $bp-2) {
+      $breakpoint-2: map-get($breakpoints, $bp-2);
+      @media only screen and (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+        @content;
+      }
+    } @else if (meta.type-of($bp-1) and meta.type-of($bp-2)) == number {
+      @if (math.is-unitless($bp-1) and math.is-unitless($bp-2)) {
+        @error 'when using a numbers with @mq() make sure to include a unit';
+      } @else {
+        @media only screen and (min-width: $bp-1) and (max-width: $bp-2) {
+          @content;
+        }
+      }
+    } @else {
+      @error 'the keyword #{$bp-1} and #{$bp-2} is not in the $breakpoints map';
+    }
+  }
+}
+
+// Creating headings
+@mixin heading($fs, $color: $heading-color-default) {
+  font-family: $heading-font-family;
+
+  font-size: $fs;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  color: $color;
+  letter-spacing: $heading-letter-spacing;
+  text-transform: $heading-text-transform;
+}
+
+// Pseudo classes
+@mixin pseudo($pos: 'before', $position: absolute, $content: '') {
+  @if $pos == 'before' {
+    &::before {
+      content: $content;
+      position: $position;
+      @content;
+    }
+  } @else {
+    &::after {
+      content: $content;
+      position: $position;
+      @content;
+    }
+  }
+}

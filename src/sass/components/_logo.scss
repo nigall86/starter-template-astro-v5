@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+
+.logo {
+  // Default logo styles
+  max-width: $logo-size-default;
+  fill: $logo-fill-default; // --> Use if the text logo or with solid fill
+
+  .site-header & {
+    max-width: $logo-size-header;
+    fill: $logo-fill-header;
+  }
+
+  .site-footer & {
+    max-width: $logo-size-footer;
+    fill: $logo-fill-footer;
+  }
+}

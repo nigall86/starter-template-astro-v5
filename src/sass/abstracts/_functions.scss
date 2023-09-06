@@ -1,0 +1,49 @@
+@use 'sass:map';
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'sizes' as *;
+
+// Returns color and shade from abstracts/_colors.scss
+@function clr($color, $shade) {
+  @if map.has-key($colors, $color, $shade) {
+    @return map.get($colors, $color, $shade);
+  } @else {
+    @error '$colors does not have that color!';
+  }
+}
+
+// Allows to make hsl values with transparency
+@function hslac($color, $alpha) {
+  @if (type-of($color) == 'color') {
+    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
+  } @else {
+    @error "You didn't pass a color object";
+  }
+}
+
+// Returns font sizes from abstracts/_typography.scss
+@function fs($font-size) {
+  @if map.has-key($font-sizes, $font-size) {
+    @return map.get($font-sizes, $font-size);
+  } @else {
+    @error '$font-sizes does not have that size!';
+  }
+}
+
+// Returns line-height from abstracts/_typography.scss
+@function lh($lh-size) {
+  @if map.has-key($line-heights, $lh-size) {
+    @return map.get($line-heights, $lh-size);
+  } @else {
+    @error '$lh-size does not have that value!';
+  }
+}
+
+// Returns size from abstracts/_sizes.scss
+@function size($size) {
+  @if map.has-key($sizes, $size) {
+    @return map.get($sizes, $size);
+  } @else {
+    @error 'this $size does not exist!';
+  }
+}

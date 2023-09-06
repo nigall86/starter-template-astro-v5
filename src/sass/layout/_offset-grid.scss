@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.offset-grid {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(3, 1fr);
+
+  & > :nth-child(2),
+  & > :nth-child(3) {
+    grid-column: span 2;
+  }
+
+  p {
+    max-width: 32ch;
+  }
+}

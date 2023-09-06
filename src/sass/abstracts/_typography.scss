@@ -1,0 +1,86 @@
+// Private members
+$-ff-montserrat: 'Montserrat', sans-serif;
+$-ff-inter: 'Inter', sans-serif;
+
+$font-family-base: $-ff-inter;
+$font-family-accent: $-ff-montserrat;
+
+// Font sizes --> 1rem = 10px
+$font-sizes: (
+  // Default values
+  'big':
+    (
+      '900': 6rem,
+      '800': 4.8rem,
+      '700': 2.8rem,
+      '600': 2.1rem,
+      '500': 1.8rem,
+      '400': 1.6rem,
+      '300': 1.4rem,
+      '200': 1.2rem,
+    ),
+
+  'small': (
+    '900': 6rem,
+    '800': 3.6rem,
+    '700': 2.8rem,
+    '600': 2.1rem,
+    '500': 1.8rem,
+    '400': 1.6rem,
+    '300': 1.4rem,
+    '200': 1.2rem,
+  ),
+
+  'medium': (
+    '900': 6rem,
+    '800': 4.8rem,
+    '700': 2.8rem,
+    '600': 2.1rem,
+    '500': 1.8rem,
+    '400': 1.6rem,
+    '300': 1.4rem,
+    '200': 1.2rem,
+  ),
+
+  'large': (
+    '900': 6rem,
+    '800': 4.8rem,
+    '700': 2.8rem,
+    '600': 2.1rem,
+    '500': 1.8rem,
+    '400': 1.6rem,
+    '300': 1.4rem,
+    '200': 1.2rem,
+  )
+);
+
+// Assigning SASS variables to custom properties from _root.scss
+$font-size-200: var(--fs-200);
+$font-size-300: var(--fs-300);
+$font-size-400: var(--fs-400);
+$font-size-500: var(--fs-500);
+$font-size-600: var(--fs-600);
+$font-size-700: var(--fs-700);
+$font-size-800: var(--fs-800);
+$font-size-900: var(--fs-900);
+
+//Font weights
+$-fw-400: 400;
+$-fw-500: 500;
+$-fw-700: 700;
+
+$font-weight-default: $-fw-400;
+$font-weight-semi-bold: $-fw-500;
+$font-weight-bold: $-fw-700;
+
+//Line heights
+$line-heights: (
+  // 110%
+  110: 1.1,
+  // 120%
+  120: 1.2,
+  // 150%
+  150: 1.5,
+  // 160%
+  160: 1.6
+);

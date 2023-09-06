@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.site-footer {
+  padding-block: $footer-padding-block;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+
+  a {
+    font-family: $footer-link-font-family;
+    font-weight: $footer-link-font-weight;
+    color: $link-color;
+    letter-spacing: $letter-spacing-loose;
+    text-decoration: $footer-link-text-decoration;
+
+    &:is(:hover, :focus) {
+      color: $footer-link-color-hover;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+html {
+  color-scheme: dark light;
+
+  // 10px/16px = 62.5% -> 1rem = 10px
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+
+  background: $body-background-color;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  color: $body-text-color;
+}
+
+a {
+  color: $link-color;
+}
+
+a:is(:hover, :focus) {
+  color: $link-color-hover;
+}
+
+::selection {
+  background-color: $color-accent-400;
+  color: $color-neutral-100;
+}
+
+// Disabling animations by user preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
+}

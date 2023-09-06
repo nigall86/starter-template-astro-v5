@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.site-header {
+  padding: $site-header-padding;
+  background-color: $site-header-background-color;
+  color: $site-header-color;
+
+  &__inner {
+    display: flex;
+    gap: $size-4;
+    align-items: $site-header-alignment;
+    justify-content: $site-header-jusitifcation-large-screens;
+
+    @include mq(small) {
+      justify-content: $site-header-jusitifcation-small-screens;
+    }
+  }
+}

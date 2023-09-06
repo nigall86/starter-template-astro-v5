@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../images/logo.svg';
+
+export interface Props {
+  links: string[];
+}
+
+const { links } = Astro.props as Props;
+---
+
+<header class='site-header'>
+  <div class='container'>
+    <div class='site-header__layout'>
+      <Image src={logo} alt="Logo of the company"/>
+      <nav>
+        <ul class='nav | flex-group'>
+          <li><a href='/'>Home</a></li>
+          {
+            links.map((link) => (
+              <li>
+                <a href={`/${link}`}> {link} </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Style / Using SCSS -->
+<style lang='scss'>
+  @use '../sass/abstracts' as *;
+</style>

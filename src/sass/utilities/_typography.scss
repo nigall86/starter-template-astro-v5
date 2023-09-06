@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+
+// Creates font sizes utility classes
+@each $screen-size, $size-map in $font-sizes {
+  @each $size-name, $size-value in $size-map {
+    @if $screen-size == big {
+      .fs-#{$size-name} {
+        font-size: var(--fs-#{$size-name});
+      }
+    }
+  }
+}
+
+// Creates line heights utility classes
+@each $lh-size, $lh-value in $line-heights {
+  .lh-#{$lh-size} {
+    line-height: $lh-value;
+  }
+}
+
+// Assigning font families
+.ff-accent {
+  font-family: $font-family-accent;
+}
+
+.ff-base {
+  font-family: $font-family-base;
+}
+
+// Font-weights
+.fw-regular {
+  font-weight: $font-weight-default;
+}
+
+.fw-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
+
+.fw-bold {
+  font-weight: $font-weight-bold;
+}
+
+// Centering the text
+.text-center {
+  text-align: center;
+}
+
+// All caps
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Headings and subheadings classes
+.heading-1 {
+  @include heading($heading-1-font-size, $heading-1-color);
+}
+
+.heading-2 {
+  @include heading($heading-2-font-size, $heading-2-color);
+}
+
+.heading-3 {
+  @include heading($heading-3-font-size, $heading-3-color);
+}
+
+.subheading {
+  font-family: $subheading-font-family;
+  font-weight: $subheading-font-weight;
+  font-size: $subheading-font-size;
+  line-height: $subheading-line-height;
+  color: $subheading-color-default;
+}

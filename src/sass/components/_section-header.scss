@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.section-header {
+  margin-block-end: $size-11;
+
+  &[data-type="subheading"] {
+    margin-block-end: $size-fluid-3;
+  }
+
+  &[data-type="subheading form"] {
+    margin-block-end: $size-5;
+  }
+}

@@ -1,0 +1,24 @@
+---
+import '../sass/main.scss';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header links={['About', 'Pricing', 'Contact', 'New link']} />
+    <slot />
+    <Footer links={['About', 'Pricing', 'Contact', 'New link']} />
+  </body>
+</html>

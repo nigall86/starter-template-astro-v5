@@ -1,0 +1,88 @@
+@use '../abstracts' as *;
+
+.full-width-split-screen {
+  --wrapper-max-width: #{$container-max-width};
+  --wrapper-padding-inline: #{$container-min-margin-inline};
+
+  // For positioning the pseudo-elements to fill in the rest of the background
+  position: relative;
+
+  // Outermost columns emulate the spacing from the .container
+  // while the two inner columns divide the rest of the space into two equal parts
+  display: grid;
+  grid-template-columns:
+    minmax(var(--wrapper-padding-inline), 1fr)
+    minmax(0, calc(var(--wrapper-max-width) / 2))
+    minmax(0, calc(var(--wrapper-max-width) / 2))
+    minmax(var(--wrapper-padding-inline), 1fr);
+
+  // Ensure the image fill up the entire space available
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    // If the image is on the left, it covers the entire left half
+    &:first-child {
+      grid-column: 1 / 3;
+    }
+
+    // If the image is on the right, it covers the entire right half
+    &:last-child {
+      grid-column: 3 / -1;
+    }
+  }
+
+  // Make sure text doesn't touch the edge of the viewport and the content is vertically centered
+  & > :not(img) {
+    display: grid;
+    align-content: center;
+    justify-items: start;
+
+    // If the non-image is first, place it in the second column (first column is empty to emulate the .container)
+    &:first-child {
+      padding-inline-start: 0;
+      padding-inline-end: clamp(1rem, 3vw, 3rem);
+      grid-column: 2 / 3;
+
+      // Ensures the background color fills the entire left side
+      &::before {
+        grid-column: 1 / 2;
+      }
+    }
+
+    // If the non-image is last, place it in the third column (fourth column is empty to emulate the .container)
+    &:last-child {
+      padding-inline-start: clamp(1rem, 3vw, 3rem);
+      padding-inline-end: 0;
+      grid-column: 3 / 4;
+
+      // Ensures the background color fills the entire right side
+      &::before {
+        grid-column: 4 / 5;
+      }
+    }
+
+    // At large screens, ensure the background color goes to the edge of the page
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: inherit;
+    }
+  }
+}
+
+@include mq(small) {
+  // Remove the padding so images can take up the entire height
+  .full-width-split-screen {
+    display: block;
+    padding-block: 0;
+
+    // Match the section padding for the text blocks for consistency
+    & > :not(img) {
+      padding-block: $section-padding-block;
+      padding-inline: --wrapper-padding-inline;
+    }
+  }
+}

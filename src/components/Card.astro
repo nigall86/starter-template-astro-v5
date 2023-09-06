@@ -1,0 +1,16 @@
+---
+export interface Props {
+  dark?: boolean;
+}
+
+const { dark = false } = Astro.props as Props;
+---
+
+<div class={`card ${dark && 'dark'}`}>
+  <slot />
+</div>
+
+<!-- Style / Using SCSS -->
+<style lang='scss'>
+  @use '../sass/abstracts' as *;
+</style>
