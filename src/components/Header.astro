@@ -1,35 +1,45 @@
 ---
 import { Image } from 'astro:assets';
+
+import Nav from '../components/Nav.astro';
 import logo from '../images/logo.svg';
-
-export interface Props {
-  links: string[];
-}
-
-const { links } = Astro.props as Props;
 ---
 
 <header class='site-header'>
   <div class='container'>
-    <div class='site-header__layout'>
-      <Image src={logo} alt="Logo of the company"/>
-      <nav>
-        <ul class='nav | flex-group'>
-          <li><a href='/'>Home</a></li>
-          {
-            links.map((link) => (
-              <li>
-                <a href={`/${link}`}> {link} </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
+    <div class='site-header__inner'>
+      <a href="/"><Image src={logo} alt="Logo of the company"/></a>
+      <Nav />
     </div>
   </div>
 </header>
 
-<!-- Style / Using SCSS -->
+<!-- * Style * -->
 <style lang='scss'>
-  @use '../sass/abstracts' as *;
+@use '../sass/abstracts' as *;
+
+.site-header {
+  padding: $site-header-padding;
+  background-color: $site-header-background-color;
+  color: $site-header-color;
+
+  &__inner {
+    display: flex;
+    gap: $size-4;
+    align-items: $site-header-alignment;
+    justify-content: $site-header-justification-large-screens;
+
+    @include mq(small) {
+      justify-content: $site-header-justification-small-screens;
+    }
+  }
+}
 </style>
+
+<!-- * Script * -->
+<script>
+
+const header = document.querySelector('.site-header');
+
+</script>
+

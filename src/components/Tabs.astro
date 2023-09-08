@@ -8,10 +8,10 @@ const { headings, contents } = Astro.props as Props;
 ---
 
 <div class='tabs'>
-  <ul class='tabs-header'>
+  <ul class='tabs__header'>
     {headings.map((heading) => <li> {heading} </li>)}
   </ul>
-  <ul class='tabs-content'>
+  <ul class='tabs__content'>
     {contents.map((content) => <li class='tab'>{content}</li>)}
   </ul>
 </div>
@@ -20,29 +20,29 @@ const { headings, contents } = Astro.props as Props;
 <style lang='scss'>
   @use '../sass/abstracts' as *;
 
-  .tabs {
-    margin-top: 30px;
-  }
+.tabs {
+  margin-top: 30px;
 
-  .tabs-header {
+  &__header {
     display: flex;
     background: #333;
     color: #fff;
     padding: 10px 20px;
   }
 
-  .tabs-header li {
+  &__header li {
     margin-right: 20px;
     cursor: pointer;
   }
 
-  .tabs-content {
+  &__content {
     font-size: 18px;
     padding: 20px;
     border: 1px solid #333;
     font-weight: bold;
     background: #f4f4f4;
   }
+}
 </style>
 
 <!-- JavaScript -->
@@ -50,8 +50,8 @@ const { headings, contents } = Astro.props as Props;
 //////////////////////////////
 // Tabs component
 function createTabs(element) {
-  const header = element.querySelector('.tabs-header');
-  const content = element.querySelector('.tabs-content');
+  const header = element.querySelector('.tabs__header');
+  const content = element.querySelector('.tabs__content');
   const tabHeaders = [...header.children]; // --> array of HTML elements
   const tabContents = [...content.children]; // --> array of HTML elements
 

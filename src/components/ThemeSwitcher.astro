@@ -1,0 +1,78 @@
+---
+const { themes = ['system', 'light', 'dark'] } = Astro.props;
+---
+
+<fieldset
+class="theme-switcher | flex-group | mx-auto | margin-block-start-10 | clr-accent-100"
+>
+<legend class="theme-switcher__legend">Theme:</legend>
+
+<div class="theme-switcher__options | flex-group">
+
+{themes.map((theme) => 
+  <div class="theme-switcher__option-group">
+    <input
+      id={theme}
+      class="theme-switcher__input"
+      name="theme"
+      type="radio"
+      checked
+    />
+    <label for={theme} class="theme-switcher__label | clr-accent-100">{theme}</label>
+  </div>
+)}
+</div>
+</fieldset>
+
+<!-- * Style * -->
+<style lang='scss'>
+  @use '../sass/abstracts' as *;
+</style>
+
+<!-- * Script * -->
+<script>
+const themeSwitcher = document.querySelector('.theme-switcher');
+
+// We get theme value from local storage
+let activeTheme = localStorage.getItem('theme');
+// console.log(activeTheme);
+
+function changeTheme(theme) {
+  // Adds class to the body
+  document.body.classList.add('theme-switch');
+
+  // Checks if system theme or another
+  if (theme === 'system') {
+    localStorage.removeItem('theme');
+    document.body.removeAttribute('data-theme');
+  } else {
+    localStorage.setItem('theme', theme);
+    document.body.setAttribute('data-theme', theme);
+  }
+
+  document.body.addEventListener(
+    'transitionend',
+    function () {
+      document.body.classList.remove('theme-switch');
+    },
+    {}
+  );
+}
+
+// Clicking on the theme switcher
+themeSwitcher.addEventListener('click', function (e) {
+  if (e.target.tagName != 'INPUT') {
+    return;
+  }
+
+  const themeToActivate = e.target.id;
+  changeTheme(themeToActivate);
+});
+
+window.onload = function () {
+  if (activeTheme) {
+    document.getElementById(activeTheme).checked = true;
+    changeTheme(activeTheme);
+  }
+};
+</script>

@@ -1,0 +1,148 @@
+---
+import Sprite from '../icons/icons.svg?url';
+
+const { links = ['About', 'Pricing', 'Contact', 'New link'] } = Astro.props;
+---
+
+<nav class="site-nav">
+  <ul class='site-nav__list | flex-group'>
+    {
+      links.map((link) => (
+        <li>
+          <a href={`/${link}`}> {link} </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<button
+  class="mobile-nav-toggle"
+  aria-controls="navigation"
+  aria-expanded="false"
+>
+  <span class="sr-only">Menu</span>
+  <svg role="img" class="mobile-nav-toggle__icon">
+    <use id="nav-icon" href={Sprite + '#icon-menu'}></use>
+  </svg>
+</button>
+
+<!-- * Style * -->
+<style lang="scss">
+@use '../sass/abstracts' as *;
+
+.site-nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $nav-spacing;
+    list-style: none;
+
+    @include mq(large) {
+      $nav-spacing: clamp($size-4, 10vw, $size-6);
+      gap: $nav-spacing;
+    }
+
+    @include mq(medium) {
+      $nav-spacing: $size-5;
+
+      position: absolute;
+      z-index: 1000;
+      top: 90%;
+      right: 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: $nav-spacing;
+      padding: $size-6;
+      border-radius: 2rem 0 2rem 0;
+      background-color: $color-neutral-100;
+      box-shadow: $box-shadow-3;
+
+      transition: all 0.4s ease-out;
+      backdrop-filter: blur(6px);
+
+      &[data-visible='false'] {
+        transform: translate(150%, 0);
+        opacity: 0;
+      }
+
+      &[data-visible='true'] {
+        transform: translate(0%, 0);
+        opacity: 0.9;
+      }
+    }
+  }
+
+  a {
+    font-family: $nav-font-family;
+    font-weight: $nav-font-weight;
+    font-size: $nav-font-size;
+    color: $nav-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:is(:hover, :focus) {
+      color: $nav-color-hover;
+    }
+
+    @include mq(medium) {
+      $nav-font-size: $font-size-400;
+
+      font-size: $nav-font-size;
+    }
+  }
+}
+
+.mobile-nav-toggle {
+  --icon-stroke: #{$color-neutral-200};
+  --icon-stroke-w: 3px;
+
+  display: none;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  & .sr-only {
+    display: none;
+  }
+
+  &:is(:hover, :focus) {
+    --icon-stroke: #{$color-neutral-100};
+  }
+
+  @include mq(medium) {
+    display: block;
+  }
+}
+</style>
+
+<!-- * Script * -->
+<script define:vars={{ Sprite }}>
+const siteNav = document.querySelector('.site-nav__list');
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const navIcon = document.getElementById('nav-icon');
+
+navToggle.addEventListener('click', function () {
+  const visibility = siteNav.getAttribute('data-visible');
+  console.log(visibility);
+
+  if (visibility === 'false') {
+    siteNav.setAttribute('data-visible', true);
+    navToggle.setAttribute('aria-expanded', true);
+    navIcon.setAttribute('href', `${Sprite + '#icon-menu'}`);
+  } else {
+    siteNav.setAttribute('data-visible', false);
+    navToggle.setAttribute('aria-expanded', false);
+    navIcon.setAttribute('href', `${Sprite + '#icon-close'}`);
+  }
+});
+</script>

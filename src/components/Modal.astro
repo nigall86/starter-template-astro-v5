@@ -1,0 +1,23 @@
+---
+---
+
+<dialog id="MegaDialog" modal-mode="mega">
+  <form method="dialog">
+    <header>
+      <h3>Dialog title</h3>
+      <button onclick="this.closest('dialog').close('close')"></button>
+    </header>
+    <article>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde facere possimus sapiente.
+      Fugiat nam facere perspiciatis distinctio iste aliquam impedit!
+    </article>
+    <footer>
+      <menu>
+        <button autofocus type="reset" onclick="this.closest('dialog').close('cancel')">Cancel</button>
+        <button type="submit" value="confirm">Confirm</button>
+      </menu>
+    </footer>
+  </form>
+</dialog>
+
+<button onclick="MegaDialog.showModal()">Open Dialog</button>

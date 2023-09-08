@@ -9,13 +9,13 @@
   }
 
   // Settings colors for the dark theme
-  @media (prefers-color-scheme: dark) {
-    @each $color, $shade-map in $dark {
-      @each $shade, $value in $shade-map {
-        --#{$color}-#{$shade}: #{$value};
-      }
-    }
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @each $color, $shade-map in $dark {
+  //     @each $shade, $value in $shade-map {
+  //       --#{$color}-#{$shade}: #{$value};
+  //     }
+  //   }
+  // }
 
   // Loop creates custom font sizes CSS properties
   // from abstracts/_typography.scss depending on media query
@@ -35,6 +35,8 @@
 }
 
 body[data-theme='light'] {
+  // $active-theme: 'light';
+
   @each $color, $shade-map in $light {
     @each $shade, $value in $shade-map {
       --#{$color}-#{$shade}: #{$value};
@@ -43,6 +45,8 @@ body[data-theme='light'] {
 }
 
 body[data-theme='dark'] {
+  // $active-theme: 'dark';
+
   @each $color, $shade-map in $dark {
     @each $shade, $value in $shade-map {
       --#{$color}-#{$shade}: #{$value};

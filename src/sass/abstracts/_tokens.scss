@@ -137,8 +137,8 @@ $footer-link-text-decoration: none;
 
 ///// <<< SITE HEADER >>> /////
 // -> Spacing
-$site-header-jusitifcation-small-screens: center;
-$site-header-jusitifcation-large-screens: space-between;
+$site-header-justification-small-screens: center;
+$site-header-justification-large-screens: space-between;
 $site-header-alignment: center;
 $site-header-margin: 0;
 $site-header-padding: $size-8 0;
@@ -148,7 +148,7 @@ $site-header-color: $color-neutral-100;
 
 ///// <<< NAVIGATION >>> /////
 // -> Spacing
-$nav-gap: $size-9;
+$nav-spacing: $size-9;
 // -> Decoration
 $nav-color: $site-header-color;
 $nav-color-hover: $link-color-hover;

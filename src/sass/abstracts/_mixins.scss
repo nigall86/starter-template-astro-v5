@@ -45,6 +45,13 @@
   }
 }
 
+// Dark theme
+@mixin dark-theme {
+  @media screen and (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
 // Creating headings
 @mixin heading($fs, $color: $heading-color-default) {
   font-family: $heading-font-family;

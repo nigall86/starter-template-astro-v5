@@ -1,4 +1,6 @@
 ---
+// const cardFlowSpacing = 0;
+
 export interface Props {
   dark?: boolean;
 }
@@ -12,5 +14,24 @@ const { dark = false } = Astro.props as Props;
 
 <!-- Style / Using SCSS -->
 <style lang='scss'>
-  @use '../sass/abstracts' as *;
+@use '../sass/abstracts' as *;
+
+.card {
+  display: grid;
+  gap: $card-flow-spacing;
+  padding: $card-body-padding;
+  border-radius: $card-border-radius;
+  background-color: $card-background-default;
+  font-family: $card-font-family;
+  line-height: $card-line-height;
+  color: $card-color-default;
+  box-shadow: $card-box-shadow;
+    &__heading {
+      @include heading($card-heading-font-size, $card-heading-color-default);
+    }
+
+    &__text {
+      font-size: $font-size-400;
+    }
+}
 </style>
