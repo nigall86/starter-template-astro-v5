@@ -26,20 +26,20 @@
   }
 }
 
-body[data-theme='light'] {
-  $active-theme: $light;
-  @each $color, $shade-map in $light {
-    @each $shade, $value in $shade-map {
-      --#{$color}-#{$shade}: #{$value};
+body {
+  &[data-theme='light'] {
+    @each $color, $shade-map in $light {
+      @each $shade, $value in $shade-map {
+        --#{$color}-#{$shade}: #{$value};
+      }
     }
   }
-}
 
-body[data-theme='dark'] {
-  $active-theme: $dark;
-  @each $color, $shade-map in $dark {
-    @each $shade, $value in $shade-map {
-      --#{$color}-#{$shade}: #{$value};
+  &[data-theme='dark'] {
+    @each $color, $shade-map in $dark {
+      @each $shade, $value in $shade-map {
+        --#{$color}-#{$shade}: #{$value};
+      }
     }
   }
 }

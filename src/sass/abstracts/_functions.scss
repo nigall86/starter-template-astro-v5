@@ -12,15 +12,6 @@
   }
 }
 
-// Allows to make hsl values with transparency
-@function hslac($color, $alpha) {
-  @if (type-of($color) == 'color') {
-    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
-  } @else {
-    @error "You didn't pass a color object";
-  }
-}
-
 // Returns font sizes from abstracts/_typography.scss
 @function fs($font-size) {
   @if map.has-key($font-sizes, $font-size) {
