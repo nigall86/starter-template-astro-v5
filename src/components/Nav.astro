@@ -1,6 +1,10 @@
 ---
 import Sprite from '../icons/icons.svg?url';
 
+export interface Props {
+  links: string[];
+}
+
 const { links = ['About', 'Pricing', 'Contact', 'New link'] } = Astro.props;
 ---
 

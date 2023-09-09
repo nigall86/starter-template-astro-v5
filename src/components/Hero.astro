@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 import mainImage from '../images/group-on-computer.webp';
 ---
 
@@ -13,8 +15,12 @@ import mainImage from '../images/group-on-computer.webp';
           audience and achieve your goals.
         </p>
         <div class='flex-group'>
-          <a href='#' class='btn' data-type='primary'>Join now</a>
-          <a href='#' class='btn'>Learn more</a>
+          <Button type = 'primary', href = '#'>
+            Join now
+          </Button>
+          <Button href='#'>
+            Learn more
+          </Button>
         </div>
       </div>
       <div>

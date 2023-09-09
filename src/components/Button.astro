@@ -1,5 +1,27 @@
-@use '../abstracts' as *;
+---
+export interface Props {
+  type?: string;
+  href: string;
+  btnType?: boolean;
+}
 
+const { type, href, btnType = false} = Astro.props as Props;
+---
+
+<!-- For <button> tag -->
+{btnType && <button data-type={type} class="btn">
+  <slot />
+</button>}
+
+<!-- For <a> tag -->
+{!btnType && <a data-type={type} class="btn" href={href} >
+  <slot />
+</a>}
+
+<!-- * Style * -->
+<style lang='scss'>
+@use '../sass/abstracts' as *;
+  
 .btn {
   &,
   &:link,
@@ -42,3 +64,4 @@
     }
   }
 }
+</style>
