@@ -1,23 +1,37 @@
 ---
+import Button from './Button.astro';
+
+export interface Props {
+  title?: string;
+  text?: string; 
+}
+
+const { 
+  title = 'Dialog heading',
+  text = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde facere possimus sapiente. Fugiat nam facere perspiciatis distinctio iste aliquam impedit!',
+   } = Astro.props as Props;
 ---
 
 <dialog id="MegaDialog" modal-mode="mega">
   <form method="dialog">
     <header>
-      <h3>Dialog title</h3>
-      <button onclick="this.closest('dialog').close('close')"></button>
+      <h3>{title}</h3>
+      <Button onClick='this.closest('dialog').close('close')' btnType = {true} />
     </header>
     <article>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde facere possimus sapiente.
-      Fugiat nam facere perspiciatis distinctio iste aliquam impedit!
+      {text}
     </article>
     <footer>
       <menu>
-        <button autofocus type="reset" onclick="this.closest('dialog').close('cancel')">Cancel</button>
-        <button type="submit" value="confirm">Confirm</button>
+        <Button type='primary' autofocus = {true} onClick='this.closest('dialog').close('cancel')' btnType = {true} >
+          Cancel
+        </Button>
+        <Button value='confirm' btnType = {true} >
+          Confirm
+        </Button>
       </menu>
     </footer>
   </form>
 </dialog>
 
-<button onclick="MegaDialog.showModal()">Open Dialog</button>
+<Button onClick="MegaDialog.showModal()" btnType={true}>Open Dialog</Button>

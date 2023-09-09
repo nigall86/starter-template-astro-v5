@@ -1,15 +1,32 @@
 ---
 export interface Props {
   type?: string;
-  href: string;
+  href?: string;
+  autofocus?: boolean;
+  attribute?: string;
+  value?: string;
+  onClick?: string;
   btnType?: boolean;
 }
 
-const { type, href, btnType = false} = Astro.props as Props;
+const { 
+  type = 'accent', 
+  href = '#', 
+  autofocus = false,
+  value,
+  onClick, 
+  btnType = false,
+} = Astro.props as Props;
 ---
 
 <!-- For <button> tag -->
-{btnType && <button data-type={type} class="btn">
+{btnType &&
+<button
+  data-type={type}
+  {autofocus}
+  class="btn"
+  {value}
+  onclick={onClick}>
   <slot />
 </button>}
 
