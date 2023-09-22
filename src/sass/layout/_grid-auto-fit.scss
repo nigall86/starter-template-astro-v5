@@ -1,7 +1,7 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .grid-auto-fit {
   display: grid;
-  grid-gap: var(--grid-gap, $grid-gap);
+  grid-gap: var(--grid-gap);
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
 }

@@ -1,9 +1,29 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .border-radius-1 {
-  border-radius: $border-radius-1;
+  border-radius: var(--radius-1);
 }
 
 .border-radius-2 {
-  border-radius: $border-radius-2;
+  border-radius: var(--radius-2);
+}
+
+.border-radius-3 {
+  border-radius: var(--radius-3);
+}
+
+.border-radius-4 {
+  border-radius: var(--radius-4);
+}
+
+.border-radius-5 {
+  border-radius: var(--radius-5);
+}
+
+.border-radius-6 {
+  border-radius: var(--radius-6);
+}
+
+.border-radius-round {
+  border-radius: var(--radius-round);
 }

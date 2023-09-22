@@ -16,30 +16,22 @@ import logo from '../images/logo.svg';
 
 <!-- * Style * -->
 <style lang='scss'>
-@use '../sass/abstracts' as *;
 
 .site-header {
-  padding: $site-header-padding;
-  background-color: $site-header-background-color;
-  color: $site-header-color;
+  --_header-margin: 0;
+  --_header-padding: var(--size-8) 0;
+  --_header-bg: var(--surface-2);
+
+  margin: var(--_header-margin);
+  padding: var(--_header-padding);
+  background-color: var(--_header-bg);
+  color: var(--text-1);
 
   &__inner {
     display: flex;
-    gap: $size-4;
-    align-items: $site-header-alignment;
-    justify-content: $site-header-justification-large-screens;
-
-    @include mq(small) {
-      justify-content: $site-header-justification-small-screens;
-    }
+    gap: var(--size-4);
+    align-items: center;
+    justify-content: space-between;
   }
 }
 </style>
-
-<!-- * Script * -->
-<script>
-
-const header = document.querySelector('.site-header');
-
-</script>
-

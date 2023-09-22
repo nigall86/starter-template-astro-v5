@@ -30,34 +30,11 @@ class="theme-switcher | flex-group | mx-auto | margin-block-start-10 | clr-accen
 </style>
 
 <!-- * Script * -->
-<script>
+<script define:vars={{ themes }}>
+
+const body = document.body;
+
 const themeSwitcher = document.querySelector('.theme-switcher');
-
-// We get theme value from local storage
-let activeTheme = localStorage.getItem('theme');
-// console.log(activeTheme);
-
-function changeTheme(theme) {
-  // Adds class to the body
-  document.body.classList.add('theme-switch');
-
-  // Checks if system theme or another
-  if (theme === 'system') {
-    localStorage.removeItem('theme');
-    document.body.removeAttribute('data-theme');
-  } else {
-    localStorage.setItem('theme', theme);
-    document.body.setAttribute('data-theme', theme);
-  }
-
-  document.body.addEventListener(
-    'transitionend',
-    function () {
-      document.body.classList.remove('theme-switch');
-    },
-    {}
-  );
-}
 
 // Clicking on the theme switcher
 themeSwitcher.addEventListener('click', function (e) {
@@ -65,14 +42,29 @@ themeSwitcher.addEventListener('click', function (e) {
     return;
   }
 
-  const themeToActivate = e.target.id;
-  changeTheme(themeToActivate);
+  const themeToSet = e.target.id;
+  setTheme(themeToSet);
 });
 
-window.onload = function () {
-  if (activeTheme) {
-    document.getElementById(activeTheme).checked = true;
-    changeTheme(activeTheme);
+function setTheme(themeToSet) {
+  // Checks if theme exist
+  if (!themes.includes(themeToSet)) return;
+
+  window.localStorage.setItem("theme", themeToSet);
+
+  themes.forEach((theme) => {
+    if (theme !== themeToSet && body.hasAttribute(theme))
+      body.removeAttribute(theme);
+  });
+
+  if (!body.hasAttribute(themeToSet)) {
+    body.setAttribute('data-theme', themeToSet);
   }
-};
+}
+
+(function loadTheme() {
+  const theme = window.localStorage.getItem('theme');
+  setTheme(theme);
+  document.getElementById(theme).checked = true;
+})();
 </script>

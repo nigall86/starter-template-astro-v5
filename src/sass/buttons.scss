@@ -1,0 +1,148 @@
+.btn,
+button,
+input:is([type='button'], [type='submit'], [type='reset']),
+input[type='file']::-webkit-file-upload-button,
+input[type='file']::file-selector-button {
+  $btn-accent: initial;
+  $btn-text-color: initial;
+  $btn-size: initial;
+
+  $btn-bg-light: $color-neutral-000;
+  $btn-bg-dark: $color-surface-3;
+  $btn-bg: $btn-bg-light;
+
+  $btn-border-color: $color-surface-3;
+  $btn-highlight-size: 0;
+  $btn-highlight-light: hsl(var(--neutral-500) / 25%);
+  $btn-highlight-dark: hsl($color-neutral-1200 / 25%);
+  $btn-highlight: $btn-highlight-light;
+
+  $btn-text-shadow-light: 0 1px 0 $color-neutral-300;
+  $btn-text-shadow-dark: 0 1px 0 $color-surface-1;
+  $btn-text-shadow: $btn-text-shadow-light;
+  $btn-icon-size: $size-relative-7;
+  $btn-icon-color: var($btn-accent, $link-color);
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: $size-2;
+
+  padding-block: 0.75ch;
+  padding-inline: $size-relative-6;
+
+  background: $btn-bg;
+  border: $border-size-2 solid $btn-border-color;
+  border-radius: $radius-2;
+
+  box-shadow: $shadow-2, 0 1px $color-surface-3,
+    0 0 0 $btn-highlight-size $btn-highlight;
+
+  font-size: $btn-size;
+  font-weight: $font-weight-semi-bold;
+  color: $btn-text-color;
+  text-shadow: $btn-text-shadow;
+
+  text-align: center;
+  transition: border-color 0.5s $ease-3 3s;
+  user-select: none;
+
+  @media (prefers-color-scheme: dark) {
+    $btn-highlight: $btn-highlight-dark;
+    $btn-bg: $btn-bg-dark;
+    $btn-text-shadow: $btn-text-shadow-dark;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: border-color 0.5s $ease-3 3s, box-shadow 145ms $ease-4,
+      outline-offset 145ms $ease-4;
+  }
+}
+
+.btn,
+button,
+input:is([type='button'], [type='submit'], [type='reset']) {
+  &[disabled] {
+    $btn-bg: none;
+    $btn-text-color: $color-neutral-600;
+    box-shadow: $shadow-1;
+    cursor: not-allowed;
+
+    @media (prefers-color-scheme: dark) {
+      $btn-text-color: $color-neutral-500;
+    }
+  }
+
+  &:not(:active):hover {
+    $btn-highlight-size: $size-2;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+
+  & > svg {
+    block-size: $btn-icon-size;
+    filter: drop-shadow($btn-text-shadow);
+    flex-shrink: 0;
+    inline-size: $btn-icon-size;
+
+    & > * {
+      stroke: $btn-icon-color;
+      stroke-width: $border-size-2;
+    }
+  }
+}
+
+[type='submit'],
+form button:not([type], [disabled]) {
+  $btn-text-color: var($btn-accent, $link-color);
+}
+
+[type='reset'] {
+  $btn-text-color: $color-error-600;
+  $btn-border-color: $color-error-300;
+
+  &:focus-visible {
+    outline-color: $color-error-600;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    $btn-text-color: $color-error-200;
+    $btn-border-color: $color-surface-3;
+  }
+}
+
+[type='submit'],
+[type='reset'],
+form button:not([type]):is(:hover, :focus-visible):not([disabled]) {
+  $btn-border-color: currentColor;
+}
+
+input[type='file'] {
+  align-self: flex-start;
+  max-inline-size: 100%;
+  padding: 0;
+
+  border: $border-size-1 solid $color-surface-2;
+  border-radius: $radius-2;
+  color: $btn-text-color;
+  box-shadow: $inner-shadow-4;
+  cursor: auto;
+
+  &::-webkit-file-upload-button,
+  &::file-selector-button {
+    margin-inline-end: $size-relative-6;
+    cursor: pointer;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  [disabled],
+  [type='reset'],
+  [type='submit'],
+  form button:not([type='button']) {
+    $btn-bg: $color-surface-1;
+  }
+}

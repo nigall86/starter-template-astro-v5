@@ -5,34 +5,39 @@ html {
 
   // 10px/16px = 62.5% -> 1rem = 10px
   font-size: 62.5%;
+
+  accent-color: var(--brand-accent);
+  scrollbar-color: var(--scroll-thumb-color) transparent;
+  block-size: 100%;
+  caret-color: var(--brand-accent, var(--link));
+  -webkit-text-size-adjust: none;
 }
 
 body {
   min-height: 100vh;
-
-  background: $body-background-color;
-  font-family: $body-font-family;
-  font-size: $body-font-size;
-  font-weight: $body-font-weight;
-  line-height: $body-line-height;
-  color: $body-text-color;
+  background: var(--surface-1);
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-default);
+  line-height: var(--lh-150);
+  color: var(--color-text-default);
 }
 
-a {
-  color: $link-color;
-}
+a[href] {
+  color: var(--brand-accent, var(--link));
 
-a:is(:hover, :focus) {
-  color: $link-color-hover;
+  &:is(:hover, :focus) {
+    color: var(--link-color-hover);
+  }
 }
 
 ::selection {
-  background-color: $color-accent-400;
-  color: $color-neutral-100;
+  background-color: var(--accent-400);
+  color: var(--neutral-100);
 }
 
 // Disabling animations by user preference
-@media (prefers-reduced-motion: reduce) {
+@media (--motionNotOK) {
   *,
   *::before,
   *::after {

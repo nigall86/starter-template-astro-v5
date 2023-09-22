@@ -1,84 +1,50 @@
 ---
+import '../sass/components/_buttons.scss';
+
 export interface Props {
-  type?: string;
+  dataType?: string;
   href?: string;
   autofocus?: boolean;
+  disabled?: boolean;
+  className?: string;
   attribute?: string;
   value?: string;
   onClick?: string;
-  btnType?: boolean;
+  kind?: string;
 }
 
-const { 
-  type = 'accent', 
+const {
+  dataType,
   href = '#', 
+  className,
   autofocus = false,
+  disabled = false,
   value,
   onClick, 
-  btnType = false,
+  kind = 'button',
 } = Astro.props as Props;
 ---
 
-<!-- For <button> tag -->
-{btnType &&
+{kind === 'button' &&
 <button
-  data-type={type}
+  data-type={dataType}
+  class = {className}
   {autofocus}
-  class="btn"
+  {disabled}
   {value}
   onclick={onClick}>
   <slot />
 </button>}
 
-<!-- For <a> tag -->
-{!btnType && <a data-type={type} class="btn" href={href} >
+{kind === 'input' &&
+<input
+  {autofocus}
+  {disabled}
+  {value}>
+  <slot />
+</input>}
+
+{kind === 'link' && 
+<a data-type={dataType} href={href} >
   <slot />
 </a>}
-
-<!-- * Style * -->
-<style lang='scss'>
-@use '../sass/abstracts' as *;
-  
-.btn {
-  &,
-  &:link,
-  &:visited {
-    display: inline-flex;
-    justify-content: center;
-    padding: $button-padding;
-
-    border: $button-border;
-    border-radius: $button-border-radius;
-    outline-color: $button-outline;
-
-    font-family: $button-font-family;
-    font-size: $button-font-size;
-    font-weight: $button-font-weight;
-    line-height: 1;
-    text-transform: $button-text-transform;
-    text-decoration: none;
-    transition: 0.3s ease;
-    cursor: pointer;
-  }
-
-  &[data-type='accent'] {
-    background-color: $button-accent-background;
-    color: $button-accent-color;
-
-    &:is(:hover, :focus) {
-      background: $button-accent-background-hover;
-      color: $button-accent-color-hover;
-    }
-  }
-
-  &[data-type='primary'] {
-    background-color: $button-primary-background;
-    color: $button-primary-color;
-
-    &:is(:hover, :focus) {
-      background: $button-primary-background-hover;
-      color: $button-primary-color-hover;
-    }
-  }
-}
-</style>

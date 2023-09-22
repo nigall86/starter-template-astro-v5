@@ -1,44 +1,31 @@
 @use 'sass:map';
-@use '../abstracts' as *;
+@use '../abstracts/' as *;
 
 :root {
-  // Loop creates custom color CSS properties from abstracts/_colors.scss
-  @each $color, $shade-map in $active-theme {
+  // Loop creates custom color CSS variables
+  @each $color, $shade-map in $colors {
     @each $shade, $value in $shade-map {
       --#{$color}-#{$shade}: #{$value};
     }
   }
 
   // Loop creates custom font sizes CSS properties
-  // from abstracts/_typography.scss depending on media query
   @each $screen-size, $size-map in $font-sizes {
     @if #{$screen-size} == big {
       @each $size-name, $size-value in $size-map {
         --fs-#{$size-name}: #{$size-value};
+      }
+    } @else if #{$screen-size} == large {
+      @include mq($screen-size, $min-or-max: min-width) {
+        @each $size-name, $size-value in $size-map {
+          --fs-#{$size-name}: #{$size-value};
+        }
       }
     } @else {
       @include mq($screen-size) {
         @each $size-name, $size-value in $size-map {
           --fs-#{$size-name}: #{$size-value};
         }
-      }
-    }
-  }
-}
-
-body {
-  &[data-theme='light'] {
-    @each $color, $shade-map in $light {
-      @each $shade, $value in $shade-map {
-        --#{$color}-#{$shade}: #{$value};
-      }
-    }
-  }
-
-  &[data-theme='dark'] {
-    @each $color, $shade-map in $dark {
-      @each $shade, $value in $shade-map {
-        --#{$color}-#{$shade}: #{$value};
       }
     }
   }

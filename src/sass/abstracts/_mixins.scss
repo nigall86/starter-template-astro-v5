@@ -2,7 +2,6 @@
 @use 'sass:math';
 @use 'sass:map';
 @use 'breakpoints' as *;
-@use 'tokens' as *;
 
 // Breakpoints --> we can change $min-or-max to 'min-width', 'max-width' (default value), 'between'
 // if we choose 'between', we can set range of breakpoints
@@ -45,23 +44,16 @@
   }
 }
 
-// Dark theme
-@mixin dark-theme {
-  @media screen and (prefers-color-scheme: dark) {
-    @content;
-  }
-}
-
 // Creating headings
-@mixin heading($fs, $color: $heading-color-default) {
-  font-family: $heading-font-family;
+@mixin heading($fs, $color: var(--heading-color-default)) {
+  font-family: var(--heading-font-family);
 
   font-size: $fs;
-  font-weight: $heading-font-weight;
-  line-height: $heading-line-height;
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
   color: $color;
-  letter-spacing: $heading-letter-spacing;
-  text-transform: $heading-text-transform;
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
 }
 
 // Pseudo classes

@@ -1,0 +1,60 @@
+/* 1rem = 10px */
+/* Sizes from 1 to 10 is the product of size's name by 4 */
+
+/* Size tokens */
+:where(html) {
+  --size-1: 0.4rem;
+  --size-2: 0.8rem;
+  --size-3: 1.2rem;
+  --size-4: 1.6rem;
+  --size-5: 2rem;
+  --size-6: 2.4rem;
+  --size-7: 2.8rem;
+  --size-8: 3.2rem;
+  --size-9: 3.6rem;
+  --size-10: 4rem;
+  --size-11: 4.8rem;
+  --size-12: 6.4rem;
+  --size-13: 8rem;
+  --size-14: 9.6rem;
+  --size-15: 12rem;
+  --size-16: 16rem;
+  --size-17: 24rem;
+
+  /* Fluid sizes */
+  --size-fluid-1: clamp(var(--size-2), 1vw, var(--size-4));
+  --size-fluid-2: clamp(var(--size-4), 2vw, var(--size-6));
+  --size-fluid-3: clamp(var(--size-6), 3vw, var(--size-8));
+  --size-fluid-4: clamp(var(--size-8), 4vw, var(--size-10));
+  --size-fluid-5: clamp(var(--size-10), 5vw, var(--size-12));
+  --size-fluid-6: clamp(var(--size-12), 7vw, var(--size-14));
+  --size-fluid-7: clamp(var(--size-14), 10vw, var(--size-16));
+  --size-fluid-8: clamp(var(--size-16), 20vw, var(--size-17));
+
+  /* Content sizes */
+  --size-content-1: 20ch;
+  --size-content-2: 45ch;
+  --size-content-3: 60ch;
+
+  /* Relative sizes */
+  --size-relative-1: 0.25ch;
+  --size-relative-2: 0.5ch;
+  --size-relative-3: 1ch;
+  --size-relative-4: 1.25ch;
+  --size-relative-5: 1.5ch;
+  --size-relative-6: 1.75ch;
+  --size-relative-7: 2ch;
+  --size-relative-8: 3ch;
+  --size-relative-9: 4ch;
+  --size-relative-10: 5ch;
+  --size-relative-11: 7.5ch;
+  --size-relative-12: 10ch;
+  --size-relative-13: 15ch;
+  --size-relative-14: 20ch;
+  --size-relative-15: 30ch;
+
+  /* Header sizes */
+  --size-header-1: 20ch;
+  --size-header-2: 25ch;
+  --size-header-3: 35ch;
+}

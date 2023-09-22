@@ -1,4 +1,23 @@
-@use '../abstracts' as *;
+// @use '../abstracts' as *;
+$sizes: (
+  1: 0.4rem,
+  2: 0.8rem,
+  3: 1.2rem,
+  4: 1.6rem,
+  5: 2rem,
+  6: 2.4rem,
+  7: 2.8rem,
+  8: 3.2rem,
+  9: 3.6rem,
+  10: 4rem,
+  11: 4.8rem,
+  12: 6.4rem,
+  13: 8rem,
+  14: 9.6rem,
+  15: 12rem,
+  16: 16rem,
+  17: 24rem,
+);
 
 // Creates spaces utility classes
 @each $size-name, $size-value in $sizes {
