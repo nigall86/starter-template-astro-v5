@@ -23,10 +23,16 @@ const {
     </article>
     <footer>
       <menu>
-        <Button type='primary' autofocus = {true} onClick='this.closest('dialog').close('cancel')' btnType = {true} >
+        <Button
+          type='primary'
+          autofocus = {true}
+          onClick='this.closest('dialog').close('cancel')'
+          btnType = {true} >
           Cancel
         </Button>
-        <Button value='confirm' btnType = {true} >
+        <Button
+          value='confirm'
+          btnType = {true} >
           Confirm
         </Button>
       </menu>
@@ -34,4 +40,8 @@ const {
   </form>
 </dialog>
 
-<Button onClick="MegaDialog.showModal()" btnType={true}>Open Dialog</Button>
+<Button
+  onClick="MegaDialog.showModal()"
+  btnType={true}>
+  Open Dialog
+</Button>
