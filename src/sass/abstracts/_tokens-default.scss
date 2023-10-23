@@ -9,14 +9,14 @@
 /* ////////////////////////////// */
 /* Global tokens */
 
-:root {
+:where(html) {
   color-scheme: light;
 
   /* Surface colors */
-  --surface-1: hsl(var(--neutral-000));
-  --surface-2: hsl(var(--neutral-200));
-  --surface-3: hsl(var(--neutral-300));
-  --surface-4: hsl(var(--neutral-400));
+  --surface-1: hsl(var(--neutral-000)); // hsl(210 17% 98%)
+  --surface-2: hsl(var(--neutral-200)); //hsl(210 16% 93%)
+  --surface-3: hsl(var(--neutral-300)); // hsl(210 14% 89%)
+  --surface-4: hsl(var(--neutral-400)); // hsl(210 14% 83%)
 
   /* Link colors */
   --link: hsl(var(--indigo-700));
@@ -33,34 +33,34 @@
   /* Shadow */
   --shadow-color: 220 3% 15%;
   --shadow-strength: 1%;
-}
 
-:where(body) {
-  /* default colors */
+  /* Layout */
+  --grid-gap: var(--size-6);
+  --flex-group-gap: var(--size-4);
+
+  /* Sections */
+  --section-padding-block: clamp(8rem, 10vh, 9.6rem);
+
+  /* Default colors */
   --color-bg-default: var(--surface-1);
   --color-text-default: var(--text-2);
 
-  --brand-accent: hsl(var(--accent-500));
-  --brand-primary: hsl(var(--primary-500));
-
-  /* highlight */
+  /* Highlight */
   --highlight-size: 10px;
   --highlight-color: hsl(0 0% 0% / 20%);
 
   --highlight: 0 0 0 var(--highlight-size) var(--highlight-color);
 
   @media (--OSdark) {
-    --highlight-color: hsl(0 0% 100% / 20%);
-  }
-
-  &[data-theme='dark'] {
     color-scheme: dark;
 
     /* Surface colors */
-    --surface-1: hsl(var(--neutral-900));
-    --surface-2: hsl(var(--neutral-800));
-    --surface-3: hsl(var(--neutral-700));
-    --surface-4: hsl(var(--neutral-600));
+    --surface-1: hsl(var(--neutral-900)); // hsl(210 11% 15%)
+    --surface-2: hsl(var(--neutral-800)); // hsl(210 10% 23%)
+    --surface-3: hsl(var(--neutral-700)); // hsl(210 9% 31%)
+    --surface-4: hsl(var(--neutral-600)); // hsl(210 7% 56%)
+
+    --highlight-color: hsl(0 0% 100% / 20%);
 
     /* Link colors */
     --link: hsl(var(--indigo-300));
@@ -90,34 +90,15 @@
 }
 
 /*
-// ///// <<< LOGO >>> /////
-// // -> Default
-// $logo-size-default: 15rem;
-// $logo-fill-default: $color-primary-400;
-// // -> Header
-// $logo-size-header: $logo-size-default;
-// $logo-fill-header: $color-primary-300;
-// // -> Footer
-// $logo-size-footer: $logo-size-default;
-// $logo-fill-footer: $color-accent-400;
-
 // //////////////////////////////
 // // LAYOUT
 
 // ///// <<< FlEX AND GRIDS >>> /////
-// // -> Spacing
-// $grid-gap: var(--size-6);
-// $flex-group-gap: var(--size-4);
+
 
 // ///// <<< SECTIONS >>> /////
-// $section-padding-block: clamp(8rem, 10vh, 9.6rem);
+// 
 // $hero-padding-block: clamp(24rem, 15vh, 32rem);
-
-// ///// Container /////
-// $container-min-margin-inline: var(--size-4);
-// $container-max-width: 102.4rem; // 1024px
-// $container-max-width-narrow: 64rem; // 640px
-// $container-max-width-wide: 160rem; // 1600px
 
 
 

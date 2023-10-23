@@ -1,7 +1,5 @@
-@use '../abstracts/index' as *;
-
 .section {
-  padding-block: $section-padding-block;
+  padding-block: var(--section-padding-block);
 }
 
 .mx-auto {

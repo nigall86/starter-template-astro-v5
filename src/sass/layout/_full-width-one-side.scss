@@ -1,8 +1,6 @@
-@use '../abstracts' as *;
-
 .full-width-split-screen {
-  --wrapper-max-width: #{$container-max-width};
-  --wrapper-padding-inline: #{$container-min-margin-inline};
+  --_wrapper-max-width: var(--_container-max-width);
+  --_wrapper-padding-inline: var(--_container-min-margin-inline);
 
   // For positioning the pseudo-elements to fill in the rest of the background
   position: relative;
@@ -11,10 +9,10 @@
   // while the two inner columns divide the rest of the space into two equal parts
   display: grid;
   grid-template-columns:
-    minmax(var(--wrapper-padding-inline), 1fr)
-    minmax(0, calc(var(--wrapper-max-width) / 2))
-    minmax(0, calc(var(--wrapper-max-width) / 2))
-    minmax(var(--wrapper-padding-inline), 1fr);
+    minmax(var(--_wrapper-padding-inline), 1fr)
+    minmax(0, calc(var(--_wrapper-max-width) / 2))
+    minmax(0, calc(var(--_wrapper-max-width) / 2))
+    minmax(var(--_wrapper-padding-inline), 1fr);
 
   // Ensure the image fill up the entire space available
   & > img {
@@ -73,7 +71,7 @@
   }
 }
 
-@include mq(small) {
+@media (--sm-n-below) {
   // Remove the padding so images can take up the entire height
   .full-width-split-screen {
     display: block;
@@ -81,8 +79,8 @@
 
     // Match the section padding for the text blocks for consistency
     & > :not(img) {
-      padding-block: $section-padding-block;
-      padding-inline: --wrapper-padding-inline;
+      padding-block: var(--section-padding-block);
+      padding-inline: var(--_wrapper-padding-inline);
     }
   }
 }

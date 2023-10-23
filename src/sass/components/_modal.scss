@@ -1,0 +1,168 @@
+// Disabling scrolling while open
+html:has(dialog[open][data-type='megaDialog']) {
+  overflow: hidden;
+}
+
+dialog {
+  z-index: var(--layer-important);
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  align-content: start;
+  margin: auto;
+  padding: 0;
+
+  max-inline-size: min(90vw, var(--size-content-3));
+  max-block-size: min(80vh, 100%);
+  max-block-size: min(80dvb, 100%); // dvb --> dynamic viewport block size
+
+  border: none;
+  border-radius: var(--radius-3);
+  background: var(--surface-2);
+  color: var(--text-1);
+
+  box-shadow: var(--shadow-6);
+  transition: opacity 0.5s var(--ease-3);
+  overflow: hidden;
+
+  @media (--OSdark) {
+    border-block-start: var(--border-size-1) solid var(--surface-3);
+  }
+
+  @media (--motionOK) {
+    animation: var(--animation-scale-down) forwards;
+    animation-timing-function: var(--ease-squish-3);
+  }
+
+  @media (--md-n-below) {
+    &[data-type='megaDialog'] {
+      margin-block-end: 0;
+      border-end-end-radius: 0;
+      border-end-start-radius: 0;
+    }
+
+    @media (--motionOK) {
+      animation: var(--animation-slide-out-down) forwards;
+      animation-timing-function: var(--ease-squish-2);
+    }
+  }
+
+  // Hidden state
+  &:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  // Backdrop styling
+  &[data-type='megaDialog']::backdrop {
+    backdrop-filter: blur(25px);
+  }
+
+  &[data-type='miniDialog']::backdrop {
+    backdrop-filter: none;
+  }
+
+  // Overall backdrop transition
+  &::backdrop {
+    transition: backdrop-filter 0.5s ease;
+  }
+
+  &[loading] {
+    visibility: hidden;
+  }
+
+  &[open] {
+    @media (--motionOK) {
+      animation: var(--animation-slide-in-up) forwards;
+    }
+  }
+
+  & > form {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: start;
+    max-block-size: 80vh;
+    max-block-size: 80dvb;
+
+    & > header {
+      display: flex;
+      gap: var(--size-3);
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface-2);
+      padding-block: var(--size-3);
+      padding-inline: var(--size-5);
+
+      @media (--OSdark) {
+        background: var(--surface-1);
+      }
+    }
+
+    & > article {
+      z-index: var(--layer-1);
+      display: grid;
+      justify-items: flex-start;
+      gap: var(--size-3);
+
+      max-block-size: 100%; /* safari */
+      padding-block: var(--size-3);
+      padding-inline: var(--size-5);
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      box-shadow: var(--shadow-2);
+
+      @media (--OSlight) {
+        background: var(--surface-1);
+
+        &::-webkit-scrollbar {
+          background: var(--surface-1);
+        }
+      }
+
+      [data-theme='light'] {
+        background: var(--surface-1);
+
+        &::-webkit-scrollbar {
+          background: var(--surface-1);
+        }
+      }
+
+      @media (--OSdark) {
+        border-block-start: var(--border-size-1) solid var(--surface-3);
+      }
+
+      [data-theme='dark'] {
+        border-block-start: var(--border-size-1) solid var(--surface-3);
+      }
+    }
+
+    & > footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--size-3);
+
+      padding-inline: var(--size-5);
+      padding-block: var(--size-3);
+      background: var(--surface-2);
+    }
+
+    @media (--OSdark) {
+      background: var(--surface-1);
+    }
+
+    [data-theme='dark'] {
+      background: var(--surface-1);
+    }
+
+    & > :is(header, footer) {
+      background-color: var(--surface-2);
+
+      @media (--OSdark) {
+        background-color: var(--surface-1);
+      }
+    }
+  }
+}

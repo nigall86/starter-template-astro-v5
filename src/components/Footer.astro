@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-
-import logo from '../images/logo.svg';
+import Logo from './Logo.astro';
 
 export interface Props {
   links: string[];
@@ -13,6 +11,7 @@ const { links } = Astro.props as Props;
 <footer class='site-footer'>
   <div class='container'>
     <div>
+      <Logo type="footer"/>
       <h3>Astro</h3>
       <p>
         This is a demo website to show how the Astro framework works. Visit the <a
@@ -44,7 +43,7 @@ const { links } = Astro.props as Props;
   --_footer-pading-block: var(--size-8);
 
   // Background
-  --_footer-bg: hsl(var(--neutral-1000));
+  --_footer-bg: hsl(var(--neutral-900));
 
   // Text
   --_footer-font-family: var(--ff-base);

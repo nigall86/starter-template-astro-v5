@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../abstracts/' as *;
 
-:root {
+:where(html) {
   // Loop creates custom color CSS variables
   @each $color, $shade-map in $colors {
     @each $shade, $value in $shade-map {

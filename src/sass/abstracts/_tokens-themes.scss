@@ -1,0 +1,232 @@
+@use './_animations.css';
+@use './_aspects.css';
+@use './_borders.css';
+@use './_layers.css';
+@use './_shadows.css';
+@use './_sizes.css';
+@use './_typography.css';
+
+/* ////////////////////////////// */
+/* Global tokens */
+
+:where(html) {
+  /* Brand foundation */
+  --accent-hue: 200;
+  --accent-saturation: 100%;
+  --accent-lightness: 50%;
+
+  --accent: hsl(
+    var(--accent-hue),
+    var(--accent-saturation),
+    var(--accent-lightness)
+  );
+
+  --primary-hue: 220;
+  --primary-saturation: 100%;
+  --primary-lightness: 50%;
+
+  --primary: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--primary-lightness)
+  );
+
+  /* Light theme */
+  --accent-light: hsl(
+    var(--accent-hue) var(--accent-saturation) var(--accent-lightness)
+  );
+
+  --text-1-light: hsl(var(--accent-hue) var(--accent-saturation) 10%);
+  --text-2-light: hsl(var(--accent-hue) 30% 30%);
+
+  --surface-0-light: hsl(var(--accent-hue) 15% 95%);
+  --surface-1-light: hsl(var(--accent-hue) 25% 90%);
+  --surface-2-light: hsl(var(--accent-hue) 20% 99%);
+  --surface-3-light: hsl(var(--accent-hue) 20% 92%);
+  --surface-4-light: hsl(var(--accent-hue) 20% 85%);
+
+  --shadow-color-light: var(--accent-hue) 10% 20%;
+  --shadow-strength-light: 1%;
+
+  --link-light: hsl(var(--indigo-700));
+  --link-hover-light: hsl(var(--indigo-500));
+  --link-visited-light: hsl(var(--purple-700));
+
+  --scroll-thumb-light: hsl(var(--neutral-700));
+
+  /* Dark theme */
+  --accent-dark: hsl(
+    var(--accent-hue) calc(var(--accent-saturation) / 1.5)
+      calc(var(--accent-lightness) / 1.5)
+  );
+
+  --text-1-dark: hsl(var(--accent-hue) 15% 85%);
+  --text-2-dark: hsl(var(--accent-hue) 5% 65%);
+
+  --surface-0-dark: hsl(var(--accent-hue) 5% 10%);
+  --surface-1-dark: hsl(var(--accent-hue) 10% 10%);
+  --surface-2-dark: hsl(var(--accent-hue) 10% 15%);
+  --surface-3-dark: hsl(var(--accent-hue) 5% 20%);
+  --surface-4-dark: hsl(var(--accent-hue) 5% 25%);
+
+  --shadow-color-dark: var(--accent-hue) 50% 3%;
+  --shadow-strength-dark: 10%;
+
+  --link-dark: hsl(var(--indigo-300));
+  --link-hover-dark: hsl(var(--indigo-500));
+  --link-visited-dark: hsl(var(--purple-300));
+
+  --scroll-thumb-dark: hsl(var(--neutral-600));
+
+  /* Dim theme */
+  --accent-dim: hsl(
+    var(--accent-hue) calc(var(--accent-saturation) / 1.25)
+      calc(var(--accent-lightness) / 1.25)
+  );
+
+  --text-1-dim: hsl(var(--accent-hue) 15% 75%);
+  --text-2-dim: hsl(var(--accent-hue) 10% 61%);
+
+  --surface-0-dim: hsl(var(--accent-hue) 8% 15%);
+  --surface-1-dim: hsl(var(--accent-hue) 10% 20%);
+  --surface-2-dim: hsl(var(--accent-hue) 10% 25%);
+  --surface-3-dim: hsl(var(--accent-hue) 5% 30%);
+  --surface-4-dim: hsl(var(--accent-hue) 5% 35%);
+
+  --shadow-color-dim: var(--accent-hue) 30% 13%;
+  --shadow-strength-dim: 10%;
+
+  --link-dim: hsl(var(--indigo-300));
+  --link-hover-dim: hsl(var(--indigo-500));
+  --link-visited-dim: hsl(var(--purple-300));
+
+  --scroll-thumb-dim: hsl(var(--neutral-500));
+}
+
+:root {
+  color-scheme: light;
+
+  /* set defaults */
+  --accent: var(--accent-light);
+
+  --text-1: var(--text-1-light);
+  --text-2: var(--text2-light);
+
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --surface-3: var(--surface-3-light);
+  --surface-4: var(--surface-4-light);
+
+  --shadow-color: var(--shadow-color-light);
+  --shadow-strength: var(--shadow-strength-light);
+
+  --link: var(--link-light);
+  --link-hover: var(--link-hover-light);
+  --link-visited: var(--link-visited-light);
+
+  --scroll-thumb-color: var(--scroll-thumb-light);
+
+  @media (--OSdark) {
+    color-scheme: dark;
+
+    --accent: var(--accent-dark);
+
+    --text-1: var(--text-1-dark);
+    --text-2: var(--text-2-dark);
+
+    --surface-1: var(--surface-1-dark);
+    --surface-2: var(--surface-2-dark);
+    --surface-3: var(--surface-3-dark);
+    --surface-4: var(--surface-4-dark);
+
+    --shadow-color: var(--shadow-color-dark);
+    --shadow-strength: var(--shadow-strength-dark);
+
+    --link: var(--link-dark);
+    --link-hover: var(--link-hover-dark);
+    --link-visited: var(--link-visited-dark);
+
+    --scroll-thumb-color: var(--scroll-thumb-dark);
+  }
+}
+
+[color-scheme='light'] {
+  color-scheme: light;
+
+  --accent: var(--accent-light);
+
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+
+  --surface-0: var(--surface-0-light);
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --surface-3: var(--surface-3-light);
+  --surface-4: var(--surface-4-light);
+
+  --shadow-color: var(--shadow-color-light);
+  --shadow-strength: var(--shadow-strength-light);
+
+  --link: var(--link-light);
+  --link-hover: var(--link-hover-light);
+  --link-visited: var(--link-visited-light);
+
+  --scroll-thumb-color: var(--scroll-thumb-light);
+}
+
+[color-scheme='dark'] {
+  color-scheme: dark;
+
+  --accent: var(--accent-dark);
+
+  --text-1: var(--text-1-dark);
+  --text-2: var(--text-2-dark);
+
+  --surface-0: var(--surface-0-dark);
+  --surface-1: var(--surface-1-dark);
+  --surface-2: var(--surface-2-dark);
+  --surface-3: var(--surface-3-dark);
+  --surface-4: var(--surface-4-dark);
+
+  --shadow-color: var(--shadow-color-dark);
+  --shadow-strength: var(--shadow-strength-dark);
+
+  --link: var(--link-dark);
+  --link-hover: var(--link-hover-dark);
+  --link-visited: var(--link-visited-dark);
+
+  --scroll-thumb-color: var(--scroll-thumb-dark);
+}
+
+[color-scheme='dim'] {
+  color-scheme: dark;
+
+  --accent: var(--accent-dim);
+
+  --text-1: var(--text-1-dim);
+  --text-2: var(--text-2-dim);
+
+  --surface-0: var(--surface-0-dim);
+  --surface-1: var(--surface-1-dim);
+  --surface-2: var(--surface-2-dim);
+  --surface-3: var(--surface-3-dim);
+  --surface-4: var(--surface-4-dim);
+
+  --shadow-color: var(--shadow-color-dim);
+  --shadow-strength: var(--shadow-strength-dim);
+
+  --link: var(--link-dim);
+  --link-hover: var(--link-hover-dim);
+  --link-visited: var(--link-visited-dim);
+
+  --scroll-thumb-color: var(--scroll-thumb-dim);
+}
+
+@media (--HDcolor) {
+  @supports (color: color(display-p3 0 0 0)) {
+    body {
+      --link: color(display-p3 0.1 0.4 1);
+      --link-visited: color(display-p3 0.6 0.2 1);
+    }
+  }
+}

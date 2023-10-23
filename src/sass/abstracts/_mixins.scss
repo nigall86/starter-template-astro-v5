@@ -45,15 +45,15 @@
 }
 
 // Creating headings
-@mixin heading($fs, $color: var(--heading-color-default)) {
-  font-family: var(--heading-font-family);
+@mixin heading($fs, $color: var(--_heading-color-default)) {
+  font-family: var(--_heading-font-family);
 
   font-size: $fs;
-  font-weight: var(--heading-font-weight);
-  line-height: var(--heading-line-height);
+  font-weight: var(--_heading-font-weight);
+  line-height: var(--_heading-line-height);
   color: $color;
-  letter-spacing: var(--heading-letter-spacing);
-  text-transform: var(--heading-text-transform);
+  letter-spacing: var(--_heading-letter-spacing);
+  text-transform: var(--_heading-text-transform);
 }
 
 // Pseudo classes

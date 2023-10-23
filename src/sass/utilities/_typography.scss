@@ -76,15 +76,20 @@
 
 // Headings and subheadings classes
 .heading-1 {
-  @include heading(var(--heading-1-font-size), var(--heading-1-color));
+  @include heading(var(--h1-font-size));
+  max-inline-size: var(--size-header-1);
 }
 
 .heading-2 {
-  @include heading(var(--heading-2-font-size), var(--heading-2-color));
+  @include heading(var(--h2-font-size));
 }
 
 .heading-3 {
-  @include heading(var(--heading-3-font-size), var(--heading-3-color));
+  @include heading(var(--h3-font-size));
+}
+
+.heading-4 {
+  @include heading(var(--h4-font-size));
 }
 
 .subheading {

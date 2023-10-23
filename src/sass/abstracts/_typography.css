@@ -53,21 +53,17 @@
   --fs-fluid-3: clamp(3.2rem, 9vw, 5.6rem);
 
   /* Headings */
-  --_heading-font-family: var(--ff-accent);
-  --_heading-font-weight: var(--fw-bold);
-  --_heading-line-height: 1.1;
-  --_heading-color-default: var(--text-1);
-  --_heading-letter-spacing: var(--letter-spacing-0);
-  --_heading-text-transform: uppercase;
+  --heading-font-family: var(--ff-accent);
+  --heading-font-weight: var(--fw-black);
+  --heading-line-height: var(--lh-100);
+  --heading-letter-spacing: var(--letter-spacing-0);
+  --heading-text-transform: none;
 
-  --heading-1-font-size: var(--fs-1000);
-  --heading-1-color: var(--_heading-color-default);
-
-  --heading-2-font-size: var(--fs-900);
-  --heading-2-color: var(--_heading-color-default);
-
-  --heading-3-font-size: var(--fs-800);
-  --heading-3-color: var(--_heading-color-default);
+  --h1-font-size: var(--fs-900);
+  --h2-font-size: var(--fs-800);
+  --h3-font-size: var(--fs-700);
+  --h4-font-size: var(--fs-600);
+  --h5-font-size: var(--fs-500);
 
   /* Subheadings */
   --subheading-font-family: var(--ff-base);
@@ -75,4 +71,59 @@
   --subheading-font-weight: var(--fw-regular);
   --subheading-color-default: var(--color-text-default);
   --subheading-line-height: var(--lh-150);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  color: var(--text-1);
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
+  text-wrap: balance;
+}
+
+:is(h1) {
+  font-size: var(--h1-font-size);
+  max-inline-size: var(--size-header-1);
+}
+
+:is(h2) {
+  font-size: var(--h2-font-size);
+  max-inline-size: var(--size-header-2);
+}
+
+:is(h3) {
+  font-size: var(--h3-font-size);
+}
+
+:is(h4) {
+  font-size: var(--h4-font-size);
+}
+
+:is(h5) {
+  font-size: var(--h5-font-size);
+}
+
+:is(h3, h4, h5, h6, dt) {
+  max-inline-size: var(--size-header-3);
+}
+
+:is(p, ul, ol, dl, h6) {
+  font-size: var(--fs-200);
+}
+
+:is(a, u, ins, abbr) {
+  text-underline-offset: 1px;
+}
+
+@supports (-moz-appearance: none) {
+  :is(a, u, ins, abbr) {
+    text-underline-offset: 2px;
+  }
+}
+
+:is(small) {
+  font-size: max(0.5em, var(--fs-100));
+  max-inline-size: var(--size-content-1);
 }

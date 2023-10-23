@@ -1,14 +1,12 @@
 ---
-import { Image } from 'astro:assets';
-
 import Nav from '../components/Nav.astro';
-import logo from '../images/logo.svg';
+import Logo from './Logo.astro';
 ---
 
 <header class='site-header'>
   <div class='container'>
     <div class='site-header__inner'>
-      <a href="/"><Image src={logo} alt="Logo of the company"/></a>
+      <Logo type="header"/>
       <Nav />
     </div>
   </div>

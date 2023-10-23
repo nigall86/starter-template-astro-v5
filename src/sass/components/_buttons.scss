@@ -4,34 +4,25 @@ input:is([type='button'], [type='submit'], [type='reset']),
 input[type='file']::-webkit-file-upload-button,
 input[type='file']::file-selector-button {
   // Button tokens
-  --_btn-accent: var(--brand-accent);
-  --_btn-primary: var(--brand-primary);
-  --_btn-text-color: initial;
+  --_btn-accent: var(--accent);
+  --_btn-primary: var(--primary);
+  --_btn-text-color: var(--text-1);
   --_btn-size: initial;
 
   // Background
-  --_btn-bg-light: hsl(var(--neutral-000));
-  --_btn-bg-dark: var(--surface-3);
-  --_btn-bg: var(--_btn-bg-light);
+  --_btn-bg: var(--surface-4);
 
   // Highlight
-  --_btn-border: var(--surface-3);
+  --_btn-border: var(--surface-4);
+
   --_btn-highlight-size: 0;
   --_btn-highlight-opacity: 25%;
-  --_btn-highlight-light: hsla(
-    var(--neutral-500),
-    var(--_btn-highlight-opacity)
+  --_btn-highlight: hsl(
+    var(--accent-hue) 5% var(--accent-lightness) / var(--_btn-highlight-opacity)
   );
-  --_btn-highlight-dark: hsla(
-    var(--neutral-1200),
-    var(--_btn-highlight-opacity)
-  );
-  --_btn-highlight: var(--_btn-highlight-light);
 
   // Text
-  --_btn-text-shadow-light: 0 1px 0 hsl(var(--neutral-300));
-  --_btn-text-shadow-dark: 0 1px 0 var(--surface-1);
-  --_btn-text-shadow: var(--_btn-text-shadow-light);
+  --_btn-text-shadow: 0 1px 0 var(--surface-4);
 
   // Icon
   --_btn-icon-size: var(--size-relative-7);
@@ -44,8 +35,8 @@ input[type='file']::file-selector-button {
   align-items: center;
   gap: var(--size-2);
 
-  padding-block: 0.75ch;
-  padding-inline: var(--size-relative-6);
+  padding-block: 0.5em;
+  padding-inline: 1em;
 
   background: var(--_btn-bg);
   border: var(--border-size-2) solid var(--_btn-border);
@@ -59,18 +50,12 @@ input[type='file']::file-selector-button {
   text-align: center;
   text-decoration: none;
 
-  box-shadow: var(--shadow-2), 0 1px var(--surface-3),
+  box-shadow: var(--shadow-2), 0 1px var(--surface-1),
     0 0 0 var(--_btn-highlight-size) var(--_btn-highlight);
 
   transition: border-color 0.5s var(--ease-3) 3s;
   user-select: none;
   cursor: pointer;
-
-  @media (--OSdark) {
-    --_btn-highlight: var(--_btn-highlight-dark);
-    --_btn-bg: var(--_btn-bg-dark);
-    --_btn-text-shadow: var(--_btn-text-shadow-dark);
-  }
 
   @media (--motionOK) {
     transition: border-color 0.5s var(--ease-3) 3s,
@@ -83,13 +68,13 @@ button,
 input:is([type='button'], [type='submit'], [type='reset']) {
   &[disabled] {
     --_btn-bg: none;
-    --_btn-text-color: hsl(var(--neutral-600));
+    --_btn-text-color: var(--text-1);
     box-shadow: var(--shadow-1);
     cursor: not-allowed;
 
-    @media (--OSdark) {
-      --_btn-text-color: hsl(var(--neutral-500));
-    }
+    // @media (--OSdark) {
+    //   --_btn-text-color: hsl(var(--neutral-500));
+    // }
   }
 
   &:not(:active):hover {
@@ -126,14 +111,14 @@ form button:not([type], [disabled]) {
 
   @media (--OSdark) {
     --_btn-text-color: hsl(var(--error-200));
-    border-color: var(--surface-3);
+    --_btn-border: var(--surface-3);
   }
 }
 
 [type='submit'],
 [type='reset'],
 form button:not([type]):is(:hover, :focus-visible):not([disabled]) {
-  border-color: currentColor;
+  --_btn-border: currentColor;
 }
 
 input[type='file'] {
@@ -164,31 +149,44 @@ input[type='file'] {
 }
 
 // Accent button
-[data-type='accent'] {
-  --_btn-bg: linear-gradient(hsl(var(--accent-500)), hsl(var(--accent-700)));
-  --_btn-border: hsl(var(--accent-600));
-  --_btn-text-color: hsl(var(--accent-000));
-  --_btn-text-shadow: 0 1px 0 hsl(var(--accent-900));
-}
+// [data-type='accent'] {
+//   --_btn-bg: linear-gradient(
+//     var(--accent),
+//     color-mix(in hsl, var(--accent) 90%, black)
+//   );
+//   // --_btn-text-color: hsl(var(--accent-000));
+//   // --_btn-text-shadow: 0 1px 0 color-mix(in hsl, var(--accent) 90%, black);
+// }
 
 // Primary button
 [data-type='primary'] {
-  --_btn-bg: linear-gradient(hsl(var(--primary-500)), hsl(var(--primary-700)));
-  --_btn-border: hsl(var(--primary-600));
+  --_btn-bg: linear-gradient(
+    hsl(
+      var(--primary-hue),
+      var(--primary-saturation),
+      calc(var(--primary-lightness) + 5%)
+    ),
+    hsl(
+      var(--primary-hue),
+      var(--primary-saturation),
+      calc(var(--primary-lightness) - 5%)
+    )
+  );
   --_btn-text-color: hsl(var(--primary-000));
-  --_btn-text-shadow: 0 1px 0 hsl(var(--primary-900));
+  --_btn-text-shadow: 0 1px 0 hsl(var(--primary));
 }
 
 // Button outline
-[data-type='outline'] {
-  --_btn-border: hsl(var(--accent-600));
-  --_btn-text-color: hsl(var(--accent-600));
-  --_btn-text-shadow: 0 1px 3px hsl(var(--accent-100));
-}
+// [data-type='outline'] {
+//   --_btn-bg: transparent;
+//   --_btn-border: var(--accent);
+//   --_btn-text-color: var(--accent);
+// }
 
 // Btn as icon only
 [data-type='btn-icon'] {
   --_btn-icon-size: var(--size-9);
+  --_btn-icon-color: var(--text-1);
 
   flex-shrink: 0;
   place-items: center;
@@ -210,4 +208,42 @@ input[type='file'] {
       stroke-width: var(--border-size-2);
     }
   }
+}
+
+// Spacing for inputs and textarea
+:where(input:not([type='range']), textarea) {
+  padding-block: var(--size-1);
+  padding-inline: var(--size-2);
+}
+
+@media (--OSdark) {
+  :where(
+      textarea,
+      input:not(button):not(button[type]):not(input[type='button']):not(
+          input[type='submit']
+        ):not(input[type='reset'])
+    ) {
+    background-color: var(--surface-4);
+  }
+}
+
+:where(
+    a[href],
+    area,
+    button,
+    input:not(
+        [type='text'],
+        [type='email'],
+        [type='number'],
+        [type='password'],
+        [type=''],
+        [type='tel'],
+        [type='url']
+      ),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*='-'])
+  ) {
+  cursor: pointer;
 }
