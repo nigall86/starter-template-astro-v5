@@ -4,8 +4,8 @@ const heroSection = document.querySelector('.hero');
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('[data-type="close-modal"]');
-const btnsOpenModal = document.querySelectorAll('[data-type="show-modal"]');
+// const btnCloseModal = document.querySelector('[data-type="close-modal"]');
+// const btnsOpenModal = document.querySelectorAll('[data-type="show-modal"]');
 
 //////////////////////////////
 // Preventing animation while loading

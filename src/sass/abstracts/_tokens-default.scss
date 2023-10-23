@@ -18,21 +18,21 @@
   --surface-3: hsl(var(--neutral-300)); // hsl(210 14% 89%)
   --surface-4: hsl(var(--neutral-400)); // hsl(210 14% 83%)
 
+  /* Text color */
+  --text-1: hsl(var(--neutral-900));
+  --text-2: hsl(var(--neutral-700));
+
   /* Link colors */
   --link: hsl(var(--indigo-700));
   --link-hover: hsl(var(--indigo-500));
   --link-visited: hsl(var(--purple-700));
 
-  /* Text color */
-  --text-1: hsl(var(--neutral-900));
-  --text-2: hsl(var(--neutral-700));
-
-  /* Scroll color */
-  --scroll-thumb-color: hsl(var(--neutral-700));
-
   /* Shadow */
   --shadow-color: 220 3% 15%;
   --shadow-strength: 1%;
+
+  /* Scroll color */
+  --scroll-thumb-color: hsl(var(--neutral-700));
 
   /* Layout */
   --grid-gap: var(--size-6);

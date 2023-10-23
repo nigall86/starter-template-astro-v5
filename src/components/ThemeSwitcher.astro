@@ -1,5 +1,4 @@
 ---
-import { boolean } from "astro/zod";
 const { themes = ['auto', 'light', 'dark', 'dim'], checked = true } = Astro.props;
 ---
 
@@ -9,44 +8,129 @@ const { themes = ['auto', 'light', 'dark', 'dim'], checked = true } = Astro.prop
     <label for={themes[0]}>{themes[0]}</label>
   </div>
 
-  
-  {themes.map((theme: string, index: number) => 
-    (index > 0 &&
+  {
+    themes.map((theme: string, index: number) => (
+    index > 0 &&
     <div>
-      <input type="radio" id={theme} name="theme" value={theme}>
+      <input type="radio" id={theme} name="theme" value={theme}/>
       <label for={theme}>{theme}</label>
     </div>
-    )
-  )}
+    ))
+  }
 </form>
 
-<!-- <fieldset
-class="theme-switcher | flex-group | mx-auto | margin-block-start-10 | clr-accent-100"
->
-<legend class="theme-switcher__legend">Theme:</legend>
+<!-- Style -->
+<style lang='scss'>
 
-<div class="theme-switcher__options | flex-group">
+:root {
+  &[color-scheme='light'] {
+    color-scheme: light;
 
-{themes.map((theme: string) => 
-  <div class="theme-switcher__option-group">
-    <input
-      id={theme}
-      class="theme-switcher__input"
-      name="theme"
-      type="radio"
-    />
-    <label for={theme} class="theme-switcher__label | clr-accent-100">{theme}</label>
-  </div>
-)}
-</div>
-</fieldset> -->
+    --accent: var(--accent-light);
 
-<!-- * Script * -->
+    /* Surface colors */
+    --surface-0: var(--surface-0-light);
+    --surface-1: var(--surface-1-light);
+    --surface-2: var(--surface-2-light);
+    --surface-3: var(--surface-3-light);
+    --surface-4: var(--surface-4-light);
+
+   /* Error colors */
+    --error-1: var(--error-1-light);
+    --error-2: var(--error-2-light);
+
+    /* Text color */
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+
+    /* Link colors */
+    --link: var(--link-light);
+    --link-hover: var(--link-hover-light);
+    --link-visited: var(--link-visited-light);
+
+    /* Shadow */
+    --shadow-color: var(--shadow-color-light);
+    --shadow-strength: var(--shadow-strength-light);
+
+    --highlight-color: hsl(0 0% 0% / 20%);
+
+    /* Scroll color */
+    --scroll-thumb-color: var(--scroll-thumb-light);
+  }
+
+  &[color-scheme='dark'] {
+    color-scheme: dark;
+
+    --accent: var(--accent-dark);
+
+    /* Surface colors */
+    --surface-0: var(--surface-0-dark);
+    --surface-1: var(--surface-1-dark);
+    --surface-2: var(--surface-2-dark);
+    --surface-3: var(--surface-3-dark);
+    --surface-4: var(--surface-4-dark);
+
+    /* Error colors */
+    --error-1: var(--error-1-dark);
+    --error-2: var(--error-2-dark);
+
+    /* Text color */
+    --text-1: var(--text-1-dark);
+    --text-2: var(--text-2-dark);
+
+    /* Link colors */
+    --link: var(--link-dark);
+    --link-hover: var(--link-hover-dark);
+    --link-visited: var(--link-visited-dark);
+
+    /* Shadow */
+    --shadow-color: var(--shadow-color-dark);
+    --shadow-strength: var(--shadow-strength-dark);
+
+    /* Scroll color */
+    --scroll-thumb-color: var(--scroll-thumb-dark);
+  }
+
+  &[color-scheme='dim'] {
+    color-scheme: dark;
+
+    --accent: var(--accent-dim);
+
+    /* Surface colors */
+    --surface-0: var(--surface-0-dim);
+    --surface-1: var(--surface-1-dim);
+    --surface-2: var(--surface-2-dim);
+    --surface-3: var(--surface-3-dim);
+    --surface-4: var(--surface-4-dim);
+
+    /* Error colors */
+    --error-1: var(--error-1-dim);
+    --error-2: var(--error-2-dim);
+
+    /* Text color */
+    --text-1: var(--text-1-dim);
+    --text-2: var(--text-2-dim);
+
+    /* Link colors */
+    --link: var(--link-dim);
+    --link-hover: var(--link-hover-dim);
+    --link-visited: var(--link-visited-dim);
+    
+    /* Shadow */
+    --shadow-color: var(--shadow-color-dim);
+    --shadow-strength: var(--shadow-strength-dim);
+  
+    /* Scroll color */
+    --scroll-thumb-color: var(--scroll-thumb-dim);
+  }
+}
+</style>
+
+<!-- Script -->
 <script define:vars={{ themes }}>
 
-const body = document.body;
 const themeSwitcher = document.querySelector('#theme-switcher');
-let activeTheme = localStorage.getItem('theme');
+let activeTheme = window.localStorage.getItem('theme');
 
 const doc = document.firstElementChild;
 
@@ -55,13 +139,15 @@ function setTheme(themeToSet) {
   // Checks if theme exist
   if (!themes.includes(themeToSet)) return;
 
-  if (themeToSet === "auto") {
-    window.localStorage.removeItem("theme");
-    doc.removeAttribute("color-scheme");
+  if (themeToSet === 'auto') {
+    window.localStorage.removeItem('theme');
+    doc.removeAttribute('color-scheme');
   } else {
-    window.localStorage.setItem("theme", themeToSet);
+    window.localStorage.setItem('theme', themeToSet);
     doc.setAttribute('color-scheme', themeToSet);
   }
+
+  document.getElementById(themeToSet).setAttribute('checked', true);
 }
 
 // Switcher event listener
@@ -77,129 +163,7 @@ themeSwitcher.addEventListener('click', function (e) {
 
 // Set theme on loading
 (function loadTheme() {
-  const theme = window.localStorage.getItem('theme');
+  const theme = activeTheme;
   setTheme(theme);
-  document.getElementById(theme).checked = true;
-})
-();
-
-// Var #1
-// Function to set theme
-// function setTheme(themeToSet) {
-//   // Checks if theme exist
-//   console.log(themeToSet);
-//   if (!themes.includes(themeToSet)) return;
-
-//   if (themeToSet === "system") {
-//     window.localStorage.removeItem("theme");
-//     body.removeAttribute("data-theme");
-//   } else {
-//     window.localStorage.setItem("theme", themeToSet);
-//     body.setAttribute("data-theme", themeToSet);
-//   }
-// }
-  // themes.forEach((theme) => {
-  //   if (theme !== themeToSet && body.hasAttribute(theme))
-  //     body.removeAttribute(theme);
-  // });
-
-  // if (!body.hasAttribute(themeToSet)) {
-  //   body.setAttribute('data-theme', themeToSet);
-  // }
-
-
-// Clicking on the theme switcher
-// themeSwitcher.addEventListener('click', function (e) {
-//   if (e.target.tagName != 'INPUT') {
-//     return;
-//   }
-
-//   const themeToSet = e.target.id;
-//   setTheme(themeToSet);
-// });
-
-// Set theme on loading
-// (function loadTheme() {
-//   const theme = window.localStorage.getItem('theme');
-//   setTheme(theme);
-//   document.getElementById(theme).checked = true;
-// })
-// ();
-
-// Var #2
-// function changeTheme(theme) {
-
-//   if (!themes.includes(theme)) return;
-
-//   body.classList.add("theme-switch");
-
-//   if (theme === "system") {
-//     localStorage.removeItem("theme");
-//     body.removeAttribute("data-theme");
-//   } else {
-//     localStorage.setItem("theme", theme);
-//     body.setAttribute("data-theme", theme);
-//   }
-
-//   body.addEventListener("transitionend", function() {
-//       body.classList.remove("theme-switch");
-//     }, {}
-//   );
-// }
-
-// themeSwitcher.addEventListener("click", (e) => {
-//   if (e.target.tagName != "INPUT") {
-//     return;
-//   }
-
-//   const themeToActivate = e.target.id;
-//   changeTheme(themeToActivate);
-// });
-
-// window.onload = () => {
-//   // document.getElementById('system').checked = true;
-
-//   if (activeTheme) {
-//     document.getElementById(activeTheme).checked = true;
-//     changeTheme(activeTheme);
-//   }
-// };
-
-// Var #3
-// function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
-//   if (localStorageTheme !== null) {
-//     return localStorageTheme;
-//   }
-
-//   if (systemSettingDark.matches) {
-//     return "dark";
-//   }
-
-//   return "light";
-// }
-
-// const localStorageTheme = localStorage.getItem("theme");
-// const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-// let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
-
-// themeSwitcher.addEventListener("click", (e) => {
-//   if (e.target.tagName != "INPUT") {
-//     return;
-//   }
-  
-//   console.log(currentThemeSetting);
-//   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
-//   body.setAttribute("data-theme", newTheme);
-//   localStorage.setItem("theme", newTheme);
-
-//   currentThemeSetting = newTheme;
-
-
-//   // const themeToActivate = e.target.id;
-//   // changeTheme(themeToActivate);
-// });
-
-
-
+})();
 </script>

@@ -78,19 +78,25 @@ const {
   Open Dialog
 </Button>
 
-<style>
-.labelled-input {
-  display: flex;
-  gap: var(--size-3);
-  flex-wrap: wrap;
-  align-items: center
-}
+<script>
+import GuiDialog from '../scripts/modal.js';
 
-dialog > form > footer > menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--size-3);
-  -webkit-padding-start: 0;
-  padding-inline-start: 0;
-}
-</style>
+const megaDialog = document.querySelector('#megaDialog');
+const miniDialog = document.querySelector('#miniDialog');
+
+GuiDialog(megaDialog);
+// GuiDialog(miniDialog);
+
+/*
+Each upgraded dialog element can now listen for five new events, like this:
+MegaDialog.addEventListener('closing', dialogClosing)
+MegaDialog.addEventListener('closed', dialogClosed)
+
+MegaDialog.addEventListener('opening', dialogOpening)
+MegaDialog.addEventListener('opened', dialogOpened)
+
+MegaDialog.addEventListener('removed', dialogRemoved)
+
+Source: https://web.dev/articles/building/a-dialog-component
+*/
+</script>

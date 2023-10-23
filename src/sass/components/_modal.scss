@@ -120,19 +120,7 @@ dialog {
         }
       }
 
-      [data-theme='light'] {
-        background: var(--surface-1);
-
-        &::-webkit-scrollbar {
-          background: var(--surface-1);
-        }
-      }
-
       @media (--OSdark) {
-        border-block-start: var(--border-size-1) solid var(--surface-3);
-      }
-
-      [data-theme='dark'] {
         border-block-start: var(--border-size-1) solid var(--surface-3);
       }
     }
@@ -147,21 +135,20 @@ dialog {
       padding-inline: var(--size-5);
       padding-block: var(--size-3);
       background: var(--surface-2);
-    }
-
-    @media (--OSdark) {
-      background: var(--surface-1);
-    }
-
-    [data-theme='dark'] {
-      background: var(--surface-1);
-    }
-
-    & > :is(header, footer) {
-      background-color: var(--surface-2);
 
       @media (--OSdark) {
-        background-color: var(--surface-1);
+        background: var(--surface-1);
+      }
+
+      & > menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--size-3);
+        padding-inline-start: 0;
+
+        &:only-child {
+          margin-inline-start: auto;
+        }
       }
     }
   }

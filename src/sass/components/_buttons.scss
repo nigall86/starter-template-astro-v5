@@ -10,19 +10,21 @@ input[type='file']::file-selector-button {
   --_btn-size: initial;
 
   // Background
-  --_btn-bg: var(--surface-4);
+  --_btn-bg: var(--surface-1);
 
   // Highlight
-  --_btn-border: var(--surface-4);
+  --_btn-border: var(--surface-3);
 
   --_btn-highlight-size: 0;
   --_btn-highlight-opacity: 25%;
   --_btn-highlight: hsl(
-    var(--accent-hue) 5% var(--accent-lightness) / var(--_btn-highlight-opacity)
+    var(--accent-hue) 10% var(--accent-lightness) /
+      var(--_btn-highlight-opacity)
   );
 
   // Text
-  --_btn-text-shadow: 0 1px 0 var(--surface-4);
+  --_btn-text-shadow: 0 1px 0
+    color-mix(in hsl, var(--surface-3) 90%, hsl(var(--neutral-1200)));
 
   // Icon
   --_btn-icon-size: var(--size-relative-7);
@@ -35,8 +37,8 @@ input[type='file']::file-selector-button {
   align-items: center;
   gap: var(--size-2);
 
-  padding-block: 0.5em;
-  padding-inline: 1em;
+  padding-block: 0.75ch;
+  padding-inline: var(--size-relative-6);
 
   background: var(--_btn-bg);
   border: var(--border-size-2) solid var(--_btn-border);
@@ -50,7 +52,7 @@ input[type='file']::file-selector-button {
   text-align: center;
   text-decoration: none;
 
-  box-shadow: var(--shadow-2), 0 1px var(--surface-1),
+  box-shadow: var(--shadow-2), 0 1px var(--surface-3),
     0 0 0 var(--_btn-highlight-size) var(--_btn-highlight);
 
   transition: border-color 0.5s var(--ease-3) 3s;
@@ -69,12 +71,9 @@ input:is([type='button'], [type='submit'], [type='reset']) {
   &[disabled] {
     --_btn-bg: none;
     --_btn-text-color: var(--text-1);
+
     box-shadow: var(--shadow-1);
     cursor: not-allowed;
-
-    // @media (--OSdark) {
-    //   --_btn-text-color: hsl(var(--neutral-500));
-    // }
   }
 
   &:not(:active):hover {
@@ -102,22 +101,18 @@ form button:not([type], [disabled]) {
 }
 
 [type='reset'] {
-  --_btn-text-color: hsl(var(--error-600));
-  --_btn-border: hsl(var(--error-300));
+  --_btn-text-color: var(--error-2);
+  --_btn-border: var(--error-1);
 
   &:focus-visible {
-    outline-color: hsl(var(--error-600));
-  }
-
-  @media (--OSdark) {
-    --_btn-text-color: hsl(var(--error-200));
-    --_btn-border: var(--surface-3);
+    outline-color: var(--error-2);
   }
 }
 
-[type='submit'],
-[type='reset'],
-form button:not([type]):is(:hover, :focus-visible):not([disabled]) {
+:where([type='submit'], [type='reset'], form button:not([type])):is(
+    :hover,
+    :focus-visible
+  ):not([disabled]) {
   --_btn-border: currentColor;
 }
 
@@ -149,39 +144,39 @@ input[type='file'] {
 }
 
 // Accent button
-// [data-type='accent'] {
-//   --_btn-bg: linear-gradient(
-//     var(--accent),
-//     color-mix(in hsl, var(--accent) 90%, black)
-//   );
-//   // --_btn-text-color: hsl(var(--accent-000));
-//   // --_btn-text-shadow: 0 1px 0 color-mix(in hsl, var(--accent) 90%, black);
-// }
+[data-type='accent'] {
+  --_btn-border: color-mix(in hsl, var(--accent) 90%, hsl(var(--neutral-1200)));
+  --_btn-bg: linear-gradient(
+    var(--accent),
+    color-mix(in hsl, var(--accent) 90%, hsl(var(--neutral-1200)))
+  );
+  --_btn-text-color: hsl(var(--accent-000));
+  --_btn-text-shadow: 0 1px 0
+    color-mix(in hsl, var(--accent) 70%, hsl(var(--neutral-1200)));
+}
 
 // Primary button
 [data-type='primary'] {
+  --_btn-border: color-mix(
+    in hsl,
+    var(--primary) 90%,
+    hsl(var(--neutral-1200))
+  );
   --_btn-bg: linear-gradient(
-    hsl(
-      var(--primary-hue),
-      var(--primary-saturation),
-      calc(var(--primary-lightness) + 5%)
-    ),
-    hsl(
-      var(--primary-hue),
-      var(--primary-saturation),
-      calc(var(--primary-lightness) - 5%)
-    )
+    var(--primary),
+    color-mix(in hsl, var(--primary) 90%, hsl(var(--neutral-1200)))
   );
   --_btn-text-color: hsl(var(--primary-000));
-  --_btn-text-shadow: 0 1px 0 hsl(var(--primary));
+  --_btn-text-shadow: 0 1px 0
+    color-mix(in hsl, var(--primary) 90%, hsl(var(--neutral-1200)));
 }
 
 // Button outline
-// [data-type='outline'] {
-//   --_btn-bg: transparent;
-//   --_btn-border: var(--accent);
-//   --_btn-text-color: var(--accent);
-// }
+[data-type='outline'] {
+  --_btn-bg: transparent;
+  --_btn-border: var(--accent);
+  --_btn-text-color: var(--accent);
+}
 
 // Btn as icon only
 [data-type='btn-icon'] {
