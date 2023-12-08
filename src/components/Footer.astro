@@ -1,17 +1,17 @@
 ---
 import Logo from './Logo.astro';
 
-export interface Props {
+interface Props {
   links: string[];
 }
 
-const { links } = Astro.props as Props;
+const { links } = Astro.props;
 ---
 
 <footer class='site-footer'>
-  <div class='container'>
+  <div class='content-grid'>
     <div>
-      <Logo type="footer"/>
+      <Logo type='footer' />
       <h3>Astro</h3>
       <p>
         This is a demo website to show how the Astro framework works. Visit the <a
@@ -32,40 +32,49 @@ const { links } = Astro.props as Props;
         }
       </ul>
     </div>
+    <small>
+      Copyright &copy; <span id='copyright'></span> | All rights reserved.
+    </small>
   </div>
 </footer>
 
 <!-- Style -->
 <style lang='scss'>
+  .site-footer {
+    // Spacing
+    --_footer-pading-block: var(--size-8);
 
-.site-footer {
-  // Spacing
-  --_footer-pading-block: var(--size-8);
+    // Background
+    --_footer-bg: hsl(var(--neutral-900));
 
-  // Background
-  --_footer-bg: hsl(var(--neutral-900));
+    // Text
+    --_footer-font-family: var(--ff-base);
+    --_footer-font-weight: var(--fw-regular);
+    --_footer-link: hsl(var(--neutral-000));
+    --_footer-link-hover: hsl(var(--neutral-400));
+    --_footer-letter-spacing: var(--letter-spacing-0);
 
-  // Text
-  --_footer-font-family: var(--ff-base);
-  --_footer-font-weight: var(--fw-regular);
-  --_footer-link: hsl(var(--neutral-000));
-  --_footer-link-hover: hsl(var(--neutral-400));
-  --_footer-letter-spacing: var(--letter-spacing-0);
+    padding-block: var(--_footer-pading-block);
+    background-color: var(--_footer-bg);
+    color: var(--_footer-link);
 
-  padding-block: var(--_footer-pading-block);
-  background-color: var(--_footer-bg);
-  color: var(--_footer-link);
+    a {
+      font-family: var(--_footer-font-family);
+      font-weight: var(--_footer-font-weight);
+      color: inherit;
+      letter-spacing: var(--_footer-letter-spacing);
+      text-decoration: none;
 
-  a {
-    font-family: var(--_footer-font-family);
-    font-weight: var(--_footer-font-weight);
-    color: inherit;
-    letter-spacing: var(--_footer-letter-spacing);
-    text-decoration: none;
-
-    &:is(:hover, :focus) {
-      color: var(--_footer-link-hover);
+      &:is(:hover, :focus) {
+        color: var(--_footer-link-hover);
+      }
     }
   }
-}
 </style>
+
+<!-- Script -->
+<script>
+  document.getElementById('copyright').textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>

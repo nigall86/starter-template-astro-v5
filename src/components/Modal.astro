@@ -1,10 +1,10 @@
 ---
-import Button from './Button.astro';
+import Button from './Link.astro';
 import Sprite from '../icons/icons.svg?url';
 
-import '../sass/components/_modal.scss';
+// import '../sass/components/_modal.scss';
 
-export interface Props {
+interface Props {
   dataType: string,
   title?: string;
   text?: string; 
@@ -14,7 +14,7 @@ const {
   dataType = 'megaDialog',
   title = 'Dialog heading',
   text = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde facere possimus sapiente. Fugiat nam facere perspiciatis distinctio iste aliquam impedit!',
-   } = Astro.props as Props;
+   } = Astro.props;
 ---
 
 <dialog id={dataType} data-type={dataType}>

@@ -1,0 +1,162 @@
+@use 'sizes' as *;
+
+/* --- Private variables --- */
+$-ff-montserrat: 'Montserrat', sans-serif;
+$-ff-inter: 'Inter', sans-serif;
+
+$ff-base: $-ff-inter;
+$ff-accent: $-ff-montserrat;
+
+/* --- Font weights --- */
+$-fw-100: 100;
+$-fw-200: 200;
+$-fw-300: 300;
+$-fw-400: 400;
+$-fw-500: 500;
+$-fw-600: 600;
+$-fw-700: 700;
+$-fw-800: 800;
+$-fw-900: 900;
+
+$fw-thin: $-fw-100;
+$fw-extra-light: $-fw-200;
+$fw-light: $-fw-300;
+$fw-regular: $-fw-400;
+$fw-medium: $-fw-500;
+$fw-semi-bold: $-fw-600;
+$fw-bold: $-fw-700;
+$fw-extra-bold: $-fw-800;
+$fw-black: $-fw-900;
+
+/* --- Font line heights --- */
+$lh-1: 0.95;
+$lh-2: 1;
+$lh-3: 1.1;
+$lh-4: 1.25;
+$lh-5: 1.5;
+$lh-6: 1.75;
+$lh-7: 2;
+
+/* --- Font letter spacing --- */
+$letter-spacing-0: -0.05em;
+$letter-spacing-1: 0.025em;
+$letter-spacing-2: 0.05em;
+$letter-spacing-3: 0.075em;
+$letter-spacing-4: 0.15em;
+$letter-spacing-5: 0.5em;
+$letter-spacing-6: 0.75em;
+$letter-spacing-7: 1em;
+
+/* --- Fluid font sizes (1rem --> 10px) --- */
+/* from 8px to 12px */
+$fs-0: clamp(0.8rem, 0.56rem + 0.4vw, 1.2rem);
+
+/* from 9px to 14px */
+$fs-1: clamp(0.9rem, 0.6rem + 0.5vw, 1.4rem);
+
+/* from 10px to 16px */
+$fs-2: clamp(1rem, 0.64rem + 0.6vw, 1.6rem);
+
+/* from 12px to 18px */
+$fs-3: clamp(1.2rem, 0.84rem + 0.6vw, 1.8rem);
+
+/* from 14px to 20px */
+$fs-4: clamp(1.4rem, 1.04rem + 0.6vw, 2rem);
+
+/* from 16px to 24px */
+$fs-5: clamp(1.6rem, 1.12rem + 0.8vw, 2.4rem);
+
+/* from 20px to 28px */
+$fs-6: clamp(2rem, 1.52rem + 0.8vw, 2.8rem);
+
+/* from 24px to 36px */
+$fs-7: clamp(2.4rem, 1.68rem + 1.2vw, 3.6rem);
+
+/* from 32px to 44px */
+$fs-8: clamp(3.2rem, 2.48rem + 1.2vw, 4.4rem);
+
+/* from 40px to 56px */
+$fs-9: clamp(4rem, 3.04rem + 1.6vw, 5.6rem);
+
+/* from 48px to 64px */
+$fs-10: clamp(4.8rem, 3.84rem + 1.6vw, 6.4rem);
+
+/* --- Headings --- */
+$heading-font-family: $ff-accent;
+$heading-font-weight: $fw-black;
+$heading-line-height: $lh-1;
+$heading-letter-spacing: $letter-spacing-0;
+$heading-text-transform: none;
+
+$h1-font-size: $fs-10;
+$h2-font-size: $fs-9;
+$h3-font-size: $fs-8;
+$h4-font-size: $fs-7;
+$h5-font-size: $fs-6;
+
+$size-header-1: 20ch;
+$size-header-2: 25ch;
+$size-header-3: 35ch;
+
+/* --- Subheadings --- */
+$subheading-font-family: $ff-base;
+$subheading-font-size: $fs-7;
+$subheading-font-weight: $fw-regular;
+$subheading-line-height: $lh-5;
+
+:where(html) {
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    color: var(--text-1);
+    letter-spacing: $heading-letter-spacing;
+    text-transform: $heading-text-transform;
+    text-wrap: balance;
+  }
+
+  :is(h1) {
+    font-size: $h1-font-size;
+    max-inline-size: $size-header-1;
+  }
+
+  :is(h2) {
+    font-size: $h2-font-size;
+    max-inline-size: $size-header-2;
+  }
+
+  :is(h3) {
+    font-size: $h3-font-size;
+  }
+
+  :is(h4) {
+    font-size: $h4-font-size;
+  }
+
+  :is(h5) {
+    font-size: $h5-font-size;
+  }
+
+  :is(h3, h4, h5, h6, dt) {
+    max-inline-size: $size-header-3;
+  }
+
+  :is(p, ul, ol, dl, h6) {
+    font-size: $fs-4;
+  }
+
+  :is(a, u, ins, abbr) {
+    text-underline-offset: 1px;
+  }
+
+  @supports (-moz-appearance: none) {
+    :is(a, u, ins, abbr) {
+      text-underline-offset: 2px;
+    }
+  }
+
+  :is(small) {
+    font-size: max(0.5em, $fs-1);
+    max-inline-size: $size-content-1;
+  }
+}

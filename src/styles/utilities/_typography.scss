@@ -1,0 +1,167 @@
+/* --- Font families --- */
+.ff-accent {
+  font-family: $ff-accent;
+}
+
+.ff-base {
+  font-family: $ff-base;
+}
+
+/* --- Font sizes --- */
+.fs-0 {
+  font-size: $fs-0;
+}
+
+.fs-1 {
+  font-size: $fs-1;
+}
+
+.fs-2 {
+  font-size: $fs-2;
+}
+
+.fs-3 {
+  font-size: $fs-3;
+}
+
+.fs-4 {
+  font-size: $fs-4;
+}
+
+.fs-5 {
+  font-size: $fs-5;
+}
+
+.fs-6 {
+  font-size: $fs-6;
+}
+
+.fs-7 {
+  font-size: $fs-7;
+}
+
+.fs-8 {
+  font-size: $fs-8;
+}
+
+.fs-9 {
+  font-size: $fs-9;
+}
+
+.fs-10 {
+  font-size: $fs-10;
+}
+
+/* --- Font weights --- */
+.fw-thin {
+  font-weight: $fw-thin;
+}
+
+.fw-extra-light {
+  font-weight: $fw-extra-light;
+}
+
+.fw-light {
+  font-weight: $fw-light;
+}
+
+.fw-regular {
+  font-weight: $fw-regular;
+}
+
+.fw-medium {
+  font-weight: $fw-medium;
+}
+
+.fw-semi-bold {
+  font-weight: $fw-semi-bold;
+}
+
+.fw-bold {
+  font-weight: $fw-bold;
+}
+
+.fw-extra-bold {
+  font-weight: $fw-extra-bold;
+}
+
+.fw-black {
+  font-weight: $fw-black;
+}
+
+/* ––– Centering the text --- */
+.text-center {
+  text-align: center;
+}
+
+/* ––– All caps --- */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* --- Headings and subheadings --- */
+:where(.heading-1, .heading-2, .heading-3, .heading-4) {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+  text-transform: $heading-text-transform;
+  text-wrap: balance;
+}
+
+.heading-1 {
+  font-size: $h1-font-size;
+  max-inline-size: $size-header-1;
+}
+
+.heading-2 {
+  font-size: $h2-font-size;
+  max-inline-size: $size-header-2;
+}
+
+.heading-3 {
+  font-size: $h3-font-size;
+  max-inline-size: $size-header-3;
+}
+
+.heading-4 {
+  font-size: $h4-font-size;
+  max-inline-size: $size-header-3;
+}
+
+.subheading {
+  font-family: $subheading-font-family;
+  font-weight: $subheading-font-weight;
+  font-size: $subheading-font-size;
+  line-height: $subheading-line-height;
+  color: var(--color-text-default);
+}
+
+/* --- Line heights --- */
+.lh-1 {
+  line-height: $lh-1;
+}
+
+.lh-2 {
+  line-height: $lh-2;
+}
+
+.lh-3 {
+  line-height: $lh-3;
+}
+
+.lh-4 {
+  line-height: $lh-4;
+}
+
+.lh-5 {
+  line-height: $lh-5;
+}
+
+.lh-6 {
+  line-height: $lh-6;
+}
+
+.lh-7 {
+  line-height: $lh-7;
+}

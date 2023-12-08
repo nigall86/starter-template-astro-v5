@@ -1,52 +1,52 @@
 ---
-export interface Props {
-  tier: string;
-  price: number;
-  subheading: string;
-  features?: string[];
-}
+// interface Props {
+//   tier: string;
+//   price: number;
+//   subheading: string;
+//   features?: string[];
+// }np
 
-const { tier, price, subheading, features } = Astro.props as Props;
+// const { tier, price, subheading, features } = Astro.props;
+// ---
+
+// <section class='bg-brand-primary-100 | padding-6'>
+//   <div class='text-center'>
+//     <h2>{tier}</h2>
+//     <p class='fs-700 | fw-bold'>
+//       ${price}
+//       <span class='fs-400 | fw-regular'>/month</span>
+//     </p>
+//     <p>{subheading}</p>
+//   </div>
+
+//   <ul>
+//     {features.map((feature) => <li> {feature} </li>)}
+//   </ul>
+
+//   <button class='btn' data-type='primary'>Get started</button>
+// </section>
+
+// <style lang='scss'>
+// @use '../sass/abstracts' as *;
+
+// section {
+//   display: grid;
+// }
+
+// ul {
+//   margin-inline-start: $size-6;
+//   margin-block: $size-8;
+
+//   li {
+//     // --fill: red; --> doesn't work
+//     $fill: rgb(0, 210, 172);
+
+//     padding-inline-start: $size-4;
+
+//     &::marker {
+//       content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.2345 1.48034L20.9488 0.340088L11.1844 19.914L1.90563 15.2854L0.765381 17.5712L12.3299 23.3401L23.2345 1.48034Z' fill='#{$fill}'/%3E%3C/svg%3E%0A");
+//     }
+//   }
+// }
+// </style>
 ---
-
-<section class='bg-brand-primary-100 | padding-6'>
-  <div class='text-center'>
-    <h2>{tier}</h2>
-    <p class='fs-700 | fw-bold'>
-      ${price}
-      <span class='fs-400 | fw-regular'>/month</span>
-    </p>
-    <p>{subheading}</p>
-  </div>
-
-  <ul>
-    {features.map((feature) => <li> {feature} </li>)}
-  </ul>
-
-  <button class='btn' data-type='primary'>Get started</button>
-</section>
-
-<!-- Style / Using SCSS -->
-<style lang='scss'>
-  @use '../sass/abstracts' as *;
-
-  section {
-    display: grid;
-  }
-
-  ul {
-    margin-inline-start: $size-6;
-    margin-block: $size-8;
-
-    li {
-      // --fill: red; --> doesn't work
-      $fill: rgb(0, 210, 172);
-
-      padding-inline-start: $size-4;
-
-      &::marker {
-        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.2345 1.48034L20.9488 0.340088L11.1844 19.914L1.90563 15.2854L0.765381 17.5712L12.3299 23.3401L23.2345 1.48034Z' fill='#{$fill}'/%3E%3C/svg%3E%0A");
-      }
-    }
-  }
-</style>

@@ -1,5 +1,5 @@
 ---
-import Button from './Button.astro';
+import Button from './Link.astro';
 
 import mainImage from '../images/group-on-computer.webp';
 ---
@@ -15,21 +15,19 @@ import mainImage from '../images/group-on-computer.webp';
           audience and achieve your goals.
         </p>
         <div class='flex-group'>
-          <Button dataType = 'accent', href = '#'>
-            Join now
-          </Button>
-          <Button dataType = 'outline' href='#'>
-            Learn more
-          </Button>
+          <Button dataType='accent' , href='#'>Join now</Button>
+          <Button dataType='outline' href='#'>Learn more</Button>
         </div>
       </div>
       <div>
-        <img src={mainImage.src} alt="Group of young people looking at laptop"/>
+        <img
+          src={mainImage.src}
+          alt='Group of young people looking at laptop'
+        />
       </div>
     </div>
   </div>
 </section>
 
 <!-- Style / Using SCSS -->
-<style lang='scss'>
-</style>
+<style lang='scss'></style>

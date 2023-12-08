@@ -13,8 +13,8 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 
   <section class='page-content'>
     <div class='container'>
-      <p class="text">New text</p>
-      <h2 class="heading-2">Get Started With Astro</h2>
+      <p class='text'>New text</p>
+      <h2 class='heading-2'>Get Started With Astro</h2>
       <p>
         Get a new Astro project up and running locally with our helpful
         create-astro CLI wizard!
@@ -31,23 +31,19 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 
       <Modal dataType='megaDialog' />
       <Card />
-      <ThemeSwitcher />
-      </div>
-      
-      <!-- <Buttons /> -->
+      <!-- <ThemeSwitcher /> -->
     </div>
+
+    <!-- <Buttons /> -->
   </section>
-
-	<!-- Lenis library for a smooth scrolling -->
-	<script
-		is:inline
-		src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js">
-	</script> 
-
-  <script>
-    import '../scripts/main.js';
-  </script>
 </Layout>
 
-<style>
-</style>
+<!-- Lenis library for a smooth scrolling -->
+<script
+  is:inline
+  src='https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js'
+></script>
+
+<script>
+  import '../scripts/main.js';
+</script>

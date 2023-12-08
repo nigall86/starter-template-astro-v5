@@ -14,29 +14,29 @@ const { dark = false } = Astro.props as Props;
 
 <!-- * Style * -->
 <style lang='scss'>
-@use '../sass/abstracts' as *;
+  // @use '../sass/abstracts' as *;
 
-.card {
-  display: grid;
-  // gap: $card-flow-spacing;
-  // padding: $card-body-padding;
-  // border-radius: $card-border-radius;
-  // background-color: $card-background-default;
-  // font-family: $card-font-family;
-  // line-height: $card-line-height;
-  // color: $card-color-default;
-  // box-shadow: $card-box-shadow;
+  .card {
+    display: grid;
+    // gap: $card-flow-spacing;
+    // padding: $card-body-padding;
+    // border-radius: $card-border-radius;
+    // background-color: $card-background-default;
+    // font-family: $card-font-family;
+    // line-height: $card-line-height;
+    // color: $card-color-default;
+    // box-shadow: $card-box-shadow;
 
-  @media(--xs-only) {
-    background-color: $color-accent-500;
+    @media (--xs-only) {
+      background-color: hsl(var(--accent-400));
+    }
+
+    // &__heading {
+    //   @include heading($card-heading-font-size, $card-heading-color-default);
+    // }
+
+    &__text {
+      font-size: var(--fs-400);
+    }
   }
-
-  // &__heading {
-  //   @include heading($card-heading-font-size, $card-heading-color-default);
-  // }
-
-  &__text {
-    font-size: var(--fs-400);
-  }
-}
 </style>

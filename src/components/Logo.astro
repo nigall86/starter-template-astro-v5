@@ -1,35 +1,32 @@
 ---
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon';
 
-import logo from '../images/logo.svg';
-
-export interface Props  {
+interface Props {
   type?: string;
 }
 
-const { type } = Astro.props as Props;
+const { type } = Astro.props;
 ---
 
-<a class="logo" data-type={type} href="/">
-  <Image src={logo} alt="Logo of the company"/>
+<a class='logo' data-type={type} href='/'>
+  <Icon name='logo' alt='Logo of the company' />
 </a>
 
-<style lang="scss">
+<style>
   .logo {
-  --_logo-size-header: var(--size-16);
-  --_logo-color-header: hsl(var(--accent-500));
-  --_logo-size-footer: var(--size-15);
-  --_logo-color-footer: hsl(var(--neutral-000));
+    --_logo-size-header: var(--size-12);
+    --_logo-color-header: hsl(var(--accent-5));
+    --_logo-size-footer: var(--size-10);
+    --_logo-color-footer: hsl(var(--neutral-0));
 
-  &[data-type="header"] {
-    max-width: var(--_logo-size-header);
-    fill: var(--_logo-color-header);
-  }
+    &[data-type='header'] {
+      width: var(--_logo-size-header);
+      fill: var(--_logo-color-header);
+    }
 
-  &[data-type="footer"] {
-    max-width: var(--_logo-size-footer);
-    fill: var(--_logo-color-footer);
+    &[data-type='footer'] {
+      width: var(--_logo-size-footer);
+      fill: var(--_logo-color-footer);
+    }
   }
-}
 </style>
-

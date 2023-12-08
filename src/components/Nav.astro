@@ -1,17 +1,17 @@
 ---
-import '../sass/components/_site-nav.scss';
+// import '../sass/components/_site-nav.scss';
 
 import Sprite from '../icons/icons.svg?url';
-import Button from './Button.astro';
+import Button from './Link.astro';
 
-export interface Props {
+interface Props {
   links: string[];
 }
 
 const { links = ['About', 'Pricing', 'Contact', 'New link'] } = Astro.props;
 ---
 
-<nav class="site-nav">
+<nav class='site-nav' aria-label='primary navigation'>
   <ul class='site-nav__list | flex-group'>
     {
       links.map((link) => (
@@ -24,35 +24,35 @@ const { links = ['About', 'Pricing', 'Contact', 'New link'] } = Astro.props;
 </nav>
 
 <Button
-  dataType="btn-icon"
-  className="mobile-nav-toggle"
-  aria-controls="navigation"
-  aria-expanded="false">
-
-  <span class="sr-only">Menu</span>
-  <svg role="img" class="mobile-nav-toggle__icon">
-    <use id="nav-icon" href={Sprite + '#icon-menu'}></use>
+  dataType='btn-icon'
+  className='mobile-nav-toggle'
+  aria-controls='navigation'
+  aria-expanded='false'
+>
+  <span class='sr-only'>Menu</span>
+  <svg role='img' class='mobile-nav-toggle__icon'>
+    <use id='nav-icon' href={Sprite + '#icon-menu'}></use>
   </svg>
 </Button>
 
 <!-- * Script * -->
 <script define:vars={{ Sprite }}>
-const siteNav = document.querySelector('.site-nav__list');
-const navToggle = document.querySelector('.mobile-nav-toggle');
-const navIcon = document.getElementById('nav-icon');
+  const siteNav = document.querySelector('.site-nav__list');
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navIcon = document.getElementById('nav-icon');
 
-navToggle.addEventListener('click', function () {
-  const visibility = siteNav.getAttribute('data-visible');
-  console.log(visibility);
+  navToggle.addEventListener('click', function () {
+    const visibility = siteNav.getAttribute('data-visible');
+    console.log(visibility);
 
-  if (visibility === 'false') {
-    siteNav.setAttribute('data-visible', true);
-    navToggle.setAttribute('aria-expanded', true);
-    navIcon.setAttribute('href', `${Sprite + '#icon-menu'}`);
-  } else {
-    siteNav.setAttribute('data-visible', false);
-    navToggle.setAttribute('aria-expanded', false);
-    navIcon.setAttribute('href', `${Sprite + '#icon-close'}`);
-  }
-});
+    if (visibility === 'false') {
+      siteNav.setAttribute('data-visible', true);
+      navToggle.setAttribute('aria-expanded', true);
+      navIcon.setAttribute('href', `${Sprite + '#icon-menu'}`);
+    } else {
+      siteNav.setAttribute('data-visible', false);
+      navToggle.setAttribute('aria-expanded', false);
+      navIcon.setAttribute('href', `${Sprite + '#icon-close'}`);
+    }
+  });
 </script>

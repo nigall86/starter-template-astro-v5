@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use '../abstracts/colors' as *;
+
+:root {
+  // Loop creates custom color CSS variables
+  @each $color, $shade-map in $colors {
+    @each $shade, $value in $shade-map {
+      --#{$color}-#{$shade}: hsl(#{$value});
+    }
+  }
+
+  // Loop creates custom font sizes CSS properties
+  // @each $screen-size, $size-map in $font-sizes {
+  //   @if #{$screen-size} == big {
+  //     @each $size-name, $size-value in $size-map {
+  //       --fs-#{$size-name}: #{$size-value};
+  //     }
+  //   } @else if #{$screen-size} == large {
+  //     @include mq($screen-size, $min-or-max: min-width) {
+  //       @each $size-name, $size-value in $size-map {
+  //         --fs-#{$size-name}: #{$size-value};
+  //       }
+  //     }
+  //   } @else {
+  //     @include mq($screen-size) {
+  //       @each $size-name, $size-value in $size-map {
+  //         --fs-#{$size-name}: #{$size-value};
+  //       }
+  //     }
+  //   }
+  // }
+}
