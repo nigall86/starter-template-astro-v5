@@ -1,58 +1,40 @@
 ---
-// import '../sass/components/_site-nav.scss';
+// component imports
+import Link from './Link.astro';
 
-import Sprite from '../icons/icons.svg?url';
-import Button from './Link.astro';
-
-interface Props {
-  links: string[];
-}
-
-const { links = ['About', 'Pricing', 'Contact', 'New link'] } = Astro.props;
+// data imports
+import navData from '../data/navData';
 ---
 
 <nav class='site-nav' aria-label='primary navigation'>
-  <ul class='site-nav__list | flex-group'>
+  <ul class='site-nav__list' data-visible='false'>
     {
-      links.map((link) => (
+      navData.map((item) => (
         <li>
-          <a href={`/${link}`}> {link} </a>
+          <Link type='link' title={item.name} href={item.path} data-navlink />
         </li>
       ))
     }
   </ul>
 </nav>
 
-<Button
-  dataType='btn-icon'
-  className='mobile-nav-toggle'
+<Link
+  type='button'
+  style='btn-icon'
+  classes='mobile-nav-toggle'
   aria-controls='navigation'
   aria-expanded='false'
 >
-  <span class='sr-only'>Menu</span>
-  <svg role='img' class='mobile-nav-toggle__icon'>
-    <use id='nav-icon' href={Sprite + '#icon-menu'}></use>
+  <svg
+    role='img'
+    class='mobile-nav-toggle__icon'
+    style='--stroke-color: var(--text-1)'
+  >
+    <use id='nav-icon' href='#icon-menu'></use>
   </svg>
-</Button>
+  <span class='sr-only'>Menu</span>
+</Link>
 
-<!-- * Script * -->
-<script define:vars={{ Sprite }}>
-  const siteNav = document.querySelector('.site-nav__list');
-  const navToggle = document.querySelector('.mobile-nav-toggle');
-  const navIcon = document.getElementById('nav-icon');
-
-  navToggle.addEventListener('click', function () {
-    const visibility = siteNav.getAttribute('data-visible');
-    console.log(visibility);
-
-    if (visibility === 'false') {
-      siteNav.setAttribute('data-visible', true);
-      navToggle.setAttribute('aria-expanded', true);
-      navIcon.setAttribute('href', `${Sprite + '#icon-menu'}`);
-    } else {
-      siteNav.setAttribute('data-visible', false);
-      navToggle.setAttribute('aria-expanded', false);
-      navIcon.setAttribute('href', `${Sprite + '#icon-close'}`);
-    }
-  });
+<script>
+  import '../js/nav.js';
 </script>

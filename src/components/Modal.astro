@@ -1,39 +1,41 @@
 ---
-import Button from './Link.astro';
-import Sprite from '../icons/icons.svg?url';
-
-// import '../sass/components/_modal.scss';
+// component imports
+import Link from './Link.astro';
 
 interface Props {
-  dataType: string,
-  title?: string;
+  dialogType: string,
+  heading?: string;
   text?: string; 
 }
 
 const { 
-  dataType = 'megaDialog',
-  title = 'Dialog heading',
+  dialogType = 'megaDialog',
+  heading = 'Dialog heading',
   text = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde facere possimus sapiente. Fugiat nam facere perspiciatis distinctio iste aliquam impedit!',
-   } = Astro.props;
+  } = Astro.props;
 ---
 
-<dialog id={dataType} data-type={dataType}>
+<dialog id={dialogType} data-type={dialogType}>
   <form method="dialog">
     <!-- Condition for header -->
-    {dataType === 'megaDialog' ? 
+    {dialogType === 'megaDialog' ? 
     <header>
-      <h3>{title}</h3>
-      <Button 
-        dataType="btn-icon"
-        btnType="button"
+      <h3>{heading}</h3>
+      <Link 
+        type="button"
+        style="btn-icon"
         title="Close dialog"
         onClick="this.closest('dialog').close('close')" 
       >
         <title>Close dialog icon</title>
-        <svg role="img">
-          <use href={Sprite + '#icon-close'}></use>
+        <svg
+          role='img'
+          style ='--stroke-color: var(--text-1)'
+        >
+        <use id='nav-close' href='#icon-close'></use>
         </svg>
-      </Button>
+
+      </Link>
     </header>
     // If megaDialog then header, otherwise empty element
     :<></>
@@ -47,56 +49,34 @@ const {
     </article>
     <footer>
       <menu>
-        <Button
-          btnType="reset"
-          value="clear">
-          Clear
-        </Button>
+        <Link
+          type='input'
+          input='reset'
+          value="Clear"/>
       </menu>
       <menu>
-        <Button
-          btnType="button"
-          autofocus
+        <Link
+          type = 'input'
+          input='button'
+          value='Cancel'
           onClick="this.closest('dialog').close('cancel')"
-          kind = 'button' >
-          Cancel
-       </Button>
-        <Button
-          btnType="submit"
-          value='confirm'
-          kind = 'button' >
-          Confirm
-        </Button>
+          autofocus 
+        />
+        <Link
+          type='input'
+          style='accent'
+          input='submit'
+          value='Confirm'
+          classes='.btn'
+        />
       </menu>
     </footer>
   </form>
 </dialog>
 
-<Button
-  onClick={`${dataType}.showModal()`}
-  kind='button'>
-  Open Dialog
-</Button>
-
-<script>
-import GuiDialog from '../scripts/modal.js';
-
-const megaDialog = document.querySelector('#megaDialog');
-const miniDialog = document.querySelector('#miniDialog');
-
-GuiDialog(megaDialog);
-// GuiDialog(miniDialog);
-
-/*
-Each upgraded dialog element can now listen for five new events, like this:
-MegaDialog.addEventListener('closing', dialogClosing)
-MegaDialog.addEventListener('closed', dialogClosed)
-
-MegaDialog.addEventListener('opening', dialogOpening)
-MegaDialog.addEventListener('opened', dialogOpened)
-
-MegaDialog.addEventListener('removed', dialogRemoved)
-
-Source: https://web.dev/articles/building/a-dialog-component
-*/
-</script>
+<Link
+  type='button'
+  style='accent'
+  title='Open Dialog'
+  onClick={`${dialogType}.showModal()`}
+/>

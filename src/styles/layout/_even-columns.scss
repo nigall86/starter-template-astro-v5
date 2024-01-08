@@ -6,7 +6,7 @@
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
 
-  @include mq(medium) {
+  @media (--md-n-below) {
     grid-auto-flow: row;
     grid-auto-columns: auto;
   }

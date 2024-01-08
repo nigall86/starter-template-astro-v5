@@ -1,4 +1,6 @@
 'use strict';
+const megaDialog = document.querySelector('#megaDialog');
+const miniDialog = document.querySelector('#miniDialog');
 
 // custom events to be added to <dialog>
 const dialogClosingEvent = new Event('closing');
@@ -65,8 +67,8 @@ const dialogClose = async ({ target: dialog }) => {
   dialog.dispatchEvent(dialogClosedEvent);
 };
 
-// page load dialogs setup
-export default async function (dialog) {
+// page load dialogs setup --> Guidialog
+export const Guidialog = async function (dialog) {
   dialog.addEventListener('click', lightDismiss);
   dialog.addEventListener('close', dialogClose);
 
@@ -84,4 +86,6 @@ export default async function (dialog) {
   // prevent page load @keyframes playing
   await animationsComplete(dialog);
   dialog.removeAttribute('loading');
-}
+};
+
+GuiDialog(megaDialog);

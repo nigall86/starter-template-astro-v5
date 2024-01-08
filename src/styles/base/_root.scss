@@ -5,7 +5,7 @@
   // Loop creates custom color CSS variables
   @each $color, $shade-map in $colors {
     @each $shade, $value in $shade-map {
-      --#{$color}-#{$shade}: hsl(#{$value});
+      --#{$color}-#{$shade}: oklch(#{$value});
     }
   }
 

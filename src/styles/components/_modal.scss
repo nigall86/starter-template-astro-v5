@@ -1,10 +1,12 @@
+@use '../abstracts/' as *;
+
 // Disabling scrolling while open
 html:has(dialog[open][data-type='megaDialog']) {
   overflow: hidden;
 }
 
 dialog {
-  z-index: var(--layer-important);
+  z-index: $layer-important;
   position: fixed;
   inset: 0;
 
@@ -13,26 +15,26 @@ dialog {
   margin: auto;
   padding: 0;
 
-  max-inline-size: min(90vw, var(--size-content-3));
+  max-inline-size: min(90vw, $size-content-3);
   max-block-size: min(80vh, 100%);
   max-block-size: min(80dvb, 100%); // dvb --> dynamic viewport block size
 
   border: none;
-  border-radius: var(--radius-3);
+  border-radius: $radius-3;
   background: var(--surface-2);
   color: var(--text-1);
 
   box-shadow: var(--shadow-6);
-  transition: opacity 0.5s var(--ease-3);
+  transition: opacity 0.5s $ease-3;
   overflow: hidden;
 
   @media (--OSdark) {
-    border-block-start: var(--border-size-1) solid var(--surface-3);
+    border-block-start: $border-size-1 solid var(--surface-3);
   }
 
   @media (--motionOK) {
-    animation: var(--animation-scale-down) forwards;
-    animation-timing-function: var(--ease-squish-3);
+    animation: $animation-scale-down forwards;
+    animation-timing-function: $ease-squish-3;
   }
 
   @media (--md-n-below) {
@@ -43,8 +45,8 @@ dialog {
     }
 
     @media (--motionOK) {
-      animation: var(--animation-slide-out-down) forwards;
-      animation-timing-function: var(--ease-squish-2);
+      animation: $animation-slide-out-down forwards;
+      animation-timing-function: $ease-squish-2;
     }
   }
 
@@ -87,12 +89,12 @@ dialog {
 
     & > header {
       display: flex;
-      gap: var(--size-3);
+      gap: $size-3;
       justify-content: space-between;
       align-items: center;
       background: var(--surface-2);
-      padding-block: var(--size-3);
-      padding-inline: var(--size-5);
+      padding-block: $size-3;
+      padding-inline: $size-5;
 
       @media (--OSdark) {
         background: var(--surface-1);
@@ -100,14 +102,14 @@ dialog {
     }
 
     & > article {
-      z-index: var(--layer-1);
+      z-index: $layer-1;
       display: grid;
       justify-items: flex-start;
-      gap: var(--size-3);
+      gap: $size-3;
 
       max-block-size: 100%; /* safari */
-      padding-block: var(--size-3);
-      padding-inline: var(--size-5);
+      padding-block: $size-3;
+      padding-inline: $size-5;
       overflow-y: auto;
       overscroll-behavior-y: contain;
       box-shadow: var(--shadow-2);
@@ -121,7 +123,7 @@ dialog {
       }
 
       @media (--OSdark) {
-        border-block-start: var(--border-size-1) solid var(--surface-3);
+        border-block-start: $border-size-1 solid var(--surface-3);
       }
     }
 
@@ -130,10 +132,10 @@ dialog {
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
-      gap: var(--size-3);
+      gap: $size-3;
 
-      padding-inline: var(--size-5);
-      padding-block: var(--size-3);
+      padding-inline: $size-5;
+      padding-block: $size-3;
       background: var(--surface-2);
 
       @media (--OSdark) {
@@ -143,7 +145,7 @@ dialog {
       & > menu {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--size-3);
+        gap: $size-3;
         padding-inline-start: 0;
 
         &:only-child {

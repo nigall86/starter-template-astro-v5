@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+
+.tabs {
+  --_tabs-header-bg: var(--surface-4);
+  --_tabs-header-color: var(--text-1);
+  --_tabs-content-bg: var(--surface-2);
+  --_tabs-content-text: var(--text-2);
+
+  margin-top: $size-8;
+
+  &__header {
+    display: flex;
+    background: var(--_tabs-header-bg);
+    color: var(--_tabs-header-color);
+    padding: $size-3 $size-5;
+  }
+
+  &__header li {
+    margin-right: $size-5;
+    cursor: pointer;
+  }
+
+  &__content {
+    font-size: $fs-5;
+    padding: $size-5;
+    font-weight: bold;
+    background: var(--_tabs-content-bg);
+  }
+}

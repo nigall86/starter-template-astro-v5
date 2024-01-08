@@ -1,30 +1,42 @@
 ---
+// styles import
 import '../styles/main.scss';
+
+// library imports
+import { Sprite } from 'astro-icon';
+
+// component imports
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+// constants import
+import { SITE_TITLE, SITE_DESCRIPTION } from '../constants';
+
 interface Props {
-  title: string;
-  description?: string;
+  title?: string;
 }
 
-const { title, description } = Astro.props;
+const { title = 'Aricles, Strories & Tutorials' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='description' content={description} />
+    <meta name='description' content={SITE_DESCRIPTION} />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <meta name='color-scheme' content='light dark' />
-    <title>{title}</title>
+    <title>{SITE_TITLE} – {title}</title>
   </head>
   <body>
+    <Sprite.Provider>
+      <Sprite name='icons' style='display: none;' />
+    </Sprite.Provider>
     <Header />
     <slot />
-    <Footer links={['About', 'Pricing', 'Contact', 'New link']} />
+    <Footer />
   </body>
 </html>
+ ../constants

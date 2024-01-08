@@ -1,11 +1,13 @@
+@use '../abstracts/' as *;
+
 .site-nav {
   // Spacing
-  --_nav-spacing: var(--size-5);
+  --_nav-spacing: #{$size-5};
 
   // Typography
-  --_nav-font-family: var(--ff-base);
-  --_nav-font-weight: var(--fw-medium);
-  --_nav-font-size: var(--fs-400);
+  --_nav-font-family: #{$ff-base};
+  --_nav-font-weight: #{$fw-medium};
+  --_nav-font-size: #{$fs-4};
   --_nav-text-color: var(--link);
 
   &__list {
@@ -16,19 +18,19 @@
     list-style: none;
 
     @media (--md-n-below) {
-      --_nav-spacing: var(--size-5);
+      --_nav-spacing: #{$size-5};
 
       position: absolute;
       z-index: 1000;
-      top: 90%;
-      right: 0;
+      top: 10%;
+      right: 2rem;
 
       display: flex;
       flex-direction: column;
       gap: var(--_nav-spacing);
-      padding: var(--size-6);
+      padding: $size-6;
       border-radius: 2rem 0 2rem 0;
-      background-color: hsl(var(--neutral-000));
+      background-color: var(--neutral-0);
       box-shadow: var(--shadow-3);
 
       transition: all 0.4s ease-out;
@@ -46,7 +48,7 @@
     }
 
     @media (--xl-n-above) {
-      --_nav-spacing: var(--size-fluid-3);
+      --_nav-spacing: #{$size-fluid-3};
       gap: var(--_nav-spacing);
     }
   }
@@ -64,7 +66,7 @@
     }
 
     @media (--lg-n-below) {
-      --_nav-font-size: var(--fs-400);
+      --_nav-font-size: #{$fs-4};
     }
   }
 }

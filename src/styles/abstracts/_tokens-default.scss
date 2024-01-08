@@ -1,3 +1,5 @@
+@use './sizes' as *;
+
 /* ////////////////////////////// */
 /* Global tokens */
 
@@ -5,6 +7,7 @@
   color-scheme: light;
   /* Surface colors */
   --accent: var(--accent-5);
+  --primary: var(--primary-5);
 
   /* Surface colors */
   --surface-1: var(--neutral-0);
@@ -29,9 +32,9 @@
   --scroll-thumb-color: var(--neutral-7);
 
   /* Layout */
-  --grid-gap: $size-6;
-  --flex-group-gap: $size-4;
-  --min-column-width: $size-relative-14;
+  --grid-gap: #{$size-6};
+  --flex-group-gap: #{$size-4};
+  --min-column-width: #{$size-relative-14};
 
   /* Sections */
   --section-padding-block: clamp(8rem, 10vh, 9.6rem);

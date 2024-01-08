@@ -23,7 +23,7 @@ body {
   color: var(--text-1);
 }
 
-a[href] {
+a[href]:not(.btn) {
   color: var(--accent, var(--link));
 
   &:is(:hover, :focus) {
@@ -32,7 +32,7 @@ a[href] {
 }
 
 ::selection {
-  background-color: var(--accent-4);
+  background-color: var(--accent-bright);
   color: var(--neutral-1);
 }
 

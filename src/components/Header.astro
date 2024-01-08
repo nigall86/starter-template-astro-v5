@@ -1,35 +1,14 @@
 ---
+// component imports
 import Nav from '../components/Nav.astro';
-import Logo from './Logo.astro';
+import Logo from '../components/Logo.astro';
 ---
 
 <header class='site-header'>
-  <div class='container'>
+  <div class='content-grid'>
     <div class='site-header__inner'>
-      <Logo type="header"/>
+      <Logo type='header' />
       <Nav />
     </div>
   </div>
 </header>
-
-<!-- * Style * -->
-<style lang='scss'>
-
-.site-header {
-  --_header-margin: 0;
-  --_header-padding: var(--size-8) 0;
-  --_header-bg: var(--surface-2);
-
-  margin: var(--_header-margin);
-  padding: var(--_header-padding);
-  background-color: var(--_header-bg);
-  color: var(--text-1);
-
-  &__inner {
-    display: flex;
-    gap: var(--size-4);
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-</style>

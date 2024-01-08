@@ -1,0 +1,29 @@
+---
+// component imports
+import Link from '../components/Link.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Page Not Found'>
+  <section
+    class='content-grid'
+    style={{
+      display: 'grid',
+      placeItems: 'center',
+      textAlign: 'center',
+      gap: 'var(--flex-group-gap)',
+    }}
+  >
+    <div>
+      <h1 class='h1'>Welp, this is awkward!</h1>
+      <p>We seem to have misplaced somehting...</p>
+    </div>
+    <Link
+      type='link'
+      title='Go Home'
+      href='/'
+      data-type='accent'
+      classes='btn'
+    />
+  </section>
+</Layout>

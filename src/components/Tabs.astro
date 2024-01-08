@@ -1,89 +1,17 @@
 ---
-interface Props {
-  headings: string[];
-  contents: string[];
-}
-
-const { headings, contents } = Astro.props;
+// data imports
+import tabsData from '../data/tabsData';
 ---
 
 <div class='tabs'>
   <ul class='tabs__header'>
-    {headings.map((heading) => <li> {heading} </li>)}
+    {tabsData.map((item) => <li> {item.heading} </li>)}
   </ul>
   <ul class='tabs__content'>
-    {contents.map((content) => <li class='tab'>{content}</li>)}
+    {tabsData.map((item) => <li class='tab'>{item.content}</li>)}
   </ul>
 </div>
 
-<!-- Style / Using SCSS -->
-<style lang='scss'>
-  // @use '../sass/abstracts' as *;
-
-  .tabs {
-    margin-top: 30px;
-
-    &__header {
-      display: flex;
-      background: #333;
-      color: #fff;
-      padding: 10px 20px;
-    }
-
-    &__header li {
-      margin-right: 20px;
-      cursor: pointer;
-    }
-
-    &__content {
-      font-size: 18px;
-      padding: 20px;
-      border: 1px solid #333;
-      font-weight: bold;
-      background: #f4f4f4;
-    }
-  }
-</style>
-
-<!-- JavaScript -->
 <script>
-  //////////////////////////////
-  // Tabs component
-  function createTabs(element) {
-    const header = element.querySelector('.tabs__header');
-    const content = element.querySelector('.tabs__content');
-    const tabHeaders = [...header.children]; // --> array of HTML elements
-    const tabContents = [...content.children]; // --> array of HTML elements
-
-    // Hide all tabs content
-    tabContents.forEach((x) => (x.style.display = 'none'));
-
-    let currentTabIndex = -1;
-
-    function setTab(index) {
-      // Hiding previous tabs content
-      if (currentTabIndex > -1) {
-        tabHeaders[currentTabIndex].style.fontWeight = 400;
-        tabHeaders[currentTabIndex].style.color = '#fff';
-        tabContents[currentTabIndex].style.display = 'none';
-      }
-      // Show current tab and content
-      tabHeaders[index].style.fontWeight = 800;
-      tabHeaders[index].style.color = 'red';
-      tabContents[index].style.display = 'flex';
-      currentTabIndex = index;
-    }
-
-    let defaultTabIndex = tabHeaders.findIndex((x) => {
-      return [...x.classList].indexOf('default-tab') > -1;
-    });
-
-    defaultTabIndex = defaultTabIndex === -1 ? 0 : defaultTabIndex;
-    setTab(defaultTabIndex);
-
-    tabHeaders.forEach((x, i) => (x.onclick = (event) => setTab(i)));
-  }
-
-  // Run
-  [...document.querySelectorAll('.tabs')].forEach((tab) => createTabs(tab));
+  import '../js/tabs';
 </script>

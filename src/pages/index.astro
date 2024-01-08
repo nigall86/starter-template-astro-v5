@@ -12,7 +12,7 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
   <Hero />
 
   <section class='page-content'>
-    <div class='container'>
+    <div class='content-grid'>
       <p class='text'>New text</p>
       <h2 class='heading-2'>Get Started With Astro</h2>
       <p>
@@ -20,16 +20,9 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
         create-astro CLI wizard!
       </p>
       <!-- Tabs with dynamic content -->
-      <Tabs
-        headings={['NPM', 'PNPM', 'YARN']}
-        contents={[
-          '$ npm create astro@latest',
-          '$ pnpm create astro@latest',
-          '$ yarn create astro',
-        ]}
-      />
+      <Tabs />
 
-      <Modal dataType='megaDialog' />
+      <Modal dialogType='megaDialog' />
       <Card />
       <!-- <ThemeSwitcher /> -->
     </div>
@@ -45,5 +38,5 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 ></script>
 
 <script>
-  import '../scripts/main.js';
+  import '../js/main.js';
 </script>

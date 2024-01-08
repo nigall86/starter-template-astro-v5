@@ -1,3 +1,5 @@
+@use '../abstracts/' as *;
+
 /* --- Font families --- */
 .ff-accent {
   font-family: $ff-accent;

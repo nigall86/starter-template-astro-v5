@@ -1,0 +1,18 @@
+@use '../abstracts/sizes' as *;
+
+.logo {
+  --_logo-size-header: #{$size-12};
+  --_logo-color-header: var(--accent-5);
+  --_logo-size-footer: #{$size-10};
+  --_logo-color-footer: var(--neutral-0);
+
+  &[data-type='header'] {
+    width: var(--_logo-size-header);
+    fill: var(--_logo-color-header);
+  }
+
+  &[data-type='footer'] {
+    width: var(--_logo-size-footer);
+    fill: var(--_logo-color-footer);
+  }
+}
