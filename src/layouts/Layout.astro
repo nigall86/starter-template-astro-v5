@@ -1,9 +1,10 @@
 ---
 // styles import
-import '../styles/main.scss';
+// import '../styles/main.scss';
+import '../css/main.css';
 
 // library imports
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 // component imports
 import Header from '../components/Header.astro';
@@ -31,12 +32,9 @@ const { title = 'Aricles, Strories & Tutorials' } = Astro.props;
     <title>{SITE_TITLE} – {title}</title>
   </head>
   <body>
-    <Sprite.Provider>
-      <Sprite name='icons' style='display: none;' />
-    </Sprite.Provider>
     <Header />
     <slot />
     <Footer />
   </body>
 </html>
- ../constants
+../constants

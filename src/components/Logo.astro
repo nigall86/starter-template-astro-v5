@@ -1,13 +1,14 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 interface Props {
-  type?: string;
+  type?: 'header' | 'footer';
+  alt?: string;
 }
 
-const { type } = Astro.props;
+const { type, alt = 'Logo of the company' } = Astro.props;
 ---
 
 <a href='/'>
-  <Icon name='logo' class='logo' data-type={type} alt='Logo of the company' />
+  <Icon name='logo' class='logo' data-type={type} title={alt} />
 </a>

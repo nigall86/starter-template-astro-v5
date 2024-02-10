@@ -39,6 +39,9 @@ input[type='file']::file-selector-button {
   align-items: center;
   gap: var(--flex-group-gap);
 
+  min-width: 10ch;
+  min-height: 4.4rem;
+
   padding-block: 0.75ch;
   padding-inline: $size-relative-6;
 
@@ -52,6 +55,7 @@ input[type='file']::file-selector-button {
   color: var(--_btn-text-color);
   text-shadow: var(--_btn-text-shadow);
   text-align: center;
+  line-height: $lh-3;
   text-decoration: none;
 
   box-shadow: var(--shadow-2), 0 1px var(--surface-3),

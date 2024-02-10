@@ -1,7 +1,7 @@
 @use '../abstracts/typography' as *;
 
 html {
-  color-scheme: dark light;
+  color-scheme: light dark;
 
   /* 10px/16px = 62.5% -> 1rem = 10px */
   font-size: 62.5%;
@@ -10,16 +10,16 @@ html {
   scrollbar-color: var(--scroll-thumb-color) transparent;
   block-size: 100%;
   caret-color: var(--accent, var(--link));
-  -webkit-text-size-adjust: none;
+  // -webkit-text-size-adjust: none;
 }
 
 body {
-  min-block-size: 100%;
+  // min-block-size: 100%;
   background-color: var(--surface-1);
   font-family: $ff-base;
   font-size: $fs-4;
   font-weight: $fw-regular;
-  line-height: $lh-5;
+  // line-height: $lh-5;
   color: var(--text-1);
 }
 
