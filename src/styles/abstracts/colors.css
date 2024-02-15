@@ -1,0 +1,120 @@
+/* Global color tokens */
+/*
+  --hue-red: 25;
+  --hue-pink: 350;
+  --hue-purple: 310;
+  --hue-violet: 290;
+  --hue-indigo: 270;
+  --hue-blue: 240;
+  --hue-cyan: 210;
+  --hue-teal: 185;
+  --hue-green: 145;
+  --hue-lime: 125;
+  --hue-yellow: 100;
+  --hue-orange: 75;
+
+  // Reds
+  --red-0: oklch(98%, 0.01, 17);
+  --red-1: oklch(94%, 0.03, 18);
+  --red-2: oklch(88%, 0.06, 18);
+  --red-3: oklch(82%, 0.1, 20);
+  --red-4: oklch(76%, 0.15, 21);
+  --red-5: oklch(71%, 0.18, 23);
+  --red-6: oklch(67%, 0.2, 25);
+  --red-7: oklch(63%, 0.21, 26);
+  --red-8: oklch(59%, 0.21, 27);
+  --red-9: oklch(55%, 0.2, 27);
+  --red-10: oklch(50%, 0.18, 26);
+  --red-11: oklch(44%, 0.15, 26);
+  --red-12: oklch(39%, 0.13, 26);
+
+  // Pink
+  --pink-0: oklch(97%, 0.02, 351);
+  --pink-1: oklch(93%, 0.04, 352);
+  --pink-2: oklch(87%, 0.07, 355);
+  --pink-3: oklch(80%, 0.11, 357);
+  --pink-4: oklch(75%, 0.15, 359);
+  --pink-5: oklch(69%, 0.18, 359);
+  --pink-6: oklch(64%, 0.2, 359);
+  --pink-7: oklch(59%, 0.2, 359);
+  --pink-8: oklch(54%, 0.2, 359);
+  --pink-9: oklch(48%, 0.18, 359);
+  --pink-10: oklch(42%, 0.15, 359);
+  --pink-11: oklch(37%, 0.13, 359);
+  --pink-12: oklch(31%, 0.11, 359);
+*/
+
+:where(html) {
+  /* Document colors */
+  --accent-hue: 228;
+  --accent-chroma: 0.3;
+  --accent-lightness: 65%;
+
+  --primary-hue: 75;
+  --primary-chroma: 0.3;
+  --primary-lightness: 65%;
+
+  --gray-chroma: 0;
+  --gray-hue: 248;
+
+  /* Accent colors */
+  --accent-0: oklch(99%, 0.02, var(--accent-hue));
+  --accent-1: oklch(95%, 0.06, var(--accent-hue));
+  --accent-2: oklch(88%, 0.12, var(--accent-hue));
+  --accent-3: oklch(80%, 0.14, var(--accent-hue));
+  --accent-4: oklch(74%, 0.16, var(--accent-hue));
+  --accent-5: oklch(68%, 0.19, var(--accent-hue));
+  --accent-6: oklch(63%, 0.2, var(--accent-hue));
+  --accent-7: oklch(58%, 0.21, var(--accent-hue));
+  --accent-8: oklch(53%, 0.2, var(--accent-hue));
+  --accent-9: oklch(49%, 0.19, var(--accent-hue));
+  --accent-10: oklch(42%, 0.17, var(--accent-hue));
+  --accent-11: oklch(35%, 0.15, var(--accent-hue));
+  --accent-12: oklch(27%, 0.12, var(--accent-hue));
+  --accent-bright: oklch(65%, 0.3, var(--accent-hue));
+
+  /* Primary colors */
+  --primary-0: oklch(99%, 0.02, var(--primary-hue));
+  --primary-1: oklch(95%, 0.06, var(--primary-hue));
+  --primary-2: oklch(88%, 0.12, var(--primary-hue));
+  --primary-3: oklch(80%, 0.14, var(--primary-hue));
+  --primary-4: oklch(74%, 0.16, var(--primary-hue));
+  --primary-5: oklch(68%, 0.19, var(--primary-hue));
+  --primary-6: oklch(63%, 0.2, var(--primary-hue));
+  --primary-7: oklch(58%, 0.21, var(--primary-hue));
+  --primary-8: oklch(53%, 0.2, var(--primary-hue));
+  --primary-9: oklch(49%, 0.19, var(--primary-hue));
+  --primary-10: oklch(42%, 0.17, var(--primary-hue));
+  --primary-11: oklch(35%, 0.15, var(--primary-hue));
+  --primary-12: oklch(27%, 0.12, var(--primary-hue));
+  --primary-bright: oklch(65%, 0.3, var(--primary-hue));
+
+  /* Gray colors */
+  --gray-0: oklch(98%, 0, var(--gray-hue));
+  --gray-1: oklch(96%, 0, var(--gray-hue));
+  --gray-2: oklch(94%, 0, var(--gray-hue));
+  --gray-3: oklch(91%, 0, var(--gray-hue));
+  --gray-4: oklch(87%, 0.01, var(--gray-hue));
+  --gray-5: oklch(77%, 0.015, var(--gray-hue));
+  --gray-6: oklch(64%, 0.015, var(--gray-hue));
+  --gray-7: oklch(43%, 0.015, var(--gray-hue));
+  --gray-8: oklch(35%, 0.013, var(--gray-hue));
+  --gray-9: oklch(26%, 0.01, var(--gray-hue));
+  --gray-10: oklch(21%, 0.01, var(--gray-hue));
+  --gray-11: oklch(17%, 0, var(--gray-hue));
+  --gray-12: oklch(11%, 0, var(--gray-hue));
+
+  --green-5: oklch(76%, 0.19, 147);
+  --green-6: oklch(71%, 0.18, 146);
+
+  --red-3: oklch(82%, 0.1, 20);
+  --red-6: oklch(67%, 0.2, 25);
+  --red-7: oklch(63%, 0.21, 26);
+  --red-8: oklch(59%, 0.21, 27);
+
+  --indigo-3: oklch(80%, 0.14, 270);
+  --indigo-5: oklch(68%, 0.19, 270);
+  --indigo-6: oklch(63%, 0.2, 270);
+  --indigo-7: oklch(58%, 0.21, 270);
+  --indigo-bright: oklch(65%, 0.3, 270);
+}

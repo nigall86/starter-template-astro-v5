@@ -1,35 +1,20 @@
 ---
-import Card from '../components/Card.astro';
+// component imports
+import FeatureCard from '@components/cards/FeatureCard.astro';
 
-const featuresData = [
-  {
-    title: 'Zero JavaScript Runtime',
-    body: 'Astro renders HTML on the server and strips away any remaining, unused JavaScript.',
-  },
-  {
-    title: 'The Power of Islands',
-    body: 'Need interactive UI? Load individual, non-blocking component islands in parallel.',
-  },
-  {
-    title: 'Lazy-Loading Islands',
-    body: "Components only hydrate when they scroll into view. If you don't see it, Astro won't load it.",
-  },
-];
+// data imports
+import featuresData from '@data/featuresData.json';
 ---
 
 <section class='features'>
-  <div class='container'>
+  <div class='content-grid'>
     {
       featuresData.map((feature) => (
-        <Card>
+        <FeatureCard>
           <h3>{feature.title}</h3>
           <p>{feature.body}</p>
-        </Card>
+        </FeatureCard>
       ))
     }
   </div>
 </section>
-
-<!-- Style / Using SCSS -->
-<style lang='scss'>
-</style>

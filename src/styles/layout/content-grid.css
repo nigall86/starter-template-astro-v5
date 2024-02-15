@@ -1,0 +1,46 @@
+.content-grid {
+  --content-width: 70ch;
+  --feature-width: 85ch;
+
+  /* Represents a gutter size for the left and right sides of the page */
+  --gap: clamp(1rem, 6vw, 3rem);
+  --popout-gap: 2rem;
+  --feature-gap: calc((var(--feature-width) - var(--content-width)) / 2);
+
+  /* Stretches an element so that it spans the entire horizontal space */
+  --full: minmax(var(--gap), 1fr);
+
+  /* Acts as the main content area */
+  --content: min(var(--content-width), 100% - var(--gap) * 2);
+
+  /* Extend elements beyond the content area */
+  --popout: minmax(0, var(--popout-gap));
+
+  --feature: minmax(0, var(--feature-gap));
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [feature-start] var(--feature)
+    [popout-start] var(--popout)
+    [content-start] var(--content) [content-end]
+    var(--popout) [popout-end]
+    var(--feature) [feature-end]
+    var(--full) [full-end];
+}
+
+.content-grid > * {
+  grid-column: content;
+}
+
+.popout {
+  grid-column: popout;
+}
+
+.feature {
+  grid-column: feature;
+}
+
+.full {
+  grid-column: full;
+}

@@ -1,11 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// component imports
+import Layout from '@layouts/Layout.astro';
 
-import Hero from '../components/Hero.astro';
-import Modal from '../components/Modal.astro';
-import Card from '../components/Card.astro';
-import Tabs from '../components/Tabs.astro';
-import ThemeSwitcher from '../components/ThemeSwitcher.astro';
+import Hero from '@components/Hero.astro';
+import Modal from '@components/Modal.astro';
+import PricingCard from '@components/cards/PricingCard.astro';
+import Tabs from '@components/Tabs.astro';
+import ThemeSwitcher from '@components/ThemeSwitcher.astro';
+
+// data
+import plansData from '@data/plansData.json';
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -21,10 +25,12 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
       </p>
       <!-- Tabs with dynamic content -->
       <Tabs />
-
       <Modal dialogType='megaDialog' />
-      <Card />
       <!-- <ThemeSwitcher /> -->
+      <!-- Cards -->
+      <section class='even-columns'>
+        {plansData.map((card) => <PricingCard data={card} />)}
+      </section>
     </div>
 
     <!-- <Buttons /> -->
@@ -38,5 +44,5 @@ import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 ></script>
 
 <script>
-  import '../js/main.js';
+  import '@scripts/main.js';
 </script>

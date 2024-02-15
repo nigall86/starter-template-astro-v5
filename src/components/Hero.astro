@@ -3,10 +3,10 @@
 import { Image } from 'astro:assets';
 
 // component imports
-import Link from './Link.astro';
+import Link from '@components/links/Link.astro';
 
 // assets imports
-import mainImage from '../assets/group-on-computer.webp';
+import mainImage from '@assets/group-on-computer.webp';
 ---
 
 <section class='hero | section'>
@@ -15,13 +15,13 @@ import mainImage from '../assets/group-on-computer.webp';
       <div class='flow'>
         <h1>Welcome to <span>brandboosters</span></h1>
         <p>
-          Dedicated to boosting your brand’s visibility and success that uses
+          Dedicated to boosting your brand's visibility and success that uses
           the latest strategies & techniques to help you reach your target
           audience and achieve your goals.
         </p>
         <div class='flex-group'>
-          <Link style='accent' href='#' title='Join now' />
-          <Link style='outline' href='#' title='Learn more' />
+          <Link dataType='accent' href='#' text='Join now' classes='btn' />
+          <Link dataType='outline' href='#' text='Learn more' classes='btn' />
         </div>
       </div>
       <div>

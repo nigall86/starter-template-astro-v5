@@ -1,10 +1,10 @@
 ---
 // component imports
-import Logo from './Logo.astro';
-import Link from './Link.astro';
+import Logo from '@components/Logo.astro';
+import Link from '@components/links/Link.astro';
 
 // data imports
-import footerData from '../data/footerData';
+import footerData from '@data/footerData.json';
 ---
 
 <footer class='site-footer'>
@@ -15,14 +15,14 @@ import footerData from '../data/footerData';
         {
           footerData.map((item) => (
             <li>
-              <Link type='link' title={item.name} href={item.path} />
+              <Link text={item.name} href={item.path} />
             </li>
           ))
         }
       </ul>
     </div>
     <div>
-      <small style='color: var(--neutral-5);'>
+      <small style='color: var(--gray-5);'>
         Copyright &copy; <span id='copyright'></span> | All rights reserved.
       </small>
     </div>
@@ -30,5 +30,5 @@ import footerData from '../data/footerData';
 </footer>
 
 <script>
-  import '../js/footer.js';
+  import '@scripts/footer.js';
 </script>

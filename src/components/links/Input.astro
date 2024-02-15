@@ -1,0 +1,21 @@
+---
+// library imports
+import { type HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'input'> {
+  // id?: string;
+  // inputName: string;
+  // text?: string;
+  dataType?: 'accent' | 'primary' | 'outline' | 'btn-icon';
+  icon?: {
+    name?: string;
+    side: 'left' | 'right';
+  };
+  onClick?: string;
+  classes?: string;
+}
+
+const { dataType, icon, classes, ...rest } = Astro.props as Props;
+---
+
+<input data-type={dataType} class:list={[classes]} {...rest} />

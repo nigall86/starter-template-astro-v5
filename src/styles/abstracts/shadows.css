@@ -1,5 +1,5 @@
-/* Shadows */
 :where(html) {
+  /* shadows */
   --shadow-color: 27% 0.003 var(--accent-hue);
   --shadow-strength: 1%;
   --inner-shadow-highlight: inset 0 -0.5px 0 0 var(--neutral-0),

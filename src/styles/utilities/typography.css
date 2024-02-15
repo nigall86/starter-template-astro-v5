@@ -1,0 +1,167 @@
+/* --- Font families --- */
+.ff-accent {
+  font-family: var(--ff-accent);
+}
+
+.ff-base {
+  font-family: var(--ff-base);
+}
+
+/* --- Font sizes --- */
+.fs-0 {
+  font-size: var(--fs-0);
+}
+
+.fs-1 {
+  font-size: var(--fs-1);
+}
+
+.fs-2 {
+  font-size: var(--fs-2);
+}
+
+.fs-3 {
+  font-size: var(--fs-3);
+}
+
+.fs-4 {
+  font-size: var(--fs-4);
+}
+
+.fs-5 {
+  font-size: var(--fs-5);
+}
+
+.fs-6 {
+  font-size: var(--fs-6);
+}
+
+.fs-7 {
+  font-size: var(--fs-7);
+}
+
+.fs-8 {
+  font-size: var(--fs-8);
+}
+
+.fs-9 {
+  font-size: var(--fs-9);
+}
+
+.fs-10 {
+  font-size: var(--fs-10);
+}
+
+/* --- Font weights --- */
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+
+.fw-extra-light {
+  font-weight: var(--fw-extra-light);
+}
+
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-extra-bold {
+  font-weight: var(--fw-extra-bold);
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+/* ––– Centering the text --- */
+.text-center {
+  text-align: center;
+}
+
+/* ––– All caps --- */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* --- Headings and subheadings --- */
+:where(.heading-1, .heading-2, .heading-3, .heading-4) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
+  text-wrap: balance;
+}
+
+.heading-1 {
+  font-size: var(--h1-font-size);
+  max-inline-size: var(--size-header-1);
+}
+
+.heading-2 {
+  font-size: var(--h2-font-size);
+  max-inline-size: var(--size-header-2);
+}
+
+.heading-3 {
+  font-size: var(--h3-font-size);
+  max-inline-size: var(--size-header-3);
+}
+
+.heading-4 {
+  font-size: var(--h4-font-size);
+  max-inline-size: var(--size-header-3);
+}
+
+.subheading {
+  font-family: var(--subheading-font-family);
+  font-weight: var(--subheading-font-weight);
+  font-size: var(--subheading-font-size);
+  line-height: var(--subheading-line-height);
+  color: var(--color-text-default);
+}
+
+/* --- Line heights --- */
+.lh-1 {
+  line-height: var(--lh-1);
+}
+
+.lh-2 {
+  line-height: var(--lh-2);
+}
+
+.lh-3 {
+  line-height: var(--lh-3);
+}
+
+.lh-4 {
+  line-height: var(--lh-4);
+}
+
+.lh-5 {
+  line-height: var(--lh-5);
+}
+
+.lh-6 {
+  line-height: var(--lh-6);
+}
+
+.lh-7 {
+  line-height: var(--lh-7);
+}

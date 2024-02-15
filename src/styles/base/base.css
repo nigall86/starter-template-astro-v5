@@ -1,0 +1,46 @@
+html {
+  color-scheme: light dark;
+
+  /* 10px/16px = 62.5% -> 1rem = 10px */
+  font-size: 62.5%;
+
+  accent-color: var(--accent);
+  scrollbar-color: var(--scroll-thumb-color) transparent;
+  block-size: 100%;
+  caret-color: var(--accent, var(--link));
+  /* -webkit-text-size-adjust: none; */
+}
+
+body {
+  background-color: var(--surface-1);
+  font-family: var(--ff-base);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-regular);
+  color: var(--text-1);
+}
+
+a[href]:not(.btn) {
+  color: var(--accent, var(--link));
+
+  &:is(:hover, :focus) {
+    color: var(--link-hover);
+  }
+}
+
+::selection {
+  background-color: var(--accent-bright);
+  color: var(--gray-1);
+}
+
+/* --- Disabling animations by user preference --- */
+@media (--motionNotOK) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
+}

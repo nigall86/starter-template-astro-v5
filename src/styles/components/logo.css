@@ -1,0 +1,16 @@
+.logo {
+  --_logo-size-header: var(--size-12);
+  --_logo-color-header: var(--accent-5);
+  --_logo-size-footer: var(--size-10);
+  --_logo-color-footer: var(--gray-0);
+
+  &[data-type='header'] {
+    width: var(--_logo-size-header);
+    fill: var(--_logo-color-header);
+  }
+
+  &[data-type='footer'] {
+    width: var(--_logo-size-footer);
+    fill: var(--_logo-color-footer);
+  }
+}

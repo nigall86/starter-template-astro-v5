@@ -1,0 +1,16 @@
+section,
+.section {
+  padding-block: var(--section-padding-block);
+}
+
+.section-header {
+  margin-block-end: var(--size-11);
+
+  &[data-type='subheading'] {
+    margin-block-end: var(--size-fluid-3);
+  }
+
+  &[data-type='subheading form'] {
+    margin-block-end: var(--size-5);
+  }
+}

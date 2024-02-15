@@ -1,0 +1,11 @@
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--_flex-column-gap, var(--flex-group-gap));
+  row-gap: var(--_flex-row-gap, calc(var(--flex-group-gap) / 2));
+  width: fit-content;
+
+  &.mx-auto {
+    justify-content: center;
+  }
+}

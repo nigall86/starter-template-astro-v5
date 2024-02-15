@@ -1,0 +1,29 @@
+---
+// library imports
+import { Icon } from 'astro-icon/components';
+
+// type imports
+import { type HTMLAttributes } from 'astro/types';
+
+// component imports
+import Button from '@components/links/Button.astro';
+
+interface Props extends HTMLAttributes<'article'> {
+  title: string;
+  description: string;
+  iconName: string;
+  isBtn?: boolean;
+  btnText?: string;
+}
+
+const { title, description, iconName, isBtn = false, btnText } = Astro.props;
+---
+
+<article class:list={['card', 'feature-card']}>
+  <Icon name={iconName} size={48} />
+  <h5 class='feature-card__title'>{title}</h5>
+  <p class='feature-card__text'>
+    {description}
+  </p>
+  {isBtn && <Button dataType='accent'>{btnText}</Button>}
+</article>

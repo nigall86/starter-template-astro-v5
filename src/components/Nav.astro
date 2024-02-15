@@ -1,17 +1,17 @@
 ---
 // component imports
-import Link from './Link.astro';
+import Link from '@components/links/Link.astro';
 
 // data imports
-import navData from '../data/navData';
+import navData from '@data/navData.json';
 ---
 
 <nav class='site-nav' aria-label='primary navigation'>
-  <ul class='site-nav__list' data-visible='false'>
+  <ul class='site-nav__list' data-visible='false' role='list'>
     {
       navData.map((item) => (
         <li>
-          <Link type='link' title={item.name} href={item.path} data-navlink />
+          <Link text={item.name} href={item.path} data-navlink />
         </li>
       ))
     }
@@ -36,5 +36,5 @@ import navData from '../data/navData';
 </Link>
 
 <script>
-  import '../js/nav.js';
+  import '@scripts/nav.js';
 </script>

@@ -1,0 +1,123 @@
+.card {
+  --_card-bg: var(--surface-2);
+  --_card-text: var(--text-1);
+  --_card-padding: var(--size-6);
+
+  border-radius: var(--radius-3);
+  background-color: var(--_card-bg);
+  color: var(--_card-text);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.pricing-card {
+  display: grid;
+  grid-template:
+    'tier' auto
+    'badge' 4rem
+    'inner' 1fr;
+
+  justify-items: center;
+  gap: 1rem;
+
+  &__inner {
+    grid-area: inner;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--_card-padding);
+    padding-block-start: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-2);
+    text-align: center;
+
+    .price {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      max-width: fit-content;
+
+      .sign {
+        font-size: var(--fs-1);
+      }
+
+      .num {
+        font-size: var(--fs-9);
+        line-height: var(--lh-2);
+      }
+
+      .mo {
+        align-self: end;
+      }
+    }
+
+    .title {
+      text-transform: uppercase;
+      margin-block-end: 0.4rem;
+    }
+
+    .description {
+      max-width: 20ch;
+      font-size: var(--fs-2);
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+  }
+}
+
+.tier {
+  --_tier-bg: var(--_card-bg);
+  --_tier-text: var(--_card-text);
+
+  grid-area: tier;
+
+  justify-self: stretch;
+  background-color: var(--_tier-bg);
+  color: var(--_tier-text);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-medium);
+  text-align: center;
+  text-transform: uppercase;
+  padding-block: 0.75rem;
+
+  &[data-type='Free'] {
+    --_tier-text: var(--accent-bright);
+  }
+
+  &[data-type='Pro'] {
+    --_tier-bg: var(--accent);
+    --_tier-text: var(--gray-0);
+  }
+
+  &[data-type='Enterprise'] {
+    --_tier-bg: var(--primary);
+    --_tier-text: var(--gray-0);
+  }
+}
+
+.badge {
+  grid-area: badge;
+
+  align-self: center;
+  width: fit-content;
+  padding: 0.5em 1.5em;
+  background-color: var(--gray-12);
+  color: var(--gray-0);
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.features {
+  font-size: var(--fs-2);
+}
+
+.feature {
+  display: flex;
+  gap: 0.8rem;
+}

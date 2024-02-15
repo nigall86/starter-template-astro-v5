@@ -1,6 +1,10 @@
 ---
+// library imports
+import { Icon } from 'astro-icon/components';
+
 // component imports
-import Link from './Link.astro';
+import Button from '@components/links/Button.astro';
+import Input from '@components/links/Input.astro';
 
 interface Props {
   dialogType: string,
@@ -21,21 +25,14 @@ const {
     {dialogType === 'megaDialog' ? 
     <header>
       <h3>{heading}</h3>
-      <Link 
-        type="button"
-        style="btn-icon"
-        title="Close dialog"
+      <Button 
+        dataType="btn-icon"
+        text="Close dialog"
         onClick="this.closest('dialog').close('close')" 
       >
         <title>Close dialog icon</title>
-        <svg
-          role='img'
-          style ='--stroke-color: var(--text-1)'
-        >
-        <use id='nav-close' href='#icon-close'></use>
-        </svg>
-
-      </Link>
+        <Icon name='close' size={44} />
+      </Button>
     </header>
     // If megaDialog then header, otherwise empty element
     :<></>
@@ -49,34 +46,36 @@ const {
     </article>
     <footer>
       <menu>
-        <Link
-          type='input'
-          input='reset'
+        <Input
+          type='reset'
           value="Clear"/>
       </menu>
       <menu>
-        <Link
-          type = 'input'
-          input='button'
+        <Input
+          type='button'
           value='Cancel'
           onClick="this.closest('dialog').close('cancel')"
           autofocus 
         />
-        <Link
-          type='input'
-          style='accent'
-          input='submit'
+        <Input
+          type='submit'
+          dataType='accent'
           value='Confirm'
-          classes='.btn'
         />
       </menu>
     </footer>
   </form>
 </dialog>
 
-<Link
-  type='button'
-  style='accent'
-  title='Open Dialog'
+<Button
+  dataType='accent'
+  text='Open Dialog'
   onClick={`${dialogType}.showModal()`}
 />
+
+<style>
+  [data-icon='close'] {
+    --stroke-width: 1px;
+    --stroke-color: var(--text-1);
+  }
+</style>

@@ -1,0 +1,9 @@
+.grid-auto-fit {
+  display: grid;
+  grid-gap: var(--grid-gap);
+  /* min() with 100% prevents overflow in extra narrow spaces */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--min-column-width)), 1fr)
+  );
+}

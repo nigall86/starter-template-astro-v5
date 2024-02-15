@@ -1,0 +1,17 @@
+.site-header {
+  --_header-margin: 0;
+  --_header-padding: var(--size-4) 0;
+  --_header-bg: var(--surface-2);
+
+  margin: var(--_header-margin);
+  padding: var(--_header-padding);
+  background-color: var(--_header-bg);
+  color: var(--text-1);
+
+  &__inner {
+    display: flex;
+    gap: var(--size-4);
+    align-items: center;
+    justify-content: space-between;
+  }
+}
