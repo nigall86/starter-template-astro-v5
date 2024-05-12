@@ -13,6 +13,11 @@
   font: inherit;
 }
 
+/* For testing purpose */
+/* * * * * * {
+  background-color: hsl(50 100% 70% / 0.1);
+} */
+
 /* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;
@@ -27,8 +32,8 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[class],
+ol[class] {
   list-style: none;
 }
 
@@ -80,6 +85,8 @@ video {
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
+  text-decoration-thickness: 0.625em;
+  text-underline-offset: 0.25em;
 }
 
 /* Inherit fonts for inputs and buttons */

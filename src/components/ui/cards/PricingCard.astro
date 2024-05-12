@@ -1,0 +1,95 @@
+---
+// libraries
+import { Icon } from 'astro-icon/components';
+
+// type
+import { type HTMLAttributes } from 'astro/types';
+
+// components
+import Button from '@components/ui/links/Button.astro';
+
+export type priceCard = {
+  tier: string;
+  popular?: boolean;
+  priceMonth: number;
+  title: string;
+  description: string;
+  btnText: string;
+  features: {
+    text: string;
+    checked: boolean;
+  }[];
+};
+
+interface Props extends HTMLAttributes<'article'> {
+  data: priceCard;
+}
+
+const { data } = Astro.props;
+
+const {
+  tier = 'Free',
+  popular,
+  priceMonth,
+  title,
+  description,
+  btnText,
+  features,
+} = data;
+---
+
+<article class:list={['card', 'pricing-card', { 'box-shadow-3': popular }]}>
+  <p class='tier' data-type={tier}>{tier}</p>
+
+  <!-- badge -->
+  {popular && <p class='badge'>Most Popular</p>}
+
+  <div class='pricing-card__inner flow' style='--flow-spacer: 1.5em'>
+    <!-- price block -->
+    <div class='pricing-card__content'>
+      <!-- price -->
+      <div class='price'>
+        <span class='sign'>$</span>
+        <p class='num'>{priceMonth}</p>
+        {priceMonth > 0 && <span class='mo'>/mo</span>}
+      </div>
+      <!-- title -->
+      <h6 class='title'>{title}</h6>
+      <!-- description -->
+      <p class='description'>{description}</p>
+    </div>
+
+    <!-- button -->
+    <Button data-type={tier.toLowerCase()}>
+      {btnText}
+    </Button>
+
+    <!-- features -->
+    <ul class='features' role='list'>
+      {
+        features.map((feature) => (
+          <li class='feature'>
+            {feature.checked ? (
+              <Icon name='checkmark' size={20} />
+            ) : (
+              <Icon name='close' size={20} />
+            )}
+            <span>{feature.text}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</article>
+
+<!-- * Style * -->
+<style>
+  [data-icon='close'] {
+    /* --stroke-width: 1px; */
+    --stroke-color: var(--error-1);
+  }
+  [data-icon='checkmark'] {
+    /* --stroke-width: 1px; */
+    --stroke-color: var(--success-1);
+  }
+</style>

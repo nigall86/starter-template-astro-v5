@@ -1,20 +1,11 @@
 ---
-// component imports
-import FeatureCard from '@components/cards/FeatureCard.astro';
+// components
+import FeatureCard from '@components/ui/cards/FeatureCard.astro';
 
-// data imports
-import featuresData from '@data/featuresData.json';
+// data
+import { features } from '@data/featuresData';
 ---
 
-<section class='features'>
-  <div class='content-grid'>
-    {
-      featuresData.map((feature) => (
-        <FeatureCard>
-          <h3>{feature.title}</h3>
-          <p>{feature.body}</p>
-        </FeatureCard>
-      ))
-    }
-  </div>
+<section class='even-columns'>
+  {features.map((feature) => <FeatureCard {...feature} />)}
 </section>

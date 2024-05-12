@@ -1,18 +1,20 @@
 ---
-// component imports
-import Layout from '@layouts/Layout.astro';
+import Lottie from '@advanced-astro/lottie/Lottie.astro';
 
-import Hero from '@components/Hero.astro';
+// components
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/home/Hero.astro';
 import Modal from '@components/Modal.astro';
-import PricingCard from '@components/cards/PricingCard.astro';
+import PricingCard from '@components/ui/cards/PricingCard.astro';
 import Tabs from '@components/Tabs.astro';
-import ThemeSwitcher from '@components/ThemeSwitcher.astro';
+import Features from '@components/Features.astro';
+import MagicRainbowButton from '@components/ui/links/MagicRainbowButton.jsx';
 
 // data
-import plansData from '@data/plansData.json';
+import { plans } from '@data/plansData';
 ---
 
-<Layout title='Welcome to Astro.'>
+<BaseLayout title='Welcome to Astro.'>
   <Hero />
 
   <section class='page-content'>
@@ -27,22 +29,27 @@ import plansData from '@data/plansData.json';
       <Tabs />
       <Modal dialogType='megaDialog' />
       <!-- <ThemeSwitcher /> -->
+      <Features />
+      <div class='icon' id='alarm-clock' style='width: 100px; height: 100px'>
+        <Lottie
+          src='src/assets/animations/alarm-clock.json'
+          autoplay='visible'
+        />
+        <Lottie
+          src='src/assets/animations/bellAnim24.json'
+          autoplay='visible'
+        />
+      </div>
       <!-- Cards -->
       <section class='even-columns'>
-        {plansData.map((card) => <PricingCard data={card} />)}
+        {plans.map((card) => <PricingCard data={card} />)}
+      </section>
+      <!-- <Buttons /> -->
+      <section class='even-columns'>
+        <MagicRainbowButton className={'btn'} client:only>
+          Click me
+        </MagicRainbowButton>
       </section>
     </div>
-
-    <!-- <Buttons /> -->
   </section>
-</Layout>
-
-<!-- Lenis library for a smooth scrolling -->
-<script
-  is:inline
-  src='https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js'
-></script>
-
-<script>
-  import '@scripts/main.js';
-</script>
+</BaseLayout>

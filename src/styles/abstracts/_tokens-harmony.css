@@ -1,0 +1,233 @@
+:where(html) {
+  /* --- Common tokens --- */
+
+  /* Layout */
+  --grid-gap: var(--size-6);
+  --grid-min-column: var(--size-relative-14);
+  --flex-gap: var(--size-5);
+
+  /* Sections */
+  --section-padding-block: clamp(8rem, 10vh, 9.6rem);
+}
+
+:root {
+  color-scheme: light;
+
+  --accent-hue: 320;
+  --accent-lightness: 75%;
+  --accent: var(--fuchsia-bright, --purple-5);
+
+  accent-color: var(--accent);
+
+  /* --- BACKGROUND COLORS --- */
+  /* Page and body */
+  --bg-page: var(--neutral-50, --gray-0);
+  --bg-body: var(--neutral-50, --gray-0);
+  --bg-subtle: var(--neutral-100, --gray-1);
+  --bg-inactive: var(--neutral-500, --gray-5);
+  --bg-secondary: var(--neutral-200, --gray-2);
+
+  /* Brand */
+  --bg-brand: var(--blue-800, --blue-11);
+  --bg-brand-hover: var(--blue-900, --blue-12);
+
+  /* Action */
+  --bg-action-accent: var(--fuchsia-bright, --purple-7);
+  --bg-action-accent-hover: var(--fuchsia-600, --purple-9);
+  --bg-action-primary: var(--sky-800, --cyan-10);
+  --bg-action-primary-hover: var(--sky-900, --cyan-12);
+
+  /* Error */
+  --bg-error: var(--red-100, --red-1);
+  --bg-error-hover: var(--red-200, --red-2);
+  --bg-success: var(--emerald-100, --green-1);
+  --bg-success-hover: var(--emerald-200, --green-2);
+  --bg-warning: var(--yellow-100, --yellow-1);
+  --bg-warning-hover: var(--yellow-200, --yellow-2);
+
+  /* --- BORDER COLORS --- */
+  /* Body */
+  --border-container: var(--neutral-500, --gray-5);
+  --border-strong: var(--neutral-600, --gray-6);
+  --border-inactive: var(--neutral-200, --gray-2);
+
+  /* Brand */
+  --border-brand: var(--blue-500, --blue-4);
+
+  /* Action */
+  --border-action: var(--fuchsia-bright, --purple-6);
+  --border-action-hover: var(--fuchsia-600, --purple-7);
+
+  /* Error, success, warning */
+  --border-error: var(--red-bright, --red-7);
+  --border-success: var(--emerald-bright, --green-7);
+  --border-warning: var(--yellow-bright, --yellow-7);
+  --border-outline: var(--neutral-950, --gray-10);
+
+  /* --- ICON COLORS --- */
+  /* Body */
+  --icon-primary: var(--neutral-900, --gray-10);
+  --icon-secondary: var(--neutral-800, --gray-8);
+  --icon-subtle: var(--neutral-700, --gray-7);
+  --icon-inactive: var(--neutral-500, --gray-5);
+
+  /* Brand */
+  --icon-brand: var(--blue-800, --blue-10);
+  --icon-link: var(--blue-800, --blue-10);
+
+  /* Error, success, warning */
+  --icon-error: var(--red-800, --red-11);
+  --icon-success: var(--emerald-800, --green-10);
+  --icon-warning: var(--sand-800, --brown-8);
+
+  /* --- TEXT COLORS --- */
+  /* Body */
+  --text-body: var(--neutral-950, --gray-10);
+  --text-secondary: var(--neutral-800, --gray-8);
+  --text-subtle: var(--neutral-700, --gray-7);
+  --text-inactive: var(--neutral-500, --gray-5);
+
+  /* Brand */
+  --text-brand: var(--blue-800, --blue-10);
+  --text-brand-hover: var(--blue-900, --blue-12);
+  --text-link: var(--blue-800, --blue-10);
+  --text-link-hover: var(--blue-900, --blue-12);
+
+  /* Action */
+  --text-action-accent: var(--fuchsia-100, --purple-1);
+  --text-action-accent-hover: var(--fuchsia-200, --purple-2);
+  --text-action-primary: var(--sky-100, --cyan-1);
+  --text-action-primary-hover: var(--sky-200, --cyan-2);
+
+  /* Error */
+  --text-error: var(--red-800, --red-11);
+  --text-error-hover: var(--red-900, --red-12);
+
+  /* Success */
+  --text-success: var(--emerald-800, --green-10);
+  --text-success-hover: var(--emerald-900, --green-12);
+
+  /* Warning */
+  --text-warning: var(--sand-800, --brown-8);
+  --text-warning-hover: var(--sand-900, --brown-10);
+
+  /* Scroll color */
+  --scroll-thumb-color: var(--neutral-700, --gray-7);
+
+  /* Highlight */
+  --highlight-size: 10px;
+  --highlight-color: hsl(0 0% 0% / 20%);
+
+  --highlight: 0 0 0 var(--highlight-size) var(--highlight-color);
+
+  @media (--OSdark) {
+    color-scheme: dark;
+    accent-color: var(--fuchsia-50, --purple-1);
+
+    /* --- BACKGROUND COLORS --- */
+    /* Page and body */
+    --bg-page: var(--neutral-950, --gray-9);
+    --bg-body: var(--neutral-950, --gray-8);
+    --bg-subtle: var(--neutral-900, --gray-7);
+    --bg-inactive: var(--neutral-500, --gray-12);
+    --bg-secondary: var(--neutral-800, --gray-9);
+
+    /* Brand */
+    --bg-brand: var(--blue-100, --blue-1);
+    --bg-brand-hover: var(--blue-200, --blue-2);
+
+    /* Action */
+    --bg-action-accent: var(--fuchsia-200, --purple-1);
+    --bg-action-accent-hover: var(--fuchsia-300, --purple-2);
+    --bg-action-primary: var(--sky-100, --cyan-1);
+    --bg-action-primary-hover: var(--sky-200, --cyan-2);
+
+    /* Error */
+    --bg-error: var(--red-800, --red-11);
+    --bg-error-hover: var(--red-900, --red-12);
+    --bg-success: var(--emerald-800, --green-11);
+    --bg-success-hover: var(--emerald-900, --green-12);
+    --bg-warning: var(--yellow-800, --yellow-11);
+    --bg-warning-hover: var(--yellow-900, --yellow-12);
+
+    /* --- BORDER COLORS --- */
+    /* Body */
+    --border-container: var(--neutral-500, --gray-6);
+    --border-strong: var(--neutral-600, --gray-6);
+    --border-inactive: var(--neutral-800, --gray-8);
+
+    /* Brand */
+    --border-brand: var(--blue-200, --blue-2);
+
+    /* Action */
+    --border-action: var(--fuchsia-100, --purple-1);
+    --border-action-hover: var(--fuchsia-200, --purple-2);
+
+    /* Error, success, warning */
+    --border-error: var(--red-600, --red-10);
+    --border-success: var(--emerald-600, --lime-10);
+    --border-warning: var(--yellow-600, --yellow-10);
+    --border-outline: var(--neutral-400, --gray-5);
+
+    /* --- ICON COLORS --- */
+    /* Body */
+    --icon-primary: var(--neutral-100, --gray-1);
+    --icon-secondary: var(--neutral-200, --gray-2);
+    --icon-subtle: var(--neutral-300, --gray-3);
+    --icon-inactive: var(--neutral-500, --gray-5);
+
+    /* Brand */
+    --icon-brand: var(--blue-200, --blue-1);
+    --icon-link: var(--blue-200, --blue-1);
+
+    /* Error, success, warning */
+    --icon-error: var(--red-200, --red-2);
+    --icon-success: var(--emerald-200, --green-1);
+    --icon-warning: var(--sand-200, --brown-1);
+
+    /* --- TEXT COLORS --- */
+    /* Body */
+    --text-body: var(--neutral-50, --gray-1);
+    --text-secondary: var(--neutral-200, --gray-2);
+    --text-subtle: var(--neutral-300, --gray-3);
+    --text-inactive: var(--neutral-500, --gray-5);
+
+    /* Brand */
+    --text-brand: var(--blue-100, --blue-1);
+    --text-brand-hover: var(--blue-200, --blue-2);
+    --text-link: var(--blue-100, --blue-1);
+    --text-link-hover: var(--blue-200, --blue-2);
+
+    /* Action */
+    --text-action-accent: var(--fuchsia-50, --purple-1);
+    --text-action-accent-hover: var(--fuchsia-600, --purple-7);
+    --text-action-primary: var(--sky-bright, --cyan-6);
+    --text-action-primary-hover: var(--sky-600, --cyan-7);
+
+    /* Error */
+    --text-error: var(--red-100, --red-2);
+    --text-error-hover: var(--red-200, --red-3);
+
+    /* Success */
+    --text-success: var(--emerald-100, --green-1);
+    --text-success-hover: var(--emerald-200, --green-2);
+
+    /* Warning */
+    --text-warning: var(--sand-100, --brown-1);
+    --text-warning-hover: var(--sand-200, --brown-2);
+
+    --highlight-color: oklch(100% 0 0 / 20%);
+
+    /* Scroll color */
+    --scroll-thumb-color: var(--gray-600, --gray-6);
+  }
+}
+
+@media (--HDcolor) {
+  @supports (color: color(display-p3 0 0 0)) {
+    body {
+      --text-link: color(display-p3 0.1 0.4 1);
+      --text-hover: color(display-p3 0.6 0.2 1);
+    }
+  }
+}

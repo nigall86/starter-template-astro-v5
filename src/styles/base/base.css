@@ -4,32 +4,34 @@ html {
   /* 10px/16px = 62.5% -> 1rem = 10px */
   font-size: 62.5%;
 
-  accent-color: var(--accent);
+  overscroll-behavior: none;
+  scroll-padding: 16rem;
+
   scrollbar-color: var(--scroll-thumb-color) transparent;
   block-size: 100%;
-  caret-color: var(--accent, var(--link));
+  caret-color: var(--text-link, var(--link));
   /* -webkit-text-size-adjust: none; */
 }
 
 body {
-  background-color: var(--surface-1);
+  background-color: var(--bg-page, --surface-1);
   font-family: var(--ff-base);
-  font-size: var(--fs-4);
+  font-size: var(--fs-xs);
   font-weight: var(--fw-regular);
-  color: var(--text-1);
+  color: var(--text-body, --text-1);
 }
 
-a[href]:not(.btn) {
-  color: var(--accent, var(--link));
+/* a[href]:not(.btn) {
+  color: var(--text-link, var(--link));
 
   &:is(:hover, :focus) {
-    color: var(--link-hover);
+    color: var(--text-link-hover, --link-hover);
   }
-}
+} */
 
 ::selection {
-  background-color: var(--accent-bright);
-  color: var(--gray-1);
+  background-color: var(--bg-action-accent, --accent);
+  color: var(--bg-body, --gray-1);
 }
 
 /* --- Disabling animations by user preference --- */
@@ -43,4 +45,26 @@ a[href]:not(.btn) {
     scroll-behavior: auto !important;
     transition-delay: 0ms !important;
   }
+}
+
+/* --- Styles for Lenis smooth scroll animation --- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

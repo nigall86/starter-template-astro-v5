@@ -1,15 +1,15 @@
 ---
 // component imports
-import Link from '@components/links/Link.astro';
+import Link from '@components/ui/links/Link.astro';
 
 // data imports
-import navData from '@data/navData.json';
+import { navLinks } from '@data/navData';
 ---
 
 <nav class='site-nav' aria-label='primary navigation'>
   <ul class='site-nav__list' data-visible='false' role='list'>
     {
-      navData.map((item) => (
+      navLinks.map((item) => (
         <li>
           <Link text={item.name} href={item.path} data-navlink />
         </li>

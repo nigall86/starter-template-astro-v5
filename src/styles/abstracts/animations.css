@@ -1,5 +1,6 @@
-/* ////////////////////////// */
-/* Eases */
+/* ///// Easing ///// */
+
+/* ease */
 :where(html) {
   --ease-1: cubic-bezier(0.25, 0, 0.5, 1);
   --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
@@ -7,70 +8,70 @@
   --ease-4: cubic-bezier(0.25, 0, 0.2, 1);
   --ease-5: cubic-bezier(0.25, 0, 0.1, 1);
 
-  /* eases-in */
+  /* ease-in */
   --ease-in-1: cubic-bezier(0.25, 0, 1, 1);
   --ease-in-2: cubic-bezier(0.5, 0, 1, 1);
   --ease-in-3: cubic-bezier(0.7, 0, 1, 1);
   --ease-in-4: cubic-bezier(0.9, 0, 1, 1);
   --ease-in-5: cubic-bezier(1, 0, 1, 1);
 
-  /* eases-out */
+  /* ease-out */
   --ease-out-1: cubic-bezier(0, 0, 0.75, 1);
   --ease-out-2: cubic-bezier(0, 0, 0.5, 1);
   --ease-out-3: cubic-bezier(0, 0, 0.3, 1);
   --ease-out-4: cubic-bezier(0, 0, 0.1, 1);
   --ease-out-5: cubic-bezier(0, 0, 0, 1);
 
-  /* eases-in-out */
+  /* ease-in-out */
   --ease-in-out-1: cubic-bezier(0.1, 0, 0.9, 1);
   --ease-in-out-2: cubic-bezier(0.3, 0, 0.7, 1);
   --ease-in-out-3: cubic-bezier(0.5, 0, 0.5, 1);
   --ease-in-out-4: cubic-bezier(0.7, 0, 0.3, 1);
   --ease-in-out-5: cubic-bezier(0.9, 0, 0.1, 1);
 
-  /* eases elastic-out */
+  /* ease elastic-out */
   --ease-elastic-out-1: cubic-bezier(0.5, 0.75, 0.75, 1.25);
   --ease-elastic-out-2: cubic-bezier(0.5, 1, 0.75, 1.25);
   --ease-elastic-out-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
   --ease-elastic-out-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
   --ease-elastic-out-5: cubic-bezier(0.5, 1.75, 0.75, 1.25);
 
-  /* eases elastic-in */
+  /* ease elastic-in */
   --ease-elastic-in-1: cubic-bezier(0.5, -0.25, 0.75, 1);
   --ease-elastic-in-2: cubic-bezier(0.5, -0.5, 0.75, 1);
   --ease-elastic-in-3: cubic-bezier(0.5, -0.75, 0.75, 1);
   --ease-elastic-in-4: cubic-bezier(0.5, -1, 0.75, 1);
   --ease-elastic-in-5: cubic-bezier(0.5, -1.25, 0.75, 1);
 
-  /* eases elastic-in-out */
+  /* ease elastic-in-out */
   --ease-elastic-in-out-1: cubic-bezier(0.5, -0.1, 0.1, 1.5);
   --ease-elastic-in-out-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
   --ease-elastic-in-out-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
   --ease-elastic-in-out-4: cubic-bezier(0.5, -0.7, 0.1, 1.5);
   --ease-elastic-in-out-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
 
-  /* eases elastic */
+  /* ease elastic */
   --ease-elastic-1: var(--ease-elastic-out-1);
   --ease-elastic-2: var(--ease-elastic-out-2);
   --ease-elastic-3: var(--ease-elastic-out-3);
   --ease-elastic-4: var(--ease-elastic-out-4);
   --ease-elastic-5: var(--ease-elastic-out-5);
 
-  /* eases squish */
+  /* ease squish */
   --ease-squish-1: var(--ease-elastic-in-out-1);
   --ease-squish-2: var(--ease-elastic-in-out-2);
   --ease-squish-3: var(--ease-elastic-in-out-3);
   --ease-squish-4: var(--ease-elastic-in-out-4);
   --ease-squish-5: var(--ease-elastic-in-out-5);
 
-  /* eases step */
+  /* ease step */
   --ease-step-1: steps(2);
   --ease-step-2: steps(3);
   --ease-step-3: steps(4);
   --ease-step-4: steps(7);
   --ease-step-5: steps(10);
 
-  /* eases spring */
+  /* ease spring */
   --ease-spring-1: linear(
     0,
     0.006,
@@ -191,8 +192,7 @@
     1
   );
 
-  /* ////////////////////////// */
-  /* Animations */
+  /* ///// Animations ///// */
   --animation-fade-in: fade-in 0.5s var(--ease-3);
   --animation-fade-in-bloom: fade-in-bloom 2s var(--ease-3);
   --animation-fade-out: fade-out 0.5s var(--ease-3);
@@ -217,8 +217,7 @@
   --animation-pulse: pulse 2s var(--ease-out-3) infinite;
 }
 
-/* ////////////////////////// */
-/* Keyframes */
+/* ///// Keyframes ///// */
 @keyframes fade-in {
   to {
     opacity: 1;
@@ -359,6 +358,25 @@
   }
 }
 
+@keyframes shake-z {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(1turn);
@@ -441,4 +459,21 @@
       filter: brightness(1) blur(0);
     }
   }
+}
+
+/* ///// Combined animations ///// */
+.push-out {
+  animation: var(--animation-scale-down), var(--animation-fade-out);
+  animation-timing-function: var(--ease-elastic-in-out-4);
+}
+
+.shake-in {
+  animation: var(--animation-shake-y), var(--animation-fade-in),
+    var(--animation-slide-in-left);
+}
+
+.slide-fade {
+  animation: var(--animation-fade-out) forwards, var(--animation-slide-out-down);
+  animation-timing-function: var(--ease-elastic-in-out-3);
+  animation-duration: 1s;
 }

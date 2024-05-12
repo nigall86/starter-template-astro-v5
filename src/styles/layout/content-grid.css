@@ -1,46 +1,88 @@
 .content-grid {
-  --content-width: 70ch;
-  --feature-width: 85ch;
+  --padding-inline: clamp(1rem, 6vw, 3rem);
 
-  /* Represents a gutter size for the left and right sides of the page */
-  --gap: clamp(1rem, 6vw, 3rem);
-  --popout-gap: 2rem;
-  --feature-gap: calc((var(--feature-width) - var(--content-width)) / 2);
+  /* Track widths */
+  --full-max-width: 1fr;
+  --popout-max-width: 144rem;
+  --content-max-width: 112rem;
+  --inset-content-max-width: 96rem;
 
-  /* Stretches an element so that it spans the entire horizontal space */
-  --full: minmax(var(--gap), 1fr);
-
-  /* Acts as the main content area */
-  --content: min(var(--content-width), 100% - var(--gap) * 2);
-
-  /* Extend elements beyond the content area */
-  --popout: minmax(0, var(--popout-gap));
-
-  --feature: minmax(0, var(--feature-gap));
+  /* Track sizes */
+  --full: minmax(var(--padding-inline), 1fr);
+  --popout: minmax(
+    0,
+    calc((var(--popout-max-width) - var(--content-max-width)) * 0.5)
+  );
+  --content: minmax(
+    0,
+    calc((var(--content-max-width) - var(--inset-content-max-width)) * 0.5)
+  );
+  --inset-content: min(
+    var(--inset-content-max-width),
+    100% - var(--padding-inline) * 2
+  );
 
   display: grid;
   grid-template-columns:
     [full-start] var(--full)
-    [feature-start] var(--feature)
     [popout-start] var(--popout)
-    [content-start] var(--content) [content-end]
-    var(--popout) [popout-end]
-    var(--feature) [feature-end]
-    var(--full) [full-end];
+    [content-start] var(--content)
+    [inset-content-start] var(--inset-content)
+    [inset-content-end] var(--content)
+    [content-end] var(--popout)
+    [popout-end] var(--full)
+    [full-end];
 }
 
+/* Classes */
 .content-grid > * {
   grid-column: content;
+}
+
+.full-width {
+  grid-column: full;
+}
+
+.full-start {
+  grid-column-start: full-start;
+}
+
+.full-end {
+  grid-column-end: full-end;
 }
 
 .popout {
   grid-column: popout;
 }
 
-.feature {
-  grid-column: feature;
+.popout-start {
+  grid-column-start: popout-start;
 }
 
-.full {
-  grid-column: full;
+.popout-end {
+  grid-column-end: popout-end;
+}
+
+.content {
+  grid-column: content;
+}
+
+.content-start {
+  grid-column-start: content-start;
+}
+
+.content-end {
+  grid-column-end: content-end;
+}
+
+.inset-content {
+  grid-column: inset-content;
+}
+
+.inset-content-start {
+  grid-column-start: inset-content-start;
+}
+
+.inset-content-end {
+  grid-column-end: inset-content-end;
 }

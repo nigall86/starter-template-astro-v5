@@ -1,0 +1,6 @@
+/* Let's suppose you cannot modify the background property
+and you cannot use pseudo-elements */
+
+.overlay {
+  border-image: fill 0 linear-gradient(#0003, #000); /* your gradient here */
+}

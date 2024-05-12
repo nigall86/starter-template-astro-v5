@@ -1,0 +1,224 @@
+/* --- Backgrounds --- */
+.bg-page {
+  background-color: var(--bg-page);
+}
+
+.bg-body {
+  background-color: var(--bg-body);
+}
+
+.bg-subtle {
+  background-color: var(--bg-subtle);
+}
+
+.bg-inactive {
+  background-color: var(--bg-inactive);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-brand {
+  background-color: var(--bg-brand);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-brand-hover);
+  }
+}
+
+.bg-action-accent {
+  background-color: var(--bg-action-accent);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-action-accent-hover);
+  }
+}
+
+.bg-action-primary {
+  background-color: var(--bg-action-primary);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-action-primary-hover);
+  }
+}
+
+.bg-error {
+  background-color: var(--bg-error);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-error-hover);
+  }
+}
+
+.bg-success {
+  background-color: var(--bg-success);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-success-hover);
+  }
+}
+
+.bg-warning {
+  background-color: var(--bg-warning);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--bg-warning-hover);
+  }
+}
+
+/* --- Borders --- */
+.border-container {
+  border-color: var(--border-container);
+}
+
+.border-strong {
+  border-color: var(--border-strong);
+}
+
+.border-inactive {
+  border-color: var(--border-inactive);
+}
+
+.border-brand {
+  border-color: var(--border-brand);
+}
+
+.border-action {
+  border-color: var(--border-action);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--border-action-hover);
+  }
+}
+
+.border-error {
+  border-color: var(--border-error);
+}
+
+.border-success {
+  border-color: var(--border-success);
+}
+
+.border-warning {
+  border-color: var(--border-warning);
+}
+
+.border-outline {
+  border-color: var(--border-outline);
+}
+
+/* --- Icon--- */
+.icon-primary {
+  --stroke-color: var(--icon-primary);
+}
+
+.icon-secondary {
+  --stroke-color: var(--icon-secondary);
+}
+
+.icon-subtle {
+  --stroke-color: var(--icon-subtle);
+}
+
+.icon-brand {
+  --stroke-color: var(--icon-brand);
+}
+
+.icon-link {
+  --stroke-color: var(--icon-link);
+}
+
+.icon-inactive {
+  --stroke-color: var(--icon-inactive);
+}
+
+.icon-error {
+  --stroke-color: var(--icon-error);
+}
+
+.icon-success {
+  --stroke-color: var(--icon-success);
+}
+
+.icon-warning {
+  --stroke-color: var(--icon-warning);
+}
+
+/* --- Text --- */
+.text-body {
+  color: var(--text-body);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-subtle {
+  color: var(--text-subtle);
+}
+
+.text-inactive {
+  color: var(--text-inactive);
+}
+
+.text-brand {
+  color: var(--text-brand);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text-brand-hover);
+  }
+}
+
+.text-link {
+  color: var(--text-link);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text-link-hover);
+  }
+}
+
+.text-action {
+  color: var(--text-action);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text-action-hover);
+  }
+}
+
+.text-error {
+  color: var(--text-error);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text-error-hover);
+  }
+}
+
+.text-success {
+  color: var(--text-success);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text-success-hover);
+  }
+}
+
+.text-warning {
+  color: var(--text-warning);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text-warning-hover);
+  }
+}

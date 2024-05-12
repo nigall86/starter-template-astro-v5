@@ -1,10 +1,13 @@
 ---
-// component imports
-import Logo from '@components/Logo.astro';
-import Link from '@components/links/Link.astro';
+// libraries
+import { Icon } from 'astro-icon/components';
 
-// data imports
-import footerData from '@data/footerData.json';
+// components
+import Logo from '@components/Logo.astro';
+import Link from '@components/ui/links/Link.astro';
+
+// data
+import { footerLinks, socialLinks } from '@data/footerData';
 ---
 
 <footer class='site-footer'>
@@ -13,9 +16,20 @@ import footerData from '@data/footerData.json';
       <Logo type='footer' />
       <ul class='site-footer__list'>
         {
-          footerData.map((item) => (
+          footerLinks.map((item) => (
             <li>
               <Link text={item.name} href={item.path} />
+            </li>
+          ))
+        }
+      </ul>
+      <ul class='site-footer__list'>
+        {
+          socialLinks.map(({ href, title, icon }) => (
+            <li>
+              <a href={href} aria-label={title} title={title}>
+                <Icon name={icon} size={24} />
+              </a>
             </li>
           ))
         }
@@ -23,12 +37,16 @@ import footerData from '@data/footerData.json';
     </div>
     <div>
       <small style='color: var(--gray-5);'>
-        Copyright &copy; <span id='copyright'></span> | All rights reserved.
+        Copyright &copy;<span id='copyright'>{new Date().getFullYear()}</span> |
+        All rights reserved.
       </small>
     </div>
   </div>
 </footer>
 
+<!-- Script -->
 <script>
-  import '@scripts/footer.js';
+  // Set actual year in the footer
+  const copyrightSpan = document.getElementById('copyright') as HTMLSpanElement;
+  copyrightSpan.textContent = new Date().getFullYear().toString();
 </script>

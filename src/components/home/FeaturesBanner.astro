@@ -1,0 +1,24 @@
+---
+// astro tools
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+
+const features = await getCollection('features');
+---
+
+<section aria-label='Features Banner' class='features'>
+  <div>
+    <h2>I vuild fast, sleek, modern websites.</h2>
+    <ul>
+      {
+        features.map(({ data }) => (
+          <li>
+            <Icon name={data.icon} size={64} />
+            <h3> {data.title} </h3>
+            <p>{data.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

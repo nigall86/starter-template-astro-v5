@@ -1,12 +1,12 @@
 .site-header {
   --_header-margin: 0;
   --_header-padding: var(--size-4) 0;
-  --_header-bg: var(--surface-2);
+  --_header-bg: var(--bg-body, --surface-2);
 
   margin: var(--_header-margin);
   padding: var(--_header-padding);
   background-color: var(--_header-bg);
-  color: var(--text-1);
+  color: var(--text-body, --text-1);
 
   &__inner {
     display: flex;

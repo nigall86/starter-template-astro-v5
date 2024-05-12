@@ -19,15 +19,16 @@ dialog {
 
   border: none;
   border-radius: var(--radius-3);
-  background: var(--surface-2);
-  color: var(--text-1);
+  background: var(--bg-subtle, --surface-2);
+  color: var(--text-body, --text-1);
 
   box-shadow: var(--shadow-6);
   transition: opacity 0.5s var(--ease-3);
   overflow: hidden;
 
   @media (--OSdark) {
-    border-block-start: var(--border-size-1) solid var(--surface-3);
+    border-block-start: var(--border-size-1) solid
+      var(--bg-secondary, --surface-3);
   }
 
   @media (--motionOK) {
@@ -90,12 +91,12 @@ dialog {
       gap: var(--size-3);
       justify-content: space-between;
       align-items: center;
-      background: var(--surface-2);
+      background: var(--bg-subtle, --surface-2);
       padding-block: var(--size-3);
       padding-inline: var(--size-5);
 
       @media (--OSdark) {
-        background: var(--surface-1);
+        background: var(--bg-body, --surface-1);
       }
     }
 
@@ -113,10 +114,10 @@ dialog {
       box-shadow: var(--shadow-2);
 
       @media (--OSlight) {
-        background: var(--surface-1);
+        background: var(--bg-body, --surface-1);
 
         &::-webkit-scrollbar {
-          background: var(--surface-1);
+          background: var(--bg-body, --surface-1);
         }
       }
 
@@ -134,10 +135,10 @@ dialog {
 
       padding-inline: var(--size-5);
       padding-block: var(--size-3);
-      background: var(--surface-2);
+      background: var(--bg-subtle, --surface-2);
 
       @media (--OSdark) {
-        background: var(--surface-1);
+        background: var(--bg-body, --surface-1);
       }
 
       & > menu {

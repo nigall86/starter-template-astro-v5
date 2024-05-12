@@ -1,8 +1,8 @@
 .tabs {
-  --_tabs-header-bg: var(--surface-4);
-  --_tabs-header-color: var(--text-1);
-  --_tabs-content-bg: var(--surface-2);
-  --_tabs-content-text: var(--text-2);
+  --_tabs-header-bg: var(--bg-secondary, --surface-4);
+  --_tabs-header-color: var(--text-body, --text-1);
+  --_tabs-content-bg: var(--bg-subtle, --surface-2);
+  --_tabs-content-text: var(--text-secondary, --text-2);
 
   margin-top: var(--size-8);
 
@@ -11,11 +11,11 @@
     background: var(--_tabs-header-bg);
     color: var(--_tabs-header-color);
     padding: var(--size-3) var(--size-5);
-  }
 
-  &__header li {
-    margin-right: var(--size-5);
-    cursor: pointer;
+    li {
+      margin-right: var(--size-5);
+      cursor: pointer;
+    }
   }
 
   &__content {

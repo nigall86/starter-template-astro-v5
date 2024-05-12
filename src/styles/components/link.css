@@ -4,16 +4,16 @@ input:where([type='button'], [type='submit'], [type='reset']),
 input[type='file']::-webkit-file-upload-button,
 input[type='file']::file-selector-button {
   /* Button tokens */
-  --_btn-accent: var(--accent);
-  --_btn-primary: var(--primary);
-  --_btn-text-color: var(--text-1);
+  --_btn-accent: var(--bg-action-accent, --accent);
+  --_btn-primary: var(--bg-action-primary, --primary);
+  --_btn-text-color: var(--text-body, --text-1);
   --_btn-size: initial;
 
   /* Background */
-  --_btn-bg: var(--surface-1);
+  --_btn-bg: var(--bg-body, --surface-1);
 
   /* Highlight */
-  --_btn-border: var(--surface-3);
+  --_btn-border: var(--border-container, --surface-3);
 
   --_btn-highlight-size: 0;
   --_btn-highlight-opacity: 25%;
@@ -24,7 +24,11 @@ input[type='file']::file-selector-button {
 
   /* Text */
   --_btn-text-shadow: 0 1px 0
-    color-mix(in hsl, var(--surface-3) 90%, hsl(var(--gray-12)));
+    color-mix(
+      in hsl,
+      var(--bg-secondary, --surface-3) 90%,
+      hsl(var(--neutral-950, --gray-12))
+    );
 
   /* Icon */
   --_btn-icon-size: var(--size-relative-7);
@@ -35,7 +39,7 @@ input[type='file']::file-selector-button {
   justify-self: flex-start;
   justify-content: center;
   align-items: center;
-  gap: var(--flex-group-gap);
+  gap: var(--flex-gap);
 
   min-width: 10ch;
   min-height: 4.4rem;
@@ -56,7 +60,7 @@ input[type='file']::file-selector-button {
   line-height: var(--lh-3);
   text-decoration: none;
 
-  box-shadow: var(--shadow-2), 0 1px var(--surface-3),
+  box-shadow: var(--shadow-2), 0 1px var(--bg-secondary, --surface-3),
     0 0 0 var(--_btn-highlight-size) var(--_btn-highlight);
 
   transition: border-color 0.5s var(--ease-3) 3s;
@@ -73,17 +77,19 @@ input[type='file']::file-selector-button {
 button,
 input:where([type='button'], [type='submit'], [type='reset']) {
   &[disabled] {
-    --_btn-bg: none;
-    --_btn-text-color: var(--text-1);
+    --_btn-bg: var(--bg-inactive);
+    --_btn-text-color: var(--text-inactive, --text-1);
 
     box-shadow: var(--shadow-1);
     cursor: not-allowed;
   }
 
-  &:not(:active):hover {
-    --_btn-highlight-size: var(--size-2);
-    transition-delay: 0s;
-    transition-duration: 0.25s;
+  @media (--mouse) {
+    &:not(:active):hover {
+      --_btn-highlight-size: var(--size-2);
+      transition-delay: 0s;
+      transition-duration: 0.25s;
+    }
   }
 
   & > svg {
@@ -101,12 +107,12 @@ input:where([type='button'], [type='submit'], [type='reset']) {
 
 [type='submit'],
 form button:not([type], [disabled]) {
-  --_btn-text-color: var(--_btn-accent, var(--link));
+  --_btn-text-color: var(--text-action-accent, var(--link));
 }
 
 [type='reset'] {
-  --_btn-text-color: var(--error-2);
-  --_btn-border: var(--error-1);
+  --_btn-text-color: var(--text-error, --error-2);
+  --_btn-border: var(--bg-error, --error-1);
 
   &:focus-visible {
     outline-color: var(--error-2);
@@ -125,9 +131,9 @@ input[type='file'] {
   max-inline-size: 100%;
   padding: 0;
 
-  border: var(--border-size-1) solid var(--surface-2);
+  border: var(--border-size-1) solid var(--bg-subtle, --surface-2);
   border-radius: var(--radius-2);
-  color: var(--text-1);
+  color: var(--text-body, --text-1);
   box-shadow: var(--inner-shadow-4);
   cursor: auto;
 
@@ -143,7 +149,7 @@ input[type='file'] {
   [type='reset'],
   [type='submit'],
   form button:not([type='button'], [data-type='btn-icon']) {
-    background-color: var(--surface-1);
+    background-color: var(--bg-body, --surface-1);
   }
 }
 
@@ -160,7 +166,7 @@ input[type='file'] {
           input[type='submit']
         ):not(input[type='reset'])
     ) {
-    background-color: var(--surface-4);
+    background-color: var(--bg-secondary, --surface-4);
   }
 }
 
@@ -187,40 +193,54 @@ input[type='file'] {
 
 /* --- Accent button --- */
 [data-type='accent'] {
-  --_btn-border: color-mix(in oklch, var(--accent) 90%, var(--gray-12));
+  /* --_btn-border: none; */
+  --_btn-text-color: var(--text-action-accent, --link);
+  --_btn-border: color-mix(
+    in oklch,
+    var(--accent) 90%,
+    var(--neutral-950, --gray-12)
+  );
   --_btn-bg: linear-gradient(
     var(--accent),
-    color-mix(in oklch, var(--accent) 90%, var(--gray-12))
+    color-mix(in oklch, var(--accent) 90%, var(--neutral-950, --gray-12))
   );
-  --_btn-text-color: var(--accent-0);
   --_btn-text-shadow: 0 1px 0
-    color-mix(in oklch, var(--accent) 70%, var(--gray-12));
+    color-mix(in oklch, var(--accent) 70%, var(--neutral-950, --gray-12));
+
+  /* &:hover,
+  &:focus-visible {
+    --_btn-bg: var(--bg-action-accent-hover);
+  } */
 }
 
 /* --- Primary button --- */
 [data-type='primary'] {
-  --_btn-border: color-mix(in oklch, var(--primary) 90%, var(--gray-12));
+  --_btn-border: color-mix(
+    in oklch,
+    var(--primary) 90%,
+    var(--neutral-950, --gray-12)
+  );
   --_btn-bg: linear-gradient(
     var(--primary),
-    color-mix(in oklch, var(--primary) 90%, var(--gray-12))
+    color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12))
   );
-  --_btn-text-color: var(--primary-0);
+  --_btn-text-color: var(--text-action-primary);
   --_btn-text-shadow: 0 1px 0
-    color-mix(in oklch, var(--primary) 90%, var(--gray-12));
+    color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12));
 }
 
 /* --- Button outline --- */
 [data-type='outline'] {
   --_btn-bg: transparent;
-  --_btn-border: var(--accent);
-  --_btn-text-color: var(--accent);
+  --_btn-border: var(--border-action, --accent);
+  --_btn-text-color: var(--_btn-border);
 }
 
 /* --- Btn as icon only --- */
 [data-type='btn-icon'] {
-  --_btn-bg: var(--surface-4);
+  --_btn-bg: var(--bg-secondary, --surface-4);
   --_btn-icon-size: var(--size-10);
-  --_btn-icon-color: var(--text-1);
+  --_btn-icon-color: var(--text-body, --text-1);
 
   flex-shrink: 0;
   place-items: center;

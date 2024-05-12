@@ -1,5 +1,10 @@
 'use strict';
 
+// libraries
+import Lenis from 'lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 const heroSection = document.querySelector('.hero');
 
 const modal = document.querySelector('.modal');
@@ -11,20 +16,35 @@ const overlay = document.querySelector('.overlay');
 // Preventing animation while loading
 
 // Class that will prevent animation when content is still loading
-document.body.className += 'js-loading';
+// document.body.className += 'js-loading';
 
-window.addEventListener('load', showPage, false);
+// window.addEventListener('load', showPage, false);
 
-function showPage() {
-  // When all content will be loaded this class will be removed
-  document.body.className = document.body.className.replace('js-loading', '');
-}
+// function showPage() {
+// When all content will be loaded this class will be removed
+// document.body.className = document.body.className.replace('js-loading', '');
+// }
 
 //////////////////////////////
-// Smooth scrolling
-// const lenis = new Lenis();
-// lenis.on('scroll', (e) => {
-//   console.log(e);
+// Smooth scrolling with Lenis
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+//////////////////////////////
+// Smooth scrolling for images with Lenis + GSAP
+// gsap.registerPlugin(ScrollTrigger);
+// const lenis = new Lenis({
+//   duration: 1.2,
+//   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 // });
 
 // function raf(time) {
@@ -33,6 +53,19 @@ function showPage() {
 // }
 
 // requestAnimationFrame(raf);
+
+// const tl = gsap
+//   .timeline({
+//     scrollTrigger: {
+//       trigger: '.img',
+//       scrub: true,
+//     },
+//   })
+//   .to('.img', {
+//     stagger: 0.2,
+//     y: -700,
+//     scrub: true,
+//   });
 
 // ///////////////////////////////////////
 // // Sticky navigation

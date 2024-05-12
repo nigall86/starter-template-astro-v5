@@ -3,13 +3,13 @@
   --_footer-padding-block: var(--size-8);
 
   /* Background */
-  --_footer-bg: var(--surface-2);
+  --_footer-bg: var(--bg-subtle, --surface-2);
 
   /* Text */
   --_footer-font-family: var(--ff-base);
   --_footer-font-weight: var(--fw-regular);
-  --_footer-link: var(--neutral-0);
-  --_footer-link-hover: var(--neutral-4);
+  --_footer-link: var(--text-subtle, --neutral-0);
+  --_footer-link-hover: var(--text-secondary, --neutral-4);
   --_footer-letter-spacing: var(--letter-spacing-0);
 
   padding-block: var(--_footer-padding-block);
@@ -25,12 +25,12 @@
   &__list {
     display: flex;
     list-style: none;
-    gap: var(--flex-group-gap);
+    gap: var(--flex-gap);
 
     a {
       font-family: var(--_footer-font-family);
       font-weight: var(--_footer-font-weight);
-      color: inherit;
+      color: var(--_footer-link);
       letter-spacing: var(--_footer-letter-spacing);
       text-decoration: none;
 

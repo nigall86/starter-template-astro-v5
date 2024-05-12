@@ -1,5 +1,9 @@
 import { defineConfig } from 'astro/config';
 import icon from 'astro-icon';
+import netlify from '@astrojs/netlify';
+import react from '@astrojs/react';
+
+import advancedLottie from '@advanced-astro/lottie';
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,6 +12,10 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
-  integrations: [icon()],
-  devToolbar: { enabled: false },
+  integrations: [icon(), react(), advancedLottie()],
+  devToolbar: {
+    enabled: false,
+  },
+  output: 'hybrid',
+  adapter: netlify(),
 });

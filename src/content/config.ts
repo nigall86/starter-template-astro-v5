@@ -1,49 +1,37 @@
-import { z, defineCollection, reference } from 'astro:content';
+import postSchema from '@schemas/postSchema';
+import serviceSchema from '@schemas/serviceSchema';
+import teamSchema from '@schemas/teamSchema';
+import featureSchema from '@schemas/featureSchema';
+import { defineCollection } from 'astro:content';
 
 // posts collection
-const postsCollection = defineCollection({
+const posts = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string().max(60, {
-      message: 'Title must be 60 characters or less.',
-    }),
-    description: z.string().max(160, {
-      message: 'Description must be 160 characters or less.',
-    }),
-    date: z.date(),
-    author: reference('team'),
-    relatedPosts: z.array(reference('posts')).optional(),
-  }),
+  schema: postSchema,
 });
 
 // team collection
-const teamsCollection = defineCollection({
+const team = defineCollection({
   type: 'data',
-  schema: ({ image }) =>
-    z.object({
-      name: z.string(),
-      bio: z.string(),
-      email: z.string(),
-      role: z.enum(['Software', 'Design', 'Marketing']),
-      headshot: image(),
-    }),
+  schema: teamSchema,
 });
 
 // service collection
-const servicesCollection = defineCollection({
+const services = defineCollection({
   type: 'data',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    contact: reference('team'),
-    available: z.boolean(),
-    tags: z.array(z.enum(['b2b', 'b2c', 'saas', 'ecommerce'])),
-  }),
+  schema: serviceSchema,
+});
+
+// features collection
+const features = defineCollection({
+  type: 'data',
+  schema: featureSchema,
 });
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-  posts: postsCollection,
-  team: teamsCollection,
-  services: servicesCollection,
+  posts,
+  team,
+  services,
+  features,
 };
