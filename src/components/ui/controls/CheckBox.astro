@@ -1,0 +1,27 @@
+---
+// library imports
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  name: string;
+  label: string;
+  optIn?: boolean;
+}
+
+const { name, label, optIn = false } = Astro.props;
+---
+
+<div class='checkbox-wrapper'>
+  <input
+    data-name={name}
+    type='checkbox'
+    id={name}
+    name={name}
+    checked={optIn}
+    value={name}
+  />
+  <div class='fake-checkbox'>
+    <Icon name='checkmark' width={20} height={20} />
+  </div>
+  <label for={name}>{label}</label>
+</div>

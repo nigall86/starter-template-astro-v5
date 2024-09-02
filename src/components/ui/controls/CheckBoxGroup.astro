@@ -1,0 +1,54 @@
+---
+const initialToppings = {
+  anchovies: true,
+  chicken: false,
+  tomatoes: false,
+};
+
+// interface Props {
+//   legend: string;
+//   toppingsList: string[];
+//   newToppings: object;
+// }
+
+// onchange={(event) => {
+//   newToppings({
+//     ...newToppings,
+//     [option]: event.target.checked,
+//   });
+
+const toppingsList = Object.keys(initialToppings);
+console.log(toppingsList);
+
+const newToppings = { ...initialToppings };
+console.log(newToppings);
+
+const { legend } = Astro.props;
+---
+
+<form>
+  <fieldset>
+    <legend> Select {legend}: </legend>
+
+    <!-- Iterate over those toppings, and create a checkbox for each one: -->
+    {
+      toppingsList.map((option) => (
+        <div>
+          <input
+            type='checkbox'
+            id={option}
+            value={option}
+            checked={newToppings[option as keyof typeof newToppings] === true}
+          />
+        </div>
+      ))
+    }
+  </fieldset>
+</form>
+
+<!-- onchange={(event) => {
+              newToppings({
+                ...pizzaToppings,
+                [option]: event.target.checked,
+              });
+            }} -->

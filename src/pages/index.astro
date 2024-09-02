@@ -1,4 +1,6 @@
 ---
+import { db, eq, Author, Comment } from 'astro:db';
+
 import Lottie from '@advanced-astro/lottie/Lottie.astro';
 
 // components
@@ -9,9 +11,19 @@ import PricingCard from '@components/ui/cards/PricingCard.astro';
 import Tabs from '@components/Tabs.astro';
 import Features from '@components/Features.astro';
 import MagicRainbowButton from '@components/ui/links/MagicRainbowButton.jsx';
+import CheckBox from '@components/ui/controls/CheckBox.astro';
+import Checkbox from '@components/ui/controls/Checkbox.jsx';
+import CheckBoxGroup from '@components/ui/controls/CheckBoxGroup.astro';
+import TextInput from '@components/ui/controls/TextInput';
 
 // data
 import { plans } from '@data/plansData';
+
+// connecting two tables with id column
+const comments = await db
+  .select()
+  .from(Comment)
+  .innerJoin(Author, eq(Comment.authorId, Author.id));
 ---
 
 <BaseLayout title='Welcome to Astro.'>
@@ -25,31 +37,46 @@ import { plans } from '@data/plansData';
         Get a new Astro project up and running locally with our helpful
         create-astro CLI wizard!
       </p>
+      <!-- DB content -->
+      <h4>Comments</h4>
+      {
+        comments.map(({ Author, Comment }) => (
+          <article>
+            <p>Author: {Author.name}</p>
+            <p>{Comment.content}</p>
+          </article>
+        ))
+      }
       <!-- Tabs with dynamic content -->
       <Tabs />
       <Modal dialogType='megaDialog' />
       <!-- <ThemeSwitcher /> -->
       <Features />
       <div class='icon' id='alarm-clock' style='width: 100px; height: 100px'>
-        <Lottie
+        <!-- <Lottie
           src='src/assets/animations/alarm-clock.json'
           autoplay='visible'
-        />
-        <Lottie
+        /> -->
+        <!-- <Lottie
           src='src/assets/animations/bellAnim24.json'
           autoplay='visible'
-        />
+        /> -->
       </div>
       <!-- Cards -->
       <section class='even-columns'>
         {plans.map((card) => <PricingCard data={card} />)}
       </section>
       <!-- <Buttons /> -->
-      <section class='even-columns'>
+      <!-- <section class='even-columns'>
         <MagicRainbowButton className={'btn'} client:only>
           Click me
         </MagicRainbowButton>
-      </section>
+      </section> -->
+      <CheckBox name='feature' label='Enable feature' optIn={true} />
+      <Checkbox name='feature' label='Enable feature' />
+      <TextInput name='input' label='Name' />
+
+      <!-- <CheckBoxGroup /> -->
     </div>
-  </section>
-</BaseLayout>
+  </section></BaseLayout
+>

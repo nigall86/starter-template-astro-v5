@@ -1,0 +1,23 @@
+/*
+The aim of the component and it’s weird looking flex-basis calculation
+is for a 50/50 split, or more accurately, an equal distribution of space where available
+*/
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: var(--switcher-vertical-alignment, flex-start);
+  gap: var(--gutter, var(--space-s));
+
+  > * {
+    flex-grow: 1;
+    flex-basis: calc(
+      (var(--switcher-target-container-width, 40rem) - 100%) * 999
+    );
+  }
+}
+
+/* 
+main {
+  --switcher-vertical-alignment: stretch;
+} 
+*/

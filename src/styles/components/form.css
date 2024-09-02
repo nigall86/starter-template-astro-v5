@@ -33,3 +33,47 @@ input:not(.btn) {
   font-weight: $form-placeholder-font-weight;
   color: $form-placeholder-color;
 } */
+
+/* Checkbox */
+.checkbox-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: max-content;
+  cursor: pointer;
+
+  [type='checkbox'] {
+    position: absolute;
+    inset: 0;
+    /* accent-color: red; */
+    opacity: 0;
+
+    &:is(:checked) + .fake-checkbox {
+      --stroke-color: var(--text-action-accent);
+      background-color: var(--bg-action-accent);
+    }
+
+    &:is(:hover) + .fake-checkbox {
+      box-shadow: 0px 0px 0px 3px
+        color-mix(in oklch, var(--bg-action-accent) 50%, transparent);
+    }
+
+    &:is(:focus-visible) + .fake-checkbox {
+      outline-offset: 2px;
+      outline: 2px solid var(--border-brand);
+    }
+  }
+
+  & .fake-checkbox {
+    --stroke-color: transparent;
+
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--bg-action-accent);
+    border-radius: 0.6rem;
+    transition: box-shadow 0.3s var(--ease-in-out-1);
+  }
+}

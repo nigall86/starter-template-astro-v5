@@ -2,9 +2,9 @@
   /* --- Common tokens --- */
 
   /* Layout */
-  --grid-gap: var(--size-6);
+  /* --grid-gap: var(--size-6); */
   --grid-min-column: var(--size-relative-14);
-  --flex-group-gap: var(--size-5);
+  /* --flex-group-gap: var(--size-5); */
 
   /* Sections */
   --section-padding-block: clamp(8rem, 10vh, 9.6rem);

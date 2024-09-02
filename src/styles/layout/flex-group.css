@@ -1,8 +1,8 @@
 .flex-group {
   display: flex;
   flex-wrap: wrap;
-  column-gap: var(--_flex-column-gap, var(--flex-gap));
-  row-gap: var(--_flex-row-gap, calc(var(--flex-gap) / 2));
+  column-gap: var(--_flex-column-gap, var(--gutter));
+  row-gap: var(--_flex-row-gap, calc(var(--gutter) / 2));
   width: fit-content;
 
   &.mx-auto {

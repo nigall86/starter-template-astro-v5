@@ -1,13 +1,13 @@
 :where(html) {
-  --neutral-50: oklch(98.83%, 0, 0); /* #FBFBFB */
-  --neutral-100: oklch(96.48%, 0, 0); /* #F3F3F3 */
-  --neutral-200: oklch(91.8%, 0, 0); /* #E4E4E4 */
-  --neutral-300: oklch(85.35%, 0, 0); /* #CFCFCF */
-  --neutral-400: oklch(78.91%, 0, 0); /* #BABABA */
-  --neutral-500: oklch(72.66%, 0, 0); /* #A6A6A6 */
-  --neutral-600: oklch(61.33%, 0, 0); /* #838383 */
-  --neutral-700: oklch(52.34%, 0, 0); /* #6A6A6A */
-  --neutral-800: oklch(41.21%, 0, 0); /* #4B4B4B */
-  --neutral-900: oklch(30.08%, 0, 0); /* #2E2E2E */
-  --neutral-950: oklch(19.34%, 0, 0); /* #141414 */
+  --neutral-50: oklch(98.83% 0 0); /* #FBFBFB */
+  --neutral-100: oklch(96.48% 0 0); /* #F3F3F3 */
+  --neutral-200: oklch(91.8% 0 0); /* #E4E4E4 */
+  --neutral-300: oklch(85.35% 0 0); /* #CFCFCF */
+  --neutral-400: oklch(78.91% 0 0); /* #BABABA */
+  --neutral-500: oklch(72.66% 0 0); /* #A6A6A6 */
+  --neutral-600: oklch(61.33% 0 0); /* #838383 */
+  --neutral-700: oklch(52.34% 0 0); /* #6A6A6A */
+  --neutral-800: oklch(41.21% 0 0); /* #4B4B4B */
+  --neutral-900: oklch(30.08% 0 0); /* #2E2E2E */
+  --neutral-950: oklch(19.34% 0 0); /* #141414 */
 }

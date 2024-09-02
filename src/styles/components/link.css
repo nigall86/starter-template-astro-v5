@@ -31,7 +31,7 @@ input[type='file']::file-selector-button {
     );
 
   /* Icon */
-  --_btn-icon-size: var(--size-relative-7);
+  --_btn-icon-size: 0.8lh; /* Andy Bell's setting */
 
   -webkit-tap-highlight-color: transparent;
 
@@ -94,7 +94,7 @@ input:where([type='button'], [type='submit'], [type='reset']) {
 
   & > svg {
     flex-shrink: 0;
-    inline-size: var(--_btn-icon-size);
+    inline-size: auto;
     block-size: var(--_btn-icon-size);
     filter: drop-shadow(var(--_btn-text-color));
 
@@ -193,40 +193,51 @@ input[type='file'] {
 
 /* --- Accent button --- */
 [data-type='accent'] {
-  /* --_btn-border: none; */
-  --_btn-text-color: var(--text-action-accent, --link);
-  --_btn-border: color-mix(
-    in oklch,
-    var(--accent) 90%,
-    var(--neutral-950, --gray-12)
-  );
-  --_btn-bg: linear-gradient(
-    var(--accent),
-    color-mix(in oklch, var(--accent) 90%, var(--neutral-950, --gray-12))
-  );
-  --_btn-text-shadow: 0 1px 0
-    color-mix(in oklch, var(--accent) 70%, var(--neutral-950, --gray-12));
+  --_btn-border: transparent;
+  --_btn-bg: var(--bg-action-accent);
+  --_btn-text-color: var(--text-action-accent);
 
-  /* &:hover,
-  &:focus-visible {
-    --_btn-bg: var(--bg-action-accent-hover);
-  } */
+  &:is(.gradient) {
+    --_btn-border: color-mix(
+      in oklch,
+      var(--accent) 90%,
+      var(--neutral-950, --gray-12)
+    );
+
+    --_btn-bg: linear-gradient(
+      var(--accent),
+      color-mix(in oklch, var(--accent) 90%, var(--neutral-950, --gray-12))
+    );
+
+    --_btn-text-color: var(--text-body, --text-1);
+    --_btn-text-shadow: 0 1px 0
+      color-mix(in oklch, var(--accent) 70%, var(--neutral-950, --gray-12));
+  }
 }
 
 /* --- Primary button --- */
 [data-type='primary'] {
-  --_btn-border: color-mix(
-    in oklch,
-    var(--primary) 90%,
-    var(--neutral-950, --gray-12)
-  );
-  --_btn-bg: linear-gradient(
-    var(--primary),
-    color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12))
-  );
+  --_btn-border: transparent;
+  --_btn-bg: var(--bg-action-primary);
   --_btn-text-color: var(--text-action-primary);
-  --_btn-text-shadow: 0 1px 0
-    color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12));
+
+  &:is(.gradient) {
+    --_btn-border: color-mix(
+      in oklch,
+      var(--primary) 90%,
+      var(--neutral-950, --gray-12)
+    );
+
+    --_btn-bg: linear-gradient(
+      var(--primary),
+      color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12))
+    );
+
+    --_btn-text-color: var(--text-body, --text-1);
+
+    --_btn-text-shadow: 0 1px 0
+      color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12));
+  }
 }
 
 /* --- Button outline --- */

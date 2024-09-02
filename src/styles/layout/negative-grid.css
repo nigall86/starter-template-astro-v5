@@ -1,0 +1,12 @@
+/* Stacks items on top of each other. */
+.negative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, clamp(8rem, 33%, 16rem));
+  transform: scale(83.333%);
+  transform-origin: left;
+
+  & > * {
+    transform: scale(120%);
+    transform-origin: left;
+  }
+}

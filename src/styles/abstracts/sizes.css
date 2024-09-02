@@ -24,18 +24,39 @@
   --size-40: 16rem;
   --size-60: 24rem;
 
+  /* Space sizes */
+  --space-2xs: clamp(0.8rem, 0.7053rem + 0.2632vw, 1rem);
+  --space-xs: clamp(1.2rem, 1.1053rem + 0.2632vw, 1.4rem);
+  --space-s: clamp(1.6rem, 1.5053rem + 0.2632vw, 1.8rem);
+  --space-m: clamp(2.4rem, 2.2105rem + 0.5263vw, 2.8rem);
+  --space-l: clamp(3.2rem, 3.0105rem + 0.5263vw, 3.6rem);
+  --space-xl: clamp(4.8rem, 4.5158rem + 0.7895vw, 5.4rem);
+  --space-2xl: clamp(6.4rem, 6.0211rem + 1.0526vw, 7.2rem);
+  --space-3xl: clamp(9.6rem, 9.0317rem + 1.5789vw, 10.8rem);
+
+  /* One-up pairs */
+  --space-2xs-xs: clamp(0.8rem, 0.5158rem + 0.7895vw, 1.4rem);
+  --space-xs-s: clamp(1.2rem, 0.9158rem + 0.7895vw, 1.8rem);
+  --space-s-m: clamp(1.6rem, 1.0316rem + 1.5789vw, 2.8rem);
+  --space-m-l: clamp(2.4rem, 1.8316rem + 1.5789vw, 3.6rem);
+  --space-l-xl: clamp(3.2rem, 2.1579rem + 2.8947vw, 5.4rem);
+  --space-xl-2xl: clamp(4.8rem, 3.6632rem + 3.1579vw, 7.2rem);
+  --space-2xl-3xl: clamp(6.4rem, 4.3158rem + 5.7895vw, 10.8rem);
+
+  --gutter: var(--space-s);
   /* fluid sizes */
-  --size-fluid-1: clamp(var(--size-2), 1vw, var(--size-4));
+  /* --size-fluid-1: clamp(var(--size-2), 1vw, var(--size-4));
   --size-fluid-2: clamp(var(--size-4), 2vw, var(--size-6));
   --size-fluid-3: clamp(var(--size-6), 3vw, var(--size-8));
   --size-fluid-4: clamp(var(--size-8), 4vw, var(--size-10));
   --size-fluid-5: clamp(var(--size-10), 5vw, var(--size-12));
   --size-fluid-6: clamp(var(--size-12), 7vw, var(--size-14));
   --size-fluid-7: clamp(var(--size-14), 10vw, var(--size-16));
-  --size-fluid-8: clamp(var(--size-16), 20vw, var(--size-20));
+  --size-fluid-8: clamp(var(--size-16), 20vw, var(--size-20)); 
+  */
 
   /* content sizes */
-  --size-content-1: 20ch;
+  --size-content-1: 30ch;
   --size-content-2: 45ch;
   --size-content-3: 60ch;
 

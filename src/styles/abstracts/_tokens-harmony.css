@@ -2,9 +2,9 @@
   /* --- Common tokens --- */
 
   /* Layout */
-  --grid-gap: var(--size-6);
+  /* --grid-gap: var(--size-6); */
   --grid-min-column: var(--size-relative-14);
-  --flex-gap: var(--size-5);
+  /* --flex-gap: var(--size-5); */
 
   /* Sections */
   --section-padding-block: clamp(8rem, 10vh, 9.6rem);
@@ -16,6 +16,8 @@
   --accent-hue: 320;
   --accent-lightness: 75%;
   --accent: var(--fuchsia-bright, --purple-5);
+
+  --primary: var(--sky-800, --cyan-10);
 
   accent-color: var(--accent);
 
@@ -199,7 +201,7 @@
     --text-link-hover: var(--blue-200, --blue-2);
 
     /* Action */
-    --text-action-accent: var(--fuchsia-50, --purple-1);
+    --text-action-accent: var(--fuchsia-bright, --purple-6);
     --text-action-accent-hover: var(--fuchsia-600, --purple-7);
     --text-action-primary: var(--sky-bright, --cyan-6);
     --text-action-primary-hover: var(--sky-600, --cyan-7);

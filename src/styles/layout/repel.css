@@ -1,0 +1,15 @@
+/* Items repel from each other like polar-opposites, where space allows */
+.repel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: var(--repel-alignment, center);
+  gap: var(--gutter, var(--space-s-m));
+
+  &[data-repel-variant='vertical'] {
+    --repel-alignment: stretch;
+    flex-direction: column;
+  }
+}
+
+/* --repel-alignment: stretch, center, baseline; */

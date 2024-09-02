@@ -13,6 +13,11 @@ html {
   /* -webkit-text-size-adjust: none; */
 }
 
+:is(:focus-visible) {
+  outline-offset: 2px;
+  outline: 2px solid var(--border-brand);
+}
+
 body {
   background-color: var(--bg-page, --surface-1);
   font-family: var(--ff-base);

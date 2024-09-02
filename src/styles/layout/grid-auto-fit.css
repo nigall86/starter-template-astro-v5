@@ -1,6 +1,6 @@
 .grid-auto-fit {
   display: grid;
-  grid-gap: var(--grid-gap);
+  grid-gap: var(--gutter);
   /* min() with 100% prevents overflow in extra narrow spaces */
   grid-template-columns: repeat(
     auto-fit,
