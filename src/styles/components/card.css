@@ -1,6 +1,6 @@
 .card {
-  --_card-bg: var(--surface-2);
-  --_card-text: var(--text-1);
+  --_card-bg: var(--bg-body);
+  --_card-text: var(--text-body);
   --_card-padding: var(--size-6);
 
   border-radius: var(--radius-3);
@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--size-2);
+    gap: var(--size-3);
     text-align: center;
 
     .price {
@@ -43,11 +43,11 @@
       max-width: fit-content;
 
       .sign {
-        font-size: var(--fs-1);
+        font-size: var(--fs-sm);
       }
 
       .num {
-        font-size: var(--fs-9);
+        font-size: var(--fs-3xl);
         line-height: var(--lh-2);
       }
 
@@ -63,7 +63,7 @@
 
     .description {
       max-width: 20ch;
-      font-size: var(--fs-2);
+      font-size: var(--fs-xs);
       line-height: 1.1;
       text-wrap: balance;
     }
@@ -79,24 +79,24 @@
   justify-self: stretch;
   background-color: var(--_tier-bg);
   color: var(--_tier-text);
-  font-size: var(--fs-2);
-  font-weight: var(--fw-medium);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-semi-bold);
   text-align: center;
   text-transform: uppercase;
   padding-block: 0.75rem;
 
   &[data-type='Free'] {
-    --_tier-text: var(--accent-bright);
+    --_tier-text: var(--accent);
   }
 
   &[data-type='Pro'] {
-    --_tier-bg: var(--accent);
-    --_tier-text: var(--gray-0);
+    --_tier-bg: var(--bg-action-accent);
+    --_tier-text: var(--text-action-accent);
   }
 
   &[data-type='Enterprise'] {
-    --_tier-bg: var(--primary);
-    --_tier-text: var(--gray-0);
+    --_tier-bg: var(--bg-action-primary);
+    --_tier-text: var(--text-action-primary);
   }
 }
 

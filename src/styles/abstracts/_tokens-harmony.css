@@ -3,8 +3,8 @@
 
   /* Layout */
   /* --grid-gap: var(--size-6); */
-  --grid-min-column: var(--size-relative-14);
   /* --flex-gap: var(--size-5); */
+  --grid-min-column: var(--size-relative-14);
 
   /* Sections */
   --section-padding-block: clamp(8rem, 10vh, 9.6rem);
@@ -24,8 +24,8 @@
   /* --- BACKGROUND COLORS --- */
   /* Page and body */
   --bg-page: var(--neutral-50, --gray-0);
-  --bg-body: var(--neutral-50, --gray-0);
-  --bg-subtle: var(--neutral-100, --gray-1);
+  --bg-body: var(--neutral-100, --gray-1);
+  --bg-subtle: var(--neutral-200, --gray-2);
   --bg-inactive: var(--neutral-500, --gray-5);
   --bg-secondary: var(--neutral-200, --gray-2);
 
@@ -129,8 +129,8 @@
     /* --- BACKGROUND COLORS --- */
     /* Page and body */
     --bg-page: var(--neutral-950, --gray-9);
-    --bg-body: var(--neutral-950, --gray-8);
-    --bg-subtle: var(--neutral-900, --gray-7);
+    --bg-body: var(--neutral-900, --gray-8);
+    --bg-subtle: var(--neutral-800, --gray-7);
     --bg-inactive: var(--neutral-500, --gray-12);
     --bg-secondary: var(--neutral-800, --gray-9);
 

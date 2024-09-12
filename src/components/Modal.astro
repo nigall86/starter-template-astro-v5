@@ -1,11 +1,15 @@
 ---
-// library imports
+// libraries
 import { Icon } from 'astro-icon/components';
 
-// component imports
+// styles
+import '../styles/components/modal.css'
+
+// components
 import Button from '@components/ui/links/Button.astro';
 import Input from '@components/ui/links/Input.astro';
 
+// props
 interface Props {
   dialogType: string,
   heading?: string;

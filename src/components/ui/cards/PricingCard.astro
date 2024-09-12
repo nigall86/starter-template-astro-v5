@@ -2,7 +2,10 @@
 // libraries
 import { Icon } from 'astro-icon/components';
 
-// type
+// styles
+import '../../../styles/components/card.css';
+
+// types
 import { type HTMLAttributes } from 'astro/types';
 
 // components
@@ -70,9 +73,9 @@ const {
         features.map((feature) => (
           <li class='feature'>
             {feature.checked ? (
-              <Icon name='checkmark' size={20} />
+              <Icon name='checkmark' />
             ) : (
-              <Icon name='close' size={20} />
+              <Icon name='close' />
             )}
             <span>{feature.text}</span>
           </li>
@@ -86,10 +89,10 @@ const {
 <style>
   [data-icon='close'] {
     /* --stroke-width: 1px; */
-    --stroke-color: var(--error-1);
+    --stroke-color: var(--text-error);
   }
   [data-icon='checkmark'] {
     /* --stroke-width: 1px; */
-    --stroke-color: var(--success-1);
+    --stroke-color: var(--text-success);
   }
 </style>

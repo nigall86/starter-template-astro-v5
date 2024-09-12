@@ -3,8 +3,8 @@
 
   /* Layout */
   /* --grid-gap: var(--size-6); */
-  --grid-min-column: var(--size-relative-14);
   /* --flex-group-gap: var(--size-5); */
+  --grid-min-column: var(--size-relative-14);
 
   /* Sections */
   --section-padding-block: clamp(8rem, 10vh, 9.6rem);
