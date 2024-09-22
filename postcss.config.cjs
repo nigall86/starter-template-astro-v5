@@ -13,6 +13,7 @@ module.exports = {
         'oklab-function': {
           preserve: true,
         },
+        'cascade-layers': false,
       },
     }),
   ],

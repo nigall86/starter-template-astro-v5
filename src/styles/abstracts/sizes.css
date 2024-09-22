@@ -1,6 +1,7 @@
 /* 1rem = 10px */
 /* Sizes from 1 to 10 is the product of size's name by 4 */
 
+/* --- COMMON SIZES --- */
 :where(html) {
   /* size tokens */
   --size-1: 0.4rem;
@@ -76,4 +77,12 @@
   --size-relative-13: 15ch;
   --size-relative-14: 20ch;
   --size-relative-15: 30ch;
+}
+
+/* --- LAYOUT SIZES --- */
+:where(html) {
+  --grid-min-column: var(--size-relative-14);
+
+  /* Sections */
+  --section-padding-block: clamp(8rem, 10vh, 9.6rem);
 }

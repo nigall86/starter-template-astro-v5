@@ -15,6 +15,7 @@ import CheckBox from '@components/ui/controls/CheckBox.astro';
 import Checkbox from '@components/ui/controls/Checkbox.jsx';
 import CheckBoxGroup from '@components/ui/controls/CheckBoxGroup.astro';
 import TextInput from '@components/ui/controls/TextInput';
+import ThemeSwitcherNew from '@components/ThemeSwitcherNew.astro';
 
 // data
 import { plans } from '@data/plansData';
@@ -77,6 +78,7 @@ const comments = await db
       <TextInput name='input' label='Name' />
 
       <!-- <CheckBoxGroup /> -->
+      <ThemeSwitcherNew />
     </div>
-  </section></BaseLayout
->
+  </section>
+</BaseLayout>

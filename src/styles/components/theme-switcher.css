@@ -1,0 +1,201 @@
+:root {
+  --color-day-bg: #0984e3;
+  --color-day-icon: #ffe4a1;
+  --color-night-bg: #032b43;
+  --color-night-icon: #b9c6d3;
+  --color-light: #ffffff;
+  --color-dark: #4a4a4a;
+  --color-charcoal: #252525;
+  --color-shadow-light: rgba(48, 48, 48, 0.15);
+  --color-shadow-mid: rgba(0, 0, 0, 0.25);
+  --color-shadow-dark: rgba(0, 0, 0, 0.9);
+
+  --font-base-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-label-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+  --metric-toggle-thumb-size: 2rem;
+  --metric-toggle-thumb-space: 0.4rem;
+  --metric-toggle-icon-space: 0.64rem;
+
+  --transition-snappy-duration: 500ms;
+  --transition-silky-duration: 200ms;
+  --transition-icon: opacity var(--transition-snappy-duration) ease,
+    transform var(--transition-silky-duration) cubic-bezier(1, 0, 0.55, 0.85);
+  --transition-delay-icon: 1000ms;
+}
+
+body {
+  background: var(--color-light);
+  font-family: var(--font-base-family), sans-serif;
+  color: var(--color-charcoal);
+}
+
+/* body.dark { */
+/* background: var(--color-charcoal); */
+/* color: var(--color-light); */
+/* } */
+
+body:has(#dm-toggle-element:checked) {
+  background: var(--color-charcoal);
+  color: var(--color-light);
+}
+
+.dm-toggle {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+
+  font-family: var(--font-label-family), sans-serif;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.dm-toggle__element {
+  position: absolute;
+  top: 50%;
+  right: var(--metric-toggle-thumb-size);
+
+  width: 1em;
+  height: 1em;
+  translate: 0 -50%;
+  opacity: 0;
+}
+
+.dm-toggle__decor {
+  --color-toggle-decor-bg: var(--color-day-bg);
+
+  /*  I want my border to push out, rather than be accounted for with dimensions that are set */
+  box-sizing: content-box;
+  position: relative;
+  display: block;
+  width: calc(
+    (var(--metric-toggle-thumb-size) * 2) +
+      (var(--metric-toggle-thumb-space) * 2)
+  );
+  height: calc(
+    var(--metric-toggle-thumb-size) + (var(--metric-toggle-thumb-space) * 2)
+  );
+  margin-left: 0.5rem;
+
+  border: 1px solid var(--color-light);
+  border-radius: var(--metric-toggle-thumb-size);
+  background: var(--color-toggle-decor-bg);
+  transition: background var(--transition-snappy-duration);
+  transition-delay: var(--transition-snappy-duration);
+  overflow: hidden;
+}
+
+.dm-toggle__thumb {
+  position: absolute;
+  top: var(--metric-toggle-thumb-space);
+  left: var(--metric-toggle-thumb-space);
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+  width: var(--metric-toggle-thumb-size);
+  height: var(--metric-toggle-thumb-size);
+
+  border-radius: var(--metric-toggle-thumb-size);
+  background: linear-gradient(
+      229.84deg,
+      rgba(255, 255, 255, 0) 14.29%,
+      rgba(48, 48, 48, 0.15) 81.82%
+    ),
+    #ffffff;
+  color: var(--color-day-icon);
+  box-shadow: 0 0 var(--metric-toggle-thumb-space) var(--color-shadow-mid);
+  transform: none;
+  transition: transform var(--transition-silky-duration)
+    cubic-bezier(1, 0, 0.55, 0.85);
+
+  /* Gives the browser a little heads up that this thing will very likely change */
+  will-change: transform;
+
+  &::before {
+    content: '';
+    display: none;
+    width: calc(
+      var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space)
+    );
+    height: calc(
+      var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space)
+    );
+    border: 2px solid var(--color-dark);
+    border-radius: calc(
+      var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space)
+    );
+  }
+}
+
+.dm-toggle__icon {
+  position: absolute;
+  top: 50%;
+  font-size: 0.9em;
+  transform: translateY(-50%);
+  /*translate: 0 -50%;*/
+
+  &[data-state='checked'] {
+    left: var(--metric-toggle-icon-space);
+    fill: var(--color-night-icon);
+    transform: translateY(-1rem);
+    /*translate: 0 -1rem;*/
+    opacity: 0;
+  }
+
+  &[data-state='un-checked'] {
+    right: var(--metric-toggle-icon-space);
+    fill: var(--color-day-icon);
+    transition: var(--transition-icon);
+    transition-delay: var(--transition-delay-icon);
+  }
+}
+
+.dm-toggle__decor:is(:hover) {
+  .toggle__thumb {
+    margin-left: 1px;
+  }
+}
+
+:checked + .dm-toggle__decor {
+  --color-toggle-decor-bg: var(--color-night-bg);
+
+  &:hover {
+    & .toggle__thumb {
+      margin-left: -1px;
+    }
+  }
+
+  & .dm-toggle__thumb {
+    transform: translateX(var(--metric-toggle-thumb-size)) rotate(270deg);
+    box-shadow: 0 0 var(--metric-toggle-thumb-space) var(--color-shadow-dark);
+  }
+
+  & .dm-toggle__icon[data-state='checked'] {
+    transform: translateY(-50%);
+    transition: var(--transition-icon);
+    transition-delay: var(--transition-delay-icon);
+    opacity: 1;
+  }
+
+  & .dm-toggle__icon[data-state='un-checked'] {
+    transform: translateY(1rem);
+    transition: none;
+    opacity: 0;
+  }
+}
+
+:focus + .dm-toggle__decor:not(:hover) .toggle__thumb::before {
+  display: block;
+}
+
+:disabled + .dm-toggle__decor {
+  filter: grayscale(1) brightness(1.5);
+  cursor: not-allowed;
+}

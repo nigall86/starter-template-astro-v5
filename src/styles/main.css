@@ -1,4 +1,74 @@
-@import './abstracts/_index.css';
-@import './base/_index.css';
-@import './layout/_index.css';
-@import './utilities/_index.css';
+/* @import './abstracts/_index.css'; */
+/* @import './base/_index.css'; */
+/* @import './layout/_index.css'; */
+/* @import './utilities/_index.css'; */
+
+@layer abstracts, base, layout, components, utilities;
+
+/* ---------------------------------
+  Abstract layer 
+---------------------------------  */
+@import './abstracts/colors-harmony/_index.css' layer(abstracts);
+@import './abstracts/animations.css' layer(abstracts);
+@import './abstracts/aspects.css' layer(abstracts);
+@import './abstracts/borders.css' layer(abstracts);
+@import './abstracts/gradients.css' layer(abstracts);
+@import './abstracts/layers.css' layer(abstracts);
+@import './abstracts/mask-corners.css' layer(abstracts);
+@import './abstracts/mask-edges.css' layer(abstracts);
+@import './abstracts/noises.css' layer(abstracts);
+@import './abstracts/shadows.css' layer(abstracts);
+@import './abstracts/sizes.css' layer(abstracts);
+@import './abstracts/typography.css' layer(abstracts);
+@import './abstracts/tokens-harmony.css' layer(abstracts);
+
+/* ---------------------------------
+  Base layer 
+---------------------------------  */
+@import './base/font-face.css' layer(base);
+@import './base/reset.css' layer(base);
+@import './base/base.css' layer(base);
+
+/* ---------------------------------
+  Layout layer 
+---------------------------------  */
+@import './layout/cluster.css' layer(layout);
+@import './layout/container.css' layer(layout);
+@import './layout/content-grid.css' layer(layout);
+@import './layout/even-columns.css' layer(layout);
+@import './layout/flex-group.css' layer(layout);
+@import './layout/full-with-one-side.css' layer(layout);
+@import './layout/grid-auto-fit.css' layer(layout);
+@import './layout/negative-grid.css' layer(layout);
+@import './layout/offset-grid.css' layer(layout);
+@import './layout/pile.css' layer(layout);
+@import './layout/repel.css' layer(layout);
+@import './layout/section.css' layer(layout);
+@import './layout/switcher.css' layer(layout);
+
+/* ---------------------------------
+  Components layer 
+---------------------------------  */
+@import './components/card.css' layer(components);
+@import './components/footer.css' layer(components);
+@import './components/form.css' layer(components);
+@import './components/header.css' layer(components);
+@import './components/link.css' layer(components);
+@import './components/logo.css' layer(components);
+@import './components/modal.css' layer(components);
+@import './components/nav.css' layer(components);
+@import './components/tabs.css' layer(components);
+
+/* ---------------------------------
+  Utilities layer 
+---------------------------------  */
+@import './utilities/border-radius.css' layer(utilities);
+@import './utilities/box-shadow.css' layer(utilities);
+@import './utilities/colors-harmony.css' layer(utilities);
+@import './utilities/flow.css' layer(utilities);
+@import './utilities/mx-auto.css' layer(utilities);
+@import './utilities/overlay.css' layer(utilities);
+@import './utilities/round.css' layer(utilities);
+@import './utilities/spacing.css' layer(utilities);
+@import './utilities/typography.css' layer(utilities);
+@import './utilities/visually-hidden.css' layer(utilities);
