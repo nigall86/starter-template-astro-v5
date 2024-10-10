@@ -1,0 +1,14 @@
+---
+import Avatar from './Avatar.astro';
+
+// data
+import { avatars } from '@data/avatarsData';
+---
+
+<figure class='avatars-container | negative-grid'>
+  {
+    avatars.map((avatar) => (
+      <Avatar imagePath={avatar.path} altText={avatar.name} />
+    ))
+  }
+</figure>

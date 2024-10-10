@@ -1,4 +1,5 @@
 ---
+// astro tools
 import { db, eq, Author, Comment } from 'astro:db';
 
 import Lottie from '@advanced-astro/lottie/Lottie.astro';
@@ -16,6 +17,7 @@ import Checkbox from '@components/ui/controls/Checkbox.jsx';
 import CheckBoxGroup from '@components/ui/controls/CheckBoxGroup.astro';
 import TextInput from '@components/ui/controls/TextInput';
 import ThemeSwitcherNew from '@components/ThemeSwitcherNew.astro';
+import Avatars from '@components/Avatars.astro';
 
 // data
 import { plans } from '@data/plansData';
@@ -79,6 +81,7 @@ const comments = await db
 
       <!-- <CheckBoxGroup /> -->
       <ThemeSwitcherNew />
+      <Avatars />
     </div>
   </section>
 </BaseLayout>
