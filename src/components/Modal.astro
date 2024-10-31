@@ -23,7 +23,7 @@ const {
   } = Astro.props;
 ---
 
-<dialog id={dialogType} data-type={dialogType}>
+<dialog id={dialogType} data-type={dialogType} aria-modal='true'>
   <form method="dialog">
     <!-- Condition for header -->
     {dialogType === 'megaDialog' ? 

@@ -18,15 +18,20 @@ function createTabs(element) {
     if (currentTabIndex > -1) {
       tabHeaders[currentTabIndex].style.fontWeight = 400;
       tabHeaders[currentTabIndex].style.color = 'var(--text-1)';
+      tabHeaders[currentTabIndex].setAttribute('aria-selected', 'false');
       tabContents[currentTabIndex].style.display = 'none';
     }
     // Show current tab and content
     tabHeaders[index].style.fontWeight = 800;
     tabHeaders[index].style.color = 'var(--accent)';
+    tabHeaders[index].setAttribute('aria-selected', 'true');
     tabContents[index].style.display = 'flex';
+
+    // Update index
     currentTabIndex = index;
   }
 
+  // Select default tab
   let defaultTabIndex = tabHeaders.findIndex((x) => {
     return [...x.classList].indexOf('default-tab') > -1;
   });

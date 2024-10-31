@@ -6,14 +6,24 @@ import '../styles/components/tabs.css';
 import { tabs } from '@data/tabsData';
 ---
 
-<div class='tabs'>
-  <ul class='tabs__header'>
-    {tabs.map((item) => <li> {item.heading} </li>)}
+<div class="tabs">
+  <ul role='tablist' aria-label='Tabs' class='tabs__header'>
+    {
+      tabs.map((item, index) => (
+        <li id=`tab-${index + 1}` aria-controls=`panel-${index + 1}` role='tab'  >
+          {item.heading}
+        </li>
+      ))
+    }
   </ul>
   <ul class='tabs__content'>
-    {tabs.map((item) => <li class='tab'>{item.content}</li>)}
+    {tabs.map((item, index) => (
+      <li id=`panel-${index + 1}` aria-labelledby=`tab-${index + 1}` role='tabpanel'>
+        <p>{item.content}</p>
+      </li>))}
   </ul>
 </div>
+
 
 <script>
   import '@scripts/tabs';

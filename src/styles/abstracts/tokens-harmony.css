@@ -15,7 +15,7 @@
   --bg-body: var(--neutral-100, --gray-1);
   --bg-subtle: var(--neutral-200, --gray-2);
   --bg-inactive: var(--neutral-500, --gray-5);
-  --bg-secondary: var(--neutral-200, --gray-2);
+  --bg-secondary: var(--neutral-300, --gray-3);
 
   /* Brand */
   --bg-brand: var(--blue-800, --blue-11);

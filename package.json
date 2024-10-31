@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "@advanced-astro/lottie": "^0.2.0",
-    "@astrojs/db": "^0.14.1",
-    "@astrojs/netlify": "^5.5.3",
+    "@astrojs/db": "^0.14.3",
+    "@astrojs/netlify": "^5.5.4",
     "@astrojs/react": "^3.6.2",
-    "@types/react": "^18.3.8",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.15.8",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "astro": "^4.16.8",
     "astro-icon": "^1.1.1",
     "gsap": "^3.12.5",
-    "lenis": "^1.1.13",
+    "lenis": "^1.1.14",
     "lottie-web": "^5.12.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -36,13 +36,13 @@
     "postcss-cli": "^11.0.0",
     "postcss-html": "^1.7.0",
     "postcss-import": "^16.1.0",
-    "postcss-nested": "^6.2.0",
-    "postcss-preset-env": "^10.0.4",
-    "sass": "^1.79.3",
-    "stylelint": "^16.9.0",
+    "postcss-nested": "^7.0.0",
+    "postcss-preset-env": "^10.0.8",
+    "sass": "^1.80.5",
+    "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-gamut": "^1.3.4",
     "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.7.0"
+    "stylelint-scss": "^6.8.1"
   }
 }
