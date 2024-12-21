@@ -2,5 +2,6 @@
 and you cannot use pseudo-elements */
 
 .overlay {
-  border-image: fill 0 linear-gradient(#0003, #000); /* your gradient here */
+  border-image: linear-gradient(hsl(240 100% 20% / 0.6) hsl(0 100% 20% / 0.6))
+    fill 1;
 }

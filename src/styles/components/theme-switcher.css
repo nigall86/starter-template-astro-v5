@@ -1,5 +1,5 @@
 :root {
-  /* --color-day-bg: #0984e3;
+  --color-day-bg: #0984e3;
   --color-day-icon: #ffe4a1;
   --color-night-bg: #032b43;
   --color-night-icon: #b9c6d3;
@@ -8,34 +8,18 @@
   --color-charcoal: #252525;
   --color-shadow-light: rgba(48, 48, 48, 0.15);
   --color-shadow-mid: rgba(0, 0, 0, 0.25);
-  --color-shadow-dark: rgba(0, 0, 0, 0.9); */
-
-  --font-base-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --font-label-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --color-shadow-dark: rgba(0, 0, 0, 0.9);
 
   --metric-toggle-thumb-size: 2rem;
   --metric-toggle-thumb-space: 0.4rem;
   --metric-toggle-icon-space: 0.64rem;
 
-  --transition-snappy-duration: 500ms;
+  --transition-snappy-duration: 400ms;
   --transition-silky-duration: 200ms;
   --transition-icon: opacity var(--transition-snappy-duration) ease,
     transform var(--transition-silky-duration) cubic-bezier(1, 0, 0.55, 0.85);
-  --transition-delay-icon: 1000ms;
+  --transition-delay-icon: 500ms;
 }
-
-body {
-  background: var(--color-light);
-  font-family: var(--font-base-family), sans-serif;
-  color: var(--color-charcoal);
-}
-
-/* body.dark { */
-/* background: var(--color-charcoal); */
-/* color: var(--color-light); */
-/* } */
 
 body:has(#dm-toggle-element:checked) {
   background: var(--color-charcoal);

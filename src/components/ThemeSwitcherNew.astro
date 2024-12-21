@@ -43,17 +43,18 @@ import '../styles/components/theme-switcher.css';
   </div>
 </label>
 
-<!-- <script>
-  const toggle = document.querySelector('.toggle');
+<script>
+  const toggle = document.querySelector('.dm-toggle');
 
   toggle.removeAttribute('hidden');
 
   toggle.querySelector('input').addEventListener('change', (e) => {
     if (e.target.checked) {
-      document.body.classList.add('dark');
+      document.body.setAttribute('color-scheme', 'dark');
       return;
     }
 
-    document.body.classList.remove('dark');
+    document.body.removeAttribute('dark');
+    document.body.setAttribute('color-scheme', 'light');
   });
-</script> -->
+</script>

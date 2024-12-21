@@ -1,0 +1,39 @@
+---
+// libraries
+import { Icon } from 'astro-icon/components';
+
+// data
+import { socialLinks } from '@data/socialsData';
+
+// props
+interface Props {
+  colors: string[];
+  size: number;
+  styles?: string;
+}
+
+const { colors, size, styles, ...rest } = Astro.props;
+
+if (colors.length === 1) {
+  for (let i = 0; i < socialLinks.length; i++) {
+    colors.push(colors[0]);
+  }
+}
+
+---
+
+<address>
+  <ul class='socials-container'>
+    {
+      socialLinks.map(({ href, title, icon}, index) => (
+        <li>
+          <a data-social={title} href={href} aria-label={title} title={title}
+            style=`--social-icon-color: ${colors[index]}; --social-icon-size: calc(${size} * 0.1rem);`
+            >
+            <Icon name={icon} size={size/2} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</address>

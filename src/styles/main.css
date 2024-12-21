@@ -9,6 +9,8 @@
   Abstract layer 
 ---------------------------------  */
 @import './abstracts/colors-harmony/_index.css' layer(abstracts);
+@import './abstracts/tokens-harmony.css' layer(abstracts);
+@import './abstracts/themes.css' layer(abstracts);
 @import './abstracts/animations.css' layer(abstracts);
 @import './abstracts/aspects.css' layer(abstracts);
 @import './abstracts/borders.css' layer(abstracts);
@@ -20,7 +22,6 @@
 @import './abstracts/shadows.css' layer(abstracts);
 @import './abstracts/sizes.css' layer(abstracts);
 @import './abstracts/typography.css' layer(abstracts);
-@import './abstracts/tokens-harmony.css' layer(abstracts);
 
 /* ---------------------------------
   Base layer 
@@ -58,6 +59,7 @@
 @import './components/logo.css' layer(components);
 @import './components/modal.css' layer(components);
 @import './components/nav.css' layer(components);
+@import './components/social-icons.css' layer(components);
 @import './components/tabs.css' layer(components);
 
 /* ---------------------------------

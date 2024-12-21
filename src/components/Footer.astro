@@ -8,9 +8,10 @@ import '../styles/components/footer.css';
 // components
 import Logo from '@components/Logo.astro';
 import Link from '@components/ui/links/Link.astro';
+import SocialIcons from './SocialIcons.astro';
 
 // data
-import { footerLinks, socialLinks } from '@data/footerData';
+import { footerLinks } from '@data/footerData';
 ---
 
 <footer class='site-footer'>
@@ -26,17 +27,7 @@ import { footerLinks, socialLinks } from '@data/footerData';
           ))
         }
       </ul>
-      <ul class='site-footer__list'>
-        {
-          socialLinks.map(({ href, title, icon }) => (
-            <li>
-              <a href={href} aria-label={title} title={title}>
-                <Icon name={icon} size={24} />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <SocialIcons colors={['red']} size={64} />
     </div>
     <div>
       <small style='color: var(--gray-5);'>

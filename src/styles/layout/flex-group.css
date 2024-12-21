@@ -5,6 +5,11 @@
   row-gap: var(--_flex-row-gap, calc(var(--gutter) / 2));
   width: fit-content;
 
+  > * {
+    min-width: fit-content;
+    flex: 1;
+  }
+
   &.mx-auto {
     justify-content: center;
   }
