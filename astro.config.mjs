@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import icon from 'astro-icon';
 import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
-import advancedLottie from '@advanced-astro/lottie';
+// import advancedLottie from '@advanced-astro/lottie';
 
 import db from '@astrojs/db';
 
@@ -13,7 +13,7 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
-  integrations: [icon(), react(), advancedLottie(), db()],
+  integrations: [icon(), react(), db()],
   devToolbar: {
     enabled: false,
   },
