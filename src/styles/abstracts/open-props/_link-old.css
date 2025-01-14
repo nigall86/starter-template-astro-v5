@@ -1,0 +1,273 @@
+.btn,
+button,
+input:where([type='button'], [type='submit'], [type='reset']),
+input[type='file']::-webkit-file-upload-button,
+input[type='file']::file-selector-button {
+  /* Button tokens */
+  --_btn-accent: var(--bg-action-accent, --accent);
+  --_btn-primary: var(--bg-action-primary, --primary);
+  --_btn-text-color: var(--text-body, --text-1);
+  --_btn-size: initial;
+
+  /* Background */
+  --_btn-bg: var(--bg-body, --surface-1);
+
+  /* Highlight */
+  --_btn-border: var(--border-container, --surface-3);
+
+  --_btn-highlight-size: 0;
+  --_btn-highlight-opacity: 25%;
+  --_btn-highlight: oklch(
+    var(--accent-lightness) 0.05 var(--accent-hue) /
+      var(--_btn-highlight-opacity)
+  );
+
+  /* Text */
+  --_btn-text-shadow: 0 1px 0
+    color-mix(
+      in hsl,
+      var(--bg-secondary, --surface-3) 90%,
+      hsl(var(--neutral-950, --gray-12))
+    );
+
+  /* Icon */
+  --_btn-icon-size: 0.8lh; /* Andy Bell's setting */
+
+  -webkit-tap-highlight-color: transparent;
+
+  display: inline-flex;
+  justify-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: var(--flex-gap);
+
+  min-width: 10ch;
+  min-height: 4.4rem;
+
+  padding-block: 0.75ch;
+  padding-inline: var(--size-relative-6);
+
+  background: var(--_btn-bg);
+  border: var(--border-size-2) solid var(--_btn-border);
+  border-radius: var(--radius-2);
+
+  font-family: var(--ff-base);
+  font-size: var(--_btn-size);
+  font-weight: var(--fw-bold);
+  color: var(--_btn-text-color);
+  text-shadow: var(--_btn-text-shadow);
+  text-align: center;
+  line-height: var(--lh-3);
+  text-decoration: none;
+
+  box-shadow: var(--shadow-2), 0 1px var(--bg-secondary, --surface-3),
+    0 0 0 var(--_btn-highlight-size) var(--_btn-highlight);
+
+  transition: border-color 0.5s var(--ease-3) 3s;
+  user-select: none;
+  cursor: pointer;
+
+  @media (--motionOK) {
+    transition: border-color 0.5s var(--ease-3) 3s,
+      box-shadow 145ms var(--ease-4), outline-offset 145ms var(--ease-4);
+  }
+}
+
+.btn,
+button,
+input:where([type='button'], [type='submit'], [type='reset']) {
+  &[disabled] {
+    --_btn-bg: var(--bg-inactive);
+    --_btn-text-color: var(--text-inactive, --text-1);
+
+    box-shadow: var(--shadow-1);
+    cursor: not-allowed;
+  }
+
+  @media (--mouse) {
+    &:not(:active):hover {
+      --_btn-highlight-size: var(--size-2);
+      transition-delay: 0s;
+      transition-duration: 0.25s;
+    }
+  }
+
+  & > svg {
+    flex-shrink: 0;
+    inline-size: auto;
+    block-size: var(--_btn-icon-size);
+    filter: drop-shadow(var(--_btn-text-color));
+
+    & > * {
+      stroke: var(--_btn-icon-color);
+      stroke-width: var(--border-size-2);
+    }
+  }
+}
+
+[type='submit'],
+form button:not([type], [disabled]) {
+  --_btn-text-color: var(--text-action-accent, var(--link));
+}
+
+[type='reset'] {
+  --_btn-text-color: var(--text-error, --error-2);
+  --_btn-border: var(--bg-error, --error-1);
+
+  &:focus-visible {
+    outline-color: var(--error-2);
+  }
+}
+
+:where([type='submit'], [type='reset'], form button:not([type])):where(
+    :hover,
+    :focus-visible
+  ):not([disabled]) {
+  --_btn-border: currentColor;
+}
+
+input[type='file'] {
+  align-self: flex-start;
+  max-inline-size: 100%;
+  padding: 0;
+
+  border: var(--border-size-1) solid var(--bg-subtle, --surface-2);
+  border-radius: var(--radius-2);
+  color: var(--text-body, --text-1);
+  box-shadow: var(--inner-shadow-4);
+  cursor: auto;
+
+  &::-webkit-file-upload-button,
+  &::file-selector-button {
+    margin-inline-end: var(--size-relative-6);
+    cursor: pointer;
+  }
+}
+
+@media (--OSdark) {
+  [disabled],
+  [type='reset'],
+  [type='submit'],
+  form button:not([type='button'], [data-type='btn-icon']) {
+    background-color: var(--bg-body, --surface-1);
+  }
+}
+
+/* Spacing for inputs and textarea */
+:where(input:not([type='range']), textarea) {
+  padding-block: var(--size-1);
+  padding-inline: var(--size-2);
+}
+
+@media (--OSdark) {
+  :where(
+      textarea,
+      input:not(button):not(button[type]):not(input[type='button']):not(
+          input[type='submit']
+        ):not(input[type='reset'])
+    ) {
+    background-color: var(--bg-secondary, --surface-4);
+  }
+}
+
+:where(
+    a[href],
+    area,
+    button,
+    input:not(
+        [type='text'],
+        [type='email'],
+        [type='number'],
+        [type='password'],
+        [type=''],
+        [type='tel'],
+        [type='url']
+      ),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*='-'])
+  ) {
+  cursor: pointer;
+}
+
+/* --- Accent button --- */
+[data-type='accent'] {
+  --_btn-border: transparent;
+  --_btn-bg: var(--bg-action-accent);
+  --_btn-text-color: var(--text-action-accent);
+
+  &:is(.gradient) {
+    --_btn-border: color-mix(
+      in oklch,
+      var(--accent) 90%,
+      var(--neutral-950, --gray-12)
+    );
+
+    --_btn-bg: linear-gradient(
+      var(--accent),
+      color-mix(in oklch, var(--accent) 90%, var(--neutral-950, --gray-12))
+    );
+
+    --_btn-text-color: var(--text-body, --text-1);
+    --_btn-text-shadow: 0 1px 0
+      color-mix(in oklch, var(--accent) 70%, var(--neutral-950, --gray-12));
+  }
+}
+
+/* --- Primary button --- */
+[data-type='primary'] {
+  --_btn-border: transparent;
+  --_btn-bg: var(--bg-action-primary);
+  --_btn-text-color: var(--text-action-primary);
+
+  &:is(.gradient) {
+    --_btn-border: color-mix(
+      in oklch,
+      var(--primary) 90%,
+      var(--neutral-950, --gray-12)
+    );
+
+    --_btn-bg: linear-gradient(
+      var(--primary),
+      color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12))
+    );
+
+    --_btn-text-color: var(--text-body, --text-1);
+
+    --_btn-text-shadow: 0 1px 0
+      color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12));
+  }
+}
+
+/* --- Button outline --- */
+[data-type='outline'] {
+  --_btn-bg: transparent;
+  --_btn-border: var(--border-action, --accent);
+  --_btn-text-color: var(--_btn-border);
+}
+
+/* --- Btn as icon only --- */
+[data-type='btn-icon'] {
+  --_btn-bg: var(--bg-secondary, --surface-4);
+  --_btn-icon-size: var(--size-10);
+  --_btn-icon-color: var(--text-body, --text-1);
+
+  flex-shrink: 0;
+  place-items: center;
+  aspect-ratio: var(--ratio-square);
+
+  min-width: auto;
+  padding: 0.6rem;
+  border: none;
+  border-radius: var(--radius-round);
+  stroke-width: var(--border-size-2);
+  stroke: currentColor;
+  background-color: var(--_btn-bg);
+
+  & > svg {
+    inline-size: var(--_btn-icon-size);
+    block-size: var(--_btn-icon-size);
+    filter: drop-shadow(var(--_btn-text-color));
+  }
+}

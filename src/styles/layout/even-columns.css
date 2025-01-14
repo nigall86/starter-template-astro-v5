@@ -1,6 +1,6 @@
 .even-columns {
   display: grid;
-  gap: var(--gutter);
+  gap: var(--grid-gap);
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
 

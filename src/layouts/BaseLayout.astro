@@ -5,19 +5,46 @@ import '@styles/main.css';
 
 // component
 import BaseHead from './BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Link from '@components/ui/links/Link.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <!doctype html>
 <BaseHead {...Astro.props} />
 <html lang='en'>
-  <body>
+  <body >
+  <!-- Skip to main content -->
+  <Link dataType='accent' href='#main-content' classes='skip-link'>Skip to main content</Link>
     <Header />
-    <slot />
+    <main id='main-content'>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  .skip-link {
+    z-index: var(--layer-important);
+    position: absolute;
+    top: var(--size-3);
+    left: var(--size-3);
+
+
+    padding: var(--space-xs) var(--space-m);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-2);
+    pointer-events: none;
+
+    &:is(:focus, :focus-visible) {
+      opacity: 1;
+      pointer-events: auto;
+      outline: 3px solid var(--fgColor-white);
+    }
+  }
+
+</style>
 
 <script>
   import '@scripts/main.js';

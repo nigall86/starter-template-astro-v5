@@ -1,107 +1,104 @@
 :where(html) {
-  /* --- Common tokens --- */
-
-  /* Layout */
-  /* --grid-gap: var(--size-6); */
-  /* --flex-group-gap: var(--size-5); */
-  --grid-min-column: var(--size-relative-14);
-
-  /* Sections */
-  --section-padding-block: clamp(8rem, 10vh, 9.6rem);
-
+  /***********************/
   /* --- Light theme --- */
-  --accent-light: oklch(
-    var(--accent-lightness) var(--accent-chroma) var(--accent-hue)
-  );
+  --accent-light: var(--orange-6);
 
-  --primary-light: oklch(
-    var(--primary-lightness) var(--primary-chroma) var(--primary-hue)
-  );
+  color: rgba(255, 128, 200, 0.4);
 
   /* Surface colors */
-  --surface-1-light: oklch(96% 0.001 var(--accent-hue));
-  --surface-2-light: oklch(94% 0.005 var(--accent-hue));
-  --surface-3-light: oklch(91% 0.007 var(--accent-hue));
-  --surface-4-light: oklch(87% 0.01 var(--accent-hue));
+  --surface-1-light: var(--gray-0);
+  --surface-2-light: var(--gray-1);
+  --surface-3-light: var(--gray-2);
+  --surface-4-light: var(--gray-3);
+
+  /* Success colors*/
+  --success-1-light: var(--green-5);
+  --success-2-light: var(--green-6);
 
   /* Error colors */
   --error-1-light: var(--red-6);
   --error-2-light: var(--red-7);
 
   /* Text color */
-  --text-1-light: oklch(24% 0.05 var(--accent-hue));
-  --text-2-light: oklch(43% 0.045 var(--accent-hue));
+  --text-1-light: var(--gray-8);
+  --text-2-light: var(--gray-7);
 
   /* Link colors */
   --link-light: var(--indigo-7);
   --link-hover-light: var(--indigo-5);
   --link-visited-light: var(--indigo-bright);
 
+  /* Shadow*/
+  --surface-shadow-light: var(--gray-8);
+  --shadow-strength-light: 2%;
+
   /* Scroll color */
   --scroll-thumb-light: var(--gray-7);
 
+  /***********************/
   /* --- Dark theme --- */
-  --accent-dark: oklch(
-    calc(var(--accent-lightness) / 1.5) calc(var(--accent-chroma) / 1.5)
-      var(--accent-hue)
-  );
-
-  --primary-dark: oklch(
-    calc(var(--primary-lightness) / 1.5) calc(var(--primary-chroma) / 1.5)
-      var(--primary-hue)
-  );
+  --accent-dark: var(--orange-3);
 
   /* Surface colors */
-  --surface-1-dark: oklch(27% 0.01 var(--accent-hue));
-  --surface-2-dark: oklch(35% 0.012 var(--accent-hue));
-  --surface-3-dark: oklch(43% 0.014 var(--accent-hue));
-  --surface-4-dark: oklch(65% 0.014 var(--accent-hue));
+  --surface-1-dark: var(--gray-12);
+  --surface-2-dark: var(--gray-11);
+  --surface-3-dark: var(--gray-10);
+  --surface-4-dark: var(--gray-9);
+
+  /* Success colors*/
+  --success-1-dark: var(--green-9);
+  --success-2-dark: var(--green-10);
 
   /* Error colors */
-  --error-1-dark: var(--surface-3-dark);
-  --error-2-dark: var(--red-3);
+  --error-1-dark: var(--red-9);
+  --error-2-dark: var(--red-10);
 
   /* Text color */
-  --text-1-dark: oklch(89% 0.01 var(--accent-hue));
-  --text-2-dark: oklch(73% 0.008 var(--accent-hue));
+  --text-1-dark: var(--gray-3);
+  --text-2-dark: var(--gray-5);
 
   /* Link colors */
   --link-dark: var(--indigo-3);
   --link-hover-dark: var(--indigo-5);
   --link-visited-dark: var(--indigo-bright);
 
+  /* Shadow */
+  --surface-shadow-dark: var(--gray-12);
+  --shadow-strength-dark: 80%;
+
   /* Scroll color */
   --scroll-thumb-dark: var(--gray-6);
 
+  /***********************/
   /* --- Dim theme --- */
-  --accent-dim: oklch(
-    calc(var(--accent-lightness) / 1.25) calc(var(--accent-chroma) / 1.25)
-      var(--accent-hue)
-  );
+  --accent-dim: var(--orange-4);
 
-  --primary-dim: oklch(
-    calc(var(--primary-lightness) / 1.25) calc(var(--primary-chroma) / 1.25)
-      var(--primary-hue)
-  );
+ /* Surface colors */
+  --surface-1-dim: var(--gray-8);
+  --surface-2-dim: var(--gray-7);
+  --surface-3-dim: var(--gray-6);
+  --surface-4-dim: var(--gray-5);
 
-  /* Surface colors */
-  --surface-1-dim: oklch(32% 0.011 var(--accent-hue));
-  --surface-2-dim: oklch(37% 0.013 var(--accent-hue));
-  --surface-3-dim: oklch(42% 0.008 var(--accent-hue));
-  --surface-4-dim: oklch(47% 0.009 var(--accent-hue));
+  /* Success colors*/
+  --success-1-dim: var(--green-11);
+  --success-2-dim: var(--green-12);
 
   /* Error colors */
-  --error-1-dim: var(--surface-3-dim);
-  --error-2-dim: var(--red-3);
+  --error-1-dim: var(--red-11);
+  --error-2-dim: var(--red-12);
 
   /* Text color */
-  --text-1-dim: oklch(81% 0.017 var(--accent-hue));
-  --text-2-dim: oklch(69% 0.018 var(--accent-hue));
+  --text-1-dim: var(--gray-3);
+  --text-2-dim: var(--gray-4);
 
   /* Link colors */
   --link-dim: var(--indigo-3);
   --link-hover-dim: var(--indigo-5);
   --link-visited-dim: var(--indigo-bright);
+
+  /* Shadow */
+  --surface-shadow-dim: var(--gray-9);
+  --shadow-strength-dim: 20%;
 
   /* Scroll color */
   --scroll-thumb-dim: var(--gray-5);
@@ -112,7 +109,6 @@
 
   /* --- Set defaults --- */
   --accent: var(--accent-light);
-  --primary: var(--primary-light);
 
   /* Surface colors */
   --surface-1: var(--surface-1-light);
@@ -120,9 +116,9 @@
   --surface-3: var(--surface-3-light);
   --surface-4: var(--surface-4-light);
 
-  /* Success colors*/
-  --success-1: var(--green-5);
-  --success-2: var(--green-6);
+  /* Success colors */
+  --success-1: var(--success-1-light);
+  --success-2: var(--success-2-light);
 
   /* Error colors */
   --error-1: var(--error-1-light);
@@ -131,10 +127,6 @@
   /* Text color */
   --text-1: var(--text-1-light);
   --text-2: var(--text-2-light);
-
-  /* Default colors */
-  --color-bg-default: var(--surface-1);
-  --color-text-default: var(--text-2);
 
   /* Link colors */
   --link: var(--link-light);
@@ -154,13 +146,16 @@
     color-scheme: dark;
 
     --accent: var(--accent-dark);
-    --primary: var(--primary-dark);
 
     /* Surface colors */
     --surface-1: var(--surface-1-dark);
     --surface-2: var(--surface-2-dark);
     --surface-3: var(--surface-3-dark);
     --surface-4: var(--surface-4-dark);
+
+    /* Success colors */
+    --success-1: var(--success-1-dark);
+    --success-2: var(--success-2-dark);
 
     /* Error colors */
     --error-1: var(--error-1-dark);

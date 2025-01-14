@@ -3,15 +3,11 @@
 import '../styles/components/header.css';
 
 // components
-import Nav from '@components/Nav.astro';
 import Logo from '@components/Logo.astro';
+import Nav from '@components/Nav.astro';
 ---
 
 <header class='site-header'>
-  <div class='content-grid'>
-    <div class='site-header__inner'>
-      <Logo type='header' />
-      <Nav />
-    </div>
-  </div>
+  <Logo type='header' size={32} />
+  <Nav />
 </header>

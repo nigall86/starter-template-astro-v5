@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light;
+
+  --borderColor-default: var(--base-color-neutral-6);
+  --borderColor-muted: hsla(208 19% 85% / 0.7); /* #D1D9E0B3 */
+  --borderColor-emphasis: var(--base-color-neutral-8);
+  --borderColor-disabled: hsla(214 10% 55% / 0.1); /* #818B981A */
+  --borderColor-transparent: var(--base-color-transparent);
+  --borderColor-translucent: hsla(213 13% 14% / 0.15); /* #1F232826 */
+
+  /* Neutral */
+  --borderColor-neutral-emphasis: var(--base-color-neutral-9);
+  --borderColor-neutral-muted: var(--borderColor-muted);
+
+  /* Accent */
+  --borderColor-accent-emphasis: var(--base-color-blue-5);
+  --borderColor-accent-muted: hsla(208 100% 66% / 0.4); /* #54AEFF66 */
+
+  /* Brand */
+  --borderColor-brand-emphasis: var(--borderColor-accent-emphasis);
+  --borderColor-brand-muted: var(--borderColor-accent-muted);
+
+  /* Attention */
+  --borderColor-attention-emphasis: var(--base-color-yellow-5);
+  --borderColor-attention-muted: hsla(44 66% 50% / 0.4); /* #D4A72C66 */
+
+  /* Danger & Closed */
+  --borderColor-danger-emphasis: var(--base-color-red-5);
+  --borderColor-danger-muted: hsla(360 100% 75% / 0.4); /* #FF818266 */
+  --borderColor-closed-emphasis: var(--borderColor-danger-emphasis);
+  --borderColor-closed-muted: var(--borderColor-danger-muted);
+
+  /* Done & Upsell*/
+  --borderColor-done-emphasis: var(--base-color-purple-5);
+  --borderColor-done-mute: hsla(265 100% 80% / 0.4); /* #C297FF66 */
+  --borderColor-upsell-emphasis: var(--borderColor-done-emphasis);
+  --borderColor-upsell-mute: var(--borderColor-done-mute);
+
+  /* Success & Open*/
+  --borderColor-success-emphasis: var(--base-color-green-5);
+  --borderColor-success-muted: hsla(137 50% 53% / 0.4); /* #4AC26B66 */
+  --borderColor-open-emphasis: var(--borderColor-success-emphasis);
+  --borderColor-open-muted: var(--borderColor-success-muted);
+
+  /* Severe */
+  --borderColor-severe-emphasis: var(--base-color-orange-5);
+  --borderColor-severe-muted: hsla(25 96% 63% / 0.4); /* #FB8F4466 */
+
+  @media (--OSdark) {
+    color-scheme: dark;
+
+    --borderColor-default: var(--base-color-neutral-7);
+    --borderColor-muted: hsla(214 12% 27% / 0.7); /* #3D444DB3 */
+    --borderColor-emphasis: var(--base-color-neutral-8);
+    --borderColor-disabled: hsla(215 8% 43% / 0.1); /* #656C761A */
+    --borderColor-transparent: var(--base-color-transparent);
+    --borderColor-translucent: hsla(0 0% 100% / 0.15); /* #FFFFFF26 */
+
+    /* Neutral */
+    --borderColor-neutral-emphasis: var(--borderColor-emphasis);
+    --borderColor-neutral-muted: var(--borderColor-muted);
+
+    /* Accent */
+    --borderColor-accent-emphasis: var(--base-color-blue-5);
+    --borderColor-accent-muted: hsla(215 98% 61% / 0.4); /* #388BFD66 */
+
+    --borderColor-brand-emphasis: var(--borderColor-accent-emphasis);
+    --borderColor-brand-muted: var(--borderColor-accent-muted);
+
+    /* Attention */
+    --borderColor-attention-emphasis: var(--base-color-yellow-5);
+    --borderColor-attention-muted: hsla(40 91% 38% / 0.4); /* #BB800966 */
+
+    /* Danger & Closed */
+    --borderColor-danger-emphasis: var(--base-color-red-5);
+    --borderColor-danger-muted: hsla(3 93% 63% / 0.4); /* #F8514966 */
+    --borderColor-closed-emphasis: var(--borderColor-danger-emphasis);
+    --borderColor-closed-muted: var(--borderColor-danger-muted);
+
+    /* Done & Upsell*/
+    --borderColor-done-emphasis: var(--base-color-purple-5);
+    --borderColor-done-mute: hsla(262 90% 73% / 0.4); /* #AB7DF866 */
+    --borderColor-upsell-emphasis: var(--borderColor-done-emphasis);
+    --borderColor-upsell-mute: var(--borderColor-done-mute);
+
+    /* Success & Open*/
+    --borderColor-success-emphasis: var(--base-color-green-5);
+    --borderColor-success-muted: hsla(131 55% 40% / 0.4); /* #2EA04366 */
+    --borderColor-open-emphasis: var(--borderColor-success-emphasis);
+    --borderColor-open-muted: var(--borderColor-success-muted);
+
+    /* Severe */
+    --borderColor-severe-emphasis: var(--base-color-orange-5);
+    --borderColor-severe-muted: hsla(23 71% 51% / 0.4); /* #DB6D2866 */
+  }
+}

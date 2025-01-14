@@ -7,12 +7,13 @@ import '../styles/components/logo.css';
 
 interface Props {
   type?: 'header' | 'footer';
+  size?: number;
   alt?: string;
 }
 
-const { type, alt = 'Logo of the company' } = Astro.props;
+const { type, size, alt = 'Logo of the company' } = Astro.props;
 ---
 
-<a href='/'>
-  <Icon name='logo' class='logo' data-type={type} title={alt} />
+<a class='logo' href='/' data-astro-reload>
+  <Icon name='logo' size={size}  data-type={type} title={alt} />
 </a>

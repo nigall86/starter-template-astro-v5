@@ -1,6 +1,6 @@
 :where(html) {
   :is(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--_heading-font-family);
+    font-family: var(--_heading-font-family), sans-serif;
     font-weight: var(--_heading-font-weight);
     line-height: var(--_heading-line-height);
     color: var(--text-1);

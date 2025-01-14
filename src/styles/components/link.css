@@ -3,43 +3,35 @@ button,
 input:where([type='button'], [type='submit'], [type='reset']),
 input[type='file']::-webkit-file-upload-button,
 input[type='file']::file-selector-button {
+
   /* Button tokens */
-  --_btn-accent: var(--bg-action-accent, --accent);
-  --_btn-primary: var(--bg-action-primary, --primary);
-  --_btn-text-color: var(--text-body, --text-1);
   --_btn-size: initial;
+  --_btn-bg: var(--button-default-bgColor-rest);
+  --_btn-text: var(--button-default-fgColor-rest);
+  --_btn-border: var(--button-default-borderColor-rest);
 
-  /* Background */
-  --_btn-bg: var(--bg-body, --surface-1);
+  --_btn-bg-hover: var(--button-default-bgColor-hover);
+  --_btn-bg-active: var(--button-default-bgColor-active);
+  --_btn-bg-selected: var(--button-default-bgColor-selected);
+  --_btn-bg-disabled: var(--button-default-bgColor-disabled);
 
-  /* Highlight */
-  --_btn-border: var(--border-container, --surface-3);
+  --_btn-text-hover: var(--button-default-fgColor-rest);
+  --_btn-text-active: var(--button-default-fgColor-rest);
 
-  --_btn-highlight-size: 0;
-  --_btn-highlight-opacity: 25%;
-  --_btn-highlight: oklch(
-    var(--accent-lightness) 0.05 var(--accent-hue) /
-      var(--_btn-highlight-opacity)
-  );
-
-  /* Text */
-  --_btn-text-shadow: 0 1px 0
-    color-mix(
-      in hsl,
-      var(--bg-secondary, --surface-3) 90%,
-      hsl(var(--neutral-950, --gray-12))
-    );
+  --_btn-border-hover: var(--button-default-borderColor-hover);
+  --_btn-border-active: var(--button-default-borderColor-active);
+  --_btn-border-disabled: var(--button-default-borderColor-disabled);
 
   /* Icon */
+  --_btn-icon-color: var(--_btn-text);
   --_btn-icon-size: 0.8lh; /* Andy Bell's setting */
 
   -webkit-tap-highlight-color: transparent;
 
   display: inline-flex;
-  justify-self: flex-start;
   justify-content: center;
   align-items: center;
-  gap: var(--flex-gap);
+  gap: var(--size-4);
 
   min-width: 10ch;
   min-height: 4.4rem;
@@ -47,29 +39,34 @@ input[type='file']::file-selector-button {
   padding-block: 0.75ch;
   padding-inline: var(--size-relative-6);
 
-  background: var(--_btn-bg);
+  background-color: var(--_btn-bg);
   border: var(--border-size-2) solid var(--_btn-border);
   border-radius: var(--radius-2);
 
-  font-family: var(--ff-base);
+  font-family: var(--ff-base), sans-serif;
   font-size: var(--_btn-size);
   font-weight: var(--fw-bold);
-  color: var(--_btn-text-color);
-  text-shadow: var(--_btn-text-shadow);
+  color: var(--_btn-text);
+
   text-align: center;
   line-height: var(--lh-3);
   text-decoration: none;
+  box-shadow: var(--shadow-1);
 
-  box-shadow: var(--shadow-2), 0 1px var(--bg-secondary, --surface-3),
-    0 0 0 var(--_btn-highlight-size) var(--_btn-highlight);
-
-  transition: border-color 0.5s var(--ease-3) 3s;
+  transition: all 0.2s var(--ease-3);
   user-select: none;
   cursor: pointer;
 
-  @media (--motionOK) {
-    transition: border-color 0.5s var(--ease-3) 3s,
-      box-shadow 145ms var(--ease-4), outline-offset 145ms var(--ease-4);
+  &:is(:hover, :focus-visible) {
+    --_btn-bg: var(--_btn-bg-hover);
+    --_btn-text: var(--_btn-text-hover);
+    --_btn-border: var(--_btn-border-hover);
+  }
+
+  &:active {
+    --_btn-bg: var(--_btn-bg-active);
+    --_btn-text: var(--_btn-text-active);
+    --_btn-border: var(--_btn-border-active);
   }
 }
 
@@ -77,26 +74,17 @@ input[type='file']::file-selector-button {
 button,
 input:where([type='button'], [type='submit'], [type='reset']) {
   &[disabled] {
-    --_btn-bg: var(--bg-inactive);
-    --_btn-text-color: var(--text-inactive, --text-1);
-
-    box-shadow: var(--shadow-1);
+    --_btn-bg: var(--_btn-bg-disabled);
+    --_btn-text: var(--_btn-text-disabled);
+    --_btn-border: var(--_btn-border-disabled);
     cursor: not-allowed;
-  }
-
-  @media (--mouse) {
-    &:not(:active):hover {
-      --_btn-highlight-size: var(--size-2);
-      transition-delay: 0s;
-      transition-duration: 0.25s;
-    }
   }
 
   & > svg {
     flex-shrink: 0;
     inline-size: auto;
     block-size: var(--_btn-icon-size);
-    filter: drop-shadow(var(--_btn-text-color));
+    filter: drop-shadow(var(--_btn-text));
 
     & > * {
       stroke: var(--_btn-icon-color);
@@ -107,23 +95,28 @@ input:where([type='button'], [type='submit'], [type='reset']) {
 
 [type='submit'],
 form button:not([type], [disabled]) {
-  --_btn-text-color: var(--text-action-accent, var(--link));
+  --_btn-text: var(--button-primary-fgColor-rest);
 }
 
-[type='reset'] {
-  --_btn-text-color: var(--text-error, --error-2);
-  --_btn-border: var(--bg-error, --error-1);
+[type='reset'], [data-type='danger'] {
+  /* Rest state */
+  --_btn-bg: var(--button-danger-bgColor-rest);
+  --_btn-text: var(--button-danger-fgColor-rest);
+  --_btn-border: var(--button-danger-borderColor-rest);
 
-  &:focus-visible {
-    outline-color: var(--error-2);
-  }
-}
+  /* Hover state */
+  --_btn-bg-hover: var(--button-danger-bgColor-hover);
+  --_btn-text-hover: var(--button-danger-fgColor-hover);
+  --_btn-border-hover: var(--button-danger-borderColor-hover);
 
-:where([type='submit'], [type='reset'], form button:not([type])):where(
-    :hover,
-    :focus-visible
-  ):not([disabled]) {
-  --_btn-border: currentColor;
+  /* Active state */
+  --_btn-bg-active: var(--button-danger-bgColor-active);
+  --_btn-text-active: var(--button-danger-fgColor-active);
+  --_btn-border-active: var(--button-danger-borderColor-active);
+
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-danger-bgColor-disabled);
+  --_btn-text-disabled: var(--button-danger-fgColor-disabled);
 }
 
 input[type='file'] {
@@ -131,9 +124,9 @@ input[type='file'] {
   max-inline-size: 100%;
   padding: 0;
 
-  border: var(--border-size-1) solid var(--bg-subtle, --surface-2);
+  border: var(--border-size-1) solid var(--button-default-borderColor-rest);
   border-radius: var(--radius-2);
-  color: var(--text-body, --text-1);
+  color: var(--button-default-fgColor-rest);
   box-shadow: var(--inner-shadow-4);
   cursor: auto;
 
@@ -149,7 +142,7 @@ input[type='file'] {
   [type='reset'],
   [type='submit'],
   form button:not([type='button'], [data-type='btn-icon']) {
-    background-color: var(--bg-body, --surface-1);
+    background-color: var(--button-default-bgColor-rest);
   }
 }
 
@@ -166,7 +159,7 @@ input[type='file'] {
           input[type='submit']
         ):not(input[type='reset'])
     ) {
-    background-color: var(--bg-secondary, --surface-4);
+    background-color: var(--button-default-bgColor-rest);
   }
 }
 
@@ -191,67 +184,93 @@ input[type='file'] {
   cursor: pointer;
 }
 
-/* --- Accent button --- */
-[data-type='accent'] {
-  --_btn-border: transparent;
-  --_btn-bg: var(--bg-action-accent);
-  --_btn-text-color: var(--text-action-accent);
-
-  &:is(.gradient) {
-    --_btn-border: color-mix(
-      in oklch,
-      var(--accent) 90%,
-      var(--neutral-950, --gray-12)
-    );
-
-    --_btn-bg: linear-gradient(
-      var(--accent),
-      color-mix(in oklch, var(--accent) 90%, var(--neutral-950, --gray-12))
-    );
-
-    --_btn-text-color: var(--text-body, --text-1);
-    --_btn-text-shadow: 0 1px 0
-      color-mix(in oklch, var(--accent) 70%, var(--neutral-950, --gray-12));
-  }
-}
-
-/* --- Primary button --- */
+/* --- Primary --- */
 [data-type='primary'] {
+  /* Rest state */
   --_btn-border: transparent;
-  --_btn-bg: var(--bg-action-primary);
-  --_btn-text-color: var(--text-action-primary);
+  --_btn-bg: var(--button-primary-bgColor-rest);
+  --_btn-text: var(--button-primary-fgColor-rest);
 
-  &:is(.gradient) {
-    --_btn-border: color-mix(
-      in oklch,
-      var(--primary) 90%,
-      var(--neutral-950, --gray-12)
-    );
+  /* Hover state */
+  --_btn-bg-hover: var(--button-primary-bgColor-hover);
+  --_btn-text-hover: var(--_btn-text);
+  --_btn-border-hover: var(--button-primary-borderColor-hover);
 
-    --_btn-bg: linear-gradient(
-      var(--primary),
-      color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12))
-    );
+  /* Active state */
+  --_btn-bg-active: var(--button-primary-bgColor-active);
+  --_btn-text-active: var(--button-danger-fgColor-active);
+  --_btn-border-active: var(--button-danger-borderColor-active);
 
-    --_btn-text-color: var(--text-body, --text-1);
-
-    --_btn-text-shadow: 0 1px 0
-      color-mix(in oklch, var(--primary) 90%, var(--neutral-950, --gray-12));
-  }
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-primary-bgColor-disabled);
+  --_btn-text-disabled: var(--button-primary-fgColor-disabled);
+  --_btn-border-disabled: var(--button-primary-borderColor-disabled);
 }
 
-/* --- Button outline --- */
+/* --- Outline --- */
 [data-type='outline'] {
-  --_btn-bg: transparent;
-  --_btn-border: var(--border-action, --accent);
-  --_btn-text-color: var(--_btn-border);
+  /* Rest state */
+  --_btn-bg: var(--button-outline-bgColor-rest);
+  --_btn-text-color: var(--button-outline-fgColor-rest);
+  --_btn-border: var(--borderColor-emphasis);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-outline-bgColor-hover);
+  --_btn-text-hover: var(--button-outline-fgColor-hover);
+  --_btn-border-hover: var(--button-outline-borderColor-hover);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-outline-bgColor-active);
+  --_btn-text-active: var(--button-outline-fgColor-active);
+  --_btn-border-active: var(--button-outline-borderColor-active);
+
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-outline-bgColor-disabled);
+  --_btn-text-disabled: var(--button-outline-fgColor-disabled);
+}
+
+/* --- Inactive --- */
+[data-type='inactive'] {
+  /* Rest state */
+  --_btn-bg: var(--button-inactive-bgColor);
+  --_btn-text-color: var(--button-inactive-fgColor);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-inactive-bgColor);
+  --_btn-text-hover: var(--button-inactive-fgColor);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-inactive-bgColor);
+  --_btn-text-active: var(--button-inactive-fgColor);
+}
+
+/* --- Invisible --- */
+[data-type='invisible'] {
+  /* Rest state */
+  --_btn-bg: var(--button-invisible-bgColor-rest);
+  --_btn-text-color: var(--button-invisible-fgColor-rest);
+  --_btn-border: var(--button-invisible-borderColor-rest);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-invisible-bgColor-hover);
+  --_btn-text-hover: var(--button-invisible-fgColor-hover);
+  --_btn-border-hover: var(--button-invisible-borderColor-hover);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-invisible-bgColor-active);
+  --_btn-text-active: var(--button-invisible-fgColor-hover);
+  --_btn-border-active: var(--button-invisible-borderColor-hover);
+
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-invisible-bgColor-disabled);
+  --_btn-text-disabled: var(--button-invisible-fgColor-disabled);
 }
 
 /* --- Btn as icon only --- */
 [data-type='btn-icon'] {
-  --_btn-bg: var(--bg-secondary, --surface-4);
   --_btn-icon-size: var(--size-10);
-  --_btn-icon-color: var(--text-body, --text-1);
+  --_btn-bg: var(--button-default-bgColor-rest);
+  --_btn-text-color: var(--button-default-fgColor-rest);
 
   flex-shrink: 0;
   place-items: center;
@@ -268,6 +287,6 @@ input[type='file'] {
   & > svg {
     inline-size: var(--_btn-icon-size);
     block-size: var(--_btn-icon-size);
-    filter: drop-shadow(var(--_btn-text-color));
+    filter: drop-shadow(var(--_btn-text));
   }
 }

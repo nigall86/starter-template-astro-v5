@@ -1,0 +1,133 @@
+:where(html){
+  color-scheme: light;
+
+  /* Background colors */
+  --control-bgColor-rest: var(--base-color-neutral-1);
+  --control-bgColor-hover: var(--base-color-neutral-2);
+  --control-bgColor-active: var(--base-color-neutral-3);
+  --control-bgColor-selected: var(--control-bgColor-rest);
+  --control-bgColor-disabled: var(--bgColor-disabled);
+
+  /* Foreground colors */
+  --control-fgColor-rest: var(--base-color-neutral-12);
+  --control-fgColor-placeholder: var(--fgColor-muted);
+  --control-fgColor-disabled: var(--fgColor-disabled);
+
+  /* Border colors */
+  --control-borderColor-rest: var(--borderColor-default);
+  --control-borderColor-selected: var(--control-bgColor-selected);
+  --control-borderColor-emphasis: var(--borderColor-emphasis);
+  --control-borderColor-disabled: var(--borderColor-disabled);
+  --control-borderColor-success: var(--borderColor-success-emphasis);
+  --control-borderColor-danger: var(--borderColor-danger-emphasis);
+  --control-borderColor-warning: var(--borderColor-attention-emphasis);
+
+  /* Icon color */
+  --control-iconColor-rest: var(--fgColor-muted);
+
+  /* --- Checked ---*/
+    /* Background */
+    --control-checked-bgColor-rest: var(--bgColor-accent-emphasis);
+    --control-checked-bgColor-hover: hsl(213 92% 41%); /* #0860CA */
+    --control-checked-bgColor-active: hsl(213 93% 38%); /* #0757BA */
+    --control-checked-bgColor-disabled: var(--fgColor-disabled);
+
+    /* Foreground */
+    --control-checked-fgColor-rest: var(--fgColor-onEmphasis);
+    --control-checked-fgColor-disabled: var(--fgColor-onEmphasis);
+
+    /* Border */
+    --control-checked-borderColor-rest: var(--control-checked-bgColor-rest);
+    --control-checked-borderColor-hover: var(--control-checked-bgColor-hover);
+    --control-checked-borderColor-active: var(--control-checked-bgColor-active);
+    --control-checked-borderColor-disabled: var(--control-checked-bgColor-disabled);
+
+  /* --- Danger --- */
+    /* Background */
+    --control-danger-bgColor-active: hsla(5 100% 96% / 0.4); /* #FFEBE966 */
+    --control-danger-bgColor-hover: var(--bgColor-danger-muted);
+
+    /* Foreground */
+    --control-danger-fgColor-hover: var(--fgColor-danger);
+    --control-danger-fgColor-rest: var(--fgColor-danger);
+
+  /* --- Transparent --- */
+    /* Background */
+    --control-transparent-bgColor-rest: var(--base-color-transparent);
+    --control-transparent-bgColor-hover: hsla(214 10% 55% / 0.1); /* #818B9819 */
+    --control-transparent-bgColor-active: hsla(214 10% 55% / 0.15); /* #818B9825 */
+    --control-transparent-bgColor-selected: hsla(214 10% 55% / 0.15); /* #818B9825 */
+    --control-transparent-bgColor-disabled: var(--bgColor-disabled);
+
+    /* Border */
+    --control-transparent-borderColor-rest: var(--base-color-transparent);
+    --control-transparent-borderColor-hover: var(--base-color-transparent);
+    --control-transparent-borderColor-active: var(--base-color-transparent);
+
+  @media (--OSdark) {
+    color-scheme: dark;
+
+    /* Background colors */
+    --control-bgColor-rest: var(--base-color-neutral-3);
+    --control-bgColor-hover: var(--base-color-neutral-4);
+    --control-bgColor-active: var(--base-color-neutral-5);
+    --control-bgColor-selected: var(--control-bgColor-rest);
+    --control-bgColor-disabled: var(--bgColor-disabled);
+
+    /* Foreground colors */
+    --control-fgColor-rest: var(--fgColor-default);
+    --control-fgColor-placeholder: var(--fgColor-muted);
+    --control-fgColor-disabled: var(--fgColor-disabled);
+
+    /* Border colors */
+    --control-borderColor-rest: var(--borderColor-default);
+    --control-borderColor-selected: var(--base-color-neutral-12);
+    --control-borderColor-emphasis: var(--borderColor-emphasis);
+    --control-borderColor-disabled: var(--borderColor-disabled);
+    --control-borderColor-success: var(--borderColor-success-emphasis);
+    --control-borderColor-danger: var(--borderColor-danger-emphasis);
+    --control-borderColor-warning: var(--borderColor-attention-emphasis);
+
+    /* Icon color */
+    --control-iconColor-rest: var(--fgColor-muted);
+
+    /* --- Checked ---*/
+      /* Background */
+      --control-checked-bgColor-rest: var(--bgColor-accent-emphasis);
+      --control-checked-bgColor-hover: hsl(216, 86%, 55%); /* #2A7AEF */
+      --control-checked-bgColor-active: hsl(215, 89%, 58%); /* #3685F3 */
+      --control-checked-bgColor-disabled: var(--fgColor-disabled);
+
+      /* Foreground */
+      --control-checked-fgColor-rest: var(--fgColor-onEmphasis);
+      --control-checked-fgColor-disabled: var(--base-color-neutral-0);
+
+      /* Border */
+      --control-checked-borderColor-rest: var(--control-checked-bgColor-rest);
+      --control-checked-borderColor-hover: var(--control-checked-bgColor-hover);
+      --control-checked-borderColor-active: var(--control-checked-bgColor-active);
+      --control-checked-borderColor-disabled: var(--control-checked-bgColor-disabled);
+
+    /* --- Danger --- */
+      /* Background */
+      --control-danger-bgColor-active: hsla(3 93% 63% / 0.4); /* #F8514966 */
+      --control-danger-bgColor-hover: var(--bgColor-danger-muted);
+
+      /* Foreground */
+      --control-danger-fgColor-hover: var(--base-color-red-3);
+      --control-danger-fgColor-rest: var(--fgColor-danger);
+
+    /* --- Transparent --- */
+      /* Background */
+      --control-transparent-bgColor-rest: var(--base-color-transparent);
+      --control-transparent-bgColor-hover: hsla(215 8% 43% / 0.2); /* #656C7633 */
+      --control-transparent-bgColor-active: hsla(215 8% 43% / 0.25); /* #656C7640 */
+      --control-transparent-bgColor-selected: hsla(215 8% 43% / 0.1); /* #656C7619 */
+      --control-transparent-bgColor-disabled: var(--bgColor-disabled);
+
+      /* Border */
+      --control-transparent-borderColor-rest: var(--base-color-transparent);
+      --control-transparent-borderColor-hover: var(--base-color-transparent);
+      --control-transparent-borderColor-active: var(--base-color-transparent);
+  }
+}

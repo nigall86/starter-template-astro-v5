@@ -1,0 +1,9 @@
+.max-width-wrapper {
+  --max-width: 350px;
+  --inline-padding: var(--space-s);
+
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: var(--inline-padding);
+}

@@ -1,0 +1,15 @@
+:where(html) {
+  --jungle-0: hsl(74 97.5% 84.3%);
+  --jungle-1: hsl(74 78.8% 77.8%);
+  --jungle-2: hsl(74 68.5% 71.4%);
+  --jungle-3: hsl(75 62% 64.9%);
+  --jungle-4: hsl(74 56.2% 58.8%);
+  --jungle-5: hsl(74 52.5% 52.9%);
+  --jungle-6: hsl(74 55.2% 47.3%);
+  --jungle-7: hsl(74 66% 41.6%);
+  --jungle-8: hsl(74 79.3% 36.1%);
+  --jungle-9: hsl(73 90.1% 31.6%);
+  --jungle-10: hsl(73 91% 26.3%);
+  --jungle-11: hsl(73 90.7% 21%);
+  --jungle-12: hsl(73 90.1% 15.9%);
+}

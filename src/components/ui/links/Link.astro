@@ -9,38 +9,45 @@ import '../../../styles/components/link.css';
 import { type HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'a'> {
-  id?: string;
-  alt?: string;
+  linkId?: string;
+  dataType?: 'accent' | 'primary' | 'outline' | 'inactive' | 'invisible' | 'btn-icon';
   href?: string;
   text?: string;
-  dataType?: 'accent' | 'primary' | 'outline' | 'btn-icon';
-  icon?: {
-    name?: string;
-    side: 'left' | 'right';
-  };
+  srText?: string;
+  iconName?: string;
+  iconSide?: 'left' | 'right';
+  iconSize?: '24' | '32' | '48' | '64';
+  iconColor?: string;
+  onClick?: string;
   classes?: string;
 }
 
-const { id, alt, href, text, dataType, icon, classes, ...rest } =
+const { linkId, href, text, srText = '', dataType = 'default', iconName = '', iconSide, iconSize = '24', iconColor, classes, ...rest } =
   Astro.props as Props;
 ---
 
-<a
-  data-type={dataType}
-  href={href}
-  id={id}
-  class:list={['link', classes]}
-  {...rest}
->
-  {
-    icon && icon.side === 'left' && (
-      <Icon name={icon.name} width={24} height={24} />
-    )
+{ dataType && dataType !== 'btn-icon' && (
+  <a id={linkId} data-type={dataType}  href={href} class:list={['btn', classes]} {...rest}>
+    { iconName !== '' && iconSide === 'left' && (<Icon name={iconName} size={iconSize} />)}
+      {text}
+      <slot />
+    { iconName !== '' && iconSide === 'right' && (<Icon name={iconName} size={iconSize} />)}
+  </a>
+)}
+
+{ dataType && dataType === 'btn-icon' && (
+  <a id={linkId} data-type={dataType} href={href} class:list={['btn', classes]} {...rest}>
+    { iconName !== '' && (<Icon name={iconName} size={iconSize} />)}
+      <span class='sr-only'>{srText}</span>
+  </a>
+)}
+
+<style define:vars={{ iconSize, iconColor }}>
+  [data-icon] {
+    width: var(--iconSize);
+    height: var(--iconSize);
+    color: var(--iconColor);
   }
-  <span>{text}</span>
-  {
-    icon && icon.side === 'right' && (
-      <Icon name={icon.name} width={24} height={24} />
-    )
-  }
-</a>
+</style>
+
+

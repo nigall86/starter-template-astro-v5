@@ -1,0 +1,15 @@
+:where(html) {
+  --yellow-0: hsl(50 100% 92.9%);
+  --yellow-1: hsl(49 100% 87.5%);
+  --yellow-2: hsl(49 100% 80%);
+  --yellow-3: hsl(48 100% 70%);
+  --yellow-4: hsl(47 100% 61.6%);
+  --yellow-5: hsl(45 97.4% 54.3%);
+  --yellow-6: hsl(42 96.1% 50%);
+  --yellow-7: hsl(39 100% 48%);
+  --yellow-8: hsl(35 100% 47.1%);
+  --yellow-9: hsl(31 100% 45.1%);
+  --yellow-10: hsl(31 100% 35.1%);
+  --yellow-11: hsl(31 100% 25.1%);
+  --yellow-12: hsl(31 100% 20%);
+}

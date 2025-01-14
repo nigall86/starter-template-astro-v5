@@ -1,0 +1,222 @@
+:where(html) {
+  color-scheme: light;
+
+  /* --- DEFAULT --- */
+    /* Background */
+    --button-default-bgColor-rest: var(--control-bgColor-rest);
+    --button-default-bgColor-hover: var(--control-bgColor-hover);
+    --button-default-bgColor-active: var(--control-bgColor-active);
+    --button-default-bgColor-selected: var(--control-bgColor-active);
+    --button-default-bgColor-disabled: var(--bgColor-white);
+
+    /* Foreground */
+    --button-default-fgColor-rest: var(--control-fgColor-rest);
+
+    /* Border */
+    --button-default-borderColor-rest: var(--control-borderColor-rest);
+    --button-default-borderColor-hover: var(--control-borderColor-rest);
+    --button-default-borderColor-active: var(--control-borderColor-rest);
+    --button-default-borderColor-disabled: var(--control-borderColor-disabled);
+
+  /* --- PRIMARY --- */
+    /* Background */
+    --button-primary-bgColor-rest: var(--bgColor-brand-emphasis);
+    --button-primary-bgColor-hover: hsl(from var(--bgColor-brand-emphasis) h s calc(l + 10));
+    --button-primary-bgColor-active: hsl(from var(--bgColor-brand-emphasis) h s calc(l - 10));
+    --button-primary-bgColor-selected: hsl(from var(--bgColor-brand-emphasis) h s calc(l - 10));;
+    --button-primary-bgColor-disabled: var(--bgColor-brand-muted);
+
+    /* Foreground */
+    --button-primary-fgColor-rest: var(--fgColor-onEmphasis);
+    --button-primary-fgColor-disabled: hsla(0 0% 100% / 0.8);
+
+    /* Border */
+    --button-primary-borderColor-rest: hsla(213 13% 14% / 0.15);
+    --button-primary-borderColor-hover: var(--button-primary-borderColor-rest);
+    --button-primary-borderColor-active: var(--button-primary-borderColor-rest);
+    --button-primary-borderColor-disabled: var(--button-primary-bgColor-disabled);
+
+    /* Icon */
+    --button-primary-iconColor-rest: hsla(0 0% 100% / 0.8);
+
+  /* --- OUTLINE --- */
+    /* Background */
+    --button-outline-bgColor-rest: var(--control-bgColor-rest);
+    --button-outline-bgColor-hover: var(--bgColor-accent-emphasis);
+    --button-outline-bgColor-active: hsl(213 93% 38%);
+    --button-outline-bgColor-disabled: var(--control-bgColor-disabled);
+
+    /* Foreground */
+    --button-outline-fgColor-rest: var(--fgColor-accent);
+    --button-outline-fgColor-hover: var(--base-color-neutral-0);
+    --button-outline-fgColor-active: var(--base-color-neutral-0);
+    --button-outline-fgColor-disabled: hsla(212 92% 45% / 0.5);
+
+    /* Border */
+    --button-outline-borderColor-selected: hsl(0 0% 100%);
+    --button-outline-borderColor-hover: var(--button-primary-borderColor-hover);
+    --button-outline-borderColor-active: var(--button-outline-borderColor-hover);
+
+  /* --- DANGER --- */
+    /* Background */
+    --button-danger-bgColor-rest: var(--control-bgColor-rest);
+    --button-danger-bgColor-hover: var(--base-color-red-6);
+    --button-danger-bgColor-active: hsl(349 89% 29%);
+    --button-danger-bgColor-disabled: var(--control-bgColor-disabled);
+
+    /* Foreground */
+    --button-danger-fgColor-rest: var(--fgColor-danger);
+    --button-danger-fgColor-hover: var(--base-color-neutral-0);
+    --button-danger-fgColor-active: var(--base-color-neutral-0);
+    --button-danger-fgColor-disabled: hsla(356 71% 48% / 0.5);
+
+    /* Border */
+    --button-danger-borderColor-rest: var(--control-borderColor-rest);
+    --button-danger-borderColor-hover: var(--button-primary-borderColor-rest);
+    --button-danger-borderColor-active: var(--button-danger-borderColor-hover);
+
+    /* Icon */
+    --button-danger-iconColor-rest: var(--fgColor-danger);
+    --button-danger-iconColor-hover: var(--base-color-neutral-0);
+
+  /* --- INACTIVE --- */
+    /* Background */
+    --button-inactive-bgColor: var(--base-color-neutral-3);
+
+    /* Foreground */
+    --button-inactive-fgColor: var(--base-color-neutral-9);
+
+  /* --- INVISIBLE --- */
+    /* Background */
+    --button-invisible-bgColor-rest: var(--control-transparent-bgColor-rest);
+    --button-invisible-bgColor-hover: var(--control-transparent-bgColor-hover);
+    --button-invisible-bgColor-active: var(--control-transparent-bgColor-active);
+    --button-invisible-bgColor-disabled: var(--control-transparent-bgColor-disabled);
+
+    /* Foreground */
+    --button-invisible-fgColor-rest: var(--control-fgColor-rest);
+    --button-invisible-fgColor-hover: var(--control-fgColor-rest);
+    --button-invisible-fgColor-disabled: var(--control-fgColor-disabled);
+
+    /* Border */
+    --button-invisible-borderColor-rest: var(--control-transparent-borderColor-rest);
+    --button-invisible-borderColor-hover: var(--control-transparent-borderColor-hover);
+    --button-invisible-borderColor-disabled: var(--control-borderColor-disabled);
+
+    /* Icon */
+    --button-icon-borderColor-rest: var(--fgColor-muted);
+    --button-icon-borderColor-hover: var(--fgColor-muted);
+    --button-icon-borderColor-disabled: var(--control-fgColor-disabled);
+
+  /* --- STAR --- */
+    --button-star-iconColor: var(--base-color-yellow-2);
+
+  @media(--OSdark) {
+    color-scheme: dark;
+
+    /* --- DEFAULT --- */
+      /* Background */
+      --button-default-bgColor-rest: var(--control-bgColor-rest);
+      --button-default-bgColor-hover: var(--control-bgColor-hover);
+      --button-default-bgColor-active: var(--control-bgColor-active);
+      --button-default-bgColor-selected: var(--control-bgColor-active);
+      --button-default-bgColor-disabled: var(--control-bgColor-disabled);
+
+      /* Border */
+      --button-default-borderColor-hover: var(--control-borderColor-rest);
+      --button-default-borderColor-active: var(--control-borderColor-rest);
+      --button-default-borderColor-disabled: var(--control-borderColor-disabled);
+
+    /* --- PRIMARY --- */
+      /* Background */
+      --button-primary-bgColor-rest: var(--bgColor-brand-emphasis);
+      --button-primary-bgColor-hover: hsl(from var(--bgColor-brand-emphasis) h s calc(l + 10));
+      --button-primary-bgColor-active: hsl(from var(--bgColor-brand-emphasis) h s calc(l - 10));
+      --button-primary-bgColor-selected: hsl(from var(--bgColor-brand-emphasis) h s calc(l - 10));;
+      --button-primary-bgColor-disabled: var(--bgColor-brand-muted);
+
+      /* Foreground */
+      --button-primary-fgColor-rest: var(--fgColor-onEmphasis);
+      --button-primary-fgColor-disabled: hsl(0 0% 100% / 0.4);
+
+      /* Border */
+      --button-primary-borderColor-rest: hsl(0 0% 100% / 0.1);
+      --button-primary-borderColor-hover: var(--button-primary-borderColor-rest);
+      --button-primary-borderColor-active: var(--button-primary-borderColor-rest);
+      --button-primary-borderColor-disabled: var(--button-primary-bgColor-disabled);
+
+      /* Icon */
+      --button-primary-iconColor-rest: var(--fgColor-white);
+
+    /* --- OUTLINE --- */
+      /* Background */
+      --button-outline-bgColor-rest: var(--base-color-neutral-12);
+      --button-outline-bgColor-hover: var(--control-bgColor-hover);
+      --button-outline-bgColor-active: var(--base-color-blue-7);
+      --button-outline-bgColor-disabled: var(--control-bgColor-disabled);
+
+      /* Foreground */
+      --button-outline-fgColor-rest: var(--base-color-blue-4);
+      --button-outline-fgColor-hover: var(--base-color-blue-3);
+      --button-outline-fgColor-active: var(--base-color-neutral-13);
+      --button-outline-fgColor-disabled: hsl(214 93% 62% / 0.5);
+
+      /* Border */
+      --button-outline-borderColor-selected: var(--button-outline-borderColor-hover);
+      --button-outline-borderColor-hover: var(--button-default-borderColor-hover);
+      --button-outline-borderColor-active: hsl(0 0% 100%);
+
+    /* --- DANGER --- */
+      /* Background */
+      --button-danger-bgColor-rest: var(--control-bgColor-rest);
+      --button-danger-bgColor-hover: var(--base-color-red-6);
+      --button-danger-bgColor-active: hsl(1 63% 51%);
+
+      /* Foreground */
+      --button-danger-fgColor-rest: hsl(3 94% 66%);
+      --button-danger-fgColor-hover: var(--base-color-neutral-13);
+      --button-danger-fgColor-active: var(--base-color-neutral-13);
+      --button-danger-fgColor-disabled: hsla(3 93% 63% / 0.5);
+
+      /* Border */
+      --button-danger-borderColor-rest: var(--control-borderColor-rest);
+      --button-danger-borderColor-hover: var(--button-primary-borderColor-rest);
+      --button-danger-borderColor-active: var(--button-danger-borderColor-hover);
+
+      /* Icon */
+      --button-danger-iconColor-rest: var(--button-danger-fgColor-rest);
+      --button-danger-iconColor-hover: var(--base-color-neutral-13);
+
+    /* --- INACTIVE --- */
+      /* Background */
+      --button-inactive-bgColor: var(--base-color-neutral-4);
+
+      /* Foreground */
+      --button-inactive-fgColor: var(--base-color-neutral-9);
+
+    /* --- INVISIBLE --- */
+      /* Background */
+      --button-invisible-bgColor-rest: var(--control-transparent-bgColor-rest);
+      --button-invisible-bgColor-hover: var(--control-transparent-bgColor-hover);
+      --button-invisible-bgColor-active: var(--control-transparent-bgColor-active);
+      --button-invisible-bgColor-disabled: var(--control-transparent-bgColor-disabled);
+
+      /* Foreground */
+      --button-invisible-fgColor-rest: var(--control-fgColor-rest);
+      --button-invisible-fgColor-hover: var(--control-fgColor-rest);
+      --button-invisible-fgColor-disabled: var(--control-fgColor-disabled);
+
+      /* Border */
+      --button-invisible-borderColor-rest: var(--control-transparent-borderColor-rest);
+      --button-invisible-borderColor-hover: var(--control-transparent-borderColor-hover);
+      --button-invisible-borderColor-disabled: var(--control-borderColor-disabled);
+
+      /* Icon */
+      --button-icon-borderColor-rest: var(--fgColor-muted);
+      --button-icon-borderColor-hover: var(--fgColor-muted);
+      --button-icon-borderColor-disabled: var(--control-fgColor-disabled);
+
+    /* --- STAR --- */
+    --button-star-iconColor: var(--base-color-yellow-2);
+  }
+}

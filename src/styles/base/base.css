@@ -9,21 +9,21 @@ html {
 
   scrollbar-color: var(--scroll-thumb-color) transparent;
   block-size: 100%;
-  caret-color: var(--text-link, var(--link));
-  /* -webkit-text-size-adjust: none; */
+  caret-color: var(--fgColor-link, var(--link));
+   /*-webkit-text-size-adjust: none;*/
 }
 
 :is(:focus-visible) {
   outline-offset: 2px;
-  outline: 2px solid var(--border-brand);
+  outline: 2px solid var(--borderColor-emphasis, var(--link-hover));
 }
 
 body {
-  background-color: var(--bg-page, --surface-1);
-  font-family: var(--ff-base);
+  background-color: var(--bgColor-default, var(--surface-1));
+  font-family: var(--ff-base), sans-serif;
   font-size: var(--fs-xs);
   font-weight: var(--fw-regular);
-  color: var(--text-body, --text-1);
+  color: var(--fgColor-default, var(--text-1));
 }
 
 /* a[href]:not(.btn) {
@@ -35,8 +35,8 @@ body {
 } */
 
 ::selection {
-  background-color: var(--bg-action-accent, --accent);
-  color: var(--bg-body, --gray-1);
+  background-color: var(--bgColor-brand-emphasis, var(--accent));
+  color: var(--fgColor-onEmphasis, var(--gray-1));
 }
 
 /* --- Disabling animations by user preference --- */

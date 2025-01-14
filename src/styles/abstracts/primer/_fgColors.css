@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light;
+
+  --fgColor-default: var(--base-color-neutral-13);
+  --fgColor-muted: var(--base-color-neutral-9);
+  --fgColor-link: var(--fgColor-accent);
+  --fgColor-disabled: var(--base-color-neutral-8);
+  --fgColor-onEmphasis: var(--base-color-neutral-0);
+  --fgColor-neutral: var(--base-color-neutral-9);
+  --fgColor-black: var(--base-color-neutral-13);
+  --fgColor-white: var(--base-color-neutral-0);
+  --fgColor-onInverse: var(--base-color-neutral-0);
+
+  --fgColor-accent: var(--base-color-blue-5);
+  --fgColor-brand: var(--fgColor-accent);
+  --fgColor-attention: var(--base-color-yellow-5);
+  --fgColor-danger: hsl(356 71% 48%); /* #D1242F */
+  --fgColor-closed: var(--fgColor-danger);
+  --fgColor-done: var(--base-color-purple-5);
+  --fgColor-upsell: var(--fgColor-done);
+  --fgColor-success: var(--base-color-green-5);
+  --fgColor-open: var(--fgColor-success);
+  --fgColor-severe: var(--base-color-orange-5);
+
+  @media (--OSdark) {
+    color-scheme: dark;
+
+    --fgColor-default: var(--base-color-neutral-12);
+    --fgColor-muted: var(--base-color-neutral-9);
+    --fgColor-link: var(--fgColor-accent);
+    --fgColor-disabled: hsla(215 8% 43% / 0.6); /* #656C7699 */
+    --fgColor-onEmphasis: var(--base-color-neutral-13);
+    --fgColor-neutral: var(--base-color-neutral-9);
+    --fgColor-black: var(--base-color-neutral-0);
+    --fgColor-white: var(--base-color-neutral-13);
+    --fgColor-onInverse: var(--base-color-neutral-0);
+
+    --fgColor-accent: hsl(214 93% 62%); /* #4493F8 */
+    --fgColor-brand: var(--fgColor-accent);
+    --fgColor-attention: var(--base-color-yellow-3);
+    --fgColor-danger: var(--base-color-red-4);
+    --fgColor-closed: var(--fgColor-danger);
+    --fgColor-done: var(--base-color-purple-4);
+    --fgColor-upsell: var(--fgColor-done);
+    --fgColor-success: var(--base-color-green-3);
+    --fgColor-open: var(--fgColor-success);
+    --fgColor-severe: var(--base-color-orange-4);
+  }
+}

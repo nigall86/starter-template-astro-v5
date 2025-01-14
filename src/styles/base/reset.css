@@ -5,17 +5,6 @@
   box-sizing: border-box;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-/* For testing purpose */
-/* * * * * * {
-  background-color: hsl(50 100% 70% / 0.1);
-} */
-
 html {
   /*  Allow transitions and animations using keyword values */
   interpolate-size: allow-keywords;
@@ -40,16 +29,11 @@ body {
   }
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-/* ul[class],
-ol[class] {
-  list-style: none;
-} */
-
 /* More secure way to keep semantic of lists elements */
-ul,
-ol {
-  list-style-type: '';
+:is(ul, ol)[class] {
+  list-style: "";
+  margin: 0;
+  padding: 0;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -98,10 +82,10 @@ video {
 
 /* With that, their width and height will be exactly 100% of their parent’s font-size. */
 /* We can configure than SVG with font-size only. Andy Bell's approach */
-/* svg {
-  width: 1em;
-  height: 1em;
-} */
+/*svg {*/
+/*  width: 1em;*/
+/*  height: 1em;*/
+/*}*/
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
@@ -116,7 +100,8 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */

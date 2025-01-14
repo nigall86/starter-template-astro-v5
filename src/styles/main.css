@@ -8,8 +8,8 @@
 /* ---------------------------------
   Abstract layer 
 ---------------------------------  */
-@import './abstracts/colors-harmony/_index.css' layer(abstracts);
-@import './abstracts/tokens-harmony.css' layer(abstracts);
+@import 'abstracts/primer/colors-primer/_index.css' layer(abstracts);
+@import 'abstracts/primer/tokens.css' layer(abstracts);
 @import './abstracts/themes.css' layer(abstracts);
 @import './abstracts/animations.css' layer(abstracts);
 @import './abstracts/aspects.css' layer(abstracts);
@@ -19,7 +19,7 @@
 @import './abstracts/mask-corners.css' layer(abstracts);
 @import './abstracts/mask-edges.css' layer(abstracts);
 @import './abstracts/noises.css' layer(abstracts);
-@import './abstracts/shadows.css' layer(abstracts);
+@import 'abstracts/open-props/shadows.css' layer(abstracts);
 @import './abstracts/sizes.css' layer(abstracts);
 @import './abstracts/typography.css' layer(abstracts);
 

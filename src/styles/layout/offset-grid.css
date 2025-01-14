@@ -1,6 +1,6 @@
 .offset-grid {
   display: grid;
-  gap: var(--gutter);
+  gap: var(--grid-gap);
   grid-template-columns: repeat(3, 1fr);
 
   & > :nth-child(2),

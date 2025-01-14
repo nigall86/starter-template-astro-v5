@@ -1,0 +1,35 @@
+@import './_bgColors.css';
+@import './_fgColors.css';
+@import './_borderColors.css';
+@import './_control.css';
+@import './_button.css';
+
+:root {
+  color-scheme: light;
+
+  accent-color: var(--fgColor-accent);
+
+  /* Overlay color */
+  --overlay-backdrop-bgColor: hsla(210 20% 82% / 0.4);
+
+  /* Scroll color */
+  --scroll-thumb-color: var(--base-color-neutral-7);
+
+  @media (--OSdark) {
+    color-scheme: dark;
+
+    accent-color: var(--fgColor-accent);
+
+    /* Scroll color */
+    --scroll-thumb-color: var(--base-color-neutral-6);
+  }
+}
+
+@media (--HDcolor) {
+  @supports (color: color(display-p3 0 0 0)) {
+    body {
+      --text-link: color(display-p3 0.1 0.4 1);
+      --text-hover: color(display-p3 0.6 0.2 1);
+    }
+  }
+}

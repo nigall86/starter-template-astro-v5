@@ -1,4 +1,8 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-  <path d="M13 20.5L19 26.5M19 26.5L25 20.5M19 26.5L19 11.5M37 19C37 28.9411 28.9411 37 19 37C9.05887 37 1 28.9411 1 19C1 9.05887 9.05887 1 19 1C28.9411 1 37 9.05887 37 19Z" stroke="#D76F2C" stroke-linecap="round" stroke-linejoin="round"
-  style="stroke:var(--stroke-color, var(--accent)); stroke-width: var(--stroke-width, var(--icons-width)); stroke-linecap: round; stroke-linejoin: round;"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5V19M12 19L19 12M12 19L5 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+    />
 </svg>

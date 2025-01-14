@@ -3,7 +3,7 @@
 
 /* --- COMMON SIZES --- */
 :where(html) {
-  /* size tokens */
+  /* Size tokens */
   --size-1: 0.4rem;
   --size-2: 0.8rem;
   --size-3: 1.2rem;
@@ -44,24 +44,22 @@
   --space-xl-2xl: clamp(4.8rem, 3.6632rem + 3.1579vw, 7.2rem);
   --space-2xl-3xl: clamp(6.4rem, 4.3158rem + 5.7895vw, 10.8rem);
 
-  --gutter: var(--space-s);
-  /* fluid sizes */
-  /* --size-fluid-1: clamp(var(--size-2), 1vw, var(--size-4));
-  --size-fluid-2: clamp(var(--size-4), 2vw, var(--size-6));
-  --size-fluid-3: clamp(var(--size-6), 3vw, var(--size-8));
-  --size-fluid-4: clamp(var(--size-8), 4vw, var(--size-10));
-  --size-fluid-5: clamp(var(--size-10), 5vw, var(--size-12));
-  --size-fluid-6: clamp(var(--size-12), 7vw, var(--size-14));
-  --size-fluid-7: clamp(var(--size-14), 10vw, var(--size-16));
-  --size-fluid-8: clamp(var(--size-16), 20vw, var(--size-20)); 
-  */
+  /* Fluid sizes */
+  /*--size-fluid-1: clamp(var(--size-2), 1vw, var(--size-4));*/
+  /*--size-fluid-2: clamp(var(--size-4), 2vw, var(--size-6));*/
+  /*--size-fluid-3: clamp(var(--size-6), 3vw, var(--size-8));*/
+  /*--size-fluid-4: clamp(var(--size-8), 4vw, var(--size-10));*/
+  /*--size-fluid-5: clamp(var(--size-10), 5vw, var(--size-12));*/
+  /*--size-fluid-6: clamp(var(--size-12), 7vw, var(--size-14));*/
+  /*--size-fluid-7: clamp(var(--size-14), 10vw, var(--size-16));*/
+  /*--size-fluid-8: clamp(var(--size-16), 20vw, var(--size-20));*/
 
-  /* content sizes */
+  /* Content sizes */
   --size-content-1: 30ch;
   --size-content-2: 45ch;
   --size-content-3: 60ch;
 
-  /* relative sizes */
+  /* Relative sizes */
   --size-relative-1: 0.25ch;
   --size-relative-2: 0.5ch;
   --size-relative-3: 1ch;
@@ -81,8 +79,11 @@
 
 /* --- LAYOUT SIZES --- */
 :where(html) {
-  --grid-min-column: var(--size-relative-14);
+  --flex-gap: var(--space-s);
+  --grid-gap: var(--space-s);
+
+  --grid-min-column-size: var(--size-relative-14);
 
   /* Sections */
-  --section-padding-block: clamp(8rem, 10vh, 9.6rem);
+  --section-padding-block: var(--space-2xl-3xl);
 }

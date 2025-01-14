@@ -1,0 +1,48 @@
+:where(html) {
+  color-scheme: light;
+
+  /* Common colors */
+  --base-color-black: hsl(213 13% 14%); /* #1F2328 */
+  --base-color-white: hsl(0 0% 100%); /* #FFF */
+  --base-color-transparent: hsla(0 0% 100% / 0); /* #ffffff00 */
+
+  /* Neutral colors */
+  --base-color-neutral-0: var(--base-color-white);
+  --base-color-neutral-1: hsl(210 29% 97%); /* #F6F8FA */
+  --base-color-neutral-2: hsl(210 23% 95%); /* #EFF2F5 */
+  --base-color-neutral-3: hsl(213 22% 92%); /* #E6EAEF */
+  --base-color-neutral-4: hsl(207 22% 90%); /* #E0E6EB */
+  --base-color-neutral-5: hsl(212 21% 88%); /* #DAE0E7 */
+  --base-color-neutral-6: hsl(208 19% 85%); /* #D1D9E0 */
+  --base-color-neutral-7: hsl(210 20% 82%); /* #C8D1DA */
+  --base-color-neutral-8: hsl(214 10% 55%); /* #818B98 */
+  --base-color-neutral-9: hsl(211 11% 39%); /* #59636E */
+  --base-color-neutral-10: hsl(212 10% 30%); /* #454C54 */
+  --base-color-neutral-11: hsl(212 10% 25%); /* #393F46 */
+  --base-color-neutral-12: hsl(213 11% 16%); /* #25292E */
+  --base-color-neutral-13: hsl(213 13% 14%); /* #1F2328 */
+
+  @media(--OSdark) {
+    color-scheme: dark;
+
+    /* Common colors */
+    --base-color-black: hsl(218 80% 2%); /* #010409 */
+    --base-color-transparent: hsla(0 0% 0% / 0); /* #00000000 */
+
+    /* Neutral colors */
+    --base-color-neutral-0: hsl(218 80% 2%); /* #010409 */
+    --base-color-neutral-1: hsl(216 28% 7%); /* #0D1117 */
+    --base-color-neutral-2: hsl(214 25% 11%); /* #151B23 */
+    --base-color-neutral-3: hsl(212 19% 16%); /* #212830 */
+    --base-color-neutral-4: hsl(218 17% 18%); /* #262C36 */
+    --base-color-neutral-5: hsl(217 18% 20%); /* #2A313C */
+    --base-color-neutral-6: hsl(215 17% 22%); /* #2F3742 */
+    --base-color-neutral-7: hsl(214 12% 27%); /* #3D444D */
+    --base-color-neutral-8: hsl(215 8% 43%); /* #656C76 */
+    --base-color-neutral-9: hsl(214 8% 60%); /* #9198A1 */
+    --base-color-neutral-10: hsl(219 13% 75%); /* #B7BDC8 */
+    --base-color-neutral-11: hsl(216 19% 85%); /* #D1D7E0 */
+    --base-color-neutral-12: hsl(210 67% 96%); /* #F0F6FC */
+    --base-color-neutral-13: hsl(0 0% 100%); /* #FFFFFF */
+  }
+}

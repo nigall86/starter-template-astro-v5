@@ -9,31 +9,40 @@ import '../../../styles/components/link.css';
 import { type HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'button'> {
-  id?: string;
+  btnId?: string;
   text?: string;
-  dataType?: string;
-  icon?: {
-    name?: string;
-    side: 'left' | 'right';
-  };
-  onClick?: string;
+  srText?: string;
+  dataType?: 'accent' | 'primary' | 'outline' | 'inactive' | 'invisible' | 'btn-icon';
+  iconName?: string;
+  iconSide?: 'left' | 'right';
+  iconSize?: '24' | '32' | '48' | '64';
+  iconColor?: string;
   classes?: string;
 }
 
-const { id, text, dataType, icon, classes, ...rest } = Astro.props as Props;
+const { btnId, text, srText, dataType, iconName = '', iconSide, iconSize = '24', iconColor, onClick, classes, ...rest } = Astro.props as Props;
 ---
+{ dataType && dataType !== 'btn-icon' && (
+  <button id={btnId} data-type={dataType}  class:list={['btn', classes]} {...rest}>
+    { iconName !== '' && iconSide === 'left' && (<Icon name={iconName} size={iconSize} />)}
+      {text}
+    <slot />
+    { iconName !== '' && iconSide === 'right' && (<Icon name={iconName} size={iconSize} />)}
+  </button>
+)}
 
-<button data-type={dataType} id={id} class:list={['btn', classes]} {...rest}>
-  {
-    icon && icon.side === 'left' && (
-      <Icon name={icon.name} width={24} height={24} />
-    )
+{ dataType && dataType === 'btn-icon' && (
+  <button id={btnId} data-type={dataType} class:list={['btn', classes]} {...rest}>
+    { iconName !== '' && (<Icon name={iconName} size={iconSize} />)}
+    <span class='sr-only'>{srText}</span>
+  </button>
+)}
+
+<style define:vars={{ iconSize, iconColor }}>
+  [data-icon] {
+    width: var(--iconSize);
+    height: var(--iconSize);
+    color: var(--iconColor);
   }
-  {dataType && dataType !== 'btn-icon' && <span>{text}</span>}
-  <slot />
-  {
-    icon && icon.side === 'right' && (
-      <Icon name={icon.name} width={24} height={24} />
-    )
-  }
-</button>
+</style>
+

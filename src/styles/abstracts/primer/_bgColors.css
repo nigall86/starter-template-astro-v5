@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  --bgColor-default: var(--base-color-neutral-0);
+  --bgColor-muted: var(--base-color-neutral-1);
+  --bgColor-inset: var(--bgColor-muted);
+  --bgColor-disabled: var(--base-color-neutral-2);
+  --bgColor-emphasis: var(--base-color-neutral-12);
+  --bgColor-transparent: var(--base-color-transparent);
+  --bgColor-inverse: var(--base-color-neutral-12);
+  --bgColor-black: var(--base-color-neutral-13);
+  --bgColor-white: var(--base-color-neutral-0);
+
+  /* Neutral */
+  --bgColor-neutral-emphasis: var(--base-color-neutral-9);
+  --bgColor-neutral-muted: hsla(214 10% 55% / 0.12); /* #818B981F */
+
+  /* Accent */
+  --bgColor-accent-emphasis: var(--base-color-blue-5);
+  --bgColor-accent-muted: var(--base-color-blue-0);
+
+  /* Brand */
+  --bgColor-brand-emphasis: var(--bgColor-accent-emphasis);
+  --bgColor-brand-muted: var(--bgColor-accent-muted);
+
+  /* Attention */
+  --bgColor-attention-emphasis: var(--base-color-yellow-5);
+  --bgColor-attention-muted: var(--base-color-yellow-0);
+
+  /* Danger & Close */
+  --bgColor-danger-emphasis: var(--base-color-red-5);
+  --bgColor-danger-muted: var(--base-color-red-0);
+  --bgColor-closed-emphasis: var(--bgColor-danger-emphasis);
+  --bgColor-closed-muted: var(--bgColor-danger-muted);
+
+  /* Done & Upsell*/
+  --bgColor-done-emphasis: var(--base-color-purple-5);
+  --bgColor-done-mute: var(--base-color-purple-0);
+  --bgColor-upsell-emphasis: var(--bgColor-done-emphasis);
+  --bgColor-upsell-mute: var(--bgColor-done-mute);
+
+  /* Success & Open*/
+  --bgColor-success-emphasis: hsl(137 63% 33%); /* #1F883D */
+  --bgColor-success-muted: var(--base-color-green-0);
+  --bgColor-open-emphasis: var(--bgColor-success-emphasis);
+  --bgColor-open-muted: var(--bgColor-success-muted);
+
+  /* Severe */
+  --bgColor-severe-emphasis: var(--base-color-orange-5);
+  --bgColor-severe-muted: var(--base-color-orange-0);
+
+  @media (--OSdark) {
+    color-scheme: dark;
+
+    --bgColor-default: var(--base-color-neutral-1);
+    --bgColor-muted: var(--base-color-neutral-2);
+    --bgColor-inset: var(--base-color-neutral-0);
+    --bgColor-disabled: var(--base-color-neutral-3);
+    --bgColor-emphasis: var(--base-color-neutral-7);
+    --bgColor-transparent: var(--base-color-transparent);
+    --bgColor-inverse: var(--base-color-neutral-13);
+    --bgColor-black: var(--base-color-neutral-0);
+    --bgColor-white: var(--base-color-neutral-13);
+
+    /* Neutral */
+    --bgColor-neutral-emphasis: var(--base-color-neutral-8);
+    --bgColor-neutral-muted: hsla(215 8% 43% / 0.2); /* #656C7633 */
+
+    /* Accent */
+    --bgColor-accent-emphasis: var(--base-color-blue-5);
+    --bgColor-accent-muted: hsla(215 98% 61% / 0.1); /* #388BFD1A */
+
+    /* Brand */
+    --bgColor-brand-emphasis: var(--bgColor-accent-emphasis);
+    --bgColor-brand-muted: var(--bgColor-accent-muted);
+
+    /* Attention */
+    --bgColor-attention-emphasis: var(--base-color-yellow-5);
+    --bgColor-attention-muted: hsla(40 91% 38% / 0.15); /* #BB800926 */
+
+    /* Danger & Closed */
+    --bgColor-danger-emphasis: var(--base-color-red-5);
+    --bgColor-danger-muted: hsla(3 93% 63% / 0.1); /* #F851491A */
+    --bgColor-closed-emphasis: var(--bgColor-danger-emphasis);
+    --bgColor-closed-muted: var(--bgColor-danger-muted);
+
+    /* Done & Upsell */
+    --bgColor-done-emphasis: var(--base-color-purple-5);
+    --bgColor-done-mute: hsla(262 90% 73% / 0.15); /* #AB7DF826 */
+    --bgColor-upsell-emphasis: var(--bgColor-done-emphasis);
+    --bgColor-upsell-mute: var(--bgColor-done-mute);
+
+    /* Success & Open */
+    --bgColor-success-emphasis: var(--base-color-green-5);
+    --bgColor-success-muted: hsla(131 55% 40% / 0.15); /* #2EA04326 */
+    --bgColor-open-emphasis: var(--bgColor-success-emphasis);
+    --bgColor-open-muted: var(--bgColor-success-muted);
+
+    /* Severe */
+    --bgColor-severe-emphasis: var(--base-color-orange-5);
+    --bgColor-severe-muted: hsla(23 71% 51% / 0.1); /* #DB6D281A */
+  }
+}

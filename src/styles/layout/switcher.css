@@ -6,7 +6,7 @@ is for a 50/50 split, or more accurately, an equal distribution of space where a
   display: flex;
   flex-wrap: wrap;
   align-items: var(--switcher-vertical-alignment, flex-start);
-  gap: var(--gutter, var(--space-s));
+  gap: var(--flex-gap);
 
   > * {
     flex-grow: 1;

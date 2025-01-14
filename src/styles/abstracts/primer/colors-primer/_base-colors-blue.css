@@ -1,0 +1,29 @@
+:where(html) {
+  color-scheme: light;
+
+  --base-color-blue-0: hsl(199 100% 93%); /* #DDF4FF */
+  --base-color-blue-1: hsl(203 100% 86%); /* #B6E3FF */
+  --base-color-blue-2: hsl(204 100% 75%); /* #80CCFF */
+  --base-color-blue-3: hsl(208 100% 66%); /* #54AEFF */
+  --base-color-blue-4: hsl(211 100% 56%); /* #218BFF */
+  --base-color-blue-5: hsl(212 92% 45%); /* #0969DA */
+  --base-color-blue-6: hsl(213 94% 35%); /* #0550AE */
+  --base-color-blue-7: hsl(214 96% 28%); /* #033D8B */
+  --base-color-blue-8: hsl(216 83% 23%); /* #0A3069 */
+  --base-color-blue-9: hsl(217 100% 17%); /* #002155 */
+
+  @media(--OSdark) {
+    color-scheme: dark;
+
+    --base-color-blue-0: hsl(206 100% 90%); /* #CAE8FF */
+    --base-color-blue-1: hsl(207 100% 82%); /* #A5D6FF */
+    --base-color-blue-2: hsl(208 100% 74%); /* #79C0FF */
+    --base-color-blue-3: hsl(212 100% 67%); /* #58A6FF */
+    --base-color-blue-4: hsl(215 98% 61%); /* #388BFD */
+    --base-color-blue-5: hsl(216 84% 52%); /* #1F6FEB */
+    --base-color-blue-6: hsl(217 84% 42%); /* #1158C7 */
+    --base-color-blue-7: hsl(218 85% 33%); /* #0D419D */
+    --base-color-blue-8: hsl(219 80% 23%); /* #0C2D6B */
+    --base-color-blue-9: hsl(220 88% 16%); /* #051D4D */
+  }
+}

@@ -4,10 +4,10 @@ section,
 }
 
 .section-header {
-  margin-block-end: var(--size-11);
+  margin-block-end: var(--space-l-xl);
 
   &[data-type='subheading'] {
-    margin-block-end: var(--size-fluid-3);
+    margin-block-end: var(--space-m-l);
   }
 
   &[data-type='subheading form'] {

@@ -1,5 +1,7 @@
 :where(html) {
-  /* shadows */
+  /* --- Shadows open props --- */
+  --accent-hue: 215;
+
   --shadow-color: 27% 0.003 var(--accent-hue);
   --shadow-strength: 1%;
   --inner-shadow-highlight: inset 0 -0.5px 0 0 #fff, inset 0 0.5px 0 0 #0001;
