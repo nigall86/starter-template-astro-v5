@@ -1,0 +1,29 @@
+:where(html) {
+  color-scheme: light;
+
+  --base-display-color-grey-0: hsl(216 28% 93%); /* #E8ECF2 */
+  --base-display-color-grey-1: hsl(213 25% 86%); /* #D2DAE4 */
+  --base-display-color-grey-2: hsl(213 22% 76%); /* #B4C0CF */
+  --base-display-color-grey-3: hsl(214 19% 67%); /* #9BA9BB */
+  --base-display-color-grey-4: hsl(214 16% 57%); /* #808FA3 */
+  --base-display-color-grey-5: hsl(214 13% 45%); /* #647182 */
+  --base-display-color-grey-6: hsl(213 10% 40%); /* #5C6570 */
+  --base-display-color-grey-7: hsl(215 7% 33%); /* #4E535A */
+  --base-display-color-grey-8: hsl(220 4% 27%); /* #424448 */
+  --base-display-color-grey-9: hsl(240 1% 19%); /* #303031 */
+
+  @media(--OSdark) {
+    color-scheme: dark;
+
+    --base-display-color-grey-0: hsl(0 0% 11%); /* #1C1C1C */
+    --base-display-color-grey-1: hsl(220 3% 17%); /* #2A2B2D */
+    --base-display-color-grey-2: hsl(210 7% 24%); /* #393D41 */
+    --base-display-color-grey-3: hsl(214 10% 31%); /* #474E57 */
+    --base-display-color-grey-4: hsl(214 13% 39%); /* #576270 */
+    --base-display-color-grey-5: hsl(215 16% 51%); /* #9E6A03 */
+    --base-display-color-grey-6: hsl(214 19% 64%); /* #92A1B5 */
+    --base-display-color-grey-7: hsl(213 22% 68%); /* #9BABBF */
+    --base-display-color-grey-8: hsl(214 25% 76%); /* #B3C0D1 */
+    --base-display-color-grey-9: hsl(215 28% 82%); /* #C4CFDE */
+  }
+}
