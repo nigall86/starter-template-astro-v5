@@ -7,3 +7,9 @@
 @import '_base-colors-purple.css';
 @import '_base-colors-red.css';
 @import '_base-colors-yellow.css';
+
+/* Display colors */
+@import './display-colors/_base-display-colors-gray.css';
+@import './display-colors/_base-display-colors-indigo.css';
+@import './display-colors/_base-display-colors-purple.css';
+@import './display-colors/_base-display-colors-yellow.css';
