@@ -1,6 +1,6 @@
 :where(html) {
-  --_ff-montserrat: 'Montserrat', sans-serif;
-  --_ff-inter: 'Inter', sans-serif;
+  --_ff-montserrat: "Montserrat", sans-serif;
+  --_ff-inter: "Inter", sans-serif;
 
   --ff-base: var(--_ff-inter);
   --ff-accent: var(--_ff-montserrat);
@@ -67,11 +67,11 @@
   --fs-5xl: clamp(6.8rem, 6.667rem + 0.3704vi, 7.2rem);
 
   /* --- Headings --- */
-  --_heading-font-family: var(--ff-accent);
-  --_heading-font-weight: var(--fw-black);
-  --_heading-line-height: var(--lh-3);
-  --_heading-letter-spacing: var(--letter-spacing-0);
-  --_heading-text-transform: none;
+  --heading-font-family: var(--ff-accent);
+  --heading-font-weight: var(--fw-black);
+  --heading-line-height: var(--lh-3);
+  --heading-letter-spacing: var(--letter-spacing-0);
+  --heading-text-transform: none;
 
   --h1-font-size: var(--fs-5xl);
   --h2-font-size: var(--fs-4xl);
@@ -84,8 +84,8 @@
   --size-header-3: 35ch;
 
   /* --- Subheadings --- */
-  --_subheading-font-family: var(--ff-base);
-  --_subheading-font-size: var(--fs-xl);
-  --_subheading-font-weight: var(--fw-regular);
-  --_subheading-line-height: var(--lh-5);
+  --subheading-font-family: var(--ff-base);
+  --subheading-font-size: var(--fs-xl);
+  --subheading-font-weight: var(--fw-regular);
+  --subheading-line-height: var(--lh-5);
 }

@@ -1,19 +1,39 @@
 ---
-// libraries
-import { Icon } from 'astro-icon/components';
-
-// styles
-import '../styles/components/logo.css';
+// Assets
+import IconLogo from "../icons/logo.svg";
 
 interface Props {
-  type?: 'header' | 'footer';
+  type?: "header" | "footer";
   size?: number;
-  alt?: string;
+  title?: string;
 }
 
-const { type, size, alt = 'Logo of the company' } = Astro.props;
+const {
+  type,
+  size = 40,
+  title = "Logo of the company",
+} = Astro.props;
 ---
 
-<a class='logo' href='/' data-astro-reload>
-  <Icon name='logo' size={size}  data-type={type} title={alt} />
+<a class="logo" href="/" title={title} data-astro-reload>
+  <IconLogo width={size} height={size} data-type={type} />
 </a>
+
+<style>
+  .logo {
+    --_logo-color-header: var(--fgColor-brand, var(--accent));
+    --_logo-color-footer: var(--fgColor-brand, var(--accent));
+
+    padding-inline: var(--size-5);
+
+    > svg {
+      &[data-type="header"] {
+        fill: var(--_logo-color-header);
+      }
+
+      &[data-type="footer"] {
+        fill: var(--_logo-color-footer);
+      }
+    }
+  }
+</style>

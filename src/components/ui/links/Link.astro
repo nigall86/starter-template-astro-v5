@@ -1,46 +1,83 @@
 ---
 // libraries
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 // styles
-import '../../../styles/components/link.css';
+import "../../../styles/components/link.css";
 
 // types
-import { type HTMLAttributes } from 'astro/types';
+import { type HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<'a'> {
+interface Props extends HTMLAttributes<"a"> {
   linkId?: string;
-  dataType?: 'accent' | 'primary' | 'outline' | 'inactive' | 'invisible' | 'btn-icon';
+  dataType?:
+    | "accent"
+    | "primary"
+    | "outline"
+    | "inactive"
+    | "invisible"
+    | "btn-icon";
   href?: string;
   text?: string;
   srText?: string;
   iconName?: string;
-  iconSide?: 'left' | 'right';
-  iconSize?: '24' | '32' | '48' | '64';
+  iconSide?: "left" | "right";
+  iconSize?: "24" | "32" | "48" | "64";
   iconColor?: string;
   onClick?: string;
   classes?: string;
 }
 
-const { linkId, href, text, srText = '', dataType = 'default', iconName = '', iconSide, iconSize = '24', iconColor, classes, ...rest } =
-  Astro.props as Props;
+const {
+  linkId,
+  href,
+  text,
+  srText = "",
+  dataType = "default",
+  iconName = "",
+  iconSide,
+  iconSize = "24",
+  iconColor,
+  classes,
+  ...rest
+} = Astro.props as Props;
 ---
 
-{ dataType && dataType !== 'btn-icon' && (
-  <a id={linkId} data-type={dataType}  href={href} class:list={['btn', classes]} {...rest}>
-    { iconName !== '' && iconSide === 'left' && (<Icon name={iconName} size={iconSize} />)}
+{
+  dataType && dataType !== "btn-icon" && (
+    <a
+      id={linkId}
+      data-type={dataType}
+      href={href}
+      class:list={["btn", classes]}
+      {...rest}
+    >
+      {iconName !== "" && iconSide === "left" && (
+        <Icon name={iconName} size={iconSize} />
+      )}
       {text}
       <slot />
-    { iconName !== '' && iconSide === 'right' && (<Icon name={iconName} size={iconSize} />)}
-  </a>
-)}
+      {iconName !== "" && iconSide === "right" && (
+        <Icon name={iconName} size={iconSize} />
+      )}
+    </a>
+  )
+}
 
-{ dataType && dataType === 'btn-icon' && (
-  <a id={linkId} data-type={dataType} href={href} class:list={['btn', classes]} {...rest}>
-    { iconName !== '' && (<Icon name={iconName} size={iconSize} />)}
-      <span class='sr-only'>{srText}</span>
-  </a>
-)}
+{
+  dataType && dataType === "btn-icon" && (
+    <a
+      id={linkId}
+      data-type={dataType}
+      href={href}
+      class:list={["btn", classes]}
+      {...rest}
+    >
+      {iconName !== "" && <Icon name={iconName} size={iconSize} />}
+      <span class="sr-only">{srText}</span>
+    </a>
+  )
+}
 
 <style define:vars={{ iconSize, iconColor }}>
   [data-icon] {
@@ -49,5 +86,3 @@ const { linkId, href, text, srText = '', dataType = 'default', iconName = '', ic
     color: var(--iconColor);
   }
 </style>
-
-

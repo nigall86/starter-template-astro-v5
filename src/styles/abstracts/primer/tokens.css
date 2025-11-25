@@ -5,7 +5,7 @@
 @import './_button.css';
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
   accent-color: var(--fgColor-accent);
 
@@ -13,16 +13,10 @@
   --overlay-backdrop-bgColor: hsla(210 20% 82% / 0.4);
 
   /* Scroll color */
-  --scroll-thumb-color: var(--base-color-neutral-7);
-
-  @media (--OSdark) {
-    color-scheme: dark;
-
-    accent-color: var(--fgColor-accent);
-
-    /* Scroll color */
-    --scroll-thumb-color: var(--base-color-neutral-6);
-  }
+  --scroll-thumb-color: light-dark(
+    var(--base-color-neutral-7),
+    var(--base-color-neutral-6)
+  );
 }
 
 @media (--HDcolor) {

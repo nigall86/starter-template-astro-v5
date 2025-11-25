@@ -1,49 +1,49 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
-  --fgColor-default: var(--base-color-neutral-13);
+  --fgColor-default: light-dark(
+    var(--base-color-neutral-13),
+    var(--base-color-neutral-12)
+  );
   --fgColor-muted: var(--base-color-neutral-9);
   --fgColor-link: var(--fgColor-accent);
-  --fgColor-disabled: var(--base-color-neutral-8);
-  --fgColor-onEmphasis: var(--base-color-neutral-0);
+  --fgColor-disabled: light-dark(
+    var(--base-color-neutral-8),
+    #656c7699
+  );
+  --fgColor-onEmphasis: light-dark(
+    var(--base-color-neutral-0),
+    var(--base-color-neutral-13)
+  );
   --fgColor-neutral: var(--base-color-neutral-9);
-  --fgColor-black: var(--base-color-neutral-13);
-  --fgColor-white: var(--base-color-neutral-0);
+  --fgColor-black: light-dark(
+    var(--base-color-neutral-13),
+    var(--base-color-neutral-0)
+  );
+  --fgColor-white: light-dark(
+    var(--base-color-neutral-0),
+    var(--base-color-neutral-13)
+  );
   --fgColor-onInverse: var(--base-color-neutral-0);
 
-  --fgColor-accent: var(--base-color-blue-5);
+  --fgColor-accent: light-dark(var(--base-color-blue-5), #4493f8);
   --fgColor-brand: var(--fgColor-accent);
-  --fgColor-attention: var(--base-color-yellow-5);
-  --fgColor-danger: hsl(356 71% 48%); /* #D1242F */
+  --fgColor-attention: light-dark
+    (var(--base-color-yellow-5), var(--base-color-yellow-3));
+  --fgColor-danger: light-dark(#d1242f, var(--base-color-red-4));
   --fgColor-closed: var(--fgColor-danger);
-  --fgColor-done: var(--base-color-purple-5);
+  --fgColor-done: light-dark(
+    var(--base-color-purple-5),
+    var(--base-color-purple-4)
+  );
   --fgColor-upsell: var(--fgColor-done);
-  --fgColor-success: var(--base-color-green-5);
+  --fgColor-success: light-dark(
+    var(--base-color-green-5),
+    var(--base-color-green-3)
+  );
   --fgColor-open: var(--fgColor-success);
-  --fgColor-severe: var(--base-color-orange-5);
-
-  @media (--OSdark) {
-    color-scheme: dark;
-
-    --fgColor-default: var(--base-color-neutral-12);
-    --fgColor-muted: var(--base-color-neutral-9);
-    --fgColor-link: var(--fgColor-accent);
-    --fgColor-disabled: hsla(215 8% 43% / 0.6); /* #656C7699 */
-    --fgColor-onEmphasis: var(--base-color-neutral-13);
-    --fgColor-neutral: var(--base-color-neutral-9);
-    --fgColor-black: var(--base-color-neutral-0);
-    --fgColor-white: var(--base-color-neutral-13);
-    --fgColor-onInverse: var(--base-color-neutral-0);
-
-    --fgColor-accent: hsl(214 93% 62%); /* #4493F8 */
-    --fgColor-brand: var(--fgColor-accent);
-    --fgColor-attention: var(--base-color-yellow-3);
-    --fgColor-danger: var(--base-color-red-4);
-    --fgColor-closed: var(--fgColor-danger);
-    --fgColor-done: var(--base-color-purple-4);
-    --fgColor-upsell: var(--fgColor-done);
-    --fgColor-success: var(--base-color-green-3);
-    --fgColor-open: var(--fgColor-success);
-    --fgColor-severe: var(--base-color-orange-4);
-  }
+  --fgColor-severe: light-dark(
+    var(--base-color-orange-5),
+    var(--base-color-orange-4)
+  );
 }

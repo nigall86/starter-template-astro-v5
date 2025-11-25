@@ -1,26 +1,26 @@
 ---
 // astro tools
-import { db, eq, Author, Comment } from 'astro:db';
+import { db, eq, Author, Comment } from "astro:db";
 
-import Lottie from '@advanced-astro/lottie/Lottie.astro';
+import Lottie from "@advanced-astro/lottie/Lottie.astro";
 
 // components
-import BaseLayout from '@layouts/BaseLayout.astro';
-import Hero from '@components/home/Hero.astro';
-import Modal from '@components/Modal.astro';
-import PricingCard from '@components/ui/cards/PricingCard.astro';
-import Tabs from '@components/Tabs.astro';
-import Features from '@components/Features.astro';
-import MagicRainbowButton from '@components/ui/links/MagicRainbowButton.jsx';
-import CheckBox from '@components/ui/controls/CheckBox.astro';
-import Checkbox from '@components/ui/controls/Checkbox.jsx';
-import CheckBoxGroup from '@components/ui/controls/CheckBoxGroup.astro';
-import TextInput from '@components/ui/controls/TextInput';
-import ThemeSwitcherNew from '@components/ThemeSwitcherNew.astro';
-import Avatars from '@components/Avatars.astro';
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/home/Hero.astro";
+import Modal from "@components/Modal.astro";
+import PricingCard from "@components/ui/cards/PricingCard.astro";
+import Tabs from "@components/Tabs.astro";
+import Features from "@components/Features.astro";
+import MagicRainbowButton from "@components/ui/links/MagicRainbowButton.jsx";
+import CheckBox from "@components/ui/controls/CheckBox.astro";
+import Checkbox from "@components/ui/controls/Checkbox.jsx";
+import CheckBoxGroup from "@components/ui/controls/CheckBoxGroup.astro";
+import TextInput from "@components/ui/controls/TextInput";
+import ThemeSwitcherNew from "@components/ThemeSwitcherNew.astro";
+import Avatars from "@components/Avatars.astro";
 
 // data
-import { plans } from '@data/plansData';
+import { plans } from "@data/plansData";
 
 // connecting two tables with id column
 const comments = await db
@@ -29,16 +29,16 @@ const comments = await db
   .innerJoin(Author, eq(Comment.authorId, Author.id));
 ---
 
-<BaseLayout title='Welcome to Astro.'>
+<BaseLayout title="Welcome to Astro.">
   <Hero />
 
-  <section class='page-content'>
-    <div class='content-grid'>
-      <p class='text'>New text</p>
-      <h2 class='heading-2'>Get Started With Astro</h2>
+  <section class="page-content">
+    <div class="content-grid">
+      <p class="text">New text</p>
+      <h2 class="heading-2">Get Started With Astro</h2>
       <p>
-        Get a new Astro project up and running locally with our helpful
-        create-astro CLI wizard!
+        Get a new Astro project up and running locally with our
+        helpful create-astro CLI wizard!
       </p>
       <!-- DB content -->
       <h4>Comments</h4>
@@ -52,10 +52,14 @@ const comments = await db
       }
       <!-- Tabs with dynamic content -->
       <Tabs />
-      <Modal dialogType='megaDialog' />
+      <Modal dialogType="megaDialog" />
       <!-- <ThemeSwitcher /> -->
       <Features />
-      <div class='icon' id='alarm-clock' style='width: 100px; height: 100px'>
+      <div
+        class="icon"
+        id="alarm-clock"
+        style="width: 100px; height: 100px"
+      >
         <!-- <Lottie
           src='src/assets/animations/alarm-clock.json'
           autoplay='visible'
@@ -66,7 +70,7 @@ const comments = await db
         /> -->
       </div>
       <!-- Cards -->
-      <section class='even-columns'>
+      <section class="even-columns">
         {plans.map((card) => <PricingCard data={card} />)}
       </section>
       <!-- <Buttons /> -->
@@ -75,9 +79,9 @@ const comments = await db
           Click me
         </MagicRainbowButton>
       </section> -->
-      <CheckBox name='feature' label='Enable feature' optIn={true} />
-      <Checkbox name='feature' label='Enable feature' />
-      <TextInput name='input' label='Name' />
+      <CheckBox name="feature" label="Enable feature" optIn={true} />
+      <Checkbox name="feature" label="Enable feature" />
+      <TextInput name="input" label="Name" />
 
       <!-- <CheckBoxGroup /> -->
       <ThemeSwitcherNew />

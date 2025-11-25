@@ -1,24 +1,21 @@
 ---
 // libraries
-import { Icon } from 'astro-icon/components';
-
-// styles
-import '../styles/components/footer.css';
+import { Icon } from "astro-icon/components";
 
 // components
-import Logo from '@components/Logo.astro';
-import Link from '@components/ui/links/Link.astro';
-import SocialIcons from './SocialIcons.astro';
+import Logo from "@components/Logo.astro";
+import Link from "@components/ui/links/Link.astro";
+import SocialIcons from "./SocialIcons.astro";
 
 // data
-import { footerLinks } from '@data/footerData';
+import { footerLinks } from "@data/footerData";
 ---
 
-<footer class='site-footer'>
-  <div class='content-grid'>
-    <div class='site-footer__inner'>
-      <Logo type='footer' />
-      <ul class='site-footer__list'>
+<footer class="site-footer">
+  <div class="content-grid">
+    <div class="site-footer__inner">
+      <Logo type="footer" />
+      <ul class="site-footer__list">
         {
           footerLinks.map((item) => (
             <li>
@@ -27,20 +24,69 @@ import { footerLinks } from '@data/footerData';
           ))
         }
       </ul>
-      <SocialIcons colors={['red']} size={64} />
+      <SocialIcons size={64} />
     </div>
     <div>
-      <small style='color: var(--gray-5);'>
-        Copyright &copy;<span id='copyright'>{new Date().getFullYear()}</span> |
-        All rights reserved.
+      <small style="color: var(--fgColor-muted);">
+        Copyright &copy;<span id="copyright"
+          >{new Date().getFullYear()}</span
+        > | All rights reserved.
       </small>
     </div>
   </div>
 </footer>
 
+<!-- Styles -->
+<style>
+  .site-footer {
+    /* Spacing */
+    --_footer-padding-block: var(--size-8);
+
+    /* Background */
+    --_footer-bg: var(--bg-subtle, --surface-2);
+
+    /* Text */
+    --_footer-font-family: var(--ff-base);
+    --_footer-font-weight: var(--fw-regular);
+    --_footer-link: var(--text-subtle, --neutral-0);
+    --_footer-link-hover: var(--text-secondary, --neutral-4);
+    --_footer-letter-spacing: var(--letter-spacing-0);
+
+    padding-block: var(--_footer-padding-block);
+    background-color: var(--_footer-bg);
+    color: var(--_footer-link);
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__list {
+      display: flex;
+      list-style: none;
+      gap: var(--gutter);
+
+      a {
+        font-family: var(--_footer-font-family);
+        font-weight: var(--_footer-font-weight);
+        color: var(--_footer-link);
+        letter-spacing: var(--_footer-letter-spacing);
+        text-decoration: none;
+
+        &:is(:hover, :focus) {
+          color: var(--_footer-link-hover);
+        }
+      }
+    }
+  }
+</style>
+
 <!-- Script -->
 <script>
   // Set actual year in the footer
-  const copyrightSpan = document.getElementById('copyright') as HTMLSpanElement;
+  const copyrightSpan = document.getElementById(
+    "copyright"
+  ) as HTMLSpanElement;
   copyrightSpan.textContent = new Date().getFullYear().toString();
 </script>

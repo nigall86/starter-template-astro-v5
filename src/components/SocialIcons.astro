@@ -1,39 +1,110 @@
 ---
 // libraries
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 // data
-import { socialLinks } from '@data/socialsData';
+import { socialLinks } from "@data/socialsData";
 
 // props
 interface Props {
-  colors: string[];
   size: number;
-  styles?: string;
 }
 
-const { colors, size, styles, ...rest } = Astro.props;
-
-if (colors.length === 1) {
-  for (let i = 0; i < socialLinks.length; i++) {
-    colors.push(colors[0]);
-  }
-}
-
+const { size, ...rest } = Astro.props;
 ---
 
 <address>
-  <ul class='socials-container'>
+  <ul class="socials-container">
     {
-      socialLinks.map(({ href, title, icon}, index) => (
+      socialLinks.map(({ href, title, icon, color }, index) => (
         <li>
-          <a data-social={title} href={href} aria-label={title} title={title}
-            style=`--social-icon-color: ${colors[index]}; --social-icon-size: calc(${size} * 0.1rem);`
-            >
-            <Icon name={icon} size={size/2} />
+          <a
+            data-social={title}
+            href={href}
+            aria-label={title}
+            title={title}
+            style=`--social-icon-color: ${color};`
+          >
+            <Icon name={icon} size={size / 2} />
           </a>
         </li>
       ))
     }
   </ul>
 </address>
+
+<!-- Styles -->
+<style define:vars={{ size }}>
+  .socials-container {
+    --social-icon-size: calc(var(--size) * 0.1rem);
+
+    display: flex;
+    gap: var(--flex-gap);
+
+    a {
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+      width: var(--social-icon-size);
+      height: var(--social-icon-size);
+      border-radius: 50%;
+      background-color: var(--bgColor-neutral-muted);
+      box-shadow: var(var(--shadow-floating-medium), --shadow-1);
+
+      &::before {
+        content: attr(data-social);
+        position: absolute;
+        padding: 0.5rem 1rem;
+        border-radius: 100px;
+        background-color: var(--bgColor-neutral-muted);
+        color: var(--fgColor-default);
+        text-decoration: none;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        translate: 0 calc(var(--social-icon-size) / -2);
+        rotate: 25deg;
+        opacity: 0;
+        transition: 200ms var(--ease-squish-4);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-inline-start: 0.6rem solid transparent;
+        border-inline-end: 0.6rem solid transparent;
+        border-block-start: 0.8rem solid var(--bgColor-neutral-muted);
+        translate: 0 0;
+        rotate: 25deg;
+        opacity: 0;
+        transition: 200ms var(--ease-squish-4);
+      }
+
+      &:hover {
+        background: var(--social-icon-color);
+
+        &::before {
+          translate: 0 calc((var(--social-icon-size) * -0.9) - 1rem);
+          rotate: 0deg;
+          opacity: 1;
+        }
+
+        &::after {
+          translate: 0
+            calc((var(--social-icon-size) * -0.9) - 1rem + 2rem);
+          rotate: 0deg;
+          opacity: 1;
+        }
+
+        [data-icon] {
+          color: var(--fgColor-onEmphasis);
+        }
+      }
+
+      [data-icon] {
+        color: var(--fgColor-default);
+      }
+    }
+  }
+</style>
