@@ -1,0 +1,5 @@
+:where(html) {
+  & :where(dialog) {
+    background-color: light-dark(var(--surface-1), var(--surface-2));
+  }
+}

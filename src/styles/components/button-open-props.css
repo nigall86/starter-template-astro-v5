@@ -1,0 +1,309 @@
+:where(
+    .btn,
+    button,
+    input:is([type='button'], [type='submit'], [type='reset'])
+  ),
+:where(input[type='file'])::-webkit-file-upload-button,
+:where(input[type='file'])::file-selector-button {
+  /* Button tokens */
+  --_btn-accent: initial /* your color */;
+  --_btn-text: initial /* your text color */;
+  --_btn-size: initial /* your size */;
+
+  --_btn-bg: light-dark(white, var(--surface-3));
+
+  --_btn-border: var(--surface-3);
+
+  --_highlight-size: 0;
+  --_highlight: light-dark(
+    hsl(var(--gray-5-hsl) / 25%),
+    hsl(var(--gray-12-hsl) / 25%)
+  );
+
+  --_ink-shadow: light-dark(
+    0 1px 0 var(--gray-3),
+    0 1px 0 var(--surface-1)
+  );
+
+  --_icon-size: 0.8lh; /* Andy Bell's setting */
+  --_icon-color: var(--_accent, var(--link));
+
+  -webkit-tap-highlight-color: transparent;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-4);
+
+  min-width: 10ch;
+  min-height: 4.4rem;
+
+  padding-block: 0.75ch;
+  padding-inline: var(--size-relative-6);
+
+  background-color: var(--_btn-bg);
+  border: var(--border-size-2) solid var(--_btn-border);
+  border-radius: var(--radius-2);
+
+  font-family: var(--ff-base), sans-serif;
+  font-size: var(--_btn-size);
+  font-weight: var(--fw-bold);
+  color: var(--_btn-text);
+
+  text-align: center;
+  line-height: var(--lh-3);
+  text-decoration: none;
+  box-shadow: var(--shadow-1);
+
+  transition: border-color 0.5s var(--ease-3);
+  user-select: none;
+  cursor: pointer;
+}
+
+:where(
+    .btn,
+    button,
+    input:where([type='button'], [type='submit'], [type='reset'])
+  ) {
+  &[disabled] {
+    --_btn-bg: none;
+    --_btn-text: light-dark(var(--gray-6), var(--gray-5));
+    box-shadow: var(--shadow-1);
+    cursor: not-allowed;
+  }
+
+  /* pressing */
+  &:where(:not(:active):hover) {
+    --_highlight-size: var(--size-2);
+    transition-duration: 0.25s;
+  }
+
+  /* icons */
+  & > :where(svg) {
+    flex-shrink: 0;
+    inline-size: var(--_btn-icon-size);
+    block-size: var(--_btn-icon-size);
+    filter: drop-shadow(var(--_ink-shadow));
+  }
+
+  & > :where(svg > *) {
+    stroke: var(--_btn-icon-color);
+    stroke-width: var(--border-size-2);
+  }
+}
+
+:where(.btn:is(a)) {
+  text-decoration: none;
+}
+
+/* adaptive indigo text */
+:where([type='submit'], form button:not([type], [disabled])) {
+  --_btn-text: var(--_accent, var(--link));
+}
+
+/* Red reset */
+:where([type='reset']) {
+  --_btn-text: light-dark(var(--red-6), var(--red-2));
+  --_btn-border: light-dark(var(--red-3), var(--surface-3));
+
+  &:focus-visible {
+    outline-color: var(--red-6);
+  }
+}
+
+/* submit, form > button, reset matching hover border color */
+:where([type='submit'], [type='reset'], form button:not([type])):is(
+    :hover,
+    :focus-visible
+  ):not([disabled]) {
+  --_btn-border: currentColor;
+}
+
+/* file input */
+:where(input[type='file']) {
+  max-inline-size: 100%;
+  padding: 0;
+  align-self: flex-start;
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--surface-2);
+  color: var(--text-2);
+  box-shadow: var(--inner-shadow-4);
+  cursor: initial;
+}
+
+[type='submit'],
+form button:not([type], [disabled]) {
+  --_btn-text: var(--_btn-accent);
+}
+
+[type='reset'],
+[data-type='danger'] {
+  /* Rest state */
+  --_btn-bg: var(--button-danger-bgColor-rest);
+  --_btn-text: var(--button-danger-fgColor-rest);
+  --_btn-border: var(--button-danger-borderColor-rest);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-danger-bgColor-hover);
+  --_btn-text-hover: var(--button-danger-fgColor-hover);
+  --_btn-border-hover: var(--button-danger-borderColor-hover);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-danger-bgColor-active);
+  --_btn-text-active: var(--button-danger-fgColor-active);
+  --_btn-border-active: var(--button-danger-borderColor-active);
+
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-danger-bgColor-disabled);
+  --_btn-text-disabled: var(--button-danger-fgColor-disabled);
+}
+
+input[type='file'] {
+  align-self: flex-start;
+  max-inline-size: 100%;
+  padding: 0;
+
+  border: var(--border-size-1) solid
+    var(--button-default-borderColor-rest);
+  border-radius: var(--radius-2);
+  color: var(--button-default-fgColor-rest);
+  box-shadow: var(--inner-shadow-4);
+  cursor: auto;
+
+  &::-webkit-file-upload-button,
+  &::file-selector-button {
+    margin-inline-end: var(--size-relative-6);
+    cursor: pointer;
+  }
+}
+
+@media (--OSdark) {
+  [disabled],
+  [type='reset'],
+  [type='submit'],
+  form button:not([type='button'], [data-type='btn-icon']) {
+    background-color: var(--button-default-bgColor-rest);
+  }
+}
+
+/* Spacing for inputs and textarea */
+:where(input:not([type='range']), textarea) {
+  padding-block: var(--size-1);
+  padding-inline: var(--size-2);
+}
+
+@media (--OSdark) {
+  :where(
+      textarea,
+      input:not(button):not(button[type]):not(
+          input[type='button']
+        ):not(input[type='submit']):not(input[type='reset'])
+    ) {
+    background-color: var(--button-default-bgColor-rest);
+  }
+}
+
+:where(
+    a[href],
+    area,
+    button,
+    input:not(
+        [type='text'],
+        [type='email'],
+        [type='number'],
+        [type='password'],
+        [type=''],
+        [type='tel'],
+        [type='url']
+      ),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*='-'])
+  ) {
+  cursor: pointer;
+}
+
+/* --- Outline --- */
+[data-type='outline'] {
+  /* Rest state */
+  --_btn-bg: var(--button-outline-bgColor-rest);
+  --_btn-text-color: var(--button-outline-fgColor-rest);
+  --_btn-border: var(--borderColor-emphasis);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-outline-bgColor-hover);
+  --_btn-text-hover: var(--button-outline-fgColor-hover);
+  --_btn-border-hover: var(--button-outline-borderColor-hover);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-outline-bgColor-active);
+  --_btn-text-active: var(--button-outline-fgColor-active);
+  --_btn-border-active: var(--button-outline-borderColor-active);
+
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-outline-bgColor-disabled);
+  --_btn-text-disabled: var(--button-outline-fgColor-disabled);
+}
+
+/* --- Inactive --- */
+[data-type='inactive'] {
+  /* Rest state */
+  --_btn-bg: var(--button-inactive-bgColor);
+  --_btn-text-color: var(--button-inactive-fgColor);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-inactive-bgColor);
+  --_btn-text-hover: var(--button-inactive-fgColor);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-inactive-bgColor);
+  --_btn-text-active: var(--button-inactive-fgColor);
+}
+
+/* --- Invisible --- */
+[data-type='invisible'] {
+  /* Rest state */
+  --_btn-bg: var(--button-invisible-bgColor-rest);
+  --_btn-text-color: var(--button-invisible-fgColor-rest);
+  --_btn-border: var(--button-invisible-borderColor-rest);
+
+  /* Hover state */
+  --_btn-bg-hover: var(--button-invisible-bgColor-hover);
+  --_btn-text-hover: var(--button-invisible-fgColor-hover);
+  --_btn-border-hover: var(--button-invisible-borderColor-hover);
+
+  /* Active state */
+  --_btn-bg-active: var(--button-invisible-bgColor-active);
+  --_btn-text-active: var(--button-invisible-fgColor-hover);
+  --_btn-border-active: var(--button-invisible-borderColor-hover);
+
+  /* Disabled state */
+  --_btn-bg-disabled: var(--button-invisible-bgColor-disabled);
+  --_btn-text-disabled: var(--button-invisible-fgColor-disabled);
+}
+
+/* --- Btn as icon only --- */
+[data-type='btn-icon'] {
+  --_btn-icon-size: var(--size-10);
+  --_btn-bg: var(--button-default-bgColor-rest);
+  --_btn-text-color: var(--button-default-fgColor-rest);
+
+  flex-shrink: 0;
+  place-items: center;
+  aspect-ratio: var(--ratio-square);
+
+  min-width: auto;
+  padding: 0.6rem;
+  border: none;
+  border-radius: var(--radius-round);
+  stroke-width: var(--border-size-2);
+  stroke: currentColor;
+  background-color: var(--_btn-bg);
+
+  & > svg {
+    inline-size: var(--_btn-icon-size);
+    block-size: var(--_btn-icon-size);
+    filter: drop-shadow(var(--_btn-text));
+  }
+}

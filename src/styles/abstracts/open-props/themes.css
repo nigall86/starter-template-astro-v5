@@ -1,6 +1,6 @@
 /* @import 'colors-open-props'; */
 
-:where(html, [data-theme='light'], .light, .light-theme) {
+:where(html) {
   color-scheme: light dark;
 
   --link: light-dark(var(--indigo-7), var(--indigo-3));
@@ -16,18 +16,6 @@
 
   --scrollthumb-color: light-dark(var(--gray-7), var(--gray-6));
 
-  --shadow-color: light-dark(220 3% 15%, 220 40% 2%);
-  --shadow-strength: light-dark(1%, 10%);
-
-  --inner-shadow-highlight-light: inset 0 -0.5px 0 0 #fff,
-    inset 0 0.5px 0 0 #0001;
-  --inner-shadow-highlight-dark: inset 0 -0.5px 0 0 #fff1,
-    inset 0 0.5px 0 0 #0007;
-  --inner-shadow-highlight: light-dark(
-    var(--inner-shadow-highlight-light),
-    var(--inner-shadow-highlight-dark)
-  );
-
   @media (--HDcolor) {
     @supports (color: color(display-p3 0 0 0)) {
       --link: color(display-p3 0.1 0.39 1);
@@ -35,15 +23,7 @@
     }
   }
 
-  & :where(dialog) {
-    background-color: light-dark(var(--surface-1), var(--surface-2));
-  }
-
   & :where(button, .btn) {
-    --_highlight: light-dark(
-      var(--_highlight-light),
-      var(--_highlight-dark)
-    );
     --_bg: light-dark(var(--_bg-light), var(--_bg-dark));
     --_ink-shadow: light-dark(
       var(--_ink-shadow-light),
@@ -75,16 +55,5 @@
       var(--surface-2),
       hsl(210deg 11% 10%)
     );
-  }
-}
-
-:where(html, [data-theme='dark'], .dark, .dark-theme) {
-  color-scheme: dark;
-
-  & :where([type='submit']),
-  & :where(form button:not([type='button'])),
-  & :where([type='reset']),
-  & :where([disabled]) {
-    --_bg: var(--surface-1);
   }
 }
