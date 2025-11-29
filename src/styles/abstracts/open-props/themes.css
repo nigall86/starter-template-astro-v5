@@ -1,0 +1,90 @@
+/* @import 'colors-open-props'; */
+
+:where(html, [data-theme='light'], .light, .light-theme) {
+  color-scheme: light dark;
+
+  --link: light-dark(var(--indigo-7), var(--indigo-3));
+  --link-visited: light-dark(var(--purple-7), var(--purple-3));
+
+  --text-1: light-dark(var(--gray-12), var(--gray-0));
+  --text-2: light-dark(var(--gray-7), var(--gray-4));
+
+  --surface-1: light-dark(var(--gray-0), var(--gray-9));
+  --surface-2: light-dark(var(--gray-2), var(--gray-8));
+  --surface-3: light-dark(var(--gray-3), var(--gray-7));
+  --surface-4: light-dark(var(--gray-4), var(--gray-6));
+
+  --scrollthumb-color: light-dark(var(--gray-7), var(--gray-6));
+
+  --shadow-color: light-dark(220 3% 15%, 220 40% 2%);
+  --shadow-strength: light-dark(1%, 10%);
+
+  --inner-shadow-highlight-light: inset 0 -0.5px 0 0 #fff,
+    inset 0 0.5px 0 0 #0001;
+  --inner-shadow-highlight-dark: inset 0 -0.5px 0 0 #fff1,
+    inset 0 0.5px 0 0 #0007;
+  --inner-shadow-highlight: light-dark(
+    var(--inner-shadow-highlight-light),
+    var(--inner-shadow-highlight-dark)
+  );
+
+  @media (--HDcolor) {
+    @supports (color: color(display-p3 0 0 0)) {
+      --link: color(display-p3 0.1 0.39 1);
+      --link-visited: color(display-p3 0.6 0.2 1);
+    }
+  }
+
+  & :where(dialog) {
+    background-color: light-dark(var(--surface-1), var(--surface-2));
+  }
+
+  & :where(button, .btn) {
+    --_highlight: light-dark(
+      var(--_highlight-light),
+      var(--_highlight-dark)
+    );
+    --_bg: light-dark(var(--_bg-light), var(--_bg-dark));
+    --_ink-shadow: light-dark(
+      var(--_ink-shadow-light),
+      var(--_ink-shadow-dark)
+    );
+
+    & :where([type='reset']) {
+      --_text: light-dark(var(--red-6), var(--red-2));
+      --_border: light-dark(var(--red-3), var(--surface-3));
+    }
+  }
+
+  &
+    :where(
+      button,
+      .btn,
+      input:is([type='button'], [type='submit'], [type='reset'])
+    )[disabled] {
+    --_text: light-dark(var(--gray-6), var(--gray-5));
+  }
+
+  &
+    :where(
+      textarea,
+      select,
+      input:not([type='button'], [type='submit'], [type='reset'])
+    ) {
+    background-color: light-dark(
+      var(--surface-2),
+      hsl(210deg 11% 10%)
+    );
+  }
+}
+
+:where(html, [data-theme='dark'], .dark, .dark-theme) {
+  color-scheme: dark;
+
+  & :where([type='submit']),
+  & :where(form button:not([type='button'])),
+  & :where([type='reset']),
+  & :where([disabled]) {
+    --_bg: var(--surface-1);
+  }
+}

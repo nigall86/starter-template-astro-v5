@@ -1,0 +1,222 @@
+:where(html) {
+  color-scheme: light dark;
+
+  accent-color: var(--fgColor-accent);
+
+  /* --- BACKGROUND TOKENS --- */
+  --bgColor-default: light-dark(
+    var(--base-color-neutral-0),
+    var(--base-color-neutral-1)
+  );
+
+  --bgColor-muted: light-dark(
+    var(--base-color-neutral-1),
+    var(--base-color-neutral-2)
+  );
+
+  --bgColor-inset: light-dark(
+    var(--bgColor-muted),
+    var(--base-color-neutral-0)
+  );
+
+  --bgColor-disabled: light-dark(
+    var(--base-color-neutral-2),
+    var(--base-color-neutral-3)
+  );
+
+  --bgColor-emphasis: light-dark(
+    var(--base-color-neutral-12),
+    var(--base-color-neutral-7)
+  );
+
+  --bgColor-transparent: var(--base-color-transparent);
+  --bgColor-inverse: light-dark(
+    var(--base-color-neutral-12),
+    var(--base-color-neutral-13)
+  );
+
+  --bgColor-black: light-dark(
+    var(--base-color-neutral-13),
+    var(--base-color-neutral-0)
+  );
+  --bgColor-white: light-dark(
+    var(--base-color-neutral-0),
+    var(--base-color-neutral-13)
+  );
+
+  /* Neutral */
+  --bgColor-neutral-emphasis: light-dark(
+    var(--base-color-neutral-9),
+    var(--base-color-neutral-8)
+  );
+  --bgColor-neutral-muted: light-dark(#818b981f, #656c7633);
+
+  /* Accent */
+  --bgColor-accent-emphasis: var(--base-color-blue-5);
+  --bgColor-accent-muted: light-dark(
+    var(--base-color-blue-0),
+    #388bfd1a
+  );
+
+  /* Brand */
+  --bgColor-brand-emphasis: var(--bgColor-accent-emphasis);
+  --bgColor-brand-muted: var(--bgColor-accent-muted);
+
+  /* Attention */
+  --bgColor-attention-emphasis: var(--base-color-yellow-5);
+  --bgColor-attention-muted: light-dark(
+    var(--base-color-yellow-0),
+    #bb800926
+  );
+
+  /* Danger & Close */
+  --bgColor-danger-emphasis: var(--base-color-red-5);
+  --bgColor-danger-muted: light-dark(
+    var(--base-color-red-0),
+    #f851491a
+  );
+  --bgColor-closed-emphasis: var(--bgColor-danger-emphasis);
+  --bgColor-closed-muted: var(--bgColor-danger-muted);
+
+  /* Done & Upsell*/
+  --bgColor-done-emphasis: var(--base-color-purple-5);
+  --bgColor-done-mute: light-dark(
+    var(--base-color-purple-0),
+    #ab7df826
+  );
+  --bgColor-upsell-emphasis: var(--bgColor-done-emphasis);
+  --bgColor-upsell-mute: var(--bgColor-done-mute);
+
+  /* Success & Open*/
+  --bgColor-success-emphasis: light-dark(
+    #1f883d,
+    var(--base-color-green-5)
+  );
+  --bgColor-success-muted: light-dark(
+    var(--base-color-green-0),
+    #2ea04326
+  );
+  --bgColor-open-emphasis: var(--bgColor-success-emphasis);
+  --bgColor-open-muted: var(--bgColor-success-muted);
+
+  /* Severe */
+  --bgColor-severe-emphasis: var(--base-color-orange-5);
+  --bgColor-severe-muted: light-dark(
+    var(--base-color-orange-0),
+    #db6d281a
+  );
+
+  /* --- FOREGROUND TOKENS --- */
+  --fgColor-default: light-dark(
+    var(--base-color-neutral-13),
+    var(--base-color-neutral-12)
+  );
+  --fgColor-muted: var(--base-color-neutral-9);
+  --fgColor-link: var(--fgColor-accent);
+  --fgColor-disabled: light-dark(
+    var(--base-color-neutral-8),
+    #656c7699
+  );
+  --fgColor-onEmphasis: light-dark(
+    var(--base-color-neutral-0),
+    var(--base-color-neutral-13)
+  );
+  --fgColor-neutral: var(--base-color-neutral-9);
+  --fgColor-black: light-dark(
+    var(--base-color-neutral-13),
+    var(--base-color-neutral-0)
+  );
+  --fgColor-white: light-dark(
+    var(--base-color-neutral-0),
+    var(--base-color-neutral-13)
+  );
+  --fgColor-onInverse: var(--base-color-neutral-0);
+  --fgColor-accent: light-dark(var(--base-color-blue-5), #4493f8);
+  --fgColor-brand: var(--fgColor-accent);
+  --fgColor-attention: light-dark(
+    var(--base-color-yellow-5),
+    var(--base-color-yellow-3)
+  );
+  --fgColor-danger: light-dark(#d1242f, var(--base-color-red-4));
+  --fgColor-closed: var(--fgColor-danger);
+  --fgColor-done: light-dark(
+    var(--base-color-purple-5),
+    var(--base-color-purple-4)
+  );
+  --fgColor-upsell: var(--fgColor-done);
+  --fgColor-success: light-dark(
+    var(--base-color-green-5),
+    var(--base-color-green-3)
+  );
+  --fgColor-open: var(--fgColor-success);
+  --fgColor-severe: light-dark(
+    var(--base-color-orange-5),
+    var(--base-color-orange-4)
+  );
+
+  /* --- BORDER TOKENS --- */
+  --borderColor-default: light-dark(
+    var(--base-color-neutral-6),
+    var(--base-color-neutral-7)
+  );
+  --borderColor-muted: light-dark(#d1d9e0b3, #3d444db3);
+  --borderColor-emphasis: var(--base-color-neutral-8);
+  --borderColor-disabled: light-dark(#818b981a, #656c761a);
+  --borderColor-transparent: var(--base-color-transparent);
+  --borderColor-translucent: light-dark(#1f232826, #ffffff26);
+
+  /* Neutral */
+  --borderColor-neutral-emphasis: light-dark(
+    var(--base-color-neutral-9),
+    var(--borderColor-emphasis)
+  );
+  --borderColor-neutral-muted: var(--borderColor-muted);
+
+  /* Accent */
+  --borderColor-accent-emphasis: var(--base-color-blue-5);
+  --borderColor-accent-muted: light-dark(#54aeff66, #388bfd66);
+
+  /* Brand */
+  --borderColor-brand-emphasis: var(--borderColor-accent-emphasis);
+  --borderColor-brand-muted: var(--borderColor-accent-muted);
+
+  /* Attention */
+  --borderColor-attention-emphasis: var(--base-color-yellow-5);
+  --borderColor-attention-muted: light-dark(#d4a72c66, #bb800966);
+
+  /* Danger & Closed */
+  --borderColor-danger-emphasis: var(--base-color-red-5);
+  --borderColor-danger-muted: light-dark(#ff818266, #f8514966);
+  --borderColor-closed-emphasis: var(--borderColor-danger-emphasis);
+  --borderColor-closed-muted: var(--borderColor-danger-muted);
+
+  /* Done & Upsell*/
+  --borderColor-done-emphasis: var(--base-color-purple-5);
+  --borderColor-done-mute: light-dark(#c297ff66, #ab7df866);
+  --borderColor-upsell-emphasis: var(--borderColor-done-emphasis);
+  --borderColor-upsell-mute: var(--borderColor-done-mute);
+
+  /* Success & Open*/
+  --borderColor-success-emphasis: var(--base-color-green-5);
+  --borderColor-success-muted: light-dark(#4ac26b66, #2ea04366);
+  --borderColor-open-emphasis: var(--borderColor-success-emphasis);
+  --borderColor-open-muted: var(--borderColor-success-muted);
+
+  /* Severe */
+  --borderColor-severe-emphasis: var(--base-color-orange-5);
+  --borderColor-severe-muted: light-dark(#fb8f4466, #db6d2866);
+
+  /* Scroll color */
+  --scroll-thumb-color: var(--base-color-neutral-7);
+
+  /* Highlight */
+  --highlight-size: 10px;
+  --highlight-color: light-color(
+    hsl(0 0% 0% / 20%),
+    oklch(100% 0 0 / 20%)
+  );
+  --highlight: 0 0 0 var(--highlight-size) var(--highlight-color);
+
+  /* Scroll color */
+  --scroll-thumb-color: var(--base-color-neutral-6);
+}

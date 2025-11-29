@@ -1,29 +1,14 @@
 :where(html) {
-  color-scheme: light;
+  color-scheme: light dark;
 
-  --base-color-orange-0: hsl(28 100% 95%); /* #FFF1E5 */
-  --base-color-orange-1: hsl(28 100% 85%); /* #FFD8B5 */
-  --base-color-orange-2: hsl(27 100% 74%); /* #FFB77C */
-  --base-color-orange-3: hsl(25 96% 63%); /* #FB8F44 */
-  --base-color-orange-4: hsl(24 76% 51%); /* #E16F24 */
-  --base-color-orange-5: hsl(24 100% 37%); /* #BC4C00 */
-  --base-color-orange-6: hsl(23 100% 29%); /* #953800 */
-  --base-color-orange-7: hsl(22 100% 23%); /* #762C00 */
-  --base-color-orange-8: hsl(22 100% 18%); /* #5C2200 */
-  --base-color-orange-9: hsl(19 100% 14%); /* #471700 */
-
-  @media(--OSdark) {
-    color-scheme: dark;
-
-    --base-color-orange-0: hsl(34 100% 86%); /* #FFDFB6 */
-    --base-color-orange-1: hsl(33 100% 75%); /* #FFC680 */
-    --base-color-orange-2: hsl(28 100% 67%); /* #FFA657 */
-    --base-color-orange-3: hsl(25 86% 59%); /* #F0883E */
-    --base-color-orange-4: hsl(23 71% 51%); /* #DB6D28 */
-    --base-color-orange-5: hsl(21 73% 43%); /* #BD561D */
-    --base-color-orange-6: hsl(20 76% 35%); /* #9B4215 */
-    --base-color-orange-7: hsl(19 84% 25%); /* #762D0A */
-    --base-color-orange-8: hsl(19 96% 18%); /* #5A1E02 */
-    --base-color-orange-9: hsl(19 100% 12%); /* #3D1300 */
-  }
+  --base-color-orange-0: light-dark(#fff1e5, #ffdfb6);
+  --base-color-orange-1: light-dark(#ffd8b5, #ffc680);
+  --base-color-orange-2: light-dark(#ffb77c, #ffa657);
+  --base-color-orange-3: light-dark(#fb8f44, #f0883e);
+  --base-color-orange-4: light-dark(#e16f24, #db6d28);
+  --base-color-orange-5: light-dark(#bc4c00, #bd561d);
+  --base-color-orange-6: light-dark(#953800, #9b4215);
+  --base-color-orange-7: light-dark(#762c00, #762d0a);
+  --base-color-orange-8: light-dark(#5c2200, #5a1e02);
+  --base-color-orange-9: light-dark(#471700, #3d1300);
 }

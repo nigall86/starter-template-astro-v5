@@ -2,9 +2,9 @@
   /* --- Shadows open props --- */
   --accent-hue: 215;
 
-  --shadow-color: 27% 0.003 var(--accent-hue);
+  /* --shadow-color: 27% 0.003 var(--accent-hue);
   --shadow-strength: 1%;
-  --inner-shadow-highlight: inset 0 -0.5px 0 0 #fff, inset 0 0.5px 0 0 #0001;
+  --inner-shadow-highlight: inset 0 -0.5px 0 0 #fff, inset 0 0.5px 0 0 #0001; */
 
   --shadow-1: 0 1px 2px -1px oklch(var(--shadow-color) /
         calc(var(--shadow-strength) + 9%));
@@ -14,24 +14,32 @@
           calc(var(--shadow-strength) + 5%));
   --shadow-3: 0 -1px 3px 0 oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 2%)),
-    0 1px 2px -5px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    0 2px 5px -5px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 1px 2px -5px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 4%)),
     0 4px 12px -5px oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 5%)),
     0 12px 15px -5px oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 7%));
   --shadow-4: 0 -2px 5px 0 oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 2%)),
-    0 1px 1px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
-    0 2px 2px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
-    0 5px 5px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
-    0 9px 9px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 1px 1px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 2px 2px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 4%)),
+    0 9px 9px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 5%)),
     0 16px 16px -2px oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 6%));
   --shadow-5: 0 -1px 2px 0 oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 2%)),
-    0 2px 1px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
-    0 5px 5px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 2px 1px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
     0 10px 10px -2px oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 4%)),
     0 20px 20px -2px oklch(var(--shadow-color) /
@@ -40,8 +48,10 @@
           calc(var(--shadow-strength) + 7%));
   --shadow-6: 0 -1px 2px 0 hsl(var(--shadow-color) /
           calc(var(--shadow-strength) + 2%)),
-    0 3px 2px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
-    0 7px 5px -2px oklch(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 3px 2px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 7px 5px -2px oklch(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
     0 12px 10px -2px oklch(var(--shadow-color) /
           calc(var(--shadow-strength) + 4%)),
     0 22px 18px -2px oklch(var(--shadow-color) /
@@ -70,6 +80,7 @@
   :where(html) {
     --shadow-color: 11% 0.01 var(--accent-hue);
     --shadow-strength: 15%;
-    --inner-shadow-highlight: inset 0 -0.5px 0 0 #fff1, inset 0 0.5px 0 0 #0007;
+    --inner-shadow-highlight: inset 0 -0.5px 0 0 #fff1,
+      inset 0 0.5px 0 0 #0007;
   }
 }

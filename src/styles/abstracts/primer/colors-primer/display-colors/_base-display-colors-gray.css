@@ -1,29 +1,14 @@
 :where(html) {
-  color-scheme: light;
+  color-scheme: light dark;
 
-  --base-display-color-gray-0: hsl(216 28% 93%); /* #E8ECF2 */
-  --base-display-color-gray-1: hsl(213 25% 86%); /* #D2DAE4 */
-  --base-display-color-gray-2: hsl(213 22% 76%); /* #B4C0CF */
-  --base-display-color-gray-3: hsl(214 19% 67%); /* #9BA9BB */
-  --base-display-color-gray-4: hsl(214 16% 57%); /* #808FA3 */
-  --base-display-color-gray-5: hsl(214 13% 45%); /* #647182 */
-  --base-display-color-gray-6: hsl(213 10% 40%); /* #5C6570 */
-  --base-display-color-gray-7: hsl(215 7% 33%); /* #4E535A */
-  --base-display-color-gray-8: hsl(220 4% 27%); /* #424448 */
-  --base-display-color-gray-9: hsl(240 1% 19%); /* #303031 */
-
-  @media(--OSdark) {
-    color-scheme: dark;
-
-    --base-display-color-gray-0: hsl(0 0% 11%); /* #1C1C1C */
-    --base-display-color-gray-1: hsl(220 3% 17%); /* #2A2B2D */
-    --base-display-color-gray-2: hsl(210 7% 24%); /* #393D41 */
-    --base-display-color-gray-3: hsl(214 10% 31%); /* #474E57 */
-    --base-display-color-gray-4: hsl(214 13% 39%); /* #576270 */
-    --base-display-color-gray-5: hsl(215 16% 51%); /* #6E7F96 */
-    --base-display-color-gray-6: hsl(214 19% 64%); /* #92A1B5 */
-    --base-display-color-gray-7: hsl(213 22% 68%); /* #9BABBF */
-    --base-display-color-gray-8: hsl(214 25% 76%); /* #B3C0D1 */
-    --base-display-color-gray-9: hsl(215 28% 82%); /* #C4CFDE */
-  }
+  --base-display-color-gray-0: light-dark(#e8ecf2, #1c1c1c);
+  --base-display-color-gray-1: light-dark(#d2dae4, #2a2b2d);
+  --base-display-color-gray-2: light-dark(#b4c0cf, #393d41);
+  --base-display-color-gray-3: light-dark(#9ba9bb, #474e57);
+  --base-display-color-gray-4: light-dark(#808fa3, #576270);
+  --base-display-color-gray-5: light-dark(#647182, #6e7f96);
+  --base-display-color-gray-6: light-dark(#5c6570, #92a1b5);
+  --base-display-color-gray-7: light-dark(#4e535a, #9babbf);
+  --base-display-color-gray-8: light-dark(#424448, #b3c0d1);
+  --base-display-color-gray-9: light-dark(#303031, #c4cfde);
 }
