@@ -1,14 +1,44 @@
 :where(html) {
   color-scheme: light dark;
 
-  --base-display-color-gray-0: light-dark(#e8ecf2, #1c1c1c);
-  --base-display-color-gray-1: light-dark(#d2dae4, #2a2b2d);
-  --base-display-color-gray-2: light-dark(#b4c0cf, #393d41);
-  --base-display-color-gray-3: light-dark(#9ba9bb, #474e57);
-  --base-display-color-gray-4: light-dark(#808fa3, #576270);
-  --base-display-color-gray-5: light-dark(#647182, #6e7f96);
-  --base-display-color-gray-6: light-dark(#5c6570, #92a1b5);
-  --base-display-color-gray-7: light-dark(#4e535a, #9babbf);
-  --base-display-color-gray-8: light-dark(#424448, #b3c0d1);
-  --base-display-color-gray-9: light-dark(#303031, #c4cfde);
+  --base-display-color-gray-0: light-dark(
+    oklch(94.2% 0.009 258.3),
+    oklch(22.6% 0 none)
+  );
+  --base-display-color-gray-1: light-dark(
+    oklch(88.5% 0.016 253.9),
+    oklch(28.9% 0.004 264.5)
+  );
+  --base-display-color-gray-2: light-dark(
+    oklch(80.3% 0.025 254),
+    oklch(35.8% 0.009 248.1)
+  );
+  --base-display-color-gray-3: light-dark(
+    oklch(73% 0.031 254.7),
+    oklch(42.1% 0.018 254.7)
+  );
+  --base-display-color-gray-4: light-dark(
+    oklch(64.5% 0.035 255.6),
+    oklch(49.2% 0.026 254.5)
+  );
+  --base-display-color-gray-5: light-dark(
+    oklch(54.4% 0.031 255.2),
+    oklch(59.1% 0.041 256)
+  );
+  --base-display-color-gray-6: light-dark(
+    oklch(50.3% 0.021 253.5),
+    oklch(70.4% 0.034 255.6)
+  );
+  --base-display-color-gray-7: light-dark(
+    oklch(44% 0.013 256.7),
+    oklch(73.5% 0.034 254)
+  );
+  --base-display-color-gray-8: light-dark(
+    oklch(38.6% 0.007 264.5),
+    oklch(80.3% 0.028 255.1)
+  );
+  --base-display-color-gray-9: light-dark(
+    oklch(31% 0.002 286.3),
+    oklch(85.1% 0.024 256.1)
+  );
 }

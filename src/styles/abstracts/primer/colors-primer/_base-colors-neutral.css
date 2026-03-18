@@ -2,26 +2,71 @@
   color-scheme: light dark;
 
   /* Common colors */
-  --base-color-black: light-dark(#1f2328, #010409);
-  --base-color-white: #fff;
-  --base-color-transparent: light-dark(#ffffff00, #00000000);
+  --base-color-black: light-dark(
+    oklch(25.4% 0.011 254),
+    oklch(10.4% 0.019 248.3)
+  );
+  --base-color-white: oklch(100% 0 none);
+  --base-color-transparent: light-dark(
+    oklch(100% 0 none / 0),
+    oklch(0% 0 none / 0)
+  );
 
   /* Neutral colors */
   --base-color-neutral-0: light-dark(
     var(--base-color-white),
-    #010409
+    oklch(10.4% 0.019 248.3)
   );
-  --base-color-neutral-1: light-dark(#f6f8fa, #0d1117);
-  --base-color-neutral-2: light-dark(#eff2f5, #151b23);
-  --base-color-neutral-3: light-dark(#e6eaef, #212830);
-  --base-color-neutral-4: light-dark(#e0e6eb, #262c36);
-  --base-color-neutral-5: light-dark(#dae0e7, #2a313c);
-  --base-color-neutral-6: light-dark(#d1d9e0, #2f3742);
-  --base-color-neutral-7: light-dark(#c8d1da, #3d444d);
-  --base-color-neutral-8: light-dark(#818b98, #656c76);
-  --base-color-neutral-9: light-dark(#59636e, #9198a1);
-  --base-color-neutral-10: light-dark(#454c54, #b7bdc8);
-  --base-color-neutral-11: light-dark(#393f46, #d1d7e0);
-  --base-color-neutral-12: light-dark(#25292e, #f0f6fc);
-  --base-color-neutral-13: light-dark(#1f2328, #ffffff);
+  --base-color-neutral-1: light-dark(
+    oklch(97.8% 0.003 247.9),
+    oklch(17.6% 0.014 258.4)
+  );
+  --base-color-neutral-2: light-dark(
+    oklch(96% 0.005 247.9),
+    oklch(22% 0.018 255.7)
+  );
+  --base-color-neutral-3: light-dark(
+    oklch(93.5% 0.008 253.9),
+    oklch(27.4% 0.018 251.9)
+  );
+  --base-color-neutral-4: light-dark(
+    oklch(92.2% 0.009 242.8),
+    oklch(29.2% 0.02 260.6)
+  );
+  --base-color-neutral-5: light-dark(
+    oklch(90.4% 0.012 252.1),
+    oklch(31.1% 0.022 259.4)
+  );
+  --base-color-neutral-6: light-dark(
+    oklch(88.1% 0.013 244.3),
+    oklch(33.4% 0.022 256.4)
+  );
+  --base-color-neutral-7: light-dark(
+    oklch(85.6% 0.016 248),
+    oklch(38.4% 0.018 254.7)
+  );
+  --base-color-neutral-8: light-dark(
+    oklch(63.3% 0.023 255),
+    oklch(52.9% 0.018 257.2)
+  );
+  --base-color-neutral-9: light-dark(
+    oklch(49.5% 0.022 250.8),
+    oklch(67.7% 0.016 254.6)
+  );
+  --base-color-neutral-10: light-dark(
+    oklch(41.3% 0.016 251.7),
+    oklch(79.7% 0.017 262.7)
+  );
+  --base-color-neutral-11: light-dark(
+    oklch(36.5% 0.015 252.3),
+    oklch(87.7% 0.014 258.3)
+  );
+  --base-color-neutral-12: light-dark(
+    oklch(27.9% 0.011 254),
+    oklch(97% 0.01 247.9)
+  );
+  --base-color-neutral-13: light-dark(
+    oklch(25.4% 0.011 254),
+    oklch(100% 0 none)
+  );
 }

@@ -1,14 +1,44 @@
 :where(html) {
   color-scheme: light dark;
 
-  --base-color-pink-0: light-dark(#ffeff7, #ffdaec);
-  --base-color-pink-1: light-dark(#ffd3eb, #ffbedd);
-  --base-color-pink-2: light-dark(#ffadda, #ff9bce);
-  --base-color-pink-3: light-dark(#ff80c8, #f778ba);
-  --base-color-pink-4: light-dark(#e85aad, #db61a2);
-  --base-color-pink-5: light-dark(#bf3989, #bf4b8a);
-  --base-color-pink-6: light-dark(#99286e, #9e3670);
-  --base-color-pink-7: light-dark(#772057, #7d2457);
-  --base-color-pink-8: light-dark(#611347, #5e103e);
-  --base-color-pink-9: light-dark(#4d0336, #42062a);
+  --base-color-pink-0: light-dark(
+    oklch(96.7% 0.02 345.7),
+    oklch(92.4% 0.047 347.2)
+  );
+  --base-color-pink-1: light-dark(
+    oklch(91.1% 0.058 344.3),
+    oklch(86.9% 0.084 348.8)
+  );
+  --base-color-pink-2: light-dark(
+    oklch(84% 0.111 345.7),
+    oklch(80.7% 0.133 348.6)
+  );
+  --base-color-pink-3: light-dark(
+    oklch(76.5% 0.173 346.9),
+    oklch(73.9% 0.171 349.7)
+  );
+  --base-color-pink-4: light-dark(
+    oklch(67.6% 0.195 347.5),
+    oklch(66.2% 0.168 349.5)
+  );
+  --base-color-pink-5: light-dark(
+    oklch(56.5% 0.187 348),
+    oklch(58.5% 0.163 349.6)
+  );
+  --base-color-pink-6: light-dark(
+    oklch(47.7% 0.164 347.1),
+    oklch(50% 0.151 349.5)
+  );
+  --base-color-pink-7: light-dark(
+    oklch(40.1% 0.134 346),
+    oklch(41.6% 0.134 349.2)
+  );
+  --base-color-pink-8: light-dark(
+    oklch(34.2% 0.124 344.8),
+    oklch(33% 0.119 349.8)
+  );
+  --base-color-pink-9: light-dark(
+    oklch(28.3% 0.116 345.2),
+    oklch(25.7% 0.097 349.6)
+  );
 }

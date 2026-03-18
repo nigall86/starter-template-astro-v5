@@ -1,15 +1,15 @@
 :where(html) {
-  --indigo-0: hsl(223 100% 96%);
-  --indigo-1: hsl(225 100% 93%);
-  --indigo-2: hsl(228 100% 86%);
-  --indigo-3: hsl(228 100% 78%);
-  --indigo-4: hsl(228 96% 72%);
-  --indigo-5: hsl(228 94% 67%);
-  --indigo-6: hsl(228 89% 63%);
-  --indigo-7: hsl(228 81% 59%);
-  --indigo-8: hsl(228 69% 55%);
-  --indigo-9: hsl(230 57% 50%);
-  --indigo-10: hsl(230 57% 43%);
-  --indigo-11: hsl(230 57% 37%);
-  --indigo-12: hsl(230 57% 30%);
+  --indigo-0: oklch(95.6% 0.021 268.6);
+  --indigo-1: oklch(92.1% 0.038 271);
+  --indigo-2: oklch(83.5% 0.082 273.6);
+  --indigo-3: oklch(74.2% 0.132 272.2);
+  --indigo-4: oklch(67.8% 0.164 270.9);
+  --indigo-5: oklch(62.7% 0.191 269.6);
+  --indigo-6: oklch(59% 0.204 268.7);
+  --indigo-7: oklch(55.8% 0.208 268.2);
+  --indigo-8: oklch(53% 0.197 268.2);
+  --indigo-9: oklch(48.6% 0.19 269.3);
+  --indigo-10: oklch(43.7% 0.168 269.5);
+  --indigo-11: oklch(39.4% 0.148 269.6);
+  --indigo-12: oklch(34.3% 0.125 269.9);
 }

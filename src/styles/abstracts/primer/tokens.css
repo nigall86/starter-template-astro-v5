@@ -6,6 +6,12 @@
 
 :root {
   color-scheme: light dark;
+  /* Define brand color here */
+  --brand-color: light-dark(#dd03ed, #a006ab);
+  --brand-color-muted: light-dark(
+    hsla(var(--brand-color-muted-light) / 0.6),
+    hsla(var(--brand-color-muted-dark) / 0.6)
+  );
 
   accent-color: var(--fgColor-accent);
 
@@ -13,7 +19,7 @@
   --overlay-backdrop-bgColor: hsla(210 20% 82% / 0.4);
 
   /* Scroll color */
-  --scroll-thumb-color: light-dark(
+  --scrollthumb-color: light-dark(
     var(--base-color-neutral-7),
     var(--base-color-neutral-6)
   );

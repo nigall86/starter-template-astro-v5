@@ -1,27 +1,27 @@
 ---
 // libraries
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
 // styles
-import "../../../styles/components/link.css";
+// import "../../../styles/components/link.css";
 
 // types
-import { type HTMLAttributes } from "astro/types";
+import { type HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"button"> {
+interface Props extends HTMLAttributes<'button'> {
   btnId?: string;
   text?: string;
   srText?: string;
   dataType?:
-    | "accent"
-    | "primary"
-    | "outline"
-    | "inactive"
-    | "invisible"
-    | "btn-icon";
+    | 'accent'
+    | 'primary'
+    | 'outline'
+    | 'inactive'
+    | 'invisible'
+    | 'btn-icon';
   iconName?: string;
-  iconSide?: "left" | "right";
-  iconSize?: "24" | "32" | "48" | "64";
+  iconSide?: 'left' | 'right';
+  iconSize?: '24' | '32' | '48' | '64';
   iconColor?: string;
   classes?: string;
 }
@@ -31,30 +31,29 @@ const {
   text,
   srText,
   dataType,
-  iconName = "",
+  iconName = '',
   iconSide,
-  iconSize = "24",
+  iconSize = '24',
   iconColor,
-  onClick,
   classes,
   ...rest
 } = Astro.props as Props;
 ---
 
 {
-  dataType && dataType !== "btn-icon" && (
+  dataType && dataType !== 'btn-icon' && (
     <button
       id={btnId}
       data-type={dataType}
-      class:list={["btn", classes]}
+      class:list={['btn', classes]}
       {...rest}
     >
-      {iconName !== "" && iconSide === "left" && (
+      {iconName !== '' && iconSide === 'left' && (
         <Icon name={iconName} size={iconSize} />
       )}
       {text}
       <slot />
-      {iconName !== "" && iconSide === "right" && (
+      {iconName !== '' && iconSide === 'right' && (
         <Icon name={iconName} size={iconSize} />
       )}
     </button>
@@ -62,14 +61,14 @@ const {
 }
 
 {
-  dataType && dataType === "btn-icon" && (
+  dataType && dataType === 'btn-icon' && (
     <button
       id={btnId}
       data-type={dataType}
-      class:list={["btn", classes]}
+      class:list={['btn', classes]}
       {...rest}
     >
-      {iconName !== "" && <Icon name={iconName} size={iconSize} />}
+      {iconName !== '' && <Icon name={iconName} size={iconSize} />}
       <span class="sr-only">{srText}</span>
     </button>
   )

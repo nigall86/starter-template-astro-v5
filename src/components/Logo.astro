@@ -1,9 +1,9 @@
 ---
 // Assets
-import IconLogo from "../icons/logo.svg";
+import IconLogo from '../icons/logo.svg';
 
 interface Props {
-  type?: "header" | "footer";
+  type?: 'header' | 'footer';
   size?: number;
   title?: string;
 }
@@ -11,7 +11,7 @@ interface Props {
 const {
   type,
   size = 40,
-  title = "Logo of the company",
+  title = 'Logo of the company',
 } = Astro.props;
 ---
 
@@ -21,17 +21,17 @@ const {
 
 <style>
   .logo {
-    --_logo-color-header: var(--fgColor-brand, var(--accent));
-    --_logo-color-footer: var(--fgColor-brand, var(--accent));
+    --_logo-color-header: var(--brand, var(--fgColor-brand));
+    --_logo-color-footer: var(--brand, var(--fgColor-brand));
 
     padding-inline: var(--size-5);
 
     > svg {
-      &[data-type="header"] {
+      &[data-type='header'] {
         fill: var(--_logo-color-header);
       }
 
-      &[data-type="footer"] {
+      &[data-type='footer'] {
         fill: var(--_logo-color-footer);
       }
     }

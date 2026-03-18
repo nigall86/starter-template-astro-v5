@@ -3,18 +3,26 @@
   --_nav-font-family: var(--ff-base);
   --_nav-link-font-weight: var(--fw-medium);
   --_nav-link-font-size: var(--fs-sm);
-  --_nav-link-color: var(--fgColor-default, var(--text-1));
-  --_nav-link-color-hover: var(--fgColor-accent, var(--link-hover));
-  --_nav-link-bg-hover: var(--bgColor-default, var(--surface-1));
+
+  /* Spacing */
+  --_nav-link-padding: var(--space-s);
+
+  /* Background */
+  --_nav-link-bg-color: var(--surface-1);
+  --_nav-link-bg-hover: var(--_nav-link-bg-color);
+
+  /* Text */
+  --_nav-link-color: var(--text-1);
+  --_nav-link-color-hover: var(--link-hover);
+  --_nav-link-color-visited: var(--link-visited);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family:var(--_nav-font-family), sans-serif;
-  color: var(--_nav-text-color);
 
-  @media (--md-n-below) {
-  }
+  background-color: var(--_nav-link-bg-color);
+  font-family: var(--_nav-font-family), sans-serif;
+  color: var(--_nav-link-color);
 
   &__list {
     display: flex;
@@ -31,10 +39,11 @@
       z-index: var(--layer-important);
       top: 0;
       right: -100%;
+
       display: flex;
       flex-direction: column;
       width: min(25rem, 100%);
-      background-color: var(--bgColor-muted, var(--surface-2));
+      background-color: var(--surface-2, var(--bgColor-muted));
       box-shadow: var(--shadow-3);
 
       transition: right 0.4s ease-out;
@@ -51,7 +60,7 @@
 
     a {
       display: flex;
-      padding: var(--_site-header-link-padding);
+      padding: var(--_nav-link-padding);
       width: 100%;
       border-radius: 0;
       font-weight: var(--_nav-link-font-weight);
@@ -60,9 +69,15 @@
       transition: background-color 0.3s var(--ease-5);
       cursor: pointer;
 
-      &:hover, &:focus-visible {
+      &:hover,
+      &:focus-visible {
         color: var(--_nav-link-color-hover);
         background-color: var(--_nav-link-bg-hover);
+        text-decoration: underline;
+
+        &:visited {
+          color: var(--link-visited);
+        }
       }
 
       @media (--lg-n-below) {
@@ -72,9 +87,10 @@
   }
 }
 
-#nav-menu-open, #nav-menu-close {
+#nav-menu-open,
+#nav-menu-close {
   display: none;
-  padding: var(--_site-header-link-padding);
+  padding: var(--_nav-link-padding);
   border-radius: 0;
   font-size: var(--_nav-link-font-size);
 
@@ -84,7 +100,7 @@
 
   &:hover {
     color: var(--_nav-link-color-hover);
-    background-color: var(--_nav-link-bg-hover);
+    /* background-color: var(--_nav-link-bg-hover); */
   }
 
   @media (--md-n-below) {
@@ -105,6 +121,3 @@
 .site-nav__list.show ~ #overlay {
   display: block;
 }
-
-
-

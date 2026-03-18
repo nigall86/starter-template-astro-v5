@@ -1,0 +1,44 @@
+:where(html) {
+  color-scheme: light dark;
+
+  --base-display-color-brown-0: light-dark(
+    oklch(93.8% 0.012 84.6),
+    oklch(23.3% 0.019 66.6)
+  );
+  --base-display-color-brown-1: light-dark(
+    oklch(88.1% 0.022 83.3),
+    oklch(29.2% 0.027 73.8)
+  );
+  --base-display-color-brown-2: light-dark(
+    oklch(80.3% 0.038 82.1),
+    oklch(35.8% 0.035 73.3)
+  );
+  --base-display-color-brown-3: light-dark(
+    oklch(72.8% 0.05 79.4),
+    oklch(42.3% 0.045 72.6)
+  );
+  --base-display-color-brown-4: light-dark(
+    oklch(65.2% 0.063 76.4),
+    oklch(49.7% 0.055 75.1)
+  );
+  --base-display-color-brown-5: light-dark(
+    oklch(55% 0.056 75),
+    oklch(58.7% 0.07 76.6)
+  );
+  --base-display-color-brown-6: light-dark(
+    oklch(50% 0.05 73),
+    oklch(70.1% 0.069 79.1)
+  );
+  --base-display-color-brown-7: light-dark(
+    oklch(44.8% 0.043 71.7),
+    oklch(73.9% 0.063 81.4)
+  );
+  --base-display-color-brown-8: light-dark(
+    oklch(38.7% 0.036 69.7),
+    oklch(79.8% 0.051 83.9)
+  );
+  --base-display-color-brown-9: light-dark(
+    oklch(31.1% 0.027 66.6),
+    oklch(85.5% 0.039 85.3)
+  );
+}

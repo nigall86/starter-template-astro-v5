@@ -1,15 +1,15 @@
 :where(html) {
-  --stone-0: hsl(200 27% 98%);
-  --stone-1: hsl(210 18% 96%);
-  --stone-2: hsl(210 11% 93%);
-  --stone-3: hsl(192 9% 89%);
-  --stone-4: hsl(197 8% 83%);
-  --stone-5: hsl(202 5% 71%);
-  --stone-6: hsl(200 3% 60%);
-  --stone-7: hsl(180 1% 50%);
-  --stone-8: hsl(160 1% 41%);
-  --stone-9: hsl(90 1% 31%);
-  --stone-10: hsl(60 3% 22%);
-  --stone-11: hsl(60 6% 14%);
-  --stone-12: hsl(60 6% 7%);
+  --stone-0: oklch(98.5% 0.002 228.8);
+  --stone-1: oklch(96.9% 0.003 247.9);
+  --stone-2: oklch(94.6% 0.003 247.9);
+  --stone-3: oklch(91.7% 0.005 214.3);
+  --stone-4: oklch(87% 0.006 223.2);
+  --stone-5: oklch(77.3% 0.007 232.7);
+  --stone-6: oklch(68.4% 0.006 228.9);
+  --stone-7: oklch(60% 0.003 197.1);
+  --stone-8: oklch(52.1% 0.003 174.4);
+  --stone-9: oklch(42.9% 0.003 128.5);
+  --stone-10: oklch(34.6% 0.006 106.7);
+  --stone-11: oklch(26.6% 0.008 106.9);
+  --stone-12: oklch(18.6% 0.004 106.8);
 }

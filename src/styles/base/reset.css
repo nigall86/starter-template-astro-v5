@@ -13,6 +13,10 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
+  @media (--motionOK) {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Set core body defaults */
@@ -30,9 +34,20 @@ body {
   }
 }
 
+:not(dialog) {
+  margin: 0;
+}
+
+:not(fieldset, progress, meter) {
+  border-width: 0;
+  border-style: solid;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+
 /* More secure way to keep semantic of lists elements */
 :is(ul, ol)[class] {
-  list-style: "";
+  list-style: '';
   margin: 0;
   padding: 0;
 }
@@ -107,12 +122,51 @@ video {
 /*  height: 1em;*/
 /*}*/
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
+/* Elements that don't have a class get default styles */
+/* a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
   text-decoration-thickness: 0.625em;
   text-underline-offset: 0.25em;
+} */
+
+a,
+u,
+ins,
+abbr {
+  text-underline-offset: 1px;
+
+  @supports (-moz-appearance: none) {
+    text-underline-offset: 2px;
+  }
+}
+
+a[href],
+area,
+button,
+input,
+label[for],
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex*='-']) {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  & [href] {
+    text-decoration-color: var(--link);
+
+    &:where(:visited) {
+      color: var(--link-visited);
+      text-decoration-color: var(--link-visited);
+    }
+  }
+
+  &:not(:hover) {
+    text-decoration: inherit;
+  }
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -139,4 +193,48 @@ li,
 figcaption {
   text-wrap: pretty;
   max-width: 65ch;
+}
+
+::placeholder {
+  color: var(--gray-7, var(--fgColor-neutral));
+  opacity: 0.75;
+}
+
+select {
+  padding-inline: var(--size-relative-4) 0;
+  padding-block: 0.75ch;
+  field-sizing: content;
+}
+
+summary {
+  margin: calc(var(--size-2) * -1) calc(var(--size-3) * -1);
+  padding: var(--size-2) var(--size-3);
+  border-radius: var(--radius-2);
+  background: var(--surface-3, var(--bgColor-neutral-muted));
+}
+
+details {
+  padding-inline: var(--size-3);
+  padding-block: var(--size-2);
+  border-radius: var(--radius-2);
+  background: var(--surface-2, var(--bgColor-neutral-emphasis));
+
+  &[open] > summary {
+    margin-bottom: var(--size-2);
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+}
+
+sup {
+  font-size: 0.5em;
+}
+
+@media (--motionOK) {
+  focus-visible {
+    transition: outline-offset 145ms var(--ease-2);
+  }
+  :not(:active):focus-visible {
+    transition-duration: 0.25s;
+  }
 }

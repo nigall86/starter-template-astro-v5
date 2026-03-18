@@ -1,15 +1,15 @@
 :where(html) {
-  --violet-0: hsl(252 100% 97%);
-  --violet-1: hsl(257 100% 93%);
-  --violet-2: hsl(256 100% 87%);
-  --violet-3: hsl(255 94% 79%);
-  --violet-4: hsl(255 93% 72%);
-  --violet-5: hsl(255 91% 67%);
-  --violet-6: hsl(255 86% 63%);
-  --violet-7: hsl(255 78% 60%);
-  --violet-8: hsl(255 67% 55%);
-  --violet-9: hsl(255 53% 50%);
-  --violet-10: hsl(255 53% 44%);
-  --violet-11: hsl(255 53% 37%);
-  --violet-12: hsl(255 53% 31%);
+  --violet-0: oklch(96.1% 0.021 295.2);
+  --violet-1: oklch(91.1% 0.049 298.4);
+  --violet-2: oklch(83.5% 0.093 296.6);
+  --violet-3: oklch(73.9% 0.144 294.1);
+  --violet-4: oklch(65.7% 0.19 291.8);
+  --violet-5: oklch(60.4% 0.218 289.8);
+  --violet-6: oklch(56.8% 0.229 288.3);
+  --violet-7: oklch(54.6% 0.226 288);
+  --violet-8: oklch(50.9% 0.22 287.3);
+  --violet-9: oklch(47.8% 0.198 287.9);
+  --violet-10: oklch(43.7% 0.179 288.1);
+  --violet-11: oklch(38.8% 0.156 288.4);
+  --violet-12: oklch(34.5% 0.135 288.8);
 }

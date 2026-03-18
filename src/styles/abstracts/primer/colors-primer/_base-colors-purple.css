@@ -1,14 +1,44 @@
 :where(html) {
   color-scheme: light dark;
 
-  --base-color-purple-0: light-dark(#fbefff, #eddeff);
-  --base-color-purple-1: light-dark(#ecd8ff, #e2c5ff);
-  --base-color-purple-2: light-dark(#d8b9ff, #d2a8ff);
-  --base-color-purple-3: light-dark(#c297ff, #be8fff);
-  --base-color-purple-4: light-dark(#a475f9, #ab7df8);
-  --base-color-purple-5: light-dark(#8250df, #8957e5);
-  --base-color-purple-6: light-dark(#6639ba, #6e40c9);
-  --base-color-purple-7: light-dark(#512a97, #553098);
-  --base-color-purple-8: light-dark(#3e1f79, #3c1e70);
-  --base-color-purple-9: light-dark(#2e1461, #271052);
+  --base-color-purple-0: light-dark(
+    oklch(96.6% 0.025 317.7),
+    oklch(92.3% 0.047 306)
+  );
+  --base-color-purple-1: light-dark(
+    oklch(91% 0.057 308.3),
+    oklch(86.7% 0.085 307.4)
+  );
+  --base-color-purple-2: light-dark(
+    oklch(83.6% 0.101 304.5),
+    oklch(80.1% 0.127 305.9)
+  );
+  --base-color-purple-3: light-dark(
+    oklch(75.6% 0.151 302),
+    oklch(73.9% 0.163 301.9)
+  );
+  --base-color-purple-4: light-dark(
+    oklch(66.9% 0.19 297.4),
+    oklch(68.8% 0.178 298.9)
+  );
+  --base-color-purple-5: light-dark(
+    oklch(56.3% 0.207 295),
+    oklch(58.4% 0.205 295.6)
+  );
+  --base-color-purple-6: light-dark(
+    oklch(47.4% 0.191 293.8),
+    oklch(50.4% 0.2 293.3)
+  );
+  --base-color-purple-7: light-dark(
+    oklch(40.2% 0.167 293.9),
+    oklch(41.6% 0.161 294.7)
+  );
+  --base-color-purple-8: light-dark(
+    oklch(34% 0.143 292.9),
+    oklch(32.8% 0.133 294.7)
+  );
+  --base-color-purple-9: light-dark(
+    oklch(28.3% 0.126 291.7),
+    oklch(25.5% 0.111 292.6)
+  );
 }

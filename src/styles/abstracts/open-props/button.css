@@ -1,6 +1,3 @@
-@import '../props.media.css';
-@import '../props.gray-hsl.css';
-
 :where(
     .btn,
     button,

@@ -1,14 +1,44 @@
 :where(html) {
   color-scheme: light dark;
 
-  --base-color-green-0: light-dark(#dafbe1, #aff5b4);
-  --base-color-green-1: light-dark(#aceebb, #7ee787);
-  --base-color-green-2: light-dark(#6fdd8b, #56d364);
-  --base-color-green-3: light-dark(#4ac26b, #3fb950);
-  --base-color-green-4: light-dark(#2da44e, #2ea043);
-  --base-color-green-5: light-dark(#1a7f37, #238636);
-  --base-color-green-6: light-dark(#116329, #196c2e);
-  --base-color-green-7: light-dark(#044f1e, #0f5323);
-  --base-color-green-8: light-dark(#003d16, #033a16);
-  --base-color-green-9: light-dark(#002d11, #04260f);
+  --base-color-green-0: light-dark(
+    oklch(95.7% 0.049 151.6),
+    oklch(90.7% 0.112 146.3)
+  );
+  --base-color-green-1: light-dark(
+    oklch(89.1% 0.096 151.1),
+    oklch(84.2% 0.164 145.8)
+  );
+  --base-color-green-2: light-dark(
+    oklch(81.2% 0.154 150.1),
+    oklch(77.2% 0.188 145.5)
+  );
+  --base-color-green-3: light-dark(
+    oklch(72.6% 0.164 149.5),
+    oklch(69.5% 0.181 145.6)
+  );
+  --base-color-green-4: light-dark(
+    oklch(63.4% 0.162 148.4),
+    oklch(62.2% 0.166 146.2)
+  );
+  --base-color-green-5: light-dark(
+    oklch(52.4% 0.14 148),
+    oklch(54.6% 0.147 146.3)
+  );
+  --base-color-green-6: light-dark(
+    oklch(43.9% 0.118 148.1),
+    oklch(46.8% 0.123 147.6)
+  );
+  --base-color-green-7: light-dark(
+    oklch(37.4% 0.104 148.5),
+    oklch(38.9% 0.102 148.4)
+  );
+  --base-color-green-8: light-dark(
+    oklch(31.4% 0.088 149.3),
+    oklch(30.5% 0.083 149.3)
+  );
+  --base-color-green-9: light-dark(
+    oklch(26% 0.07 151.1),
+    oklch(23.7% 0.058 150.5)
+  );
 }

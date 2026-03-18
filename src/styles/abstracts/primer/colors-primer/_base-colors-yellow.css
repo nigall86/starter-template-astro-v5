@@ -1,14 +1,44 @@
 :where(html) {
   color-scheme: light dark;
 
-  --base-display-color-yellow-0: light-dark(#fff8c5, #f8e3a1);
-  --base-display-color-yellow-1: light-dark(#fae17d, #f2cc60);
-  --base-display-color-yellow-2: light-dark(#eac54f, #e3b341);
-  --base-display-color-yellow-3: light-dark(#d4a72c, #d29922);
-  --base-display-color-yellow-4: light-dark(#bf8700, #bb8009);
-  --base-display-color-yellow-5: light-dark(#9a6700, #9e6a03);
-  --base-display-color-yellow-6: light-dark(#7d4e00, #845306);
-  --base-display-color-yellow-7: light-dark(#633c01, #693e00);
-  --base-display-color-yellow-8: light-dark(#4d2d00, #4b2900);
-  --base-display-color-yellow-9: light-dark(#3b2300, #341a00);
+  --base-display-color-yellow-0: light-dark(
+    oklch(97.2% 0.066 101),
+    oklch(91.8% 0.087 92.5)
+  );
+  --base-display-color-yellow-1: light-dark(
+    oklch(91% 0.123 95.7),
+    oklch(85.7% 0.133 90)
+  );
+  --base-display-color-yellow-2: light-dark(
+    oklch(83.4% 0.14 91.5),
+    oklch(79% 0.139 85.2)
+  );
+  --base-display-color-yellow-3: light-dark(
+    oklch(75% 0.141 87.1),
+    oklch(72% 0.14 79.9)
+  );
+  --base-display-color-yellow-4: light-dark(
+    oklch(66.2% 0.137 79.3),
+    oklch(64.4% 0.133 75.9)
+  );
+  --base-display-color-yellow-5: light-dark(
+    oklch(55.4% 0.117 75),
+    oklch(56.5% 0.118 74.9)
+  );
+  --base-display-color-yellow-6: light-dark(
+    oklch(46.6% 0.101 70.2),
+    oklch(48.6% 0.103 69.7)
+  );
+  --base-display-color-yellow-7: light-dark(
+    oklch(39.4% 0.085 68.9),
+    oklch(40.6% 0.09 67)
+  );
+  --base-display-color-yellow-8: light-dark(
+    oklch(33% 0.072 68.3),
+    oklch(31.8% 0.072 64.2)
+  );
+  --base-display-color-yellow-9: light-dark(
+    oklch(28% 0.06 71.5),
+    oklch(24.9% 0.057 62.6)
+  );
 }

@@ -1,0 +1,238 @@
+.btn,
+button,
+input:is([type='button'], [type='submit'], [type='reset']),
+input[type='file']::-webkit-file-upload-button,
+input[type='file']::file-selector-button {
+  /* Button tokens */
+  --_btn-text: initial /* your text color */;
+  --_btn-size: initial /* your size */;
+
+  --_btn-bg: light-dark(white, var(--surface-3));
+
+  --_btn-border: var(--surface-3);
+
+  --_highlight-size: 0;
+  --_highlight: light-dark(
+    color-mix(in hsl, var(--gray-5) 25%, transparent),
+    color-mix(in hsl, var(--gray-12) 25%, transparent)
+  );
+
+  --_ink-shadow: light-dark(
+    0 1px 0 var(--gray-3),
+    0 1px 0 var(--surface-1)
+  );
+
+  --_icon-size: 0.8lh; /* Andy Bell's setting */
+  --_icon-color: var(--_btn-accent, var(--link));
+
+  -webkit-tap-highlight-color: transparent;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-4);
+
+  min-height: 4.4rem;
+
+  padding-block: 0.75ch;
+  padding-inline: var(--size-relative-6);
+
+  background-color: var(--_btn-bg);
+  border: var(--border-size-2) solid var(--_btn-border);
+  border-radius: var(--radius-2);
+
+  font-family: var(--ff-base), sans-serif;
+  font-size: var(--_btn-size);
+  font-weight: var(--fw-bold);
+  color: var(--_btn-text);
+
+  text-align: center;
+  line-height: var(--lh-3);
+  text-decoration: none;
+
+  box-shadow:
+    var(--shadow-2),
+    0 0 var(--surface-3),
+    0 0 0 var(--_highlight-size) var(--_highlight);
+
+  text-shadow: var(--_ink-shadow);
+  transition: border-color 0.5s var(--ease-3);
+
+  user-select: none;
+  cursor: pointer;
+
+  @media (--motionOK) {
+    transition:
+      border-color 0.5s var(--ease-3) 3s,
+      box-shadow 145ms var(--ease-4),
+      outline-offset 145ms var(--ease-4);
+  }
+}
+
+.btn,
+button,
+input:where([type='button'], [type='submit'], [type='reset']) {
+  &[disabled] {
+    --_btn-bg: none;
+    --_btn-text: light-dark(var(--gray-6), var(--gray-5));
+    box-shadow: var(--shadow-1);
+    cursor: not-allowed;
+  }
+
+  /* pressing */
+  &:not(:active):hover {
+    --_highlight-size: var(--size-2);
+    transition-duration: 0.25s;
+  }
+
+  /* icons */
+  & > svg {
+    flex-shrink: 0;
+    inline-size: var(--_btn-icon-size);
+    block-size: var(--_btn-icon-size);
+    filter: drop-shadow(var(--_ink-shadow));
+  }
+
+  & > svg > * {
+    stroke: var(--_btn-icon-color);
+    stroke-width: var(--border-size-2);
+  }
+}
+
+.btn:is(a) {
+  text-decoration: none;
+}
+
+/* adaptive indigo text */
+[type='submit'],
+form button:not([type], [disabled]) {
+  --_btn-text: var(--_accent, var(--link));
+}
+
+/* Red reset */
+[type='reset'] {
+  --_btn-text: light-dark(var(--red-6), var(--red-2));
+  --_btn-border: light-dark(var(--red-3), var(--surface-3));
+
+  &:focus-visible {
+    outline-color: var(--red-6);
+  }
+}
+
+/* submit, form > button, reset matching hover border color */
+[type='submit'],
+[type='reset'],
+form button:not([type]):is(:hover, :focus-visible):not([disabled]) {
+  --_btn-border: currentColor;
+}
+
+/* file input */
+input[type='file'] {
+  max-inline-size: 100%;
+  padding: 0;
+  align-self: flex-start;
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--surface-2);
+  color: var(--text-2);
+  box-shadow: var(--inner-shadow-4);
+  cursor: initial;
+}
+
+[type='submit'],
+form button:not([type], [disabled]) {
+  --_btn-text: var(--_btn-accent);
+}
+
+input[type='file'] {
+  align-self: flex-start;
+  max-inline-size: 100%;
+  padding: 0;
+
+  border: var(--border-size-1) solid var(--surface-1);
+  border-radius: var(--radius-2);
+  color: var(--text-1);
+  box-shadow: var(--inner-shadow-4);
+  cursor: auto;
+
+  &::-webkit-file-upload-button,
+  &::file-selector-button {
+    margin-inline-end: var(--size-relative-6);
+    cursor: pointer;
+  }
+}
+
+@media (--OSdark) {
+  [disabled],
+  [type='reset'],
+  [type='submit'],
+  form button:not([type='button'], [data-type='btn-icon']) {
+    background-color: var(--surface-1);
+  }
+}
+
+/* Spacing for inputs and textarea */
+input:not([type='range']),
+textarea {
+  padding-block: var(--size-1);
+  padding-inline: var(--size-2);
+}
+
+@media (--OSdark) {
+  textarea,
+  input:not(button):not(button[type]):not(input[type='button']):not(
+      input[type='submit']
+    ):not(input[type='reset']) {
+    background-color: var(--surface-1);
+  }
+}
+
+a[href],
+area,
+button,
+input:not(
+  [type='text'],
+  [type='email'],
+  [type='number'],
+  [type='password'],
+  [type=''],
+  [type='tel'],
+  [type='url']
+),
+label[for],
+select,
+summary,
+[tabindex]:not([tabindex*='-']) {
+  cursor: pointer;
+}
+
+[data-type='accent'] {
+  --_btn-bg: var(--accent);
+  --_btn-text: color-mix(in hsl, var(--accent) 5%, white);
+  --_btn-border: var(--accent);
+  --_highlight: color-mix(in hsl, var(--accent) 25%, transparent);
+}
+
+/* --- Btn as icon only --- */
+[data-type='btn-icon'] {
+  --_btn-icon-size: var(--size-10);
+  --_btn-bg: none;
+  --_btn-text-color: var(--text-1);
+
+  flex-shrink: 0;
+  place-items: center;
+  aspect-ratio: var(--ratio-square);
+
+  min-width: auto;
+  padding: 0.6rem;
+  border: none;
+  border-radius: var(--radius-round);
+  stroke-width: var(--border-size-2);
+  stroke: currentColor;
+  background-color: var(--_btn-bg);
+
+  & > svg {
+    inline-size: var(--_btn-icon-size);
+    block-size: var(--_btn-icon-size);
+    filter: drop-shadow(var(--_btn-text));
+  }
+}

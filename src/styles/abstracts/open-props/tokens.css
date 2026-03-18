@@ -1,9 +1,11 @@
 /* @import 'colors-open-props'; */
-
-:where(html) {
+html {
   color-scheme: light dark;
 
+  --accent: var(--brand);
+
   --link: light-dark(var(--indigo-7), var(--indigo-3));
+  --link-hover: light-dark(var(--indigo-6), var(--indigo-2));
   --link-visited: light-dark(var(--purple-7), var(--purple-3));
 
   --text-1: light-dark(var(--gray-12), var(--gray-0));
@@ -16,6 +18,9 @@
 
   --scrollthumb-color: light-dark(var(--gray-7), var(--gray-6));
 
+  /* Overlay color */
+  --overlay-backdrop-bgColor: hsla(210 20% 82% / 0.4);
+
   @media (--HDcolor) {
     @supports (color: color(display-p3 0 0 0)) {
       --link: color(display-p3 0.1 0.39 1);
@@ -23,34 +28,30 @@
     }
   }
 
-  & :where(button, .btn) {
+  & button,
+  .btn {
     --_bg: light-dark(var(--_bg-light), var(--_bg-dark));
     --_ink-shadow: light-dark(
       var(--_ink-shadow-light),
       var(--_ink-shadow-dark)
     );
 
-    & :where([type='reset']) {
+    & [type='reset'] {
       --_text: light-dark(var(--red-6), var(--red-2));
       --_border: light-dark(var(--red-3), var(--surface-3));
     }
   }
 
-  &
-    :where(
-      button,
-      .btn,
-      input:is([type='button'], [type='submit'], [type='reset'])
-    )[disabled] {
+  & button,
+  .btn,
+  input:is([type='button'], [type='submit'], [type='reset'])
+    [disabled] {
     --_text: light-dark(var(--gray-6), var(--gray-5));
   }
 
-  &
-    :where(
-      textarea,
-      select,
-      input:not([type='button'], [type='submit'], [type='reset'])
-    ) {
+  & textarea,
+  select,
+  input:not([type='button'], [type='submit'], [type='reset']) {
     background-color: light-dark(
       var(--surface-2),
       hsl(210deg 11% 10%)

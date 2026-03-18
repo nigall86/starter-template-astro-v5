@@ -1,17 +1,14 @@
 .site-header {
-  --_header-margin: 0;
-  --_header-padding: 0;
-  --_site-header-link-padding: var(--space-s);
-  --_header-bg: var(--bgColor-inset, var(--surface-2));
+  --_site-header-margin: 0;
+  --_site-header-padding: 0;
+  --_site-header-bg: var(--surface-1, var(--bgColor-default));
 
-  margin: var(--_header-margin);
-  padding: var(--_header-padding);
-  background-color: var(--_header-bg);
-  color: var(--fgColor-default, var(--text-1));
+  margin: var(--_site-header-margin);
+  padding: var(--_site-header-padding);
+  background-color: var(--_site-header-bg);
+  color: var(--text-1, var(--fgColor-default));
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-

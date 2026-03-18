@@ -52,7 +52,7 @@
   --control-checked-fgColor-rest: var(--fgColor-onEmphasis);
   --control-checked-fgColor-disabled: light-dark(
     var(--fgColor-onEmphasis),
-    var(--base-color-neutral-0)
+    #010409
   );
 
   /* Border */

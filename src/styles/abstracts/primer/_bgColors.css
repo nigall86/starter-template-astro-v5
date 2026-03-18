@@ -13,7 +13,7 @@
   );
 
   --bgColor-inset: light-dark(
-    var(--bgColor-accent-muted),
+    var(--bgColor-muted),
     var(--base-color-neutral-0)
   );
 
@@ -59,8 +59,8 @@
   );
 
   /* Brand */
-  --bgColor-brand-emphasis: var(--bgColor-accent-emphasis);
-  --bgColor-brand-muted: var(--bgColor-accent-muted);
+  --bgColor-brand-emphasis: var(--brand-color);
+  --bgColor-brand-muted: var(--brand-muted);
 
   /* Attention */
   --bgColor-attention-emphasis: var(--base-color-yellow-5);
@@ -80,7 +80,7 @@
 
   /* Done & Upsell*/
   --bgColor-done-emphasis: var(--base-color-purple-5);
-  --bgColor-done-mute: light-dark(
+  --bgColor-done-muted: light-dark(
     var(--base-color-purple-0),
     #ab7df826
   );

@@ -1,0 +1,28 @@
+:where(html) {
+  --brand-facebook: oklch(56.4% 0.24 261.2);
+  --brand-youtube: oklch(62.8% 0.258 29.2);
+  --brand-twitter: oklch(67.9% 0.15 250.5);
+  --brand-whatsapp: oklch(76.1% 0.201 149.7);
+  --brand-instagram-yellow: oklch(88.1% 0.158 95.3);
+  --brand-instagram-red: oklch(61.9% 0.216 11);
+  --brand-instagram-magenta: oklch(61.2% 0.245 333.8);
+  --brand-instagram-blue: oklch(50% 0.276 284.4);
+  --brand-snapchat: oklch(96.2% 0.208 108.9);
+  --brand-google-blue: oklch(63% 0.18 260);
+  --brand-google-red: oklch(60.2% 0.19 28.9);
+  --brand-google-yellow: oklch(80.8% 0.166 82.7);
+  --brand-google-green: oklch(61.2% 0.151 154.1);
+  --brand-tiktok-razzmatazz: oklch(64.7% 0.238 17.7);
+  --brand-tiktok-splash: oklch(87.6% 0.146 191.6);
+  --brand-microsoft-red: oklch(65.1% 0.206 35.6);
+  --brand-microsoft-green: oklch(72.1% 0.191 128.9);
+  --brand-microsoft-blue: oklch(68.5% 0.156 239.6);
+  --brand-microsoft-yellow: oklch(82.9% 0.171 81);
+  --brand-pinterest: oklch(58.2% 0.236 25.5);
+  --brand-spotify: oklch(77% 0.212 148.7);
+  --brand-discord: oklch(57.7% 0.209 273.9);
+  --brand-telegram: oklch(70.5% 0.144 237.8);
+  --brand-reddit: oklch(66% 0.229 35.4);
+  --brand-amazon: oklch(30.1% 0.032 254.3);
+  --brand-twitch: oklch(59.1% 0.255 296.1);
+}

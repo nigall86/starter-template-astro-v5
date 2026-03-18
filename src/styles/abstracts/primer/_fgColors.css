@@ -27,7 +27,7 @@
   --fgColor-onInverse: var(--base-color-neutral-0);
 
   --fgColor-accent: light-dark(var(--base-color-blue-5), #4493f8);
-  --fgColor-brand: var(--fgColor-accent);
+  --fgColor-brand: var(--brand-color);
   --fgColor-attention: light-dark
     (var(--base-color-yellow-5), var(--base-color-yellow-3));
   --fgColor-danger: light-dark(#d1242f, var(--base-color-red-4));

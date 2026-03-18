@@ -9,7 +9,15 @@
 @import '_base-colors-yellow.css';
 
 /* Display colors */
+@import './display-colors/_base-display-colors-auburn.css';
+@import './display-colors/_base-display-colors-brown.css';
+@import './display-colors/_base-display-colors-cyan.css';
 @import './display-colors/_base-display-colors-gray.css';
 @import './display-colors/_base-display-colors-indigo.css';
-@import './display-colors/_base-display-colors-purple.css';
+@import './display-colors/_base-display-colors-lemon.css';
+@import './display-colors/_base-display-colors-lime.css';
+@import './display-colors/_base-display-colors-olive.css';
+@import './display-colors/_base-display-colors-pine.css';
+@import './display-colors/_base-display-colors-plum.css';
+@import './display-colors/_base-display-colors-teal.css';
 @import './display-colors/_base-display-colors-yellow.css';

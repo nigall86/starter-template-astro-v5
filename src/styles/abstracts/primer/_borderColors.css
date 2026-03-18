@@ -17,15 +17,15 @@
     var(--base-color-neutral-9),
     var(--borderColor-emphasis)
   );
-  --borderColor-neutral-muted: var(--borderColor-muted);
+  --borderColor-neutral-muted: light-dark(var(--borderColor-muted));
 
   /* Accent */
   --borderColor-accent-emphasis: var(--base-color-blue-5);
   --borderColor-accent-muted: light-dark(#54aeff66, #388bfd66);
 
   /* Brand */
-  --borderColor-brand-emphasis: var(--borderColor-accent-emphasis);
-  --borderColor-brand-muted: var(--borderColor-accent-muted);
+  --borderColor-brand-emphasis: var(--brand-color);
+  --borderColor-brand-muted: var(--brand-color-muted);
 
   /* Attention */
   --borderColor-attention-emphasis: var(--base-color-yellow-5);
@@ -39,9 +39,9 @@
 
   /* Done & Upsell */
   --borderColor-done-emphasis: var(--base-color-purple-5);
-  --borderColor-done-mute: light-dark(#C297FF66, #AB7DF866);
+  --borderColor-done-muted: light-dark(#C297FF66, #AB7DF866);
   --borderColor-upsell-emphasis: var(--borderColor-done-emphasis);
-  --borderColor-upsell-mute: var(--borderColor-done-mute);
+  --borderColor-upsell-muted: var(--borderColor-done-muted);
 
   /* Success & Open */
   --borderColor-success-emphasis: var(--base-color-green-5);

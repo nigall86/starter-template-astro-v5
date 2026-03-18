@@ -1,0 +1,44 @@
+:where(html) {
+  color-scheme: light dark;
+
+  --base-display-color-pine-0: light-dark(
+    oklch(93.2% 0.07 162.6),
+    oklch(22.5% 0.035 169.3)
+  );
+  --base-display-color-pine-1: light-dark(
+    oklch(87.2% 0.129 160.9),
+    oklch(28.5% 0.051 165.4)
+  );
+  --base-display-color-pine-2: light-dark(
+    oklch(77.5% 0.184 155.6),
+    oklch(34.6% 0.066 163.8)
+  );
+  --base-display-color-pine-3: light-dark(
+    oklch(71% 0.164 156.6),
+    oklch(41.7% 0.084 162.2)
+  );
+  --base-display-color-pine-4: light-dark(
+    oklch(63% 0.141 157.9),
+    oklch(48.7% 0.102 160.7)
+  );
+  --base-display-color-pine-5: light-dark(
+    oklch(52.6% 0.113 159.6),
+    oklch(58.2% 0.128 158.8)
+  );
+  --base-display-color-pine-6: light-dark(
+    oklch(48.2% 0.1 160.8),
+    oklch(68.6% 0.156 157.6)
+  );
+  --base-display-color-pine-7: light-dark(
+    oklch(42.7% 0.085 162.7),
+    oklch(71.5% 0.167 156.4)
+  );
+  --base-display-color-pine-8: light-dark(
+    oklch(37% 0.069 164.4),
+    oklch(78.2% 0.188 155.2)
+  );
+  --base-display-color-pine-9: light-dark(
+    oklch(30% 0.053 165.1),
+    oklch(83.2% 0.181 156.9)
+  );
+}

@@ -1,15 +1,15 @@
 :where(html) {
-  --jungle-0: hsl(74 98% 84%);
-  --jungle-1: hsl(74 79% 78%);
-  --jungle-2: hsl(74 68% 71%);
-  --jungle-3: hsl(75 62% 65%);
-  --jungle-4: hsl(74 56% 59%);
-  --jungle-5: hsl(74 53% 53%);
-  --jungle-6: hsl(74 55% 47%);
-  --jungle-7: hsl(74 66% 42%);
-  --jungle-8: hsl(74 79% 36%);
-  --jungle-9: hsl(73 90% 32%);
-  --jungle-10: hsl(73 91% 26%);
-  --jungle-11: hsl(73 91% 21%);
-  --jungle-12: hsl(73 90% 16%);
+  --jungle-0: oklch(96.5% 0.103 119.1);
+  --jungle-1: oklch(93% 0.114 119.4);
+  --jungle-2: oklch(89% 0.129 119.9);
+  --jungle-3: oklch(85.4% 0.141 121.1);
+  --jungle-4: oklch(81.7% 0.147 120.7);
+  --jungle-5: oklch(78.2% 0.155 121.3);
+  --jungle-6: oklch(74.1% 0.158 121.9);
+  --jungle-7: oklch(71.4% 0.163 122.6);
+  --jungle-8: oklch(67% 0.16 123.4);
+  --jungle-9: oklch(64.2% 0.156 123.1);
+  --jungle-10: oklch(55.5% 0.134 123);
+  --jungle-11: oklch(47.7% 0.114 122.8);
+  --jungle-12: oklch(39.4% 0.093 122.4);
 }

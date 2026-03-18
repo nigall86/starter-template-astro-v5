@@ -1,14 +1,44 @@
 :where(html) {
   color-scheme: light dark;
 
-  --base-color-orange-0: light-dark(#fff1e5, #ffdfb6);
-  --base-color-orange-1: light-dark(#ffd8b5, #ffc680);
-  --base-color-orange-2: light-dark(#ffb77c, #ffa657);
-  --base-color-orange-3: light-dark(#fb8f44, #f0883e);
-  --base-color-orange-4: light-dark(#e16f24, #db6d28);
-  --base-color-orange-5: light-dark(#bc4c00, #bd561d);
-  --base-color-orange-6: light-dark(#953800, #9b4215);
-  --base-color-orange-7: light-dark(#762c00, #762d0a);
-  --base-color-orange-8: light-dark(#5c2200, #5a1e02);
-  --base-color-orange-9: light-dark(#471700, #3d1300);
+  --base-color-orange-0: light-dark(
+    oklch(96.6% 0.022 63.2),
+    oklch(92% 0.064 73.7)
+  );
+  --base-color-orange-1: light-dark(
+    oklch(90.7% 0.063 63.8),
+    oklch(86.3% 0.109 71.3)
+  );
+  --base-color-orange-2: light-dark(
+    oklch(83.4% 0.113 59.7),
+    oklch(79.9% 0.141 60.1)
+  );
+  --base-color-orange-3: light-dark(
+    oklch(75.3% 0.157 52.4),
+    oklch(72.7% 0.153 52.8)
+  );
+  --base-color-orange-4: light-dark(
+    oklch(66.5% 0.164 48.8),
+    oklch(65.4% 0.158 48.4)
+  );
+  --base-color-orange-5: light-dark(
+    oklch(55.7% 0.16 44.7),
+    oklch(57.4% 0.148 45.3)
+  );
+  --base-color-orange-6: light-dark(
+    oklch(46.6% 0.137 43.3),
+    oklch(49.1% 0.131 43.5)
+  );
+  --base-color-orange-7: light-dark(
+    oklch(39.5% 0.115 44.2),
+    oklch(39.7% 0.111 42)
+  );
+  --base-color-orange-8: light-dark(
+    oklch(33.4% 0.095 45.4),
+    oklch(32.4% 0.096 41.8)
+  );
+  --base-color-orange-9: light-dark(
+    oklch(27.7% 0.081 43.8),
+    oklch(25.2% 0.073 44.2)
+  );
 }

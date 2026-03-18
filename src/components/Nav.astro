@@ -1,6 +1,6 @@
 ---
 // styles
-import '../styles/components/nav.css';
+// import '../styles/components/nav.css';
 
 // components
 import Link from '@components/ui/links/Link.astro';
@@ -10,44 +10,49 @@ import Button from '@components/ui/links/Button.astro';
 import { navLinks } from '@data/navData';
 ---
 
-<nav class='site-nav' aria-label='primary navigation'>
-  <ul class="site-nav__list" data-visible='false' role='list'>
-  <li>
-    <Button
-      id='nav-menu-close'
-      type='button'
-      dataType='btn-icon'
-      srText='Close'
-      iconName='close'
-      iconSize= '32'
-      iconSide='left'
-      aria-label='close menu'
-    >
-    </Button>
-  </li>
-    {navLinks.map((item) => (
+<nav class="site-nav" aria-label="primary navigation">
+  <ul class="site-nav__list" data-visible="false" role="list">
+    <li>
+      <Button
+        dataType="btn-icon"
+        id="nav-menu-close"
+        type="button"
+        srText="Close"
+        iconName="close"
+        iconSize="32"
+        iconSide="left"
+        aria-label="close menu"
+      />
+    </li>
+    {
+      navLinks.map((item) => (
         <li>
-          <Link dataType='accent' text={item.name} href={item.path} data-navLink data-astro-reload/>
+          <Link
+            dataType="accent"
+            text={item.name}
+            href={item.path}
+            data-navLink
+            data-astro-reload
+          />
         </li>
       ))
     }
   </ul>
 
-  <div id='overlay' aria-hidden='true'></div>
+  <div id="overlay" aria-hidden="true"></div>
 
   <Button
-    id='nav-menu-open'
-    type='button'
-    dataType='btn-icon'
-    srText='Menu'
-    iconName='menu'
-    iconSize= '32'
-    iconSide='left'
-    aria-controls='navigation'
-    aria-label='open menu'
-    aria-expanded='false'
-  >
-  </Button>
+    dataType="btn-icon"
+    id="nav-menu-open"
+    type="button"
+    srText="Menu"
+    iconName="menu"
+    iconSize="32"
+    iconSide="left"
+    aria-controls="navigation"
+    aria-label="open menu"
+    aria-expanded="false"
+  />
 </nav>
 
 <script>

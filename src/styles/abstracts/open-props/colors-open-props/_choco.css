@@ -1,15 +1,15 @@
 :where(html) {
-  --choco-0: hsl(48 100% 93%);
-  --choco-1: hsl(35 91% 86%);
-  --choco-2: hsl(30 85% 79%);
-  --choco-3: hsl(27 80% 72%);
-  --choco-4: hsl(25 75% 65%);
-  --choco-5: hsl(25 71% 57%);
-  --choco-6: hsl(25 70% 49%);
-  --choco-7: hsl(25 75% 42%);
-  --choco-8: hsl(25 75% 37%);
-  --choco-9: hsl(25 76% 31%);
-  --choco-10: hsl(25 71% 26%);
-  --choco-11: hsl(25 66% 21%);
-  --choco-12: hsl(25 65% 15%);
+  --choco-0: oklch(97.7% 0.038 95.4);
+  --choco-1: oklch(92.2% 0.058 76.2);
+  --choco-2: oklch(86.6% 0.079 66.5);
+  --choco-3: oklch(81% 0.099 60);
+  --choco-4: oklch(75.5% 0.118 55.4);
+  --choco-5: oklch(70% 0.137 53.8);
+  --choco-6: oklch(64.7% 0.152 51.2);
+  --choco-7: oklch(58.4% 0.142 50.5);
+  --choco-8: oklch(53.3% 0.128 50.7);
+  --choco-9: oklch(47.1% 0.112 50.8);
+  --choco-10: oklch(41.3% 0.092 52.1);
+  --choco-11: oklch(35.5% 0.073 53.2);
+  --choco-12: oklch(28.6% 0.055 54);
 }
