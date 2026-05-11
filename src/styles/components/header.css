@@ -3,12 +3,14 @@
   --_site-header-padding: 0;
   --_site-header-bg: var(--surface-1, var(--bgColor-default));
 
-  margin: var(--_site-header-margin);
-  padding: var(--_site-header-padding);
-  background-color: var(--_site-header-bg);
-  color: var(--text-1, var(--fgColor-default));
+  /* position: fixed; */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin: var(--_site-header-margin);
+  padding: var(--_site-header-padding);
+  background-color: var(--_site-header-bg);
+  color: var(--text-1, var(--fgColor-default));
 }

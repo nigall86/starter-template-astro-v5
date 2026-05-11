@@ -3,7 +3,7 @@
 import { Icon } from "astro-icon/components";
 
 // data
-import { socialLinks } from "@data/socialsData";
+import { socialLinks } from "@/data/socialsData.ts";
 
 // props
 interface Props {
@@ -36,6 +36,7 @@ const { size, ...rest } = Astro.props;
 <!-- Styles -->
 <style define:vars={{ size }}>
   .socials-container {
+    --flex-gap: var(--size-3);
     --social-icon-size: calc(var(--size) * 0.1rem);
 
     display: flex;
@@ -49,16 +50,16 @@ const { size, ...rest } = Astro.props;
       width: var(--social-icon-size);
       height: var(--social-icon-size);
       border-radius: 50%;
-      background-color: var(--bgColor-neutral-muted);
-      box-shadow: var(var(--shadow-floating-medium), --shadow-1);
+      background-color: var(--surface-1, var(--bgColor-neutral-muted));
+      box-shadow: var(--shadow-1, var(--shadow-floating-medium));
 
       &::before {
         content: attr(data-social);
         position: absolute;
         padding: 0.5rem 1rem;
         border-radius: 100px;
-        background-color: var(--bgColor-neutral-muted);
-        color: var(--fgColor-default);
+        background-color: var(--surface-1, var(--bgColor-neutral-muted));
+        color: var(--text-1, (--fgColor-default));
         text-decoration: none;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
         translate: 0 calc(var(--social-icon-size) / -2);
@@ -74,7 +75,7 @@ const { size, ...rest } = Astro.props;
         height: 0;
         border-inline-start: 0.6rem solid transparent;
         border-inline-end: 0.6rem solid transparent;
-        border-block-start: 0.8rem solid var(--bgColor-neutral-muted);
+        border-block-start: 0.8rem solid var(--surface-1, var(--bgColor-neutral-muted));
         translate: 0 0;
         rotate: 25deg;
         opacity: 0;
@@ -98,12 +99,12 @@ const { size, ...rest } = Astro.props;
         }
 
         [data-icon] {
-          color: var(--fgColor-onEmphasis);
+          color: var(--gray-0,var(--fgColor-onEmphasis));
         }
       }
 
       [data-icon] {
-        color: var(--fgColor-default);
+        color: var(--text-1, var(--fgColor-default));
       }
     }
   }

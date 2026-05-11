@@ -8,7 +8,11 @@
   --_container-padding: calc(var(--_container-min-margin-inline) * 2);
 
   margin-inline: auto;
-  width: min(100% - var(--_container-padding), var(--_container-max-width));
+  width: min(
+    100% - var(--_container-padding),
+    var(--_container-max-width)
+  );
+  max-inline-size: var(--_container-max-width);
 }
 
 .container[data-type='narrow'] {

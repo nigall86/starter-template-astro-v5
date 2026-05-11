@@ -3,20 +3,25 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    // "paths": {
+    //   "@assets/*": ["./src/assets/*"],
+    //   "@components/*": ["./src/components/*"],
+    //   "@content/*": ["./src/content/*"],
+    //   "@data/*": ["./src/data/*"],
+    //   "@hooks/*": ["./src/hooks/*"],
+    //   "@icons/*": ["./src/icons/*"],
+    //   "@layouts/*": ["./src/layouts/*"],
+    //   "@pages/*": ["./src/pages/*"],
+    //   "@schemas/*": ["./src/schemas/*"],
+    //   "@scripts/*": ["./src/scripts/*"],
+    //   "@styles/*": ["./src/styles/*"],
+    //   "@utils/*": ["./src/utils/*"],
+    //   "*": ["./*"]
+    // },
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@content/*": ["src/content/*"],
-      "@data/*": ["src/data/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@icons/*": ["src/icons/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@schemas/*": ["src/schemas/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      "@/*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

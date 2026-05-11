@@ -3,10 +3,10 @@
 import { Icon } from 'astro-icon/components';
 
 // styles
-import '../../../styles/components/card.css';
+import '@/styles/components/card.css';
 
 // components
-import Button from '@components/ui/links/Button.astro';
+import Button from '@/components/ui/links/Button.astro';
 
 interface Props {
   title: string;
@@ -16,14 +16,20 @@ interface Props {
   btnText?: string;
 }
 
-const { title, description, icon, isBtn = false, btnText } = Astro.props;
+const {
+  title,
+  description,
+  icon,
+  isBtn = false,
+  btnText,
+} = Astro.props;
 ---
 
 <article class:list={['card', 'feature-card', 'text-center']}>
   <Icon name={icon} size={48} />
-  <h5 class='feature-card__title'>{title}</h5>
-  <p class='feature-card__text'>
+  <h5 class="feature-card__title">{title}</h5>
+  <p class="feature-card__text">
     {description}
   </p>
-  {isBtn && <Button dataType='accent'>{btnText}</Button>}
+  {isBtn && <Button dataType="accent">{btnText}</Button>}
 </article>

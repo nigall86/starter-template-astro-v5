@@ -15,8 +15,14 @@ const {
 } = Astro.props;
 ---
 
-<a class="logo" href="/" title={title} data-astro-reload>
-  <IconLogo width={size} height={size} data-type={type} />
+<a
+  class="logo"
+  href="/"
+  title={title}
+  data-type={type}
+  data-astro-reload
+>
+  <IconLogo width={size} height={size} />
 </a>
 
 <style>
@@ -24,16 +30,16 @@ const {
     --_logo-color-header: var(--brand, var(--fgColor-brand));
     --_logo-color-footer: var(--brand, var(--fgColor-brand));
 
-    padding-inline: var(--size-5);
+    &[data-type='header'] {
+      padding-inline: var(--space-s);
 
-    > svg {
-      &[data-type='header'] {
+      > svg {
         fill: var(--_logo-color-header);
       }
+    }
 
-      &[data-type='footer'] {
-        fill: var(--_logo-color-footer);
-      }
+    &[data-type='footer'] > svg {
+      fill: var(--_logo-color-footer);
     }
   }
 </style>

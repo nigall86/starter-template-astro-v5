@@ -1,8 +1,8 @@
 /* eslint-disable array-callback-return */
 import { useEffect, useRef } from 'react';
-import { range, generateId } from '@utils/utils';
-import useIncrementingNumber from '@hooks/use-incrementing-number.hook';
-import { log } from 'node_modules/astro/dist/core/logger/core';
+import { range, generateId } from '#utils/utils.js';
+import useIncrementingNumber from '#hooks/use-incrementing-number.hook.js';
+// import { log } from 'node_modules/astro/dist/core/logger/core';
 
 const rainbowColors = [
   'hsl(1deg, 96%, 55%)', // red
@@ -29,7 +29,8 @@ const hasBrowserSupport =
     : false;
 
 // Function for generating a unique color
-const getColorPropName = (id, index) => `--magic-rainbow-color-${id}-${index}`;
+const getColorPropName = (id, index) =>
+  `--magic-rainbow-color-${id}-${index}`;
 
 const useRainbow = ({ intervalDelay = 2000 }) => {
   const prefersReducedMotion =
@@ -81,7 +82,8 @@ const useRainbow = ({ intervalDelay = 2000 }) => {
     // Shift every color up by one position.
     // `% paletteSize` is a handy trick to ensure that values "wrap around"; if we've exceeded
     // the number of items in the array, it loops back to 0.
-    const value = rainbowColors[(effectiveIntervalCount + index) % paletteSize];
+    const value =
+      rainbowColors[(effectiveIntervalCount + index) % paletteSize];
 
     return {
       ...acc,

@@ -3,22 +3,22 @@
 import { db, eq, Author, Comment } from 'astro:db';
 
 // components
-import BaseLayout from '@layouts/BaseLayout.astro';
-import Hero from '@components/home/Hero.astro';
-import Modal from '@components/Modal.astro';
-import PricingCard from '@components/ui/cards/PricingCard.astro';
-import Tabs from '@components/Tabs.astro';
-import Features from '@components/Features.astro';
-import MagicRainbowButton from '@components/ui/links/MagicRainbowButton.jsx';
-import CheckBox from '@components/ui/controls/CheckBox.astro';
-import Checkbox from '@components/ui/controls/Checkbox.jsx';
-import CheckBoxGroup from '@components/ui/controls/CheckBoxGroup.astro';
-import TextInput from '@components/ui/controls/TextInput';
-// import ThemeSwitcherNew from '@components/ThemeSwitcherNew.astro';
-import Avatars from '@components/Avatars.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Modal from '@/components/Modal.astro';
+import PricingCard from '@/components/ui/cards/PricingCard.astro';
+import Tabs from '@/components/Tabs.astro';
+import Features from '@/components/Features.astro';
+import MagicRainbowButton from '@/components/ui/links/MagicRainbowButton.jsx';
+import CheckBox from '@/components/ui/controls/CheckBox.astro';
+import Checkbox from '@/components/ui/controls/Checkbox.jsx';
+import CheckBoxGroup from '@/components/ui/controls/CheckBoxGroup.astro';
+// import TextInput from '#components/ui/controls/TextInput';
+import ThemeSwitcherNew from '@/components/ThemeSwitcherNew.astro';
+import Avatars from '@/components/Avatars.astro';
 
 // data
-import { plans } from '@data/plansData';
+import { plans } from '@/data/plansData.ts';
 
 // connecting two tables with id column
 const comments = await db
@@ -77,12 +77,12 @@ const comments = await db
           Click me
         </MagicRainbowButton>
       </section> -->
-      <CheckBox name="feature" label="Enable feature" optIn={true} />
-      <Checkbox name="feature" label="Enable feature" />
-      <TextInput name="input" label="Name" />
+      <!-- <CheckBox name="feature" label="Enable feature" optIn={true} /> -->
+      <!-- <Checkbox name="feature" label="Enable feature" /> -->
+      <!-- <TextInput name="input" label="Name" /> -->
 
       <!-- <CheckBoxGroup /> -->
-      <!-- <ThemeSwitcherNew /> -->
+      <ThemeSwitcherNew />
       <Avatars />
     </div>
   </section>

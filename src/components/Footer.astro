@@ -1,14 +1,11 @@
 ---
-// libraries
-import { Icon } from "astro-icon/components";
-
 // components
-import Logo from "@components/Logo.astro";
-import Link from "@components/ui/links/Link.astro";
-import SocialIcons from "./SocialIcons.astro";
+import Logo from '@/components/Logo.astro';
+import Link from '@/components/ui/links/Link.astro';
+import SocialIcons from './SocialIcons.astro';
 
 // data
-import { footerLinks } from "@data/footerData";
+import { footerLinks } from '@/data/footerData.ts';
 ---
 
 <footer class="site-footer">
@@ -24,10 +21,10 @@ import { footerLinks } from "@data/footerData";
           ))
         }
       </ul>
-      <SocialIcons size={64} />
+      <SocialIcons size={40} />
     </div>
     <div>
-      <small style="color: var(--fgColor-muted);">
+      <small class="date">
         Copyright &copy;<span id="copyright"
           >{new Date().getFullYear()}</span
         > | All rights reserved.
@@ -40,16 +37,20 @@ import { footerLinks } from "@data/footerData";
 <style>
   .site-footer {
     /* Spacing */
-    --_footer-padding-block: var(--size-8);
+    --flex-gap: var(--space-l);
+    --_footer-padding-block: var(--space-l);
 
     /* Background */
-    --_footer-bg: var(--bg-subtle, --surface-2);
+    --_footer-bg: var(--surface-2, var(--bgColor-default));
 
     /* Text */
     --_footer-font-family: var(--ff-base);
     --_footer-font-weight: var(--fw-regular);
-    --_footer-link: var(--text-subtle, --neutral-0);
-    --_footer-link-hover: var(--text-secondary, --neutral-4);
+    --_footer-link: var(--text-1, var(--fgColor-default));
+    --_footer-link-hover: var(
+      --link-hover,
+      var(--fgColor-onEmphasis)
+    );
     --_footer-letter-spacing: var(--letter-spacing-0);
 
     padding-block: var(--_footer-padding-block);
@@ -60,15 +61,19 @@ import { footerLinks } from "@data/footerData";
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: var(--flex-gap);
     }
 
     &__list {
+      flex-grow: 1;
+
       display: flex;
       list-style: none;
-      gap: var(--gutter);
+      justify-content: space-evenly;
 
       a {
         font-family: var(--_footer-font-family);
+        font-size: var(--fs-sm);
         font-weight: var(--_footer-font-weight);
         color: var(--_footer-link);
         letter-spacing: var(--_footer-letter-spacing);
@@ -79,6 +84,13 @@ import { footerLinks } from "@data/footerData";
         }
       }
     }
+
+    .date {
+      display: inline-block;
+      margin-block-start: var(--space-s);
+      color: var(--text-2, var(--fgColor-muted));
+      font-size: var(--fs-2xs);
+    }
   }
 </style>
 
@@ -86,7 +98,7 @@ import { footerLinks } from "@data/footerData";
 <script>
   // Set actual year in the footer
   const copyrightSpan = document.getElementById(
-    "copyright"
+    'copyright',
   ) as HTMLSpanElement;
   copyrightSpan.textContent = new Date().getFullYear().toString();
 </script>

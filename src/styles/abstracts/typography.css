@@ -1,9 +1,9 @@
 :where(html) {
-  --_ff-montserrat: "Montserrat", sans-serif;
-  --_ff-inter: "Inter", sans-serif;
+  /* --_ff-montserrat: "Montserrat", sans-serif; */
+  /* --_ff-inter: 'Inter', sans-serif; */
 
-  --ff-base: var(--_ff-inter);
-  --ff-accent: var(--_ff-montserrat);
+  --ff-base: var(--font-inter);
+  --ff-accent: var(--font-montserrat);
 
   /* --- Font weights --- */
   --fw-thin: 100;

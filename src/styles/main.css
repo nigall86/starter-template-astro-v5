@@ -40,7 +40,7 @@
 /* ---------------------------------
   Base layer 
 ---------------------------------  */
-@import './base/font-face.css' layer(base);
+/* @import './base/font-face.css' layer(base); */
 @import './base/reset.css' layer(base);
 @import './base/base.css' layer(base);
 @import './base/typography.css' layer(base);

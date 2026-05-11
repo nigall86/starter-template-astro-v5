@@ -14,3 +14,18 @@
     justify-content: center;
   }
 }
+
+.flex-columns {
+  display: flex;
+  gap: var(--flex-gap);
+
+  flex-direction: column;
+
+  @container (width > 90ch) {
+    flex-direction: row;
+  }
+
+  & > * {
+    flex: 1;
+  }
+}

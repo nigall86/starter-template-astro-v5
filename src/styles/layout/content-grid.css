@@ -1,5 +1,5 @@
 .content-grid {
-  --padding-inline: clamp(1rem, 6vw, 3rem);
+  --padding-inline: clamp(1rem, 6vi, 3rem);
 
   /* Track widths */
   --full-max-width: 1fr;
@@ -15,7 +15,10 @@
   );
   --content: minmax(
     0,
-    calc((var(--content-max-width) - var(--inset-content-max-width)) * 0.5)
+    calc(
+      (var(--content-max-width) - var(--inset-content-max-width)) *
+        0.5
+    )
   );
   --inset-content: min(
     var(--inset-content-max-width),

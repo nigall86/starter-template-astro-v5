@@ -3,13 +3,13 @@
 import { Icon } from 'astro-icon/components';
 
 // styles
-import '../../../styles/components/card.css';
+import '@/styles/components/card.css';
 
 // types
 import { type HTMLAttributes } from 'astro/types';
 
 // components
-import Button from '@components/ui/links/Button.astro';
+import Button from '@/components/ui/links/Button.astro';
 
 export type priceCard = {
   tier: string;
@@ -41,26 +41,27 @@ const {
 } = data;
 ---
 
-<article class:list={['card', 'pricing-card', { 'box-shadow-3': popular }]}>
-  <p class='tier' data-type={tier}>{tier}</p>
+<article
+  class:list={['card', 'pricing-card', { 'box-shadow-3': popular }]}
+>
+  <p class="tier" data-type={tier}>{tier}</p>
 
   <!-- badge -->
-  {popular && <p class='badge'>Most Popular</p>}
+  {popular && <p class="badge">Most Popular</p>}
 
-  <div class='pricing-card__inner flow' style='--flow-spacer: 1.5em'>
-    <!-- price block -->
-    <div class='pricing-card__content'>
-      <!-- price -->
-      <div class='price'>
-        <span class='sign'>$</span>
-        <p class='num'>{priceMonth}</p>
-        {priceMonth > 0 && <span class='mo'>/mo</span>}
-      </div>
-      <!-- title -->
-      <h6 class='title'>{title}</h6>
-      <!-- description -->
-      <p class='description'>{description}</p>
+  <!-- <div class="pricing-card__inner | flow" style="--flow-space: 1.5em"> -->
+  <!-- price block -->
+  <div class="pricing-card__content">
+    <!-- price -->
+    <div class="price">
+      <span class="sign">$</span>
+      <p class="num">{priceMonth}</p>
+      {priceMonth > 0 && <span class="mo">/mo</span>}
     </div>
+    <!-- title -->
+    <h6 class="plan-title">{title}</h6>
+    <!-- description -->
+    <p class="plan-description">{description}</p>
 
     <!-- button -->
     <Button data-type={tier.toLowerCase()}>
@@ -68,14 +69,14 @@ const {
     </Button>
 
     <!-- features -->
-    <ul class='features' role='list'>
+    <ul class="plan-features" role="list">
       {
         features.map((feature) => (
-          <li class='feature'>
+          <li class="feature">
             {feature.checked ? (
-              <Icon name='checkmark' />
+              <Icon name="checkmark" />
             ) : (
-              <Icon name='close' />
+              <Icon name="close" />
             )}
             <span>{feature.text}</span>
           </li>
@@ -87,12 +88,125 @@ const {
 
 <!-- * Style * -->
 <style>
+  .pricing-card {
+    display: grid;
+    grid-template:
+      'tier' auto
+      'badge' 4rem
+      'content' 1fr;
+
+    justify-items: center;
+    gap: var(--size-4);
+
+    &__content {
+      grid-area: content;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--size-3);
+      padding-block-end: var(--size-10);
+      text-align: center;
+
+      .price {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        max-width: fit-content;
+
+        .sign {
+          font-size: var(--fs-sm);
+        }
+
+        .num {
+          font-size: var(--fs-3xl);
+          line-height: var(--lh-2);
+        }
+
+        .mo {
+          align-self: end;
+        }
+      }
+
+      .plan-title {
+        text-transform: uppercase;
+        margin-block-end: 0.4rem;
+      }
+
+      .plan-description {
+        max-width: 20ch;
+        font-size: var(--fs-xs);
+        line-height: 1.1;
+        text-wrap: balance;
+      }
+
+      .plan-features {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          svg {
+            width: 1.25em;
+            height: 1.25em;
+          }
+        }
+      }
+    }
+
+    .tier {
+      --_tier-bg: var(--_card-bg);
+      --_tier-text: var(--_card-text);
+
+      grid-area: tier;
+
+      justify-self: stretch;
+      background-color: var(--_tier-bg);
+      color: var(--_tier-text);
+      font-size: var(--fs-2xs);
+      font-weight: var(--fw-semi-bold);
+      text-align: center;
+      text-transform: uppercase;
+      padding-block: 0.75rem;
+
+      &[data-type='Free'] {
+        --_tier-text: var(--accent);
+      }
+
+      &[data-type='Pro'] {
+        --_tier-bg: var(--indigo-5);
+        --_tier-text: oklch(from var(--_tier-bg) 1 0 h);
+      }
+
+      &[data-type='Enterprise'] {
+        --_tier-bg: var(--bg-action-primary);
+        --_tier-text: var(--text-action-primary);
+      }
+    }
+
+    .badge {
+      grid-area: badge;
+
+      align-self: center;
+      width: fit-content;
+      padding: 0.5em 1.5em;
+      background-color: var(--gray-12);
+      color: var(--gray-0);
+      font-size: 1rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
   [data-icon='close'] {
     /* --stroke-width: 1px; */
-    --stroke-color: var(--text-error);
+    --stroke-color: var(--red-5);
   }
   [data-icon='checkmark'] {
     /* --stroke-width: 1px; */
-    --stroke-color: var(--text-success);
+    --stroke-color: var(--green-5);
   }
 </style>

@@ -4,17 +4,26 @@ input:is([type='button'], [type='submit'], [type='reset']),
 input[type='file']::-webkit-file-upload-button,
 input[type='file']::file-selector-button {
   /* Button tokens */
+  --_btn-accent: var(--accent);
   --_btn-text: initial /* your text color */;
   --_btn-size: initial /* your size */;
 
   --_btn-bg: light-dark(white, var(--surface-3));
 
-  --_btn-border: var(--surface-3);
+  --_btn-border: light-dark(
+    oklch(from var(--_btn-bg) 0.9 c h),
+    oklch(from var(--_btn-bg) l c h)
+  );
 
   --_highlight-size: 0;
+  /* --_highlight: light-dark(
+    oklch(from var(--gray-5) l c h / 0.2),
+    oklch(from var(--gray-12) l c h / 0.2)
+  ); */
+
   --_highlight: light-dark(
-    color-mix(in hsl, var(--gray-5) 25%, transparent),
-    color-mix(in hsl, var(--gray-12) 25%, transparent)
+    oklch(from var(--_btn-bg) 0.85 c h / 0.25),
+    oklch(from var(--_btn-bg) 0.2 c h / 0.5)
   );
 
   --_ink-shadow: light-dark(
@@ -206,10 +215,10 @@ summary,
 }
 
 [data-type='accent'] {
-  --_btn-bg: var(--accent);
-  --_btn-text: color-mix(in hsl, var(--accent) 5%, white);
-  --_btn-border: var(--accent);
-  --_highlight: color-mix(in hsl, var(--accent) 25%, transparent);
+  --_btn-bg: var(--_btn-accent);
+  --_btn-border: var(--_btn-bg);
+  --_btn-text: oklch(from var(--_btn-accent) 0.98 0 h);
+  --_highlight: oklch(from var(--_btn-accent) l c h / 0.25);
 }
 
 /* --- Btn as icon only --- */

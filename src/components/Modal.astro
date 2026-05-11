@@ -3,11 +3,11 @@
 import { Icon } from 'astro-icon/components';
 
 // styles
-import '../styles/components/modal.css'
+import '@/styles/components/modal.css'
 
 // components
-import Button from '@components/ui/links/Button.astro';
-import Input from '@components/ui/links/Input.astro';
+import Button from '@/components/ui/links/Button.astro';
+import Input from '@/components/ui/links/Input.astro';
 
 // props
 interface Props {
@@ -32,7 +32,7 @@ const {
       <Button 
         dataType="btn-icon"
         text="Close dialog"
-        onClick="this.closest('dialog').close('close')" 
+        onclick="this.closest('dialog').close('close')" 
       >
         <title>Close dialog icon</title>
         <Icon name='close' size={44} />
@@ -74,7 +74,7 @@ const {
 <Button
   dataType='accent'
   text='Open Dialog'
-  onClick={`${dialogType}.showModal()`}
+  onclick={`${dialogType}.showModal()`}
 />
 
 <style>

@@ -1,14 +1,22 @@
 ---
+// components
 import Avatar from './Avatar.astro';
 
 // data
-import { avatars } from '@data/avatarsData';
+import { avatars } from '@/data/avatarsData.ts';
 ---
 
-<figure class='avatars-container | negative-grid'>
+<figure class="avatars-container | negative-grid">
   {
     avatars.map((avatar) => (
-      <Avatar imagePath={avatar.path} altText={avatar.name} />
+      <Avatar src={avatar.path} altText={avatar.name} />
     ))
   }
 </figure>
+
+<style>
+  /* Shifting of other avatars */
+  & ~ .avatar {
+    translate: calc(var(--el-size) / 2);
+  }
+</style>

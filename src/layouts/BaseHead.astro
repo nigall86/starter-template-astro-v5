@@ -1,6 +1,7 @@
 ---
 // libraries
 import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
 
 // constants import
 import { SITE_TITLE, SITE_DESCRIPTION } from '../constants';
@@ -13,12 +14,14 @@ const { title = 'Articles, Stories & Tutorials' } = Astro.props;
 ---
 
 <head>
-  <meta charset='UTF-8' />
-  <meta name='description' content={SITE_DESCRIPTION} />
-  <meta name='viewport' content='width=device-width' />
-  <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-  <meta name='generator' content={Astro.generator} />
-  <meta name='color-scheme' content='light dark' />
+  <meta charset="UTF-8" />
+  <meta name="description" content={SITE_DESCRIPTION} />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="color-scheme" content="light dark" />
+  <Font cssVariable="--font-montserrat" />
+  <Font cssVariable="--font-inter" />
   <ClientRouter />
   <title>{SITE_TITLE} – {title}</title>
 </head>

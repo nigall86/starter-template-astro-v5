@@ -1,6 +1,6 @@
 // import { styled } from 'styled-components';
 
-import useRainbow from '@hooks/use-rainbow.hook';
+import useRainbow from '#hooks/use-rainbow.hook';
 
 const MagicRainbowButton = function ({
   children,
