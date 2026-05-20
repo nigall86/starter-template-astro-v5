@@ -1,0 +1,29 @@
+---
+// styles
+import '@/styles/components/card.css';
+
+// components
+import Button from '@/components/ui/links/Button.astro';
+
+import { Features } from '@/data/featuresData.ts';
+
+interface Props {
+  isBtn?: boolean;
+  btnText?: string;
+}
+
+const { isBtn = false, btnText } = Astro.props;
+---
+
+<section class="even-columns">
+  {
+    Features.map(({ title, description, icon: Icon }) => (
+      <article class:list={['card', 'feature-card', 'text-center']}>
+        <Icon width={48} height={48} stroke="red" />
+        <h5 class="feature-card__title">{title}</h5>
+        <p class="feature-card__text">{description}</p>
+        {isBtn && <Button dataType="accent">{btnText}</Button>}
+      </article>
+    ))
+  }
+</section>

@@ -1,9 +1,9 @@
 import { defineCollection } from 'astro:content';
 
-import postSchema from '#schemas/postSchema.ts';
-import serviceSchema from '#schemas/serviceSchema.ts';
-import teamSchema from '#schemas/teamSchema.ts';
-import featureSchema from '#schemas/featureSchema.ts';
+import postSchema from '@/schemas/postSchema.ts';
+import serviceSchema from '@/schemas/serviceSchema.ts';
+import teamSchema from '@/schemas/teamSchema.ts';
+import featureSchema from '@/schemas/featureSchema.ts';
 
 // posts collection
 const posts = defineCollection({
