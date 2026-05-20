@@ -5,10 +5,13 @@
   box-sizing: border-box;
 }
 
-html {
-  /*  Allow transitions and animations using keyword values */
-  interpolate-size: allow-keywords;
+/* Create a root stacking context for frameworks (like React) */
+#root,
+#__next {
+  isolation: isolate;
+}
 
+html {
   /* Prevent font size inflation */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -17,6 +20,8 @@ html {
   scrollbar-gutter: stable;
 
   @media (--motionOK) {
+    /*  Allow transitions and animations using keyword values */
+    interpolate-size: allow-keywords;
     scroll-behavior: smooth;
   }
 }
@@ -25,7 +30,6 @@ html {
 body {
   min-block-size: 100svh;
   line-height: 1.5;
-  margin: 0;
 
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -37,6 +41,9 @@ body {
   article {
     container-type: inline-size;
   }
+
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
 :not(dialog) {
@@ -62,20 +69,6 @@ body {
   margin-block-start: 0;
 }
 
-/* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin-block-end: 0;
-}
-
 /* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
@@ -89,6 +82,17 @@ label {
   line-height: 1.1;
 }
 
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
 /* Balance text wrapping on headings */
 h1,
 h2,
@@ -97,6 +101,11 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+}
+
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
 }
 
 img,
