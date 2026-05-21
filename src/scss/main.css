@@ -1214,8 +1214,7 @@ section {
     background-color: var(--neutral-0);
     box-shadow: var(--shadow-3);
     transition: all 0.4s ease-out;
-    -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
   }
   .site-nav__list[data-visible=false] {
     transform: translate(150%, 0);
@@ -1364,17 +1363,13 @@ dialog:not([open]) {
   opacity: 0;
 }
 dialog[data-type=megaDialog]::backdrop {
-  -webkit-backdrop-filter: blur(25px);
-          backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
 }
 dialog[data-type=miniDialog]::backdrop {
-  -webkit-backdrop-filter: none;
-          backdrop-filter: none;
+  backdrop-filter: none;
 }
 dialog::backdrop {
-  transition: -webkit-backdrop-filter 0.5s ease;
   transition: backdrop-filter 0.5s ease;
-  transition: backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease;
 }
 dialog[loading] {
   visibility: hidden;

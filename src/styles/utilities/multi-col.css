@@ -1,0 +1,9 @@
+.multi-col {
+  columns: var(--columns-count, 3) var(--columns-width, 15ch);
+  gap: var(--columns-gap, var(--space-m));
+  column-rule: 1px solid var(--surface-2);
+
+  p {
+    margin-block-end: var(--space-s);
+  }
+}
